@@ -1,0 +1,49 @@
+//
+// Prefix header for all source files of the 'erpbarcode' target in the 'erpbarcode' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+    //User-defined Header
+    #import <QuartzCore/QuartzCore.h>
+    #import "Constant.h"
+    #import "WorkUtil.h"
+    #import "Util.h"
+    #import "JSONKit.h"
+    #import "CLTickerView.h"
+    #import "DBManager.h"
+    #import "dbquerys.h"
+    //added common category jdh
+    #import "NSDate+Addition.h"
+    #import "NSData+AESAdditions.h"
+    #import "NSString+NetworkAdditions.h"
+    //#import "NSData+GZIP.h"
+    //#import "NSData+Base64.h"
+    //#import "NSDataGZipAdditions.h"
+    //#import "NSData+GzipExtension.h"
+//    #import "Base64.h"
+//    #import "GTMDefines.h"
+//    #import "GTMNSData+zlib.h"    
+    #import <CoreLocation/CoreLocation.h>
+    #import <MapKit/MapKit.h>
+    #import <AddressBook/AddressBook.h>
+    #import "scrollTouch.h"
+    #import "UIViewController+findFirstResponder.h"
+    #import "UINavigationItem+Addition.h"
+//    #import "KScan.h"
+
+    //User-defined Log Macro
+    #ifdef DEBUG
+        #define NSLog( s, ... ) NSLog(@"%@ %s(%d) : %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+    #else
+        #define NSLog( s, ... )
+    #endif
+#endif

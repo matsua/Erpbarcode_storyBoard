@@ -1,0 +1,42 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B2E3E317467B00DE2B21A71D290E2F149B54B48B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "4df3ba51-d7a0-9b42-a925-7352f88aaf2f++1489" : {
+
+    },
+    "894c79de-0517-0510-a95a-9c66e91f8d32++9811" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "894c79de-0517-0510-a95a-9c66e91f8d32++9811" : 9223372036854775807,
+    "B2E3E317467B00DE2B21A71D290E2F149B54B48B" : 9223372036854775807,
+    "4df3ba51-d7a0-9b42-a925-7352f88aaf2f++1489" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C9BDC38D-6970-4A1F-95F7-EA2EE8C5A380",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "894c79de-0517-0510-a95a-9c66e91f8d32++9811" : "erpbarcode\/",
+    "B2E3E317467B00DE2B21A71D290E2F149B54B48B" : "erpbarcode_ios_64\/",
+    "4df3ba51-d7a0-9b42-a925-7352f88aaf2f++1489" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "erpbarcode",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "erpbarcode.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/211.206.123.166\/svn\/erpbarcode",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4df3ba51-d7a0-9b42-a925-7352f88aaf2f++1489"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/dev.naver.com\/svn\/mbarcode",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "894c79de-0517-0510-a95a-9c66e91f8d32++9811"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/matsua\/erpbarcode_ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B2E3E317467B00DE2B21A71D290E2F149B54B48B"
+    }
+  ]
+}
