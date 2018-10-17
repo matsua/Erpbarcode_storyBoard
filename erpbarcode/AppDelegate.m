@@ -51,7 +51,7 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
     // Local DB 를 사용하는데 있어서 기본적으로 필요한 초기화 작업이 이루어지도록 함.
     [DBManager sharedInstance];
     
-    [self customizeAppearance];
+    //[self customizeAppearance];
     //map table create
     [self initializeMapTable];
     
