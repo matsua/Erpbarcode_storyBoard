@@ -200,11 +200,19 @@
 
 //메인화면 이동
 -(void)startServiceMenu{
-    MainMenuViewController* view = [[MainMenuViewController alloc] init];
-    view.preview = @"LOGIN";
-    UINavigationController* navi = [[UINavigationController alloc] initWithRootViewController:view];
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController* nc = [sb instantiateViewControllerWithIdentifier:@"MainNavigationController"];
+    [self.navigationController presentViewController:nc animated:YES completion:nil];
+    
     AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    appDelegate.window.rootViewController = navi;
+    appDelegate.window.rootViewController = nc;
+    
+//    MainMenuViewController* view = [[MainMenuViewController alloc] init];
+//    view.preview = @"LOGIN";
+//    UINavigationController* navi = [[UINavigationController alloc] initWithRootViewController:view];
+//    AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+//    appDelegate.window.rootViewController = navi;
 }
 
 #pragma INoticeConfirm delegate -- call by NoticeViewController

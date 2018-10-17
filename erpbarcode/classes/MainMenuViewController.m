@@ -847,6 +847,8 @@
     NSDictionary* menuDic = [menuList objectAtIndex:selectedMenu];
     subMenuList = [menuDic objectForKey:@"submenu"];
     
+    CGRect rect = viewMainMenu1.frame;
+    NSLog(@"\nLineView %f, %f, %f, %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
     // 열리는 크기를 계산하는 과정
     //olleh - font
 //    NSInteger subMenuLineCount = subMenuList.count / 3;
