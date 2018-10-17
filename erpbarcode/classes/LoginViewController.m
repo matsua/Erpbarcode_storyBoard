@@ -88,7 +88,7 @@
     [super viewDidLoad];
     
     self.title = @"로그인";
-    
+    // 테스트 커밋
     // 이전 로그인한 id/pw를 textfield에 표시한다.
     NSString* userid = [Util udObjectForKey:USER_ID];
     if (userid.length){
