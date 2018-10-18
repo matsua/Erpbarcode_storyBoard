@@ -41,6 +41,8 @@
 @implementation MainMenuViewController
 
 @synthesize preview;
+@synthesize subMenuView;
+@synthesize subMenuLayout;
 @synthesize setupInfoList;
 @synthesize menuList;
 @synthesize subMenuList;
@@ -137,7 +139,12 @@
     //    [locMgr getMyPosition];
     
     //base menu tab hidden - matsua - ing
-        viewMainMenu4.hidden = YES;
+    //viewMainMenu4.hidden = YES;
+    
+//    [self.viewMainSubMenu1 setHidden:YES];
+//    [self.viewMainSubMenu2 setHidden:YES];
+//    [self.viewMainSubMenu3 setHidden:YES];
+//    [self.viewMainSubMenu4 setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -777,8 +784,48 @@
 }
 
 // 서브메뉴를 구성을 한다.
-- (void)arrangeMenu
+- (float)arrangeMenu
 {
+    int count = (int)self.subMenuView.subviews.count;
+    for(int i= count - 1; i>=0; i--) {
+        [self.subMenuView.subviews[i] removeFromSuperview];
+    }
+    
+    CGRect rect = self.subMenuView.frame;
+    
+    float rate = rect.size.width / 320;
+    float width = 90 * rate;
+    float height = 35 * rate;
+    float gap = (rect.size.width - (width * 3)) / 4;
+    float y = 0;
+    
+    for (NSInteger i=0; i < subMenuList.count/2; i++){
+        // 하나의 메뉴가 두개의 아이템(서브메뉴이름, 이미지 이름)을 갖고 있으므로
+        NSInteger fileIndex = (2*i)+1;
+        
+        // 서브메뉴의 이름
+        NSString* menuString = [subMenuList objectAtIndex:i];
+        
+        // 해당 메뉴의 이미지파일 이름
+        NSString* fileName = [subMenuList objectAtIndex:fileIndex];
+        
+        CGRect frame = CGRectMake(gap + (gap + width) * (i % 3), gap + (gap + height) * (i / 3), width, height);
+        UIButton* btn = [[UIButton alloc]initWithFrame:frame];
+        [btn setBackgroundImage:[UIImage imageNamed:@"common_button_bg_gray.png"] forState:UIControlStateNormal];
+        [btn setTitle:menuString forState:UIControlStateNormal];
+        [subMenuView addSubview:btn];
+        
+        frame.origin.y += 12 * rate;
+        frame.size.height = 11 * rate;
+        
+        UIImageView* imgView = [[UIImageView alloc]initWithFrame:frame];
+        [imgView setImage:[UIImage imageNamed:fileName]];
+        [self.subMenuView addSubview:imgView];
+        
+        y = btn.frame.origin.y + btn.frame.size.height + gap;
+    }
+    return y;
+    
     //olleh - font
 //    for (NSInteger i=0; i < subMenuList.count; i++){
 //        NSString* menuString = [subMenuList objectAtIndex:i];
@@ -803,43 +850,47 @@
     // =>title(메인메뉴이름), count(하위 서브메뉴의 갯수), submenu
     // submenu 구성
     // => 서브메뉴 이름, 이미지이름
-    for (NSInteger i=0; i < subMenuList.count/2; i++){
-        // 하나의 메뉴가 두개의 아이템(서브메뉴이름, 이미지 이름)을 갖고 있으므로
-        NSInteger fileIndex = (2*i)+1;
-        
-        // 서브메뉴의 이름
-        NSString* menuString = [subMenuList objectAtIndex:i];
-        
-        // 해당 메뉴의 이미지파일 이름
-        NSString* fileName = [subMenuList objectAtIndex:fileIndex];
-        
-        // 각 버튼은 tag값을 통해서 접근한다.
-        UIButton * btn = (UIButton*)[viewSubMenu viewWithTag:10+i];
-        UIImageView* imgView = (UIImageView*)[viewSubMenu viewWithTag:20+i];
-        [imgView setImage:[UIImage imageNamed:fileName]];
-        [btn setTitle:menuString forState:UIControlStateNormal];
-        btn.hidden = NO;
-        imgView.hidden = NO;
-    }
+//    for (NSInteger i=0; i < subMenuList.count/2; i++){
+//        // 하나의 메뉴가 두개의 아이템(서브메뉴이름, 이미지 이름)을 갖고 있으므로
+//        NSInteger fileIndex = (2*i)+1;
+//
+//        // 서브메뉴의 이름
+//        NSString* menuString = [subMenuList objectAtIndex:i];
+//
+//        // 해당 메뉴의 이미지파일 이름
+//        NSString* fileName = [subMenuList objectAtIndex:fileIndex];
+//
+//        // 각 버튼은 tag값을 통해서 접근한다.
+//        UIButton * btn = (UIButton*)[viewSubMenu viewWithTag:10+i];
+//        UIImageView* imgView = (UIImageView*)[viewSubMenu viewWithTag:20+i];
+//        [imgView setImage:[UIImage imageNamed:fileName]];
+//        [btn setTitle:menuString forState:UIControlStateNormal];
+//        btn.hidden = NO;
+//        imgView.hidden = NO;
+//    }
+//
+//    // submenu의 갯수만큼의 버튼을 제외한 나머지는 모두 감춰준다.
+//    for (NSInteger i = 0 ;i < 9 ; i++)
+//    {
+//        if (i <= [subMenuList count]/2-1)
+//            continue;
+//        else {
+//            UIButton * btn = (UIButton*)[viewSubMenu viewWithTag:10+i];
+//            UIImageView* imgView = (UIImageView*)[viewSubMenu viewWithTag:20+i];
+//            btn.hidden = YES;
+//            imgView.hidden = YES;
+//        }
+//    }
     
-    // submenu의 갯수만큼의 버튼을 제외한 나머지는 모두 감춰준다.
-    for (NSInteger i = 0 ;i < 9 ; i++)
-    {
-        if (i <= [subMenuList count]/2-1)
-            continue;
-        else {
-            UIButton * btn = (UIButton*)[viewSubMenu viewWithTag:10+i];
-            UIImageView* imgView = (UIImageView*)[viewSubMenu viewWithTag:20+i];
-            btn.hidden = YES;
-            imgView.hidden = YES;
-        }
-    }
+    
 }
 
 
 - (void)MenuOpenLine:(NSInteger)line LineView:(UIView*)mainView selBtn:(UIButton*)button
 {
     [button setSelected:YES];
+    //self.subMenuView.hidden = NO;
+    //self.subMenuLayout.constant = 0;
     
     // 메인메뉴의 열리는 방향(위/아래)
     MenuMoveDirection direction = MENU_MOVE_DOWN;
@@ -847,157 +898,229 @@
     NSDictionary* menuDic = [menuList objectAtIndex:selectedMenu];
     subMenuList = [menuDic objectForKey:@"submenu"];
     
-    CGRect rect = viewMainMenu1.frame;
-    NSLog(@"\nLineView %f, %f, %f, %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
-    // 열리는 크기를 계산하는 과정
-    //olleh - font
+    float rate = self.view.frame.size.width / 320;
+    bool expandUp = NO;
+    self.subMenuView = self.viewMainSubMenu1;
+    self.subMenuLayout = self.lcSubMenu1;
+    if (line == 2) {
+        self.subMenuView = self.viewMainSubMenu2;
+        self.subMenuLayout = self.lcSubMenu2;
+    }
+    else if (line == 3) {
+        self.subMenuView = self.viewMainSubMenu3;
+        self.subMenuLayout = self.lcSubMenu3;
+    }
+    else if (line == 4) {
+        CGRect frame = self.viewMainSubMenu4.frame;
+        if (frame.origin.y + 150 * rate > self.view.frame.size.height) {
+            self.subMenuView = self.viewMainSubMenu3;
+            self.subMenuLayout = self.lcSubMenu3;
+            expandUp = YES;
+        } else {
+            self.subMenuView = self.viewMainSubMenu4;
+            self.subMenuLayout = self.lcSubMenu4;
+        }
+    }
+    float y = [self arrangeMenu];
+    self.subMenuLayout.constant = y;
+    if (expandUp) self.lcMenu.constant = -y;
+    
+    [self.view setNeedsUpdateConstraints];
+    
+    [UIView animateWithDuration:0.3f
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+    isAlreadyOpen = YES;
+    
+//    CGRect rect = viewMainMenu1.bounds;
+//    NSLog(@"\nLineView %f, %f, %f, %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+//    // 열리는 크기를 계산하는 과정
+//    //olleh - font
 //    NSInteger subMenuLineCount = subMenuList.count / 3;
 //    if(subMenuList.count % 3 == 0){
 //        subMenuLineCount = subMenuList.count / 3 - 1;
 //    }
-    
-    NSInteger subMenuLineCount = subMenuList.count / 7;
-    NSInteger posY = 0;
-    NSInteger movePos1 = VIEW1_POS_Y;
-    NSInteger movePos2 = VIEW2_POS_Y;
-    NSInteger movePos3 = VIEW3_POS_Y;
-    NSInteger movePos4 = VIEW4_POS_Y;
-    NSInteger moveSize = (40 * subMenuLineCount) + 55;
-    
-    // 두번째 메인메뉴 선택시 4인치가 아니면 위로 열리고, 4인치이면 아래로 열린다(크기 차에 따른 하단부의 공간문제 때문)
-    if (line == 2 && !IS_4_INCH())
-        direction = MENU_MOVE_UP;
-    else if (line == 3 && !IS_4_INCH())
-        direction = MENU_MOVE_UP;
-    else if (line == 4)
-        direction = MENU_MOVE_UP;
-    
-    // 원래 뷰의 위치 지정
-    switch (line) {
-        case 1:
-            posY = VIEW2_POS_Y - 1;
-            movePos2 = VIEW2_POS_Y + moveSize;
-            movePos3 = VIEW3_POS_Y + moveSize;
-            movePos4 = VIEW4_POS_Y + moveSize;
-            break;
-        case 2:
-            if (direction == MENU_MOVE_UP){
-                posY = VIEW3_POS_Y - 1 - moveSize;
-                movePos1 = VIEW1_POS_Y - moveSize;
-                movePos2 = VIEW2_POS_Y - moveSize;
-            }else{
-                posY = VIEW3_POS_Y - 1;
-                movePos3 = VIEW3_POS_Y + moveSize;
-                movePos4 = VIEW4_POS_Y + moveSize;
-            }
-            break;
-        case 3:
-            if (direction == MENU_MOVE_UP){
-                posY = VIEW4_POS_Y -1 - moveSize;
-                movePos1 = VIEW1_POS_Y - moveSize;
-                movePos2 = VIEW2_POS_Y - moveSize;
-                movePos3 = VIEW3_POS_Y - moveSize;
-            }else{
-                posY = VIEW4_POS_Y - 1;
-                movePos4 = VIEW4_POS_Y + moveSize;
-            }
-            break;
-        case 4:
-            posY = VIEW4_POS_Y -1 - moveSize;
-            movePos1 = VIEW1_POS_Y - moveSize;
-            movePos2 = VIEW2_POS_Y - moveSize;
-            movePos3 = VIEW3_POS_Y - moveSize;
-            break;
-        default:
-            break;
-    }
-    
-    // 서브메뉴를 구성한다.
-    [self arrangeMenu];
-    //olleh - font
-//    viewSubMenu.frame = CGRectMake(0, posY, 320, 0);
-//    if ([subMenuList count] <= 3)
-//        viewSubMenu.frame = CGRectMake(0, posY, 320, 55);
-//    else if ([subMenuList count] > 3 && [subMenuList count] <=6)
-//        viewSubMenu.frame = CGRectMake(0, posY, 320, 95);
+//
+//    NSInteger subMenuLineCount = subMenuList.count / 7;
+//    NSInteger posY = 0;
+//    NSInteger movePos1 = VIEW1_POS_Y;
+//    NSInteger movePos2 = VIEW2_POS_Y;
+//    NSInteger movePos3 = VIEW3_POS_Y;
+//    NSInteger movePos4 = VIEW4_POS_Y;
+//    NSInteger moveSize = (40 * subMenuLineCount) + 55;
+//
+//    // 두번째 메인메뉴 선택시 4인치가 아니면 위로 열리고, 4인치이면 아래로 열린다(크기 차에 따른 하단부의 공간문제 때문)
+//    if (line == 2 && !IS_4_INCH())
+//        direction = MENU_MOVE_UP;
+//    else if (line == 3 && !IS_4_INCH())
+//        direction = MENU_MOVE_UP;
+//    else if (line == 4)
+//        direction = MENU_MOVE_UP;
+//
+//    // 원래 뷰의 위치 지정
+//    switch (line) {
+//        case 1:
+//            posY = VIEW2_POS_Y - 1;
+//            movePos2 = VIEW2_POS_Y + moveSize;
+//            movePos3 = VIEW3_POS_Y + moveSize;
+//            movePos4 = VIEW4_POS_Y + moveSize;
+//            break;
+//        case 2:
+//            if (direction == MENU_MOVE_UP){
+//                posY = VIEW3_POS_Y - 1 - moveSize;
+//                movePos1 = VIEW1_POS_Y - moveSize;
+//                movePos2 = VIEW2_POS_Y - moveSize;
+//            }else{
+//                posY = VIEW3_POS_Y - 1;
+//                movePos3 = VIEW3_POS_Y + moveSize;
+//                movePos4 = VIEW4_POS_Y + moveSize;
+//            }
+//            break;
+//        case 3:
+//            if (direction == MENU_MOVE_UP){
+//                posY = VIEW4_POS_Y -1 - moveSize;
+//                movePos1 = VIEW1_POS_Y - moveSize;
+//                movePos2 = VIEW2_POS_Y - moveSize;
+//                movePos3 = VIEW3_POS_Y - moveSize;
+//            }else{
+//                posY = VIEW4_POS_Y - 1;
+//                movePos4 = VIEW4_POS_Y + moveSize;
+//            }
+//            break;
+//        case 4:
+//            posY = VIEW4_POS_Y -1 - moveSize;
+//            movePos1 = VIEW1_POS_Y - moveSize;
+//            movePos2 = VIEW2_POS_Y - moveSize;
+//            movePos3 = VIEW3_POS_Y - moveSize;
+//            break;
+//        default:
+//            break;
+//    }
+//
+//    // 서브메뉴를 구성한다.
+//    [self arrangeMenu];
+//    //olleh - font
+////    viewSubMenu.frame = CGRectMake(0, posY, 320, 0);
+////    if ([subMenuList count] <= 3)
+////        viewSubMenu.frame = CGRectMake(0, posY, 320, 55);
+////    else if ([subMenuList count] > 3 && [subMenuList count] <=6)
+////        viewSubMenu.frame = CGRectMake(0, posY, 320, 95);
+////    else
+////        viewSubMenu.frame = CGRectMake(0, posY, 320, 135);
+//
+//    CGRect frame = self.view.frame;
+//    viewSubMenu.frame = CGRectMake(0, posY, frame.size.width, 0);
+//    if ([subMenuList count]/2 <= 3)
+//        viewSubMenu.frame = CGRectMake(0, posY, frame.size.width, 55);
+//    else if ([subMenuList count]/2 > 3 && [subMenuList count]/2 <=6)
+//        viewSubMenu.frame = CGRectMake(0, posY, frame.size.width, 95);
 //    else
-//        viewSubMenu.frame = CGRectMake(0, posY, 320, 135);
+//        viewSubMenu.frame = CGRectMake(0, posY, frame.size.width, 135);
+//
+//    // 에니메이션 효과로 나태나도록 한다.
+//    viewSubMenu.hidden = YES;
+//    [self.view insertSubview:viewSubMenu aboveSubview:mainView];
+//
+//    CGRect frameView1 = viewMainMenu1.frame;
+//    CGRect frameView2 = viewMainMenu2.frame;
+//    CGRect frameView3 = viewMainMenu3.frame;
+//    CGRect frameView4 = viewMainMenu4.frame;
+//
+//    // 이동 위치를 설정
+//    frameView1.origin.y = movePos1;
+//    frameView2.origin.y = movePos2;
+//    frameView3.origin.y = movePos3;
+//    frameView4.origin.y = movePos4;
+//
+//    [UIView animateWithDuration:0.3f
+//                          delay:0.0f
+//                        options:UIViewContentModeScaleToFill |UIViewContentModeScaleAspectFit
+//                     animations:^{
+//                         viewMainMenu1.frame = frameView1;
+//                         viewMainMenu2.frame = frameView2;
+//                         viewMainMenu3.frame = frameView3;
+//                         viewMainMenu4.frame = frameView4;
+//                     }
+//                     completion:^(BOOL finished){
+//                         viewSubMenu.hidden = NO;
+//                     }];
 
-    viewSubMenu.frame = CGRectMake(0, posY, 320, 0);
-    if ([subMenuList count]/2 <= 3)
-        viewSubMenu.frame = CGRectMake(0, posY, 320, 55);
-    else if ([subMenuList count]/2 > 3 && [subMenuList count]/2 <=6)
-        viewSubMenu.frame = CGRectMake(0, posY, 320, 95);
-    else
-        viewSubMenu.frame = CGRectMake(0, posY, 320, 135);
-    
-    // 에니메이션 효과로 나태나도록 한다.
-    viewSubMenu.hidden = YES;
-    [self.view insertSubview:viewSubMenu aboveSubview:mainView];
-    
-    CGRect frameView1 = viewMainMenu1.frame;
-    CGRect frameView2 = viewMainMenu2.frame;
-    CGRect frameView3 = viewMainMenu3.frame;
-    CGRect frameView4 = viewMainMenu4.frame;
-    
-    // 이동 위치를 설정
-    frameView1.origin.y = movePos1;
-    frameView2.origin.y = movePos2;
-    frameView3.origin.y = movePos3;
-    frameView4.origin.y = movePos4;
-    
-    [UIView animateWithDuration:0.3f
-                          delay:0.0f
-                        options:UIViewContentModeScaleToFill |UIViewContentModeScaleAspectFit
-                     animations:^{
-                         viewMainMenu1.frame = frameView1;
-                         viewMainMenu2.frame = frameView2;
-                         viewMainMenu3.frame = frameView3;
-                         viewMainMenu4.frame = frameView4;
-                     }
-                     completion:^(BOOL finished){
-                         viewSubMenu.hidden = NO;
-                     }];
-    
     // 메인메뉴가 열렸다고 표시함
-    isAlreadyOpen = YES;
+    //isAlreadyOpen = YES;
 }
 
 // 메인메뉴를 닫아준다
 - (void)MenuCloseWithAnimation:(BOOL)isAnimation
 {
+    self.subMenuLayout.constant = 0;
+    self.lcMenu.constant = 0;
+    [self.view setNeedsUpdateConstraints];
+    
+    [UIView animateWithDuration:0.3f
+                          delay:0.0f
+                        options:UIViewContentModeScaleToFill |UIViewContentModeScaleAspectFit
+                     animations:^{
+                         
+                         //[self.subMenuView setHidden:YES];
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
     [prevButton setSelected:NO];
-    [viewSubMenu removeFromSuperview];
     
-    CGRect frameView1 = viewMainMenu1.frame;
-    CGRect frameView2 = viewMainMenu2.frame;
-    CGRect frameView3 = viewMainMenu3.frame;
-    CGRect frameView4 = viewMainMenu4.frame;
+//    if (!isAnimation) {
+//        [self.subMenuView setHidden:YES];
+//        [prevButton setSelected:NO];
+//    } else {
+//        [UIView animateWithDuration:0.3f
+//                              delay:0.0f
+//                            options:UIViewContentModeScaleToFill |UIViewContentModeScaleAspectFit
+//                         animations:^{
+//                             [self.subMenuView setHidden:YES];
+//                         }
+//                         completion:^(BOOL finished){
+//                             [prevButton setSelected:NO];
+//                         }];
+//    }
     
-    if (isAnimation){
-        // 에니메이션을 설정함
-        [UIView beginAnimations: nil context: NULL];
-        [UIView setAnimationDuration: 0.5];
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    }
     
-    // 이동 위치를 설정
-    frameView1.origin.y = VIEW1_POS_Y;
-    frameView2.origin.y = VIEW2_POS_Y;
-    frameView3.origin.y = VIEW3_POS_Y;
-    frameView4.origin.y = VIEW4_POS_Y;
     
-    // 뷰에 적용함
-    viewMainMenu1.frame = frameView1;
-    viewMainMenu2.frame = frameView2;
-    viewMainMenu3.frame = frameView3;
-    viewMainMenu4.frame = frameView4;
-    
-    if (isAnimation){
-        // 에니메이션을 시작함
-        [UIView commitAnimations];
-    }
-    
+//    [viewSubMenu removeFromSuperview];
+//
+//    CGRect frameView1 = viewMainMenu1.frame;
+//    CGRect frameView2 = viewMainMenu2.frame;
+//    CGRect frameView3 = viewMainMenu3.frame;
+//    CGRect frameView4 = viewMainMenu4.frame;
+//
+//    if (isAnimation){
+//        // 에니메이션을 설정함
+//        [UIView beginAnimations: nil context: NULL];
+//        [UIView setAnimationDuration: 0.5];
+//        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+//    }
+//
+//    // 이동 위치를 설정
+//    frameView1.origin.y = VIEW1_POS_Y;
+//    frameView2.origin.y = VIEW2_POS_Y;
+//    frameView3.origin.y = VIEW3_POS_Y;
+//    frameView4.origin.y = VIEW4_POS_Y;
+//
+//    // 뷰에 적용함
+//    viewMainMenu1.frame = frameView1;
+//    viewMainMenu2.frame = frameView2;
+//    viewMainMenu3.frame = frameView3;
+//    viewMainMenu4.frame = frameView4;
+//
+//    if (isAnimation){
+//        // 에니메이션을 시작함
+//        [UIView commitAnimations];
+//    }
+//
     isAlreadyOpen = NO;
     prevMainMenuTag = -1;
     prevButton = nil;

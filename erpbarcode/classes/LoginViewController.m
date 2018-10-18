@@ -93,6 +93,7 @@
     NSString* userid = [Util udObjectForKey:USER_ID];
     if (userid.length){
         textID.text = userid;
+        textPW.text = @"qkzhem@1";
     }
     
     // QA와 Real 서버 전환을 위함
@@ -175,9 +176,14 @@
         view.certificationDelegate = self;
         [self.navigationController pushViewController:view animated:NO];
     }else if([agree1 isEqualToString:@"0"] || [agree3 isEqualToString:@"0"]){ //약관 동의
-        PersonalInfoAgreeController* view = [[PersonalInfoAgreeController alloc] init];
-        view.agreeDeligate = self;
-        [self.navigationController pushViewController:view animated:NO];
+        
+        UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        PersonalInfoAgreeController* vc = [sb instantiateViewControllerWithIdentifier:@"PersonalInfoAgreeController"];
+        [self.navigationController presentViewController:vc animated:YES completion:nil];
+        
+//        PersonalInfoAgreeController* view = [[PersonalInfoAgreeController alloc] init];
+//        view.agreeDeligate = self;
+//        [self.navigationController pushViewController:view animated:NO];
     }else if ([is_passwdUd_need isEqualToString:@"Y"]){ //패스워드 재설정 필요
         ResetPasswordController* view = [[ResetPasswordController alloc] init];
         view.gb = @"update";
