@@ -27,7 +27,7 @@
 		<key>title</key>
 		<string>유동관리</string>
 		<key>count</key>
-		<integer>14</integer>
+		<integer>18</integer>
 		<key>submenu</key>
 		<array>
 			<string>입고(팀내)</string>
@@ -44,6 +44,10 @@
 			<string>main_button_menu_b6</string>
 			<string>접수(팀간)</string>
 			<string>main_button_menu_b7</string>
+			<string>형상구성(창고내)</string>
+			<string>main_button_menu_b8</string>
+			<string>형상해제(창고내)</string>
+			<string>main_button_menu_b9</string>
 		</array>
 	</dict>
 	<dict>
