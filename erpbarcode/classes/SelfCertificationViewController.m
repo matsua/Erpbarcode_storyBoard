@@ -305,7 +305,11 @@
             txtCertNo.enabled = YES;
             NSDictionary* dic = [resultList objectAtIndex:0];
             certificationNumber = [dic objectForKey:@"certificationResult"];
+#if TARGET_IPHONE_SIMULATOR
+            txtCertNo.text = certificationNumber;
+#else
             txtCertNo.text = @"";
+#endif
             [self startTimer];
         }
     }else if (pid == REQUEST_LOGIN_SEND_CERTIFICATION){

@@ -93,7 +93,9 @@
     NSString* userid = [Util udObjectForKey:USER_ID];
     if (userid.length){
         textID.text = userid;
+#if TARGET_IPHONE_SIMULATOR
         textPW.text = @"qkzhem@1";
+#endif
     }
     
     // QA와 Real 서버 전환을 위함

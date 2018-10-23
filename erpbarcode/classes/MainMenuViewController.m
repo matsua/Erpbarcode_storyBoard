@@ -812,7 +812,7 @@
         CGRect frame = CGRectMake(gap + (gap + width) * (i % 3), gap + (gap + height) * (i / 3), width, height);
         UIButton* btn = [[UIButton alloc]initWithFrame:frame];
         [btn setBackgroundImage:[UIImage imageNamed:@"common_button_bg_gray.png"] forState:UIControlStateNormal];
-        [btn setTitle:menuString forState:UIControlStateNormal];
+        [btn setBackgroundImage:[UIImage imageNamed:@"common_button_bg_red.png"] forState:UIControlStateHighlighted];
         [subMenuView addSubview:btn];
         
         frame.origin.y += 12 * rate;
