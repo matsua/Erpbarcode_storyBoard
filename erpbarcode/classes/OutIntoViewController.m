@@ -4357,6 +4357,12 @@ const static char* moveTarKey = "moveTarKey";
                 NSString* scanType = [dic objectForKey:@"SCANTYPE"];
                 NSString* CHKZKOSTL;
                 
+                if([[dic objectForKey:@"PART_NAME"]isEqualToString:@"E"]){
+                    if([[dic objectForKey:@"ORG_CHECK"]hasPrefix:@"N"]){
+                        CHKZKOSTL_INSTCONF = @"X";
+                    }
+                }
+                
                 if (CHKZKOSTL_INSTCONF.length)
                     CHKZKOSTL = CHKZKOSTL_INSTCONF;
                 
