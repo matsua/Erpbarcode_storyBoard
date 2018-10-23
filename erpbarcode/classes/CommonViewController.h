@@ -12,7 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CommonViewController : UIViewController
 
-- (void)showViewController:(id)sender;
+- (UIViewController*)instantiateViewController:(NSString *)storyBoardName viewName:(NSString*)viewName;
+- (UIViewController*)pushViewController:(NSString *)storyBoardName viewName:(NSString*)viewName animated:(BOOL)animated;
+- (UIViewController*)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
+- (UIViewController*)showViewController:(UIViewController *)viewController;
 
 @end
 

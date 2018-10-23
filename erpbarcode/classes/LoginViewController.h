@@ -12,8 +12,9 @@
 #import "PersonalInfoAgreeController.h"
 #import "NoticeViewController.h"
 #import <LocalAuthentication/LocalAuthentication.h>
+#include "CommonViewController.h"
 
-@interface LoginViewController : UIViewController <IProcessRequest, ICertificationInfo, IUserAgree, INoticeConfirm>
+@interface LoginViewController : CommonViewController <IProcessRequest, ICertificationInfo, IUserAgree, INoticeConfirm>
 
 - (IBAction)touchedLogin:(id)sender;
 - (IBAction)touchBackground:(id)sender;

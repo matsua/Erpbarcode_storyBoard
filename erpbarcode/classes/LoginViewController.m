@@ -174,30 +174,55 @@
     }
     
     if (!is_auth_need){ //개인인증
-        SelfCertificationViewController* view = [[SelfCertificationViewController alloc] init];
-        view.certificationDelegate = self;
-        [self.navigationController pushViewController:view animated:NO];
+        
+        SelfCertificationViewController* view = (SelfCertificationViewController*)[self instantiateViewController:@"Login" viewName:@"SelfCertificationViewController"];
+        if (view) {
+             view.certificationDelegate = self;
+            [self pushViewController:view animated:NO];
+        }
+//        SelfCertificationViewController* view = [[SelfCertificationViewController alloc] init];
+//        view.certificationDelegate = self;
+//        [self.navigationController pushViewController:view animated:NO];
+        
+        
     }else if([agree1 isEqualToString:@"0"] || [agree3 isEqualToString:@"0"]){ //약관 동의
         
-        UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
-        PersonalInfoAgreeController* vc = [sb instantiateViewControllerWithIdentifier:@"PersonalInfoAgreeController"];
-        [self.navigationController presentViewController:vc animated:YES completion:nil];
-        
+        PersonalInfoAgreeController* view = (PersonalInfoAgreeController*)[self instantiateViewController:@"Login" viewName:@"PersonalInfoAgreeController"];
+        if (view) {
+            view.agreeDeligate = self;
+            [self pushViewController:view animated:NO];
+        }
 //        PersonalInfoAgreeController* view = [[PersonalInfoAgreeController alloc] init];
 //        view.agreeDeligate = self;
 //        [self.navigationController pushViewController:view animated:NO];
+        
     }else if ([is_passwdUd_need isEqualToString:@"Y"]){ //패스워드 재설정 필요
-        ResetPasswordController* view = [[ResetPasswordController alloc] init];
-        view.gb = @"update";
-        [self.navigationController pushViewController:view animated:NO];
+        
+        ResetPasswordController* view = (ResetPasswordController*)[self instantiateViewController:@"Login" viewName:@"ResetPasswordController"];
+        if (view) {
+            view.gb = @"update";
+            [self pushViewController:view animated:NO];
+        }
+        
+//        ResetPasswordController* view = [[ResetPasswordController alloc] init];
+//        view.gb = @"update";
+//        [self.navigationController pushViewController:view animated:NO];
+        
     }else if(noticeResultList != nil && noticeResultList.count){
         NSString* strSqlQuery = [NSString stringWithFormat:SELECT_GET_NOTICE_ITEM,[NSDate TodayString]];
         NSArray* dbNoticeList = [[DBManager sharedInstance] executeSelectQuery:strSqlQuery];
         if (!dbNoticeList.count){ //최초 접속한 경우나 체크안했을 경우는 무조건 공지 띄운다.
-            NoticeViewController* view = [[NoticeViewController alloc] init];
-            view.noticeDeligate = self;
-            view.noticeList = noticeResultList;
-            [self.navigationController pushViewController:view animated:NO];
+            
+            NoticeViewController* view = (NoticeViewController*)[self instantiateViewController:@"Login" viewName:@"NoticeViewController"];
+            if (view) {
+                view.noticeDeligate = self;
+                view.noticeList = noticeResultList;
+                [self pushViewController:view animated:NO];
+            }
+//            NoticeViewController* view = [[NoticeViewController alloc] init];
+//            view.noticeDeligate = self;
+//            view.noticeList = noticeResultList;
+//            [self.navigationController pushViewController:view animated:NO];
         }else{
             [self startServiceMenu];
         }
@@ -209,13 +234,14 @@
 //메인화면 이동
 -(void)startServiceMenu{
     
-    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController* nc = [sb instantiateViewControllerWithIdentifier:@"MainNavigationController"];
-    [self.navigationController presentViewController:nc animated:YES completion:nil];
-    
-    AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    appDelegate.window.rootViewController = nc;
-    
+    UINavigationController* nc = (UINavigationController*)[self instantiateViewController:@"Main" viewName:@"MainNavigationController"];
+    if (nc) {
+        MainMenuViewController* view = (MainMenuViewController*)[nc.viewControllers objectAtIndex:0];
+        view.preview = @"LOGIN";
+        AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+        [self showViewController:nc];
+        appDelegate.window.rootViewController = nc;
+    }
 //    MainMenuViewController* view = [[MainMenuViewController alloc] init];
 //    view.preview = @"LOGIN";
 //    UINavigationController* navi = [[UINavigationController alloc] initWithRootViewController:view];
@@ -383,8 +409,6 @@
     [textPW resignFirstResponder];
     passwordChange = NO;
     
-    textPW.text = @"qkzhem@1";
-    
     if([textID.text length] > 0 && [textPW.text isEqualToString:@"1234!"]){
         passwordChange = YES;
     }
@@ -479,11 +503,16 @@
                           [userInfoDic objectForKey:@"empNumber"],
                           [userInfoDic objectForKey:@"confirmationYn"]);
                     
-                    MainMenuViewController* vc = [[MainMenuViewController alloc] init];
-                    UINavigationController* navi = [[UINavigationController alloc] initWithRootViewController:vc];
-                    AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-                    appDelegate.window.rootViewController = navi;
-                    
+                    UINavigationController* view = (UINavigationController*)[self instantiateViewController:@"Main" viewName:@"MainNavigationController"];
+                    if (view) {
+                        AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                        appDelegate.window.rootViewController = view;
+                        [self showViewController:view];
+                    }
+//                    MainMenuViewController* vc = [[MainMenuViewController alloc] init];
+//                    UINavigationController* navi = [[UINavigationController alloc] initWithRootViewController:vc];
+//                    AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+//                    appDelegate.window.rootViewController = navi;
                     isLoginOk = YES;
                 }
             }
@@ -562,10 +591,18 @@
         if (buttonIndex == 0){
             //logout 처리
             [self requestUserLogout];
-            LoginViewController* vc = [[LoginViewController alloc] init];
-            UINavigationController* navi = [[UINavigationController alloc] initWithRootViewController:vc];
-            AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-            appDelegate.window.rootViewController = navi;
+            
+            UINavigationController* view = (UINavigationController*)[self instantiateViewController:@"Login" viewName:@"LoginNavigationController"];
+            if (view) {
+                AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                appDelegate.window.rootViewController = view;
+                [self pushViewController:view animated:NO];
+            }
+            
+//            LoginViewController* vc = [[LoginViewController alloc] init];
+//            UINavigationController* navi = [[UINavigationController alloc] initWithRootViewController:vc];
+//            AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+//            appDelegate.window.rootViewController = navi;
         }
     }
     else if(alertView.tag == 9999){
@@ -777,6 +814,7 @@
     }
     else{
         if(passwordChange){
+            // TODO : Storyboard
             ChangePasswordViewController *modalView = [[ChangePasswordViewController alloc] init];
             [self presentViewController:modalView animated:YES completion:nil];
             passwordChange = false;
@@ -847,8 +885,12 @@
 
 -(IBAction)resetPassword:(id)sender
 {
-    ResetPasswordController* modalView = [[ResetPasswordController alloc] init];
-    [self.navigationController pushViewController:modalView animated:NO];
+    ResetPasswordController* view = (ResetPasswordController*)[self instantiateViewController:@"Login" viewName:@"ResetPasswordController"];
+    if (view) {        
+        [self pushViewController:view animated:NO];
+    }
+//    ResetPasswordController* modalView = [[ResetPasswordController alloc] init];
+//    [self.navigationController pushViewController:modalView animated:NO];
 }
 
 - (NSString*) encryptString:(NSString*)plaintext withKey:(NSString*)key {

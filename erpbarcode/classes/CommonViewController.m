@@ -19,6 +19,48 @@
     // Do any additional setup after loading the view.
 }
 
+
+- (UIViewController*)instantiateViewController:(NSString *)storyBoardName viewName:(NSString*)viewName {
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:storyBoardName bundle:nil];
+    if (sb == nil) return nil;
+    
+    UIViewController* vc = [sb instantiateViewControllerWithIdentifier:viewName];
+    if (vc == nil) return nil;    
+    
+    return vc;
+}
+
+
+- (UIViewController*)pushViewController:(NSString *)storyBoardName viewName:(NSString*)viewName animated:(BOOL)animated{
+    
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:storyBoardName bundle:nil];
+    if (sb == nil) return nil;
+    
+    UIViewController* vc = [sb instantiateViewControllerWithIdentifier:viewName];
+    if (vc == nil) return nil;
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    return vc;
+}
+
+- (UIViewController*)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+    if (viewController == nil) return nil;
+
+    [self.navigationController pushViewController:viewController animated:YES];
+    return viewController;
+}
+
+- (UIViewController*)showViewController:(UIViewController *)viewController {
+    
+    if (viewController == nil) return nil;
+    
+    [self.navigationController showViewController:viewController sender:nil];
+    return viewController;
+}
+
+
 /*
 #pragma mark - Navigation
 

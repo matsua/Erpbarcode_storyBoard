@@ -30,45 +30,26 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Mfa-CL-Th3" kind="relationship" relationship="rootViewController" id="uMZ-jl-8Y3"/>
+                        <segue destination="H2D-rB-4ti" kind="relationship" relationship="rootViewController" id="kML-1K-OSI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gRH-5l-HL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="536" y="463"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="aiP-A0-MYr">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Mfa-CL-Th3" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="586-lH-DPK"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r6I-0m-IBw">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="H2D-rB-4ti" kind="relationship" relationship="viewControllers" id="Zxv-Nj-ahP"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="heZ-BA-C1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1247" y="463"/>
-        </scene>
         <!--MainMenuViewController-->
         <scene sceneID="6jq-Lq-z5b">
             <objects>
                 <viewController storyboardIdentifier="MainMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H2D-rB-4ti" userLabel="MainMenuViewController" customClass="MainMenuViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="he6-DT-1GW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khM-RZ-uj2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aka-4m-u6M">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cew-Ua-Axd">
                                                 <rect key="frame" x="5" y="0.0" width="310" height="86"/>
@@ -456,7 +437,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49l-n2-kGA">
-                                        <rect key="frame" x="0.0" y="469" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4n2-hJ-xLM">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
@@ -536,6 +517,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="DS5-mH-qnz"/>
+                    <navigationItem key="navigationItem" id="pA6-tN-JMJ"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="lblServer" destination="1WW-lg-50C" id="ZG7-ug-teV"/>
@@ -713,7 +695,7 @@
                     <viewLayoutGuide key="safeArea" id="IaW-Sc-uev"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1906.875" y="462.67605633802816"/>
+            <point key="canvasLocation" x="1230" y="463"/>
         </scene>
     </scenes>
     <resources>
