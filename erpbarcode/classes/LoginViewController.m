@@ -179,7 +179,7 @@
         [self.navigationController pushViewController:view animated:NO];
     }else if([agree1 isEqualToString:@"0"] || [agree3 isEqualToString:@"0"]){ //약관 동의
         
-        UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
         PersonalInfoAgreeController* vc = [sb instantiateViewControllerWithIdentifier:@"PersonalInfoAgreeController"];
         [self.navigationController presentViewController:vc animated:YES completion:nil];
         

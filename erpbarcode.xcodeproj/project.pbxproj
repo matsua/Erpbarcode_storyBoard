@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060D1053217F74940050D40F /* CommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 060D1052217F74940050D40F /* CommonViewController.m */; };
+		060D1056217F75FD0050D40F /* Sub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 060D1054217F75FC0050D40F /* Sub.storyboard */; };
+		060D1057217F75FD0050D40F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 060D1055217F75FC0050D40F /* Login.storyboard */; };
 		06D103CD216F07AB00520F83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06D103CB216F07AB00520F83 /* Main.storyboard */; };
 		06D103CE216F07AB00520F83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06D103CC216F07AB00520F83 /* LaunchScreen.storyboard */; };
 		08095DA81DF7EC9D006C9CE2 /* btn_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 08095D961DF7EC9D006C9CE2 /* btn_send.png */; };
@@ -644,6 +647,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		060D1051217F74940050D40F /* CommonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommonViewController.h; path = classes/CommonViewController.h; sourceTree = "<group>"; };
+		060D1052217F74940050D40F /* CommonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CommonViewController.m; path = classes/CommonViewController.m; sourceTree = "<group>"; };
+		060D1054217F75FC0050D40F /* Sub.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Sub.storyboard; path = erpbarcode/Sub.storyboard; sourceTree = "<group>"; };
+		060D1055217F75FC0050D40F /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = erpbarcode/Login.storyboard; sourceTree = "<group>"; };
 		06D103CB216F07AB00520F83 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = erpbarcode/Main.storyboard; sourceTree = "<group>"; };
 		06D103CC216F07AB00520F83 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = erpbarcode/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08095D961DF7EC9D006C9CE2 /* btn_send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_send.png; sourceTree = "<group>"; };
@@ -2481,6 +2488,8 @@
 				B6E224861848103600D3F22E /* MainMenuViewController.h */,
 				B6E224871848103600D3F22E /* MainMenuViewController.m */,
 				B6E224881848103600D3F22E /* MainMenuViewController.xib */,
+				060D1051217F74940050D40F /* CommonViewController.h */,
+				060D1052217F74940050D40F /* CommonViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -2546,6 +2555,8 @@
 		5DFB7A4917A0ABB600EB8991 = {
 			isa = PBXGroup;
 			children = (
+				060D1055217F75FC0050D40F /* Login.storyboard */,
+				060D1054217F75FC0050D40F /* Sub.storyboard */,
 				06D103CC216F07AB00520F83 /* LaunchScreen.storyboard */,
 				06D103CB216F07AB00520F83 /* Main.storyboard */,
 				5DFB7A5D17A0ABB600EB8991 /* erpbarcode */,
@@ -3190,6 +3201,7 @@
 				B6E09DE1183071EE00A29359 /* minus_Button@2x.png in Resources */,
 				B6A8769B183EF4900053EBE8 /* main_button_menu_d.png in Resources */,
 				B6A8761A183EF4800053EBE8 /* common_icon_logo1@2x.png in Resources */,
+				060D1056217F75FD0050D40F /* Sub.storyboard in Resources */,
 				5DF73C11181640CB0002B576 /* RevisionViewController.xib in Resources */,
 				5D88565A17C5AEF200521934 /* x.wav in Resources */,
 				B6A65C89184580FC00422D27 /* button_inquiry.png in Resources */,
@@ -3214,6 +3226,7 @@
 				B6A65C8D184580FC00422D27 /* button_reset.png in Resources */,
 				5D65F94817CB757400F26911 /* OrgSearchViewController.xib in Resources */,
 				B6EE64B31845DE2200209381 /* button_cancel.png in Resources */,
+				060D1057217F75FD0050D40F /* Login.storyboard in Resources */,
 				B6A87682183EF4900053EBE8 /* main_button_menu_b1@2x.png in Resources */,
 				B6A65CCE1845BC9100422D27 /* button_search@2x.png in Resources */,
 				5D65F94F17CB7C1400F26911 /* OrgSearchCell.xib in Resources */,
@@ -3405,6 +3418,7 @@
 				08AF22D62057A1180015BEE4 /* NSDataKNAdditions.m in Sources */,
 				5D62A34C17FC2772001980FD /* scrollTouch.m in Sources */,
 				B6E224891848103700D3F22E /* MainMenuViewController.m in Sources */,
+				060D1053217F74940050D40F /* CommonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

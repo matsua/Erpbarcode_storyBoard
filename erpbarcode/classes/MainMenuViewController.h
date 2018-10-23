@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "ERPRequestManager.h"
+#import "CommonViewController.h"
 
 typedef enum _MenuMoveDirection {
 	MENU_MOVE_UP = 0,
     MENU_MOVE_DOWN = 1
 } MenuMoveDirection;
 
-@interface MainMenuViewController : UIViewController <IProcessRequest>
+@interface MainMenuViewController : CommonViewController <IProcessRequest>
 
 @property (nonatomic,nonatomic) NSString *preview;
 @property (nonatomic,nonatomic) UIView* subMenuView;
