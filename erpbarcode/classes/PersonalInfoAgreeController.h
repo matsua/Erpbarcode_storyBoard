@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
+
 @protocol IUserAgree <NSObject>
 - (void)userAgree:(BOOL)agree;
 @end
 
 
-@interface PersonalInfoAgreeController : UIViewController
+@interface PersonalInfoAgreeController : CommonViewController
 
 @property(strong, nonatomic) id <IUserAgree> agreeDeligate;
 

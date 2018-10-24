@@ -12,7 +12,7 @@
 #import "PersonalInfoAgreeController.h"
 #import "NoticeViewController.h"
 #import <LocalAuthentication/LocalAuthentication.h>
-#include "CommonViewController.h"
+#import "CommonViewController.h"
 
 @interface LoginViewController : CommonViewController <IProcessRequest, ICertificationInfo, IUserAgree, INoticeConfirm>
 

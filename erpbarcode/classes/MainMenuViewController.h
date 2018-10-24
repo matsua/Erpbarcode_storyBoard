@@ -15,11 +15,12 @@ typedef enum _MenuMoveDirection {
     MENU_MOVE_DOWN = 1
 } MenuMoveDirection;
 
-@interface MainMenuViewController : CommonViewController <IProcessRequest>
+@interface MainMenuViewController : CommonViewController <IProcessRequest, UITabBarDelegate>
 
 @property (nonatomic,nonatomic) NSString *preview;
 @property (nonatomic,nonatomic) UIView* subMenuView;
 @property (nonatomic,nonatomic) NSLayoutConstraint *subMenuLayout;
+
 
 @property (nonatomic,strong) NSArray* setupInfoList;
 @property (nonatomic,strong) NSArray* menuList;
@@ -33,6 +34,7 @@ typedef enum _MenuMoveDirection {
 @property (assign, nonatomic) BOOL isQA;
 @property (assign, nonatomic) NSInteger currentOpenedMainMenu;
 
+@property (strong,nonatomic) IBOutlet UITabBar *tabBar;
 @property (strong, nonatomic) IBOutlet UIView *viewSubMenu;
 @property (strong, nonatomic) IBOutlet UIView *viewMainMenu1;
 @property (strong, nonatomic) IBOutlet UIView *viewMainMenu2;

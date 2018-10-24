@@ -45,7 +45,7 @@
          
         UIToolbar *toolbar = [[UIToolbar alloc] init];
         toolbar.barStyle = UIBarStyleDefault;
-        toolbar.frame = CGRectMake(0, 0, 320, 44);
+        toolbar.frame = CGRectMake(0, 0, frame.size.width, 44);
         
         UIBarButtonItem *flexibleBar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         
@@ -66,7 +66,7 @@
         [self addSubview:toolbar];
         
         //피커 설정
-        pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 44, 320, 216)];
+        pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 44, frame.size.width, 216)];
         pickerView.delegate = self;
         pickerView.showsSelectionIndicator = YES;
         pickerView.backgroundColor = RGB(235, 235, 241);

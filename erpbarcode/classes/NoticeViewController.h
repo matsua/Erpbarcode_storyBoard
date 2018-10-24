@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
 @protocol INoticeConfirm <NSObject>
 - (void)noticeConfirm;
 @end
 
-@interface NoticeViewController : UIViewController<UITextViewDelegate>
+@interface NoticeViewController : CommonViewController<UITextViewDelegate>
 @property(strong, nonatomic) id <INoticeConfirm> noticeDeligate;
 @property(nonatomic,strong) NSArray* noticeList;
 @end

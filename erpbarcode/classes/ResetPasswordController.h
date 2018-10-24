@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ERPRequestManager.h"
+#import "CommonViewController.h"
 
-@interface ResetPasswordController : UIViewController <IProcessRequest>
+@interface ResetPasswordController : CommonViewController <IProcessRequest>
 
 @property (nonatomic,strong) NSString *gb;
 

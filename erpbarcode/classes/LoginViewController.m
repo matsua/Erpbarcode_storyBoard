@@ -213,7 +213,7 @@
         NSArray* dbNoticeList = [[DBManager sharedInstance] executeSelectQuery:strSqlQuery];
         if (!dbNoticeList.count){ //최초 접속한 경우나 체크안했을 경우는 무조건 공지 띄운다.
             
-            NoticeViewController* view = (NoticeViewController*)[self instantiateViewController:@"Login" viewName:@"NoticeViewController"];
+            NoticeViewController* view = (NoticeViewController*)[self instantiateViewController:@"Sub" viewName:@"NoticeViewController"];
             if (view) {
                 view.noticeDeligate = self;
                 view.noticeList = noticeResultList;
@@ -239,9 +239,18 @@
         MainMenuViewController* view = (MainMenuViewController*)[nc.viewControllers objectAtIndex:0];
         view.preview = @"LOGIN";
         AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-        [self showViewController:nc];
+        //[self pushViewController:view animated:YES];
         appDelegate.window.rootViewController = nc;
     }
+    
+//    MainMenuViewController* view = (MainMenuViewController*)[self instantiateViewController:@"Main" viewName:@"MainMenuViewController"];
+//    if (view) {
+//        view.preview = @"LOGIN";
+//        AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+//        [self pushViewController:view animated:YESview];
+//        appDelegate.window.rootViewController = nc;
+//    }
+    
 //    MainMenuViewController* view = [[MainMenuViewController alloc] init];
 //    view.preview = @"LOGIN";
 //    UINavigationController* navi = [[UINavigationController alloc] initWithRootViewController:view];

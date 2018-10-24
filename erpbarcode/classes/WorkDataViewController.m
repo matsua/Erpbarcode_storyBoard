@@ -73,7 +73,7 @@
     [self.navigationItem addLeftBarButtonItem:@"navigation_back" target:self action:@selector(touchBackBtn:)];
     
     _scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    _scrollView.contentSize = CGSizeMake(_tableView1.bounds.size.width*4, _scrollView.frame.size.height);
+    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * 4, _scrollView.frame.size.height);
     nSelectedRow = -1;
     
     fetchList = [NSMutableArray array];
@@ -85,6 +85,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * 4, _scrollView.frame.size.height);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -163,7 +169,7 @@
 
     strSelWorkName = @"-전체-";
     [btnWork setTitle:@"-전체-" forState:UIControlStateNormal];
-    pvWorkName = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:WorkList];
+    pvWorkName = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, self.view.frame.size.width, 240) data:WorkList];
     pvWorkName.delegate = self;
     
     NSArray* fetchWorkDateList = [[DBManager sharedInstance] executeSelectQuery:SELECT_PICKER_DATE];
@@ -178,12 +184,12 @@
     
     strSelDate = @"-전체-";
     [btnDate setTitle:@"-전체-" forState:UIControlStateNormal];
-    pvDate = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:WorkDateList];
+    pvDate = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, self.view.frame.size.width, 240) data:WorkDateList];
     pvDate.delegate = self;
 
     strSelSendResult = @"-전체-";
     [btnSendResult setTitle:@"-전체-" forState:UIControlStateNormal];
-    pvSendResult = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:@[@"-전체-",@"미전송",@"전송성공", @"전송실패"]];
+    pvSendResult = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, self.view.frame.size.width, 240) data:@[@"-전체-",@"미전송",@"전송성공", @"전송실패"]];
     pvSendResult.delegate = self;
     
     [self fetchWorkData];

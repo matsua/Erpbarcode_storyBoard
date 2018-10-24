@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "ERPRequestManager.h"
+#import "CommonViewController.h"
 
 @protocol ICertificationInfo <NSObject>
 - (void)certificationInfo:(BOOL)certification;
 
 @end
 
-@interface SelfCertificationViewController : UIViewController <IProcessRequest>
+@interface SelfCertificationViewController : CommonViewController <IProcessRequest>
 
 @property(strong, nonatomic) id <ICertificationInfo> certificationDelegate;
 

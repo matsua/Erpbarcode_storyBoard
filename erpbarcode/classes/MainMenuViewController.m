@@ -79,6 +79,12 @@
     self.navigationController.navigationBarHidden = YES;
 }
 
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    [self.tabBar invalidateIntrinsicContentSize];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -1232,5 +1238,39 @@
     }
 }
 
-
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    
+    if(item.tag == 0) {
+        WorkDataViewController* view = (WorkDataViewController*)[self instantiateViewController:@"Main" viewName:@"WorkDataViewController"];
+        if (view) {
+            [self pushViewController:view animated:YES];
+        }
+    }
+    else if(item.tag == 1) {
+        
+        AppDelegate *app = [AppDelegate sharedInstance];
+        UINavigationController * controller = (UINavigationController*)app.window.rootViewController;
+        
+        [Util udSetObject:@"설비정보" forKey:USER_WORK_NAME];
+        OutIntoViewController* view = (OutIntoViewController*)[self instantiateViewController:@"Main" viewName:@"OutIntoViewController"];
+        if (view) {
+            [self pushViewController:view animated:YES];
+        }        
+//        OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+//        [controller pushViewController:vc animated:YES];
+    }
+    else if(item.tag == 2) {
+        SettingViewController* view = (SettingViewController*)[self instantiateViewController:@"Main" viewName:@"SettingViewController"];
+        if (view) {
+            [self pushViewController:view animated:YES];
+        }
+//        SettingViewController* vc = [[SettingViewController alloc] init];
+//        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if(item.tag == 3) {
+        NSString* message = @"종료하시겠습니까?";
+        [self showMessage:message tag:100 title1:@"예" title2:@"아니오"];
+    }
+}
 @end
+
