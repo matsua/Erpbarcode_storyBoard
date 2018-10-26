@@ -225,7 +225,7 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
 
 - (void)startIntroView
 {
-    loadingView = [[LoadingView alloc] initWithFrame:CGRectMake(0, 0,PHONE_BOUND_WIDTH, PHONE_BOUND_HEIGHT)];
+    loadingView = [[LoadingView alloc] initWithFrame:CGRectMake(0, 0,PHONE_SCREEN_WIDTH, PHONE_SCREEN_HEIGHT)];
     [self.window addSubview:loadingView];
     [loadingView startLoading];
     

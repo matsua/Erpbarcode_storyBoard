@@ -25,11 +25,11 @@
         UIImageView* backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"intro"]];
         backgroundView.frame = frame;
         
-        NSLog(@"PHONE_BOUND_WIDTH = %f", PHONE_BOUND_WIDTH);
-        NSLog(@"PHONE_BOUND_HEIGHT = %f", PHONE_BOUND_HEIGHT);
+        NSLog(@"PHONE_SCREEN_WIDTH = %f", PHONE_SCREEN_WIDTH);
+        NSLog(@"PHONE_SCREEN_HEIGHT = %f", PHONE_SCREEN_HEIGHT);
         
         int mHeight = 147;
-        switch ((int)PHONE_BOUND_HEIGHT) {
+        switch ((int)PHONE_SCREEN_HEIGHT) {
             case 568:
                 printf("iPhone 5 or 5S or 5C");
                 mHeight = 176;
@@ -53,7 +53,7 @@
         
 
         // 버전정보를 표시하는 레이블 생성, 설정
-        refreshLabel = [[UILabel alloc] initWithFrame:CGRectMake(PHONE_BOUND_WIDTH/2 - 3, PHONE_BOUND_HEIGHT/2 + mHeight, 200, 15)];
+        refreshLabel = [[UILabel alloc] initWithFrame:CGRectMake(PHONE_SCREEN_WIDTH/2 - 3, PHONE_SCREEN_HEIGHT/2 + mHeight, 200, 15)];
         refreshLabel.backgroundColor = [UIColor clearColor];
         refreshLabel.font = [UIFont systemFontOfSize:12];
         refreshLabel.textColor = RGB(158, 158, 158);

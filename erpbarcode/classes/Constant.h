@@ -11,11 +11,8 @@
 #define erpbarcode_Constant_h
 
 //공용 매크로
-#define PHONE_SCREEN_HEIGHT   CGRectGetHeight([UIScreen mainScreen].applicationFrame)
-#define PHONE_SCREEN_WIDTH    CGRectGetWidth([UIScreen mainScreen].applicationFrame)
-
-#define PHONE_BOUND_HEIGHT   CGRectGetHeight([UIScreen mainScreen].bounds)
-#define PHONE_BOUND_WIDTH    CGRectGetWidth([UIScreen mainScreen].bounds)
+#define PHONE_SCREEN_HEIGHT   CGRectGetHeight([UIScreen mainScreen].bounds)
+#define PHONE_SCREEN_WIDTH    CGRectGetWidth([UIScreen mainScreen].bounds)
 
 // DeviceOrientation (가로인지 세로인지 판단)
 #define isDevicePortrait() \
@@ -40,19 +37,19 @@
 
 // 5,5S
 #define IS_5_MODEL() \
-(PHONE_BOUND_HEIGHT == 568)
+(PHONE_SCREEN_HEIGHT == 568)
 
 //6, 6S, 7, 8
 #define IS_6_MODEL() \
-(PHONE_BOUND_HEIGHT == 667)
+(PHONE_SCREEN_HEIGHT == 667)
 
 //6+, 6S+, 7+, 8+
 #define IS_6_PLUS_MODEL() \
-(PHONE_BOUND_HEIGHT == 736)
+(PHONE_SCREEN_HEIGHT == 736)
 
 //X인지 판단
 #define IS_IPHONE_X() \
-(PHONE_BOUND_HEIGHT == 812)
+(PHONE_SCREEN_HEIGHT == 812)
 
 // iOS 4점대 판단
 #define IS_iOS4() \
