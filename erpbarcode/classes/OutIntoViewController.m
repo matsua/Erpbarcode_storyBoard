@@ -326,7 +326,58 @@ const static char* moveTarKey = "moveTarKey";
 #pragma mark - ViewLife Cycle
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"납품입고"]){
+        self = [super initWithNibName:@"OutIntoViewController1" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"납품취소"]){
+        self = [super initWithNibName:@"OutIntoViewController2" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"배송출고"]){
+        self = [super initWithNibName:@"OutIntoViewController3" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"입고(팀내)"]){
+        self = [super initWithNibName:@"OutIntoViewController4" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"출고(팀내)"]){
+        self = [super initWithNibName:@"OutIntoViewController5" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"실장"]){
+        self = [super initWithNibName:@"OutIntoViewController6" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"탈장"]){
+        self = [super initWithNibName:@"OutIntoViewController7" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"송부(팀간)"]){
+        self = [super initWithNibName:@"OutIntoViewController8" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"송부취소(팀간)"]){
+        self = [super initWithNibName:@"OutIntoViewController9" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"접수(팀간)"]){
+        self = [super initWithNibName:@"OutIntoViewController10" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"형상구성(창고내)"]){
+        self = [super initWithNibName:@"OutIntoViewController11" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"형상해제(창고내)"]){
+        self = [super initWithNibName:@"OutIntoViewController12" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"고장등록"]){
+        self = [super initWithNibName:@"OutIntoViewController13" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"설비상태변경"]){
+        self = [super initWithNibName:@"OutIntoViewController14" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"설비정보"]){
+        self = [super initWithNibName:@"OutIntoViewController15" bundle:nibBundleOrNil];
+    }
+    else if([[Util udObjectForKey:USER_WORK_NAME] isEqualToString:@"고장수리이력"]){
+        self = [super initWithNibName:@"OutIntoViewController16" bundle:nibBundleOrNil];
+    }
+    else{
+        self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    }
+    
     if (self) {
         // Custom initialization
     }
