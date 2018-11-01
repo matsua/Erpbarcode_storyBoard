@@ -169,7 +169,7 @@
     if(isWrite) msg = [NSString stringWithFormat:@"%@ 완료 했습니다.",msg];
     else msg = [NSString stringWithFormat:@"%@ 실패 했습니다.",msg];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림" message:msg delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
+    AlertViewController *alert = [[AlertViewController alloc] initWithTitle:@"알림" message:msg delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
     [alert show];
 }
 
@@ -252,7 +252,7 @@
     if(textField.tag == 0){
         if([textField.text length] < 1){
             x_coordinateTextField.text = [NSString stringWithFormat:@"%d",x_coordinate];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림" message:@"정확한 좌표를 입력해 주세요." delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
+            AlertViewController *alert = [[AlertViewController alloc] initWithTitle:@"알림" message:@"정확한 좌표를 입력해 주세요." delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
             [alert show];
         }else{
             x_coordinate = [textField.text intValue];
@@ -260,7 +260,7 @@
     }else if(textField.tag == 1){
         if([textField.text length] < 1){
             y_coordinateTextField.text = [NSString stringWithFormat:@"%d",y_coordinate];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림" message:@"정확한 좌표를 입력해 주세요." delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
+            AlertViewController *alert = [[AlertViewController alloc] initWithTitle:@"알림" message:@"정확한 좌표를 입력해 주세요." delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
             [alert show];
         }else{
             y_coordinate = [textField.text intValue];
@@ -268,14 +268,14 @@
     }else{
         if([textField.text intValue] > 0){
             if([textField.text intValue] > 30){
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림" message:@"명암의 범위는 1-30 입니다." delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
+                AlertViewController *alert = [[AlertViewController alloc] initWithTitle:@"알림" message:@"명암의 범위는 1-30 입니다." delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
                 [alert show];
             }
             darkness = [textField.text intValue];
             slider.value = darkness;
         }else{
             darknessTextField.text =  [NSString stringWithFormat:@"%d",darkness];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림" message:@"정확한 명암값을 입력해 주세요." delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
+            AlertViewController *alert = [[AlertViewController alloc] initWithTitle:@"알림" message:@"정확한 명암값을 입력해 주세요." delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
             [alert show];
         }
     }

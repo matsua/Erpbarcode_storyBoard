@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ERPRequestManager.h"
 #import "AddInfoViewController.h"
+#import "CommonViewController.h"
 
-@interface SpotCheckViewController : UIViewController<UIGestureRecognizerDelegate, IProcessRequest, IPopRequest>
+@interface SpotCheckViewController : CommonViewController<UIGestureRecognizerDelegate, IProcessRequest, IPopRequest>
 @property(nonatomic,strong) NSDictionary* dbWorkDic;
 
 - (IBAction) touchLocBtn:(id)sender;

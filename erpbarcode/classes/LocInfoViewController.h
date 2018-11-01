@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ERPRequestManager.h"
+#import "CommonViewController.h"
 
-@interface LocInfoViewController : UIViewController <IProcessRequest>
+@interface LocInfoViewController : CommonViewController <IProcessRequest>
 
 
 - (IBAction) touchSearchBtn:(id)sender;

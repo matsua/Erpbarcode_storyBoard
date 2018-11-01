@@ -109,12 +109,12 @@
 {
     strLocCode = barcode;
     
-    UIAlertView* av = nil;
+    AlertViewController* av = nil;
     int index = [WorkUtil getLocIndex:strLocCode fccList:locList];
     if (index == -1)
     {
         NSString* message = @"해당 장치에 존재하지 않는\n위치바코드입니다.";
-        av = [[UIAlertView alloc]
+        av = [[AlertViewController alloc]
               initWithTitle:nil
               message:message
               delegate:nil
@@ -134,7 +134,7 @@
                 (strLocCode.length > 17 && [[strLocCode substringFromIndex:17] isEqualToString:@"0000"])
                 ){
                 NSString* message = @"'가상창고/실' 위치 점검은\n'현장점검(창고/실)'\n메뉴를 사용하시기 바랍니다.";
-                av = [[UIAlertView alloc]
+                av = [[AlertViewController alloc]
                       initWithTitle:@"알림"
                       message:message
                       delegate:nil

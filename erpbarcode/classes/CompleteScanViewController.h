@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ERPRequestManager.h"
+#import "CommonViewController.h"
 
-@interface CompleteScanViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, IProcessRequest>
+@interface CompleteScanViewController : CommonViewController <UITableViewDataSource, UITableViewDelegate, IProcessRequest>
 
 @property (strong, nonatomic) IBOutlet UITextField *txtFacBarcode;
 @property (strong, nonatomic) IBOutlet UIPageControl *_pageCtrl;

@@ -488,7 +488,8 @@
 }
 
 #pragma mark - UIAlertViewDelegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+-(void) clickedButtonAtIndex:(NSInteger)buttonIndex alertView:(AlertViewController*)alertView;
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     [Util udSetBool:YES forKey:IS_ALERT_COMPLETE];
     if (alertView.tag == 100){

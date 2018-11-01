@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ERPRequestManager.h"
+#import "CommonViewController.h"
 
-@interface OrgSearchViewController : UIViewController <IProcessRequest>
+@interface OrgSearchViewController : CommonViewController <IProcessRequest>
 
 - (IBAction)touchCancelBtn:(id)sender;
 @property(nonatomic,strong) id Sender;

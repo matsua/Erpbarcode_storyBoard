@@ -369,10 +369,10 @@
             [[dic objectForKey:@"KOSTL_STATUS"] hasPrefix:@"X"]){
             result = FALSE;
             
-            UIAlertView* av;
+            AlertViewController* av;
         
             NSString* message = [NSString stringWithFormat:@"WBS번호 '%@'의 \n코스트센터 상태가 '폐지'이므로\n선택하실 수 없습니다.\n공사 담당자에게 문의하시기 바랍니다.", [dic objectForKey:@"POSTID"]];
-            av = [[UIAlertView alloc]
+            av = [[AlertViewController alloc]
                   initWithTitle:@"알림"
                   message:message
                   delegate:nil

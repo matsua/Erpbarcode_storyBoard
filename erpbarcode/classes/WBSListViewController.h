@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
 @protocol ISelectWBS <NSObject>
 
@@ -17,7 +18,7 @@
 
 
 
-@interface WBSListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface WBSListViewController : CommonViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) id<ISelectWBS> delegate;
 

@@ -2857,7 +2857,8 @@
 
 #pragma mark - UIAlertViewDelegate
 // Called when a button is clicked. The view will be automatically dismissed after this call returns
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+-(void) clickedButtonAtIndex:(NSInteger)buttonIndex alertView:(AlertViewController*)alertView;
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (alertView.tag == 100){
         if (buttonIndex == 0){ //전송

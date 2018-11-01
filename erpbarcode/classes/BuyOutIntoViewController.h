@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CustomPickerView.h"
 #import "ERPRequestManager.h"
+#import "CommonViewController.h"
 
-@interface BuyOutIntoViewController : UIViewController<UIGestureRecognizerDelegate,CustomPickerViewDelegate, IProcessRequest>
+@interface BuyOutIntoViewController : CommonViewController<UIGestureRecognizerDelegate,CustomPickerViewDelegate, IProcessRequest>
 @property(nonatomic,strong) NSDictionary* dbWorkDic;
 @end

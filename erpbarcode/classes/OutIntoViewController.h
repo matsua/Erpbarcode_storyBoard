@@ -12,8 +12,9 @@
 #import "ERPRequestManager.h"
 #import "AddInfoViewController.h"
 #import "GwlenListController.h"
+#import "CommonViewController.h"
 
-@interface OutIntoViewController : UIViewController <CustomPickerViewDelegate,UIGestureRecognizerDelegate, ISelectWBS, UINavigationControllerDelegate, UIImagePickerControllerDelegate, IProcessRequest, IPopRequest, UITextViewDelegate, IGwlenRequest>
+@interface OutIntoViewController : CommonViewController <CustomPickerViewDelegate,UIGestureRecognizerDelegate, ISelectWBS, UINavigationControllerDelegate, UIImagePickerControllerDelegate, IProcessRequest, IPopRequest, UITextViewDelegate, IGwlenRequest>
 @property(nonatomic,strong) NSDictionary* dbWorkDic;
 
 @property (strong, nonatomic)UIImagePickerController* imagePicker;

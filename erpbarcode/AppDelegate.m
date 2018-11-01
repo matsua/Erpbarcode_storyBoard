@@ -78,7 +78,7 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
     int ret = ix_sysCheckStart(&patternInfo);
 
     if (ret != 1) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"안내"
+        AlertViewController *alert = [[AlertViewController alloc] initWithTitle:@"안내"
                                                         message:[NSString stringWithFormat:@"[error code : %d]시스템 체크 오류 \n ERP Barcode 를 \n사용하실수 없습니다.",ret]
                                                        delegate:self
                                               cancelButtonTitle:NSLocalizedString(@"확인", nil)
@@ -87,13 +87,13 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
         [alert show];
     }else {
         NSString *jbCode = [NSString stringWithUTF8String:patternInfo->pattern_type_id];
-        UIAlertView *alert = nil;
+        AlertViewController *alert = nil;
 
         if ([jbCode isEqualToString:@"0000"]) {
             [self integrityCheck];
         }else {
             // Error code Check and App Exit.
-            alert = [[UIAlertView alloc] initWithTitle:@"안내"
+            alert = [[AlertViewController alloc] initWithTitle:@"안내"
                                                message:@"[Jail break] 감지 되었습니다. \n ERP Barcode 를 \n사용하실수 없습니다."
                                               delegate:self
                                      cancelButtonTitle:NSLocalizedString(@"확인", nil)
@@ -113,7 +113,7 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
     int ret = ix_sysCheck_gamehack(&patternInfo, &patternList);
 
     if (ret != 1) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"안내"
+        AlertViewController *alert = [[AlertViewController alloc] initWithTitle:@"안내"
                                                         message:[NSString stringWithFormat:@"[error code : %d]시스템 체크 오류 \n ERP Barcode 를 \n사용하실수 없습니다.",ret]
                                                        delegate:self
                                               cancelButtonTitle:NSLocalizedString(@"확인", nil)
@@ -138,12 +138,12 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
             [hack appendString:[NSString stringWithFormat:@"\n[GameHack%d\nid :%@\nobj : %@\n desc :%@]",i + 1,[dic objectForKey:@"id"], [dic objectForKey:@"obj"], [dic objectForKey:@"desc"]]];
         }
 
-        UIAlertView *alert = nil;
+        AlertViewController *alert = nil;
 
         if ([jbCode isEqualToString:@"0000"]) {
             [self integrityCheck];
         }else {
-            alert = [[UIAlertView alloc] initWithTitle:@"안내"
+            alert = [[AlertViewController alloc] initWithTitle:@"안내"
                                                message:[NSString stringWithFormat:@"[Jail break\n%@]%@\n감지 되었습니다.\nERP Barcode를 \n이용할수 없습니다.",[NSString stringWithUTF8String:patternInfo->pattern_desc],hack]
                                               delegate:self
                                      cancelButtonTitle:NSLocalizedString(@"확인", nil)
@@ -166,7 +166,7 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
     NSString *verifyData = [NSString stringWithCString:verifyInfo->verify_result encoding:NSUTF8StringEncoding];
 
     if (ret != 1) { // 1이 아닐 결우 오류.
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"안내"
+        AlertViewController *alert = [[AlertViewController alloc] initWithTitle:@"안내"
                                                         message:[NSString stringWithFormat:@"[error code : %d\n%@]\n시스템 체크 오류 \n ERP Barcode 를 \n사용하실수 없습니다.",ret, verifyData]
                                                        delegate:self
                                               cancelButtonTitle:NSLocalizedString(@"확인", nil)
@@ -181,10 +181,10 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
 
 #pragma mark 3. fake GPS를 사용할 경우
 - (void) fakeGpsCheck {
-    UIAlertView *alert = nil;
+    AlertViewController *alert = nil;
 
     if (ix_check_fakegps()) {
-        alert = [[UIAlertView alloc] initWithTitle:@"안내"
+        alert = [[AlertViewController alloc] initWithTitle:@"안내"
                                            message:@"[Fake Gps]\n감지 되었습니다.\nERP Barcode를 \n이용할수 없습니다."
                                           delegate:self
                                  cancelButtonTitle:NSLocalizedString(@"확인", nil)
@@ -198,10 +198,10 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
 
 #pragma mark 4. 안티 디버깅
 - (void) debuggerCheck {
-    UIAlertView *alert = nil;
+    AlertViewController *alert = nil;
 
     if (ix_runAntiDebugger()) {
-        alert = [[UIAlertView alloc] initWithTitle:@"안내"
+        alert = [[AlertViewController alloc] initWithTitle:@"안내"
                                            message:@"[Debugger]\n감지 되었습니다.\nERP Barcode를 \n이용할수 없습니다."
                                           delegate:self
                                  cancelButtonTitle:NSLocalizedString(@"확인", nil)
@@ -670,7 +670,8 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
 }
 
 #pragma mark - UIAlertViewDelegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)clickedButtonAtIndex:(NSInteger)buttonIndex alertView:(AlertViewController*)alertView
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (alertView.tag == 444){ //종료
         exit(0);

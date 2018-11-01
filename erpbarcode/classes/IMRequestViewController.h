@@ -11,8 +11,9 @@
 #import "GoodsInfoViewController.h"
 #import "ERPRequestManager.h"
 #import "AddInfoViewController.h"
+#import "CommonViewController.h"
 
-@interface IMRequestViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, CustomPickerViewDelegate, ISelectGoodsInfo, IProcessRequest, IPopRequest>
+@interface IMRequestViewController : CommonViewController <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, CustomPickerViewDelegate, ISelectGoodsInfo, IProcessRequest, IPopRequest>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *_itemScrollVIew;
 @property (strong, nonatomic) IBOutlet UILabel *lblOrgName;

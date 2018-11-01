@@ -545,8 +545,8 @@ char        RereadDelayBackup;
     
     if([cellValue isEqualToString:@"물품마스터 업데이트"])
     {
-        UIAlertView* av = nil;
-        av = [[UIAlertView alloc]
+        AlertViewController* av = nil;
+        av = [[AlertViewController alloc]
               initWithTitle:@"질문"
               message:@"물품마스터를 업데이트 하시겠습니까?"
               delegate:self
@@ -559,8 +559,8 @@ char        RereadDelayBackup;
     
     if([cellValue isEqualToString:@"메모리 리셋 하기"])
     {
-        UIAlertView* av = nil;
-        av = [[UIAlertView alloc]
+        AlertViewController* av = nil;
+        av = [[AlertViewController alloc]
               initWithTitle:@"질문"
               message:@"스캐너의 메모리를 전부 삭제 하시겠습니까?"
               delegate:self
@@ -572,8 +572,8 @@ char        RereadDelayBackup;
     
     if([cellValue isEqualToString:@"시간 동기화 하기"])
     {
-        UIAlertView* av = nil;
-        av = [[UIAlertView alloc]
+        AlertViewController* av = nil;
+        av = [[AlertViewController alloc]
               initWithTitle:@"질문"
               message:@"스캐너의 시간을 아이폰 시간과 동기화 시키겠습니까?"
               delegate:self
@@ -585,8 +585,8 @@ char        RereadDelayBackup;
     
     if([cellValue isEqualToString:@"공장 초기화 하기"])
     {
-        UIAlertView* av = nil;
-        av = [[UIAlertView alloc]
+        AlertViewController* av = nil;
+        av = [[AlertViewController alloc]
               initWithTitle:@"질문"
               message:@"스캐너의 설정을 초기화 하겠습니까?"
               delegate:self
@@ -612,7 +612,7 @@ char        RereadDelayBackup;
         else msg = @"프린트 PORT 설정 저장에 실패 했습니다.";
     }
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림" message:msg delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
+    AlertViewController *alert = [[AlertViewController alloc] initWithTitle:@"알림" message:msg delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
     [alert show];
     
     [textField resignFirstResponder];
@@ -625,9 +625,9 @@ char        RereadDelayBackup;
     {
         [self performSelectorOnMainThread:@selector(hideIndicator) withObject:nil waitUntilDone:NO];
         
-        UIAlertView *av = nil;
+        AlertViewController *av = nil;
         
-        av = [[UIAlertView alloc]
+        av = [[AlertViewController alloc]
               initWithTitle:@"알림"
               message:@"스캐너의 설정을 가져오는데 실패 하였습니다. 다시 시도 하시기 바랍니다."
               delegate:self
@@ -822,8 +822,8 @@ char        RereadDelayBackup;
 
 - (IBAction)touchUpdateBtn:(id)sender
 {
-    UIAlertView* av = nil;
-    av = [[UIAlertView alloc]
+    AlertViewController* av = nil;
+    av = [[AlertViewController alloc]
           initWithTitle:@"질문"
                 message:@"변경내역만 업데이트 하시겠습니까?"
                 delegate:self
@@ -836,7 +836,8 @@ char        RereadDelayBackup;
 }
 
 #pragma mark - UIAlertViewDelegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+-(void) clickedButtonAtIndex:(NSInteger)buttonIndex alertView:(AlertViewController*)alertView;
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (alertView.tag ==100){
         if (buttonIndex == 0){ //예 ,업데이트
@@ -952,7 +953,7 @@ char        RereadDelayBackup;
         
         if ([message length] ){
             message = [message stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            UIAlertView* av = [[UIAlertView alloc]
+            AlertViewController* av = [[AlertViewController alloc]
                                initWithTitle:nil
                                message:message
                                delegate:nil
@@ -964,7 +965,7 @@ char        RereadDelayBackup;
         return;
     }else if (status == -1){ //세션종료
         NSString* message = @"세션이 종료되었습니다.\n재접속 하시겠습니까?\n(저장하지 않은 자료는 재 작업 하셔야 합니다.)";
-        UIAlertView* av = [[UIAlertView alloc]
+        AlertViewController* av = [[AlertViewController alloc]
                            initWithTitle:@"알림"
                            message:message
                            delegate:self
@@ -999,8 +1000,8 @@ char        RereadDelayBackup;
         if (nTotalCount == [sqlResultList count]){
             NSString* progressMsg = @"서버에 업데이트 데이터가 없습니다.";
             
-            UIAlertView* av = nil;
-            av = [[UIAlertView alloc]
+            AlertViewController* av = nil;
+            av = [[AlertViewController alloc]
                   initWithTitle:@"알림"
                   message:progressMsg
                   delegate:self
@@ -1027,8 +1028,8 @@ char        RereadDelayBackup;
     else {
         NSString* progressMsg = @"물품업데이트 완료.";
         
-        UIAlertView* av = nil;
-        av = [[UIAlertView alloc]
+        AlertViewController* av = nil;
+        av = [[AlertViewController alloc]
               initWithTitle:@"알림"
               message:progressMsg
               delegate:self
@@ -1059,8 +1060,8 @@ char        RereadDelayBackup;
         }
         else {
             NSString* progressMsg = @"물품업데이트 완료.";
-            UIAlertView* av = nil;
-            av = [[UIAlertView alloc]
+            AlertViewController* av = nil;
+            av = [[AlertViewController alloc]
                   initWithTitle:@"알림"
                   message:progressMsg
                   delegate:self

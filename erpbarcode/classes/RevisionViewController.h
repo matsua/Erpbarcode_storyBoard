@@ -10,9 +10,9 @@
 #import "CustomPickerView.h"
 #import "ERPRequestManager.h"
 #import "AddInfoViewController.h"
+#import "CommonViewController.h"
 
-
-@interface RevisionViewController : UIViewController<CustomPickerViewDelegate,UIGestureRecognizerDelegate, IProcessRequest, IPopRequest>
+@interface RevisionViewController : CommonViewController<CustomPickerViewDelegate,UIGestureRecognizerDelegate, IProcessRequest, IPopRequest>
 - (IBAction) touchShowPicker:(id)sender;
 @property(nonatomic,strong) NSDictionary* dbWorkDic;
 @end

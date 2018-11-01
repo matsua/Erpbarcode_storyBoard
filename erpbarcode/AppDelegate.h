@@ -10,8 +10,9 @@
 #import "LoadingView.h"
 #import "LoginViewController.h"
 #import "KDCReader.h"
+#import "AlertViewController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, AlertViewDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong,nonatomic) LoadingView* loadingView;
@@ -32,6 +33,6 @@
 - (uint8_t *)getKdcBluetoothMacAddress;
 - (uint8_t *)getKdcBluetoothFirmwareVersion;
 - (int)getKdcBatteryCapacity;
-
+- (void)clickedButtonAtIndex:(NSInteger)buttonIndex alertView:(AlertViewController*)alertView;
 
 @end

@@ -13,6 +13,7 @@
 // 조금 비효율적인 부분이 있음.
 
 
+
 @interface ERPAlert : NSObject
 
 @property (strong, nonatomic) id delegate;
@@ -27,4 +28,7 @@
 + (ERPAlert *)getInstance;
 - (void) showMessage:(NSString*)message tag:(NSInteger)tag title1:(NSString*)t1 title2:(NSString*)t2 isError:(BOOL)isError isCheckComplete:(BOOL)isCheckComplete delegate:(id)delegate;
 - (void) showAlertMessage:(NSString*)message tag:(NSInteger)tag title1:(NSString*)t1 title2:(NSString*)t2 isError:(BOOL)isError isCheckComplete:(BOOL)isCheckComplete delegate:(id)delegate;
+
+
+
 @end

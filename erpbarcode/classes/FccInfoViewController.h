@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ERPRequestManager.h"
+#import "CommonViewController.h"
 
-@interface FccInfoViewController : UIViewController <IProcessRequest>
+@interface FccInfoViewController : CommonViewController <IProcessRequest>
 
 @property(nonatomic,strong) NSString* paramBarcode;
 @property(nonatomic,strong) NSString* paramScreenCode;

@@ -134,7 +134,8 @@ static BOOL isExistData = YES;
 
 
 #pragma mark - UIAlertViewDelegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+-(void) clickedButtonAtIndex:(NSInteger)buttonIndex alertView:(AlertViewController*)alertView;
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (alertView.tag == 100)  {    // ERP에 저장된 인계스캔 Data 전체가삭제 됩니다. 정말 삭제 하시겠습니까?
         if (buttonIndex == 0){

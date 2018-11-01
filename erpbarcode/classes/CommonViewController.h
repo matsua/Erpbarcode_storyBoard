@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ERPAlert.h"
+#import "AlertViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CommonViewController : UIViewController
+@interface CommonViewController : UIViewController<AlertViewDelegate>
 
 - (UIViewController*)instantiateViewController:(NSString *)storyBoardName viewName:(NSString*)viewName;
 - (UIViewController*)pushViewController:(NSString *)storyBoardName viewName:(NSString*)viewName animated:(BOOL)animated;

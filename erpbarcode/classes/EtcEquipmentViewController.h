@@ -11,8 +11,9 @@
 #import "DatePickerViewController.h"
 #import "ERPRequestManager.h"
 #import "AddInfoViewController.h"
+#import "CommonViewController.h"
 
-@interface EtcEquipmentViewController : UIViewController <ISelectGoodsInfo,IDatePickerView, IProcessRequest, IPopRequest>
+@interface EtcEquipmentViewController : CommonViewController <ISelectGoodsInfo,IDatePickerView, IProcessRequest, IPopRequest>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *_scrollView;
 @property (strong, nonatomic) IBOutlet UILabel *lblOrgName;

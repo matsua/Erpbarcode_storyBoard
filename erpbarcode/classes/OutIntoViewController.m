@@ -857,13 +857,14 @@ const static char* moveTarKey = "moveTarKey";
                           stringByAppendingString:[text substringToIndex:emptySpace]]
                          stringByAppendingString:[textView.text substringFromIndex:(range.location + range.length)]];
         
-        UIAlertView *toast = [[UIAlertView alloc] initWithTitle:nil message:@"고장내역은 80자 이내로 입력하세요." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
+        AlertViewController *toast = [[AlertViewController alloc] initWithTitle:nil message:@"고장내역은 80자 이내로 입력하세요." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
         [toast show];
         
         int duration = 1;
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, duration * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            [toast dismissWithClickedButtonIndex:0 animated:YES];
+            [toast hide];
+            //[toast dismissWithClickedButtonIndex:0 animated:YES];
         });
         
         return NO;
@@ -3469,7 +3470,8 @@ const static char* moveTarKey = "moveTarKey";
 }
 
 #pragma mark - UIAlertViewDelegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+-(void) clickedButtonAtIndex:(NSInteger)buttonIndex alertView:(AlertViewController*)alertView;
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (![Util udBoolForKey:IS_ALERT_COMPLETE])
         [Util udSetBool:YES forKey:IS_ALERT_COMPLETE];

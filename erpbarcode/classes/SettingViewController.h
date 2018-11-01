@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SettingViewRereadDelay.h"
 #import "ERPRequestManager.h"
+#import "CommonViewController.h"
 
-@interface SettingViewController : UIViewController<UITableViewDelegate,UITableViewDataSource, IProcessRequest, UITextFieldDelegate>
+@interface SettingViewController : CommonViewController<UITableViewDelegate,UITableViewDataSource, IProcessRequest, UITextFieldDelegate>
 {
     NSMutableArray *listOfItems;
     

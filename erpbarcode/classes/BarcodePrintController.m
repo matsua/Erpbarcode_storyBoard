@@ -225,12 +225,12 @@
         if([ssid rangeOfString:@"KT_BAR_PRT"].length > 0 || [ssid rangeOfString:@"ZD500"].length > 0){
             
         }else{
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"오류" message:@"프린터 연결에\n\r실패 했습니다." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            AlertViewController *alert = [[AlertViewController alloc]initWithTitle:@"오류" message:@"프린터 연결에\n\r실패 했습니다." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
             return;
         }
     }else{
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"오류" message:@"프린터 연결에\n\r실패 했습니다." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        AlertViewController *alert = [[AlertViewController alloc]initWithTitle:@"오류" message:@"프린터 연결에\n\r실패 했습니다." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return;
     }
@@ -248,15 +248,15 @@
         if([connection open]){
             printer = [ZebraPrinterFactory getInstance:connection error:&error];
             if(error != nil) {
-                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"오류" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                AlertViewController *alert = [[AlertViewController alloc]initWithTitle:@"오류" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
             }
         }else{
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"오류" message:@"프린터 상태를\n\r확인 하세요." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            AlertViewController *alert = [[AlertViewController alloc]initWithTitle:@"오류" message:@"프린터 상태를\n\r확인 하세요." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
         }
     }else{
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"오류" message:@"프린터 정보를\n\r설정해 주세요." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        AlertViewController *alert = [[AlertViewController alloc]initWithTitle:@"오류" message:@"프린터 정보를\n\r설정해 주세요." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
 }

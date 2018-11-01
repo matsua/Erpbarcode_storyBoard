@@ -398,7 +398,7 @@
     isOffLine = btn.selected;
     
     if (btn.selected){
-        UIAlertView* av = [[UIAlertView alloc]
+        AlertViewController* av = [[AlertViewController alloc]
                            initWithTitle:nil
                            message:@"'음영지역작업'은 음영지역에서\n스캔한 바코드를 저장한 후\n네트워크 접속을 통하여\n저장한 자료를 불러와서\n전송하는 기능입니다.\n계속하시겠습니까?"
                            delegate:self
@@ -424,7 +424,7 @@
     
     if ([textID.text length] == 0 ){
         NSString* message = @"아이디를 입력하세요.";
-        UIAlertView* av = [[UIAlertView alloc]
+        AlertViewController* av = [[AlertViewController alloc]
                            initWithTitle:nil
                            message:message
                            delegate:nil
@@ -436,7 +436,7 @@
     else if ([textPW.text length] == 0 ){
         NSString* message = @"비밀번호를 입력하세요.";
         
-        UIAlertView* av = [[UIAlertView alloc]
+        AlertViewController* av = [[AlertViewController alloc]
                            initWithTitle:nil
                            message:message
                            delegate:nil
@@ -528,7 +528,7 @@
             if (!isLoginOk)
             {
                 NSString* message = @"'음영지역작업' 으로 로그인 할 수 있는 계정이 아닙니다.";
-                UIAlertView* av = [[UIAlertView alloc]
+                AlertViewController* av = [[AlertViewController alloc]
                                    initWithTitle:nil
                                    message:message
                                    delegate:nil
@@ -568,7 +568,7 @@
             isQA = YES;
             message = @"QA서버로 전환되었습니다.";
         }
-        UIAlertView* av = [[UIAlertView alloc]
+        AlertViewController* av = [[AlertViewController alloc]
                            initWithTitle:@"알림"
                            message:message
                            delegate:self
@@ -583,7 +583,8 @@
 
 
 #pragma mark - UIAlertViewDelegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)clickedButtonAtIndex:(NSInteger)buttonIndex alertView:(AlertViewController*)alertView
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     [Util udSetBool:YES forKey:IS_ALERT_COMPLETE];
     // "'음영지역작업'은 음영지역에서\n스캔한 바코드를 저장한 후\n네트워크 접속을 통하여\n저장한 자료를 불러와서\n전송하는 기능입니다.\n계속하시겠습니까?"
@@ -757,7 +758,7 @@
             message = [message stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             
             if (![message hasPrefix:@"현재 버전이 최신"] && ![message hasPrefix:@"버젼이 낮아 접속하실 수 없습니다"] && [message rangeOfString:@"현재 접속중"].length < 1){
-                UIAlertView* av = [[UIAlertView alloc]
+                AlertViewController* av = [[AlertViewController alloc]
                                    initWithTitle:@"알림"
                                    message:message
                                    delegate:self
@@ -773,7 +774,7 @@
                     NSString *uuid = [identifierForVendor UUIDString];
                     NSArray *messagesArr = [message componentsSeparatedByString:@"/"];
                     if([messagesArr[1]isEqualToString:uuid] || [messagesArr[1]isEqualToString:@""] || [messagesArr[1]isEqualToString:@"null"]){
-                        message = @"비정상 종료 기록이 있습니다. \n\r로그아웃을 진행합니다. \n\r재로그인 해주세요.";
+                        message = @"\n\r비정상 종료 기록이 있습니다. \n\r로그아웃을 진행합니다. \n\r재로그인 해주세요.";
                         isDuplicateLoginPass = YES;
                     }else{
                         message = messagesArr[0];
@@ -781,7 +782,7 @@
                     }
                 }
                 
-                UIAlertView* av = [[UIAlertView alloc]
+                AlertViewController* av = [[AlertViewController alloc]
                                    initWithTitle:@"알림"
                                    message:message
                                    delegate:self
@@ -799,7 +800,7 @@
         
     }else if (status == -1){ //세션종료
         NSString* message = @"세션이 종료되었습니다.\n재접속 하시겠습니까?\n(저장하지 않은 자료는 재 작업 하셔야 합니다.)";
-        UIAlertView* av = [[UIAlertView alloc]
+        AlertViewController* av = [[AlertViewController alloc]
                            initWithTitle:@"알림"
                            message:message
                            delegate:self
@@ -811,7 +812,7 @@
     }
     else if (status == 3){
         NSString* message = @"KT 조직이 '케이티'인 경우\n로그인 하실 수 없습니다.\nIDMS에서 조직 정보를 변경하신 후\n사용하시기 바랍니다.\n문의처 : ISC(1588-3391)";
-        UIAlertView* av = [[UIAlertView alloc]
+        AlertViewController* av = [[AlertViewController alloc]
                            initWithTitle:@"알림"
                            message:message
                            delegate:self
@@ -850,7 +851,7 @@
 {
     if (resultList.count){
         NSString* message = @"프로그램이 변경되어 설치 페이지로 이동합니다.";
-        UIAlertView* av = [[UIAlertView alloc]
+        AlertViewController* av = [[AlertViewController alloc]
                            initWithTitle:@"알림"
                            message:message
                            delegate:self

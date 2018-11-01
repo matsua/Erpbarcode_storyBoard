@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "LocListViewController.h"
 #import "ERPRequestManager.h"
+#import "CommonViewController.h"
 
-@interface DeviceInfoViewController : UIViewController <UIGestureRecognizerDelegate, IProcessRequest>
+@interface DeviceInfoViewController : CommonViewController <UIGestureRecognizerDelegate, IProcessRequest>
 -(IBAction)touchMenuBtn:(id)sender;
 -(IBAction)touchMainMenuBtn:(id)sender;
 - (IBAction)touchSearchBtn:(id)sender;

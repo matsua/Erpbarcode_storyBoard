@@ -73,7 +73,7 @@
         inputView.hidden = YES;
         commentView.hidden = YES;
         
-        UIAlertView* am = [[UIAlertView alloc]
+        AlertViewController* am = [[AlertViewController alloc]
                            initWithTitle:@"알림"
                            message:@"3개월 이상 동일한 패스워드를 사용 중입니다.\n패스워드를 변경 하셔야 시스템 이용이 가능 합니다."
                            delegate:self
@@ -127,7 +127,7 @@
         [self infoInit];
         isRequesting = NO;
         
-        UIAlertView* am = [[UIAlertView alloc]
+        AlertViewController* am = [[AlertViewController alloc]
                            initWithTitle:@"알림"
                            message:@"인증번호를 전송하였습니다.\n3분 이내로 입력해주세요."
                            delegate:self
@@ -159,7 +159,7 @@
     if(msg.length > 0){
         msg = [NSString stringWithFormat:@"%@은 필수 입력 정보 입니다.", msg];
         
-        UIAlertView* am = [[UIAlertView alloc]
+        AlertViewController* am = [[AlertViewController alloc]
                            initWithTitle:@"알림"
                            message:msg
                            delegate:self
@@ -182,7 +182,7 @@
     if(msg.length > 0){
         msg = [NSString stringWithFormat:@"%@는 필수 입력 정보 입니다.", msg];
         
-        UIAlertView* am = [[UIAlertView alloc]
+        AlertViewController* am = [[AlertViewController alloc]
                            initWithTitle:@"알림"
                            message:msg
                            delegate:self
@@ -286,7 +286,7 @@
     }
     
     if(msg.length > 0){
-        UIAlertView* am = [[UIAlertView alloc]
+        AlertViewController* am = [[AlertViewController alloc]
                            initWithTitle:@"알림"
                            message:msg
                            delegate:self
@@ -393,7 +393,7 @@
         }
     }
     
-    UIAlertView* am = [[UIAlertView alloc]
+    AlertViewController* am = [[AlertViewController alloc]
                        initWithTitle:@"알림"
                        message:message
                        delegate:self

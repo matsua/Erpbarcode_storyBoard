@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ERPRequestManager.h"
+#import "CommonViewController.h"
 
 @protocol ISelectGoodsInfo <NSObject>
 
@@ -16,7 +17,7 @@
 
 @end
 
-@interface GoodsInfoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, IProcessRequest>
+@interface GoodsInfoViewController : CommonViewController <UITableViewDataSource, UITableViewDelegate, IProcessRequest>
 
 @property (strong, nonatomic) id<ISelectGoodsInfo> delegate;
 

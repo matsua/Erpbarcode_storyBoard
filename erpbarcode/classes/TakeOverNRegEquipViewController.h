@@ -11,9 +11,9 @@
 #import "ArgumentConfirmViewController.h"
 #import "ERPRequestManager.h"
 #import "AddInfoViewController.h"
+#import "CommonViewController.h"
 
-
-@interface TakeOverNRegEquipViewController : UIViewController <UIGestureRecognizerDelegate, ISelectWBS, IArgumentConfirm, IProcessRequest, IPopRequest>
+@interface TakeOverNRegEquipViewController : CommonViewController <UIGestureRecognizerDelegate, ISelectWBS, IArgumentConfirm, IProcessRequest, IPopRequest>
 
 @property(nonatomic,strong) NSDictionary* dbWorkDic;
 @property(nonatomic,strong) NSMutableDictionary* workDic;

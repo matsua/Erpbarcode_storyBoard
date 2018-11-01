@@ -7,9 +7,9 @@
 //
 
 #import "ERPAlert.h"
+#import "AlertViewController.h"
 
 @implementation ERPAlert
-
 
 
 - (id)init
@@ -79,16 +79,16 @@
         [Util udSetBool:NO forKey:IS_ALERT_COMPLETE];
     }
     
-    UIAlertView *av = nil;
+    AlertViewController *av = nil;
     
     if(_title1 == nil || _title2.length == 0){
-        av = [[UIAlertView alloc] initWithTitle:@"알림"
+        av = [[AlertViewController alloc] initWithTitle:@"알림"
                                         message:_message
                                        delegate:_delegate
                               cancelButtonTitle:nil
                               otherButtonTitles:_title1, nil];
     }else {
-        av = [[UIAlertView alloc] initWithTitle:@"알림"
+        av = [[AlertViewController alloc] initWithTitle:@"알림"
                                         message:_message
                                        delegate:_delegate
                               cancelButtonTitle:nil

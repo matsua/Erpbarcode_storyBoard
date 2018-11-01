@@ -123,6 +123,11 @@
     }
 }
 
+- (void)clickedButtonAtIndex:(NSInteger)buttonIndex alertView:(AlertViewController*)alertView {
+    
+    
+}
+
 /*
 #pragma mark - Navigation
 

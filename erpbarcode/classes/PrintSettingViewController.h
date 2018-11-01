@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomPickerView.h"
+#import "CommonViewController.h"
 
-
-@interface PrintSettingViewController : UIViewController<UITextFieldDelegate, CustomPickerViewDelegate>
+@interface PrintSettingViewController : CommonViewController<UITextFieldDelegate, CustomPickerViewDelegate>
 @property(nonatomic,retain) NSString* type;
 
 

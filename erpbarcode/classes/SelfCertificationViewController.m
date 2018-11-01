@@ -90,7 +90,7 @@
 
 - (IBAction)touchSendCertNo:(id)sender {
     if (isRequesting){
-        UIAlertView* av = [[UIAlertView alloc]
+        AlertViewController* av = [[AlertViewController alloc]
                            initWithTitle:@"알림"
                            message:@"새로운 인증번호를 재발송 했습니다."
                            delegate:self
@@ -123,7 +123,8 @@
 }
 
 #pragma mark - UIAlertViewDelegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+-(void) clickedButtonAtIndex:(NSInteger)buttonIndex alertView:(AlertViewController*)alertView;
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     [Util udSetBool:YES forKey:IS_ALERT_COMPLETE];
     if (alertView.tag == 2000){
@@ -143,7 +144,7 @@
     //userDefault에 넣는다.
     [Util udSetBool:NO forKey:IS_ALERT_COMPLETE];
     
-    UIAlertView* av = [[UIAlertView alloc]
+    AlertViewController* av = [[AlertViewController alloc]
                        initWithTitle:@"알림"
                        message:message
                        delegate:self
@@ -274,7 +275,7 @@
             message = @"인증 정보 전송 중 오류가 발생하였습니다.\n잠시 후 다시 실행하세요.";
         }
         if ([message length] ){
-            UIAlertView* av = [[UIAlertView alloc]
+            AlertViewController* av = [[AlertViewController alloc]
                                initWithTitle:@"알림"
                                message:message
                                delegate:self
@@ -287,7 +288,7 @@
         return;
     }else if (status == -1){ //세션종료
         NSString* message = @"세션이 종료되었습니다.\n재접속 하시겠습니까?\n(저장하지 않은 자료는 재 작업 하셔야 합니다.)";
-        UIAlertView* av = [[UIAlertView alloc]
+        AlertViewController* av = [[AlertViewController alloc]
                            initWithTitle:@"알림"
                            message:message
                            delegate:self

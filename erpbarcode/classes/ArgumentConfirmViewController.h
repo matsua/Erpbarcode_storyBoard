@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ERPRequestManager.h"
+#import "CommonViewController.h"
 
 @protocol IArgumentConfirm <NSObject>
 
@@ -15,7 +16,7 @@
 
 @end
 
-@interface ArgumentConfirmViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, IProcessRequest>
+@interface ArgumentConfirmViewController : CommonViewController <UITableViewDataSource, UITableViewDelegate, IProcessRequest>
 
 @property (strong, nonatomic) id<IArgumentConfirm> delegate;
 

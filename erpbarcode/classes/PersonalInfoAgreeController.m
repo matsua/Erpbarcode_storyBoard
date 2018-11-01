@@ -112,7 +112,7 @@
     UIButton* btn = (UIButton*)sender;
     if(btn.tag == 1){
         if(!agree1.selected || !agree2.selected || !agree3.selected || !agree4.selected){
-            UIAlertView* am = [[UIAlertView alloc]
+            AlertViewController* am = [[AlertViewController alloc]
                                initWithTitle:@"알림"
                                message:@"필수 약관내용에 동의를 해주셔야 서비스 이용 가능합니다."
                                delegate:self

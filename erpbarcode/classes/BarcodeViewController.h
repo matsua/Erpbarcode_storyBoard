@@ -13,8 +13,9 @@
 #import "CancelRsViewController.h"
 #import "FindUserController.h"
 #import "BarcodePrintController.h"
+#import "CommonViewController.h"
 
-@interface BarcodeViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, IProcessRequest, CustomPickerViewDelegate, IDatePickerView, IdPopRequest, UITextFieldDelegate, IFindUserRequest, IPrintRequest>
+@interface BarcodeViewController : CommonViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, IProcessRequest, CustomPickerViewDelegate, IDatePickerView, IdPopRequest, UITextFieldDelegate, IFindUserRequest, IPrintRequest>
 
 
 -(void)isPrintComplete:(NSDictionary *)completeDicData;
