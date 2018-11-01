@@ -62,56 +62,64 @@
 
 - (UIViewController*)goOutIntoView:(NSString*)workName {
     
+    UIViewController* viewController = [self getOutIntoView:workName];
+    if (viewController == nil) return nil;
+    
+    [self pushViewController:(UIViewController *)viewController animated:(BOOL)YES];
+}
+
+- (UIViewController*)getOutIntoView:(NSString*)workName {
+    
     if([workName isEqualToString:@"납품입고"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController1" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController1"];
     }
     else if([workName isEqualToString:@"납품취소"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController2" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController2"];
     }
     else if([workName isEqualToString:@"배송출고"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController3" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController3"];
     }
     else if([workName isEqualToString:@"입고(팀내)"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController4" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController4"];
     }
     else if([workName isEqualToString:@"출고(팀내)"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController5" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController5"];
     }
     else if([workName isEqualToString:@"실장"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController6" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController6"];
     }
     else if([workName isEqualToString:@"탈장"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController7" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController7"];
     }
     else if([workName isEqualToString:@"송부(팀간)"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController8" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController8"];
     }
     else if([workName isEqualToString:@"송부취소(팀간)"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController9" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController9"];
     }
     else if([workName isEqualToString:@"접수(팀간)"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController10" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController10"];
     }
     else if([workName isEqualToString:@"형상구성(창고내)"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController11" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController11"];
     }
     else if([workName isEqualToString:@"형상해제(창고내)"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController12" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController12"];
     }
     else if([workName isEqualToString:@"고장등록"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController13" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController13"];
     }
     else if([workName isEqualToString:@"설비상태변경"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController14" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController14"];
     }
     else if([workName isEqualToString:@"설비정보"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController15" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController15"];
     }
     else if([workName isEqualToString:@"고장수리이력"]){
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController16" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController16"];
     }
     else{
-        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController1" animated:YES];
+        return [self instantiateViewController:@"OutInto" viewName:@"OutIntoViewController1"];
     }
 }
 

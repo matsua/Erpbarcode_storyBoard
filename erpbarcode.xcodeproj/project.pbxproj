@@ -936,7 +936,7 @@
 		08FF755320516925000B5546 /* ixShield_com.kt.ERPBarcode_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ixShield_com.kt.ERPBarcode_license.txt; sourceTree = "<group>"; };
 		1C93A5621855D3FB000C790E /* SettingViewRereadDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewRereadDelay.h; path = classes/SettingViewRereadDelay.h; sourceTree = "<group>"; };
 		1C93A5631855D3FB000C790E /* SettingViewRereadDelay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewRereadDelay.m; path = classes/SettingViewRereadDelay.m; sourceTree = "<group>"; };
-		1C93A5641855D3FB000C790E /* SettingViewRereadDelay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingViewRereadDelay.xib; path = classes/SettingViewRereadDelay.xib; sourceTree = "<group>"; };
+		1C93A5641855D3FB000C790E /* SettingViewRereadDelay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewRereadDelay.xib; sourceTree = "<group>"; };
 		5D26950517BE250600DD0BA9 /* BuyOutIntoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyOutIntoViewController.h; path = classes/BuyOutIntoViewController.h; sourceTree = "<group>"; };
 		5D26950617BE250600DD0BA9 /* BuyOutIntoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = BuyOutIntoViewController.m; path = classes/BuyOutIntoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5D26950717BE250600DD0BA9 /* BuyOutIntoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BuyOutIntoViewController.xib; path = classes/BuyOutIntoViewController.xib; sourceTree = "<group>"; };
@@ -1031,7 +1031,7 @@
 		5D6C80C917DECF2F008C33C4 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBManager.m; path = classes/DBManager.m; sourceTree = "<group>"; };
 		5D6C80CE17DEE8EB008C33C4 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = classes/SettingViewController.h; sourceTree = "<group>"; };
 		5D6C80CF17DEE8EB008C33C4 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = classes/SettingViewController.m; sourceTree = "<group>"; };
-		5D6C80D017DEE8EB008C33C4 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingViewController.xib; path = classes/SettingViewController.xib; sourceTree = "<group>"; };
+		5D6C80D017DEE8EB008C33C4 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		5D6DBBA417C1C0A8006CF0AA /* CommonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommonCell.xib; path = classes/CommonCell.xib; sourceTree = "<group>"; };
 		5D70F33B182CC97A002B1307 /* plus_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_Button.png; sourceTree = "<group>"; };
 		5D70F33D182CC97A002B1307 /* minus_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus_Button.png; sourceTree = "<group>"; };
@@ -1593,6 +1593,8 @@
 		068DA0A8218AF802007DAB10 /* old_xib */ = {
 			isa = PBXGroup;
 			children = (
+				1C93A5641855D3FB000C790E /* SettingViewRereadDelay.xib */,
+				5D6C80D017DEE8EB008C33C4 /* SettingViewController.xib */,
 				7A9D3ABE218A169900C36FC8 /* OutIntoViewController1.xib */,
 				7A9D3AC6218A169A00C36FC8 /* OutIntoViewController2.xib */,
 				7A9D3AB8218A169800C36FC8 /* OutIntoViewController3.xib */,
@@ -2378,10 +2380,8 @@
 			children = (
 				1C93A5621855D3FB000C790E /* SettingViewRereadDelay.h */,
 				1C93A5631855D3FB000C790E /* SettingViewRereadDelay.m */,
-				1C93A5641855D3FB000C790E /* SettingViewRereadDelay.xib */,
 				5D6C80CE17DEE8EB008C33C4 /* SettingViewController.h */,
 				5D6C80CF17DEE8EB008C33C4 /* SettingViewController.m */,
-				5D6C80D017DEE8EB008C33C4 /* SettingViewController.xib */,
 			);
 			name = "설정";
 			sourceTree = "<group>";

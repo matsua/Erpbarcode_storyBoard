@@ -296,7 +296,8 @@
     [Util udSetObject:@"Y" forKey:USER_WORK_MODE]; //작업모드
     [Util udSetObject:[WorkUtil getWorkName:WORK_CD] forKey:USER_WORK_NAME];
     
-    MainMenuViewController* mainVc = [[MainMenuViewController alloc] init];
+    //MainMenuViewController* mainVc = [[MainMenuViewController alloc] init];
+    MainMenuViewController* mainVc = (MainMenuViewController*)[self instantiateViewController:@"Main" viewName:@"MainMenuViewController"];
     
     // WORK_CD는 메인메뉴 순서(0 ~ 7)와 서브메뉴의 순서(0 ~ 9)
     // 예> 납품입고는 메인메뉴 순서 0, 서브메뉴순서 0 => "00"
@@ -327,8 +328,10 @@
             [WORK_CD isEqualToString:@"18"]    // 형상해제(창고내)
         )
     {
-        // TODO : goOutInto
-        OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+        
+        //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+        OutIntoViewController* vc = (OutIntoViewController*)[self getOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+        
         vc.dbWorkDic = selItemDic;
         self.navigationController.viewControllers = @[mainVc,vc];
     }

@@ -759,12 +759,13 @@
 
 // 설비정보조회
 - (IBAction)touchFccInfo:(id)sender {
-    AppDelegate *app = [AppDelegate sharedInstance];
-    UINavigationController * controller = (UINavigationController*)app.window.rootViewController;
+    //AppDelegate *app = [AppDelegate sharedInstance];
+    //UINavigationController * controller = (UINavigationController*)app.window.rootViewController;
     
     [Util udSetObject:@"설비정보" forKey:USER_WORK_NAME];
-    OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-    [controller pushViewController:vc animated:YES];
+    [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+    //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+    //[controller pushViewController:vc animated:YES];
 }
 
 // 환경설정
@@ -836,6 +837,7 @@
         [btn setBackgroundImage:[UIImage imageNamed:@"common_button_bg_gray.png"] forState:UIControlStateNormal];
         [btn setBackgroundImage:[UIImage imageNamed:@"common_button_bg_red.png"] forState:UIControlStateHighlighted];
         [btn addTarget:self action:@selector(touchSubMemu:) forControlEvents:UIControlEventTouchUpInside];
+        [btn setTag:i];
         [subMenuView addSubview:btn];
         
         frame.origin.y += 12 * rate;
@@ -935,7 +937,7 @@
     }
     else if (line == 4) {
         CGRect frame = self.viewMainSubMenu4.frame;
-        if (frame.origin.y + 150 * rate > self.view.frame.size.height) {
+        if (frame.origin.y + 150 * rate > self.view.frame.size.height - self.tabBar.frame.size.height) {
             self.subMenuView = self.viewMainSubMenu3;
             self.subMenuLayout = self.lcSubMenu3;
             expandUp = YES;
@@ -1258,33 +1260,21 @@
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     
     if(item.tag == 0) {
-        WorkDataViewController* view = (WorkDataViewController*)[self instantiateViewController:@"Main" viewName:@"WorkDataViewController"];
-        if (view) {
-            [self pushViewController:view animated:YES];
-        }
+        
+        [self pushViewController:@"Main" viewName:@"WorkDataViewController" animated:YES];
     }
     else if(item.tag == 1) {
         
-        AppDelegate *app = [AppDelegate sharedInstance];
-        UINavigationController * controller = (UINavigationController*)app.window.rootViewController;
-        
         [Util udSetObject:@"설비정보" forKey:USER_WORK_NAME];
-        OutIntoViewController* view = (OutIntoViewController*)[self instantiateViewController:@"Main" viewName:@"OutIntoViewController"];
-        if (view) {
-            [self pushViewController:view animated:YES];
-        }        
-//        OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-//        [controller pushViewController:vc animated:YES];
+        [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
     }
     else if(item.tag == 2) {
-        SettingViewController* view = (SettingViewController*)[self instantiateViewController:@"Main" viewName:@"SettingViewController"];
-        if (view) {
-            [self pushViewController:view animated:YES];
-        }
-//        SettingViewController* vc = [[SettingViewController alloc] init];
-//        [self.navigationController pushViewController:vc animated:YES];
+       
+        [self pushViewController:@"Main" viewName:@"SettingViewController" animated:YES];
+
     }
     else if(item.tag == 3) {
+        
         NSString* message = @"종료하시겠습니까?";
         [self showMessage:message tag:100 title1:@"예" title2:@"아니오"];
     }

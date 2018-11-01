@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomPickerView.h"
+#import "CommonViewController.h"
 
-@interface WorkDataViewController : UIViewController <CustomPickerViewDelegate>
+@interface WorkDataViewController : CommonViewController <CustomPickerViewDelegate>
 
 @property(nonatomic,strong) UIActivityIndicatorView* indicatorView;
 

@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIViewController*)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
 - (UIViewController*)showViewController:(UIViewController *)viewController;
 
+- (UIViewController*)getOutIntoView:(NSString*)workName;
 - (UIViewController*)goOutIntoView:(NSString*)workName;
 
 @end
