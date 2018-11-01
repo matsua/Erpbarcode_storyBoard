@@ -835,6 +835,7 @@
         UIButton* btn = [[UIButton alloc]initWithFrame:frame];
         [btn setBackgroundImage:[UIImage imageNamed:@"common_button_bg_gray.png"] forState:UIControlStateNormal];
         [btn setBackgroundImage:[UIImage imageNamed:@"common_button_bg_red.png"] forState:UIControlStateHighlighted];
+        [btn addTarget:self action:@selector(touchSubMemu:) forControlEvents:UIControlEventTouchUpInside];
         [subMenuView addSubview:btn];
         
         frame.origin.y += 12 * rate;
