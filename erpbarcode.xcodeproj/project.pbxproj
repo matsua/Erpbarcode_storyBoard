@@ -321,6 +321,7 @@
 		7A9D3AD5218A169A00C36FC8 /* OutIntoViewController8.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D3AC5218A169A00C36FC8 /* OutIntoViewController8.xib */; };
 		7A9D3AD6218A169A00C36FC8 /* OutIntoViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D3AC6218A169A00C36FC8 /* OutIntoViewController2.xib */; };
 		7A9D3AD7218A169A00C36FC8 /* OutIntoViewController13.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D3AC7218A169A00C36FC8 /* OutIntoViewController13.xib */; };
+		7AE6190C218AF27E0015A535 /* OutInto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE6190B218AF27D0015A535 /* OutInto.storyboard */; };
 		B23A846F18725E59005FC0E9 /* setupInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B23A846E18725E59005FC0E9 /* setupInfo.plist */; };
 		B24B9DE11AC1599F005634D8 /* GridColumnRepairCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B24B9DDF1AC1599F005634D8 /* GridColumnRepairCell.m */; };
 		B24B9DE21AC1599F005634D8 /* GridColumnRepairCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24B9DE01AC1599F005634D8 /* GridColumnRepairCell.xib */; };
@@ -1169,6 +1170,7 @@
 		7A9D3AC5218A169A00C36FC8 /* OutIntoViewController8.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OutIntoViewController8.xib; path = classes/OutIntoViewController8.xib; sourceTree = "<group>"; };
 		7A9D3AC6218A169A00C36FC8 /* OutIntoViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OutIntoViewController2.xib; path = classes/OutIntoViewController2.xib; sourceTree = "<group>"; };
 		7A9D3AC7218A169A00C36FC8 /* OutIntoViewController13.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OutIntoViewController13.xib; path = classes/OutIntoViewController13.xib; sourceTree = "<group>"; };
+		7AE6190B218AF27D0015A535 /* OutInto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = OutInto.storyboard; path = erpbarcode/OutInto.storyboard; sourceTree = "<group>"; };
 		B23A846E18725E59005FC0E9 /* setupInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setupInfo.plist; sourceTree = "<group>"; };
 		B24B9DDE1AC1599F005634D8 /* GridColumnRepairCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GridColumnRepairCell.h; path = classes/GridColumnRepairCell.h; sourceTree = "<group>"; };
 		B24B9DDF1AC1599F005634D8 /* GridColumnRepairCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GridColumnRepairCell.m; path = classes/GridColumnRepairCell.m; sourceTree = "<group>"; };
@@ -2603,6 +2605,7 @@
 		5DFB7A4917A0ABB600EB8991 = {
 			isa = PBXGroup;
 			children = (
+				7AE6190B218AF27D0015A535 /* OutInto.storyboard */,
 				060D1055217F75FC0050D40F /* Login.storyboard */,
 				060D1054217F75FC0050D40F /* Sub.storyboard */,
 				06D103CC216F07AB00520F83 /* LaunchScreen.storyboard */,
@@ -3375,6 +3378,7 @@
 				B6A876B1183EF4900053EBE8 /* main_button_menu_f.png in Resources */,
 				B6A87704183F48D20053EBE8 /* login_id@2x.png in Resources */,
 				B6A8767E183EF4900053EBE8 /* main_button_menu_b_up@2x.png in Resources */,
+				7AE6190C218AF27E0015A535 /* OutInto.storyboard in Resources */,
 				B6A876E8183EF9560053EBE8 /* main_button_2_up.png in Resources */,
 				B6A65CBA1845BC8600422D27 /* button_request@2x.png in Resources */,
 				B6A876CA183EF4900053EBE8 /* main_button_menu_h4@2x.png in Resources */,
