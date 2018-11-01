@@ -191,18 +191,21 @@
         case 0: //납품/인계인수
             if (nTag == 0){ // 납품입고
                 [Util udSetObject:@"납품입고" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 1){ //납품취소
                 [Util udSetObject:@"납품취소" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 2){ //배송출고
                 [Util udSetObject:@"배송출고" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 3){
                 [Util udSetObject:@"인계" forKey:USER_WORK_NAME];
@@ -229,48 +232,57 @@
         case 1: //유동관리
             if (nTag == 0){ //입고(팀내)
                 [Util udSetObject:@"입고(팀내)" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 1){ //출고(팀내)
                 [Util udSetObject:@"출고(팀내)" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 2){ //실장
                 [Util udSetObject:@"실장" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 3){ //탈장
                 [Util udSetObject:@"탈장" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 4){ //송부(팀간)
                 [Util udSetObject:@"송부(팀간)" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 5){ //송부취소(팀간)
                 [Util udSetObject:@"송부취소(팀간)" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 6){ //접수(팀간)
                 [Util udSetObject:@"접수(팀간)" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if(nTag == 7){ //형상구성(창고내)
                 [Util udSetObject:@"형상구성(창고내)" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if(nTag == 8){ //형상해제(창고내)
                 [Util udSetObject:@"형상해제(창고내)" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             break;
         case 2: // 인스토어마킹
@@ -320,8 +332,9 @@
         case 3: //수리/개조개량
             if (nTag == 0){ //고장등록
                 [Util udSetObject:@"고장등록" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 1){ //고장등록취소
                 [Util udSetObject:@"고장등록취소" forKey:USER_WORK_NAME];
@@ -358,8 +371,9 @@
         case 5:
             if (nTag == 0){ //설비상태변경
                 [Util udSetObject:@"설비상태변경" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 1){ //S/N변경
                 [Util udSetObject:@"S/N변경" forKey:USER_WORK_NAME];
@@ -420,8 +434,9 @@
                 }
                 
                 [Util udSetObject:@"설비정보" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 2){ //장치바코드정보
                 if (isOffLine) {
@@ -453,8 +468,9 @@
                     return;
                 }
                 [Util udSetObject:@"고장수리이력" forKey:USER_WORK_NAME];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             break;
         case 8://바코드관리

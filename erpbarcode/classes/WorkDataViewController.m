@@ -327,6 +327,7 @@
             [WORK_CD isEqualToString:@"18"]    // 형상해제(창고내)
         )
     {
+        // TODO : goOutInto
         OutIntoViewController* vc = [[OutIntoViewController alloc] init];
         vc.dbWorkDic = selItemDic;
         self.navigationController.viewControllers = @[mainVc,vc];

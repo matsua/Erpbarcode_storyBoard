@@ -60,6 +60,60 @@
     return viewController;
 }
 
+- (UIViewController*)goOutIntoView:(NSString*)workName {
+    
+    if([workName isEqualToString:@"납품입고"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController1" animated:YES];
+    }
+    else if([workName isEqualToString:@"납품취소"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController2" animated:YES];
+    }
+    else if([workName isEqualToString:@"배송출고"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController3" animated:YES];
+    }
+    else if([workName isEqualToString:@"입고(팀내)"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController4" animated:YES];
+    }
+    else if([workName isEqualToString:@"출고(팀내)"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController5" animated:YES];
+    }
+    else if([workName isEqualToString:@"실장"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController6" animated:YES];
+    }
+    else if([workName isEqualToString:@"탈장"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController7" animated:YES];
+    }
+    else if([workName isEqualToString:@"송부(팀간)"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController8" animated:YES];
+    }
+    else if([workName isEqualToString:@"송부취소(팀간)"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController9" animated:YES];
+    }
+    else if([workName isEqualToString:@"접수(팀간)"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController10" animated:YES];
+    }
+    else if([workName isEqualToString:@"형상구성(창고내)"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController11" animated:YES];
+    }
+    else if([workName isEqualToString:@"형상해제(창고내)"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController12" animated:YES];
+    }
+    else if([workName isEqualToString:@"고장등록"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController13" animated:YES];
+    }
+    else if([workName isEqualToString:@"설비상태변경"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController14" animated:YES];
+    }
+    else if([workName isEqualToString:@"설비정보"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController15" animated:YES];
+    }
+    else if([workName isEqualToString:@"고장수리이력"]){
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController16" animated:YES];
+    }
+    else{
+        return [self pushViewController:@"OutInto" viewName:@"OutIntoViewController1" animated:YES];
+    }
+}
 
 /*
 #pragma mark - Navigation
