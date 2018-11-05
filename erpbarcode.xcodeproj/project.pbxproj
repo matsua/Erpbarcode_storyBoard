@@ -322,6 +322,12 @@
 		7A9D3AD5218A169A00C36FC8 /* OutIntoViewController8.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D3AC5218A169A00C36FC8 /* OutIntoViewController8.xib */; };
 		7A9D3AD6218A169A00C36FC8 /* OutIntoViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D3AC6218A169A00C36FC8 /* OutIntoViewController2.xib */; };
 		7A9D3AD7218A169A00C36FC8 /* OutIntoViewController13.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D3AC7218A169A00C36FC8 /* OutIntoViewController13.xib */; };
+		7AB4A8D32190C7E60004C28B /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB4A8D22190C7E60004C28B /* Info.storyboard */; };
+		7AE4C873218F30CE002F622C /* Barcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE4C86B218F30CC002F622C /* Barcode.storyboard */; };
+		7AE4C877218F30CE002F622C /* TakeOverNRegEquip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE4C86F218F30CD002F622C /* TakeOverNRegEquip.storyboard */; };
+		7AE4C878218F30CE002F622C /* BuyOutInto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE4C870218F30CD002F622C /* BuyOutInto.storyboard */; };
+		7AE4C879218F30CE002F622C /* Revision.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE4C871218F30CE002F622C /* Revision.storyboard */; };
+		7AE4C87A218F30CE002F622C /* SpotCheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE4C872218F30CE002F622C /* SpotCheck.storyboard */; };
 		7AE6190C218AF27E0015A535 /* OutInto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE6190B218AF27D0015A535 /* OutInto.storyboard */; };
 		B23A846F18725E59005FC0E9 /* setupInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B23A846E18725E59005FC0E9 /* setupInfo.plist */; };
 		B24B9DE11AC1599F005634D8 /* GridColumnRepairCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B24B9DDF1AC1599F005634D8 /* GridColumnRepairCell.m */; };
@@ -1173,6 +1179,12 @@
 		7A9D3AC5218A169A00C36FC8 /* OutIntoViewController8.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutIntoViewController8.xib; sourceTree = "<group>"; };
 		7A9D3AC6218A169A00C36FC8 /* OutIntoViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutIntoViewController2.xib; sourceTree = "<group>"; };
 		7A9D3AC7218A169A00C36FC8 /* OutIntoViewController13.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutIntoViewController13.xib; sourceTree = "<group>"; };
+		7AB4A8D22190C7E60004C28B /* Info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Info.storyboard; path = erpbarcode/Info.storyboard; sourceTree = "<group>"; };
+		7AE4C86B218F30CC002F622C /* Barcode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Barcode.storyboard; path = erpbarcode/Barcode.storyboard; sourceTree = "<group>"; };
+		7AE4C86F218F30CD002F622C /* TakeOverNRegEquip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TakeOverNRegEquip.storyboard; path = erpbarcode/TakeOverNRegEquip.storyboard; sourceTree = "<group>"; };
+		7AE4C870218F30CD002F622C /* BuyOutInto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BuyOutInto.storyboard; path = erpbarcode/BuyOutInto.storyboard; sourceTree = "<group>"; };
+		7AE4C871218F30CE002F622C /* Revision.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Revision.storyboard; path = erpbarcode/Revision.storyboard; sourceTree = "<group>"; };
+		7AE4C872218F30CE002F622C /* SpotCheck.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SpotCheck.storyboard; path = erpbarcode/SpotCheck.storyboard; sourceTree = "<group>"; };
 		7AE6190B218AF27D0015A535 /* OutInto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = OutInto.storyboard; path = erpbarcode/OutInto.storyboard; sourceTree = "<group>"; };
 		B23A846E18725E59005FC0E9 /* setupInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setupInfo.plist; sourceTree = "<group>"; };
 		B24B9DDE1AC1599F005634D8 /* GridColumnRepairCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GridColumnRepairCell.h; path = classes/GridColumnRepairCell.h; sourceTree = "<group>"; };
@@ -2617,6 +2629,12 @@
 		5DFB7A4917A0ABB600EB8991 = {
 			isa = PBXGroup;
 			children = (
+				7AB4A8D22190C7E60004C28B /* Info.storyboard */,
+				7AE4C86B218F30CC002F622C /* Barcode.storyboard */,
+				7AE4C870218F30CD002F622C /* BuyOutInto.storyboard */,
+				7AE4C871218F30CE002F622C /* Revision.storyboard */,
+				7AE4C872218F30CE002F622C /* SpotCheck.storyboard */,
+				7AE4C86F218F30CD002F622C /* TakeOverNRegEquip.storyboard */,
 				7AE6190B218AF27D0015A535 /* OutInto.storyboard */,
 				060D1055217F75FC0050D40F /* Login.storyboard */,
 				060D1054217F75FC0050D40F /* Sub.storyboard */,
@@ -2929,6 +2947,7 @@
 				08DE32CD1BFC6DA600F1C32E /* LocListCell.xib in Resources */,
 				B6A876AD183EF4900053EBE8 /* main_button_menu_e.png in Resources */,
 				B6A87687183EF4900053EBE8 /* main_button_menu_b4.png in Resources */,
+				7AE4C879218F30CE002F622C /* Revision.storyboard in Resources */,
 				B6A65CEC1845BCB800422D27 /* toolbar_bg@2x.png in Resources */,
 				5D3F699E17B33E8400EBD5E8 /* navi_bg@2x.png in Resources */,
 				B6A65CB41845BC8600422D27 /* button_regist_up@2x.png in Resources */,
@@ -3022,6 +3041,7 @@
 				5D40648417B9CB6E00E84566 /* icon_setting@2x.png in Resources */,
 				0853F4FA1BA2BE5900C57C6C /* main_button_menu_i3.png in Resources */,
 				B6A876F7183EF9560053EBE8 /* main_button_menu_a@2x.png in Resources */,
+				7AE4C873218F30CE002F622C /* Barcode.storyboard in Resources */,
 				B6A87613183EF4800053EBE8 /* common_button_bg_gray.png in Resources */,
 				0853F4FB1BA2BE5900C57C6C /* main_button_menu_i3@2x.png in Resources */,
 				5D40648717B9CB8600E84566 /* btn_login.png in Resources */,
@@ -3292,6 +3312,7 @@
 				08095DB21DF7EC9D006C9CE2 /* main_button_menu_jk6.png in Resources */,
 				B6EE64EF1845DE5E00209381 /* button_select.png in Resources */,
 				B6EE64E01845DE4800209381 /* button_rescan@2x.png in Resources */,
+				7AB4A8D32190C7E60004C28B /* Info.storyboard in Resources */,
 				5D5C9665181A3EBD00BE0708 /* GridColumn3Cell.xib in Resources */,
 				B6F15C41180E65B400410DE7 /* WBSListViewController.xib in Resources */,
 				B6F9D8C9187A6E51004467AC /* button_send_cert.png in Resources */,
@@ -3319,6 +3340,7 @@
 				B6A65CE41845BCB800422D27 /* navigation_back.png in Resources */,
 				B6A65CAC1845BC8600422D27 /* button_modify_up@2x.png in Resources */,
 				B6A65CC91845BC9100422D27 /* button_save.png in Resources */,
+				7AE4C878218F30CE002F622C /* BuyOutInto.storyboard in Resources */,
 				B6EE64FB1845DE6B00209381 /* common_checkbox_checked.png in Resources */,
 				5D59F71F17CC98FF00E78D68 /* list_arrow_02@2x.png in Resources */,
 				B6EE65031845DE6B00209381 /* common_icon_deviceid.png in Resources */,
@@ -3366,12 +3388,14 @@
 				5D3AA3BA17F2D09D003649DF /* GoodsInfoViewController.xib in Resources */,
 				B6EE64FC1845DE6B00209381 /* common_checkbox_checked@2x.png in Resources */,
 				08C27AB81FA9BE5C003B56A9 /* navi_bg_ps.png in Resources */,
+				7AE4C87A218F30CE002F622C /* SpotCheck.storyboard in Resources */,
 				5D77124B17F3D38F00D1A8C0 /* DeviceInfoViewController.xib in Resources */,
 				B6825AC1183C862800BB27E4 /* ArgumentConfirmCell1.xib in Resources */,
 				B6A87677183EF4900053EBE8 /* main_button_menu_a4.png in Resources */,
 				B6A876C2183EF4900053EBE8 /* main_button_menu_h@2x.png in Resources */,
 				B6A87683183EF4900053EBE8 /* main_button_menu_b2.png in Resources */,
 				5D77125017F3D97D00D1A8C0 /* LocInfoViewController.xib in Resources */,
+				7AE4C877218F30CE002F622C /* TakeOverNRegEquip.storyboard in Resources */,
 				7A9D3ACF218A169A00C36FC8 /* OutIntoViewController11.xib in Resources */,
 				08095DA91DF7EC9D006C9CE2 /* main_button_menu_j_up.png in Resources */,
 				B6E22650183D9AE700147519 /* db.wav in Resources */,
