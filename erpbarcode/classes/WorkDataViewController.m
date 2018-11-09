@@ -335,20 +335,76 @@
         vc.dbWorkDic = selItemDic;
         self.navigationController.viewControllers = @[mainVc,vc];
     }
-    else if (
-             [WORK_CD isEqualToString:@"31"] || // 고장등록취소
-             [WORK_CD isEqualToString:@"32"] || // 수리의뢰취소
-             [WORK_CD isEqualToString:@"33"] || // 수리완료
-             [WORK_CD isEqualToString:@"34"] || // 개조개량의뢰
-             [WORK_CD isEqualToString:@"35"] || // 개조개량의뢰취소
-             [WORK_CD isEqualToString:@"36"] || // 개조개량완료
-             [WORK_CD isEqualToString:@"51"] || // S/N변경
-             [WORK_CD isEqualToString:@"80"]    // 위치바코드
-             ){
-        RevisionViewController* vc = [[RevisionViewController alloc] init];
-        vc.dbWorkDic = selItemDic;
-        self.navigationController.viewControllers = @[mainVc,vc];
+    else if ( [WORK_CD isEqualToString:@"31"] ) {// 고장등록취소
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        if (vc != nil) {
+            ((RevisionViewController*)vc).dbWorkDic = selItemDic;
+            [self pushViewController:vc animated:YES];
+        }
     }
+    else if ( [WORK_CD isEqualToString:@"32"] ) {// 수리의뢰취소
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        if (vc != nil) {
+            ((RevisionViewController*)vc).dbWorkDic = selItemDic;
+            [self pushViewController:vc animated:YES];
+        }
+    }
+    else if ( [WORK_CD isEqualToString:@"33"] ) {// 수리완료
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        if (vc != nil) {
+            ((RevisionViewController*)vc).dbWorkDic = selItemDic;
+            [self pushViewController:vc animated:YES];
+        }
+    }
+    else if ( [WORK_CD isEqualToString:@"34"] ) {// 개조개량의뢰
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        if (vc != nil) {
+            ((RevisionViewController*)vc).dbWorkDic = selItemDic;
+            [self pushViewController:vc animated:YES];
+        }
+    }
+    else if ( [WORK_CD isEqualToString:@"35"] ) {// 개조개량의뢰취소
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        if (vc != nil) {
+            ((RevisionViewController*)vc).dbWorkDic = selItemDic;
+            [self pushViewController:vc animated:YES];
+        }
+    }
+    else if ( [WORK_CD isEqualToString:@"36"] ) {// 개조개량완료
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        if (vc != nil) {
+            ((RevisionViewController*)vc).dbWorkDic = selItemDic;
+            [self pushViewController:vc animated:YES];
+        }
+    }
+    else if ( [WORK_CD isEqualToString:@"51"] ) {// S/N변경
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        if (vc != nil) {
+            ((RevisionViewController*)vc).dbWorkDic = selItemDic;
+            [self pushViewController:vc animated:YES];
+        }
+    }
+    else if ( [WORK_CD isEqualToString:@"90"] ) {// 위치바코드
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        if (vc != nil) {
+            ((RevisionViewController*)vc).dbWorkDic = selItemDic;
+            [self pushViewController:vc animated:YES];
+        }
+    }
+//    else if (
+//               [WORK_CD isEqualToString:@"31"] || // 고장등록취소
+//               [WORK_CD isEqualToString:@"32"] || // 수리의뢰취소
+//               [WORK_CD isEqualToString:@"33"] || // 수리완료
+//               [WORK_CD isEqualToString:@"34"] || // 개조개량의뢰
+//               [WORK_CD isEqualToString:@"35"] || // 개조개량의뢰취소
+//               [WORK_CD isEqualToString:@"36"] || // 개조개량완료
+//               [WORK_CD isEqualToString:@"51"] || // S/N변경
+//               [WORK_CD isEqualToString:@"80"]    // 위치바코드
+//               ){
+//        RevisionViewController* vc = [[RevisionViewController alloc] init];
+//        vc.dbWorkDic = selItemDic;
+//        self.navigationController.viewControllers = @[mainVc,vc];
+//    }
     else if (
              [WORK_CD isEqualToString:@"60"] || // 현장점검(창고/실)
              [WORK_CD isEqualToString:@"61"]  // 현장점검(베이)

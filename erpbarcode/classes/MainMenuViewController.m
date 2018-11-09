@@ -338,33 +338,39 @@
             }
             else if (nTag == 1){ //고장등록취소
                 [Util udSetObject:@"고장등록취소" forKey:USER_WORK_NAME];
-                RevisionViewController* vc = [[RevisionViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Revision" viewName:@"RevisionViewController1" animated:YES];
+                //RevisionViewController* vc = [[RevisionViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 2){ //수리의뢰취소
                 [Util udSetObject:@"수리의뢰취소" forKey:USER_WORK_NAME];
-                RevisionViewController* vc = [[RevisionViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Revision" viewName:@"RevisionViewController2" animated:YES];
+                //RevisionViewController* vc = [[RevisionViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 3){ //수리완료
                 [Util udSetObject:@"수리완료" forKey:USER_WORK_NAME];
-                RevisionViewController* vc = [[RevisionViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Revision" viewName:@"RevisionViewController3" animated:YES];
+                //RevisionViewController* vc = [[RevisionViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 4){ //개조개량의뢰
+                [self pushViewController:@"Revision" viewName:@"RevisionViewController4" animated:YES];
                 [Util udSetObject:@"개조개량의뢰" forKey:USER_WORK_NAME];
-                RevisionViewController* vc = [[RevisionViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                //RevisionViewController* vc = [[RevisionViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 5){ //개조개량의뢰취소
                 [Util udSetObject:@"개조개량의뢰취소" forKey:USER_WORK_NAME];
-                RevisionViewController* vc = [[RevisionViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Revision" viewName:@"RevisionViewController5" animated:YES];
+                //RevisionViewController* vc = [[RevisionViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 6){ //개조개량완료
                 [Util udSetObject:@"개조개량완료" forKey:USER_WORK_NAME];
-                RevisionViewController* vc = [[RevisionViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Revision" viewName:@"RevisionViewController6" animated:YES];
+                //RevisionViewController* vc = [[RevisionViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             break;
             
@@ -377,8 +383,9 @@
             }
             else if (nTag == 1){ //S/N변경
                 [Util udSetObject:@"S/N변경" forKey:USER_WORK_NAME];
-                RevisionViewController* vc = [[RevisionViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Revision" viewName:@"RevisionViewController7" animated:YES];
+                //RevisionViewController* vc = [[RevisionViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             
             break;
@@ -402,8 +409,9 @@
                     return;
                 }
                 [Util udSetObject:@"상품단말실사" forKey:USER_WORK_NAME];
-                RevisionViewController* vc = [[RevisionViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Revision" viewName:@"RevisionViewController8" animated:YES];
+                //evisionViewController* vc = [[RevisionViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 3){ //임대단말실사
                 if (isOffLine) {
