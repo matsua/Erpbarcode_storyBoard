@@ -336,56 +336,56 @@
         self.navigationController.viewControllers = @[mainVc,vc];
     }
     else if ( [WORK_CD isEqualToString:@"31"] ) {// 고장등록취소
-        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController"];
         if (vc != nil) {
             ((RevisionViewController*)vc).dbWorkDic = selItemDic;
             [self pushViewController:vc animated:YES];
         }
     }
     else if ( [WORK_CD isEqualToString:@"32"] ) {// 수리의뢰취소
-        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController"];
         if (vc != nil) {
             ((RevisionViewController*)vc).dbWorkDic = selItemDic;
             [self pushViewController:vc animated:YES];
         }
     }
     else if ( [WORK_CD isEqualToString:@"33"] ) {// 수리완료
-        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController"];
         if (vc != nil) {
             ((RevisionViewController*)vc).dbWorkDic = selItemDic;
             [self pushViewController:vc animated:YES];
         }
     }
     else if ( [WORK_CD isEqualToString:@"34"] ) {// 개조개량의뢰
-        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController"];
         if (vc != nil) {
             ((RevisionViewController*)vc).dbWorkDic = selItemDic;
             [self pushViewController:vc animated:YES];
         }
     }
     else if ( [WORK_CD isEqualToString:@"35"] ) {// 개조개량의뢰취소
-        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController"];
         if (vc != nil) {
             ((RevisionViewController*)vc).dbWorkDic = selItemDic;
             [self pushViewController:vc animated:YES];
         }
     }
     else if ( [WORK_CD isEqualToString:@"36"] ) {// 개조개량완료
-        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController"];
         if (vc != nil) {
             ((RevisionViewController*)vc).dbWorkDic = selItemDic;
             [self pushViewController:vc animated:YES];
         }
     }
     else if ( [WORK_CD isEqualToString:@"51"] ) {// S/N변경
-        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController"];
         if (vc != nil) {
             ((RevisionViewController*)vc).dbWorkDic = selItemDic;
             [self pushViewController:vc animated:YES];
         }
     }
     else if ( [WORK_CD isEqualToString:@"90"] ) {// 위치바코드
-        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController1"];
+        UIViewController* vc = [self instantiateViewController:@"Revision" viewName:@"RevisionViewController"];
         if (vc != nil) {
             ((RevisionViewController*)vc).dbWorkDic = selItemDic;
             [self pushViewController:vc animated:YES];

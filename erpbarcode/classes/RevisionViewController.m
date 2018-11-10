@@ -209,9 +209,9 @@
 @property(nonatomic,assign) BOOL isDataSaved;   // 저장했는지 여부..  초기화 하면 NO 저장하면 YES
 @property(nonatomic,assign) BOOL isOffLine;     // 음영지역인지 여부
 
-@property(nonatomic,assign) IBOutlet IBOutlet UIView* snNumberView;
+@property(nonatomic,assign) IBOutlet UIView* snNumberView;
 @property(nonatomic,strong) IBOutlet UITextField* txtSnCode;
-@property(nonatomic,assign) IBOutlet IBOutlet UIView* organInfoView;
+@property(nonatomic,assign) IBOutlet UIView* organInfoView;
 @property(nonatomic,assign) NSInteger rowSelIdx;     //row select idx
 @property(nonatomic,strong) IBOutlet UIButton* btnSelectAll;
 @end
@@ -1078,7 +1078,8 @@
     btnClose.hidden = NO;
     
     _scrollView.frame = CGRectMake(0, 262, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height + 44));
-    _scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width, _scrollView.frame.size.height);
+    //_scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width, _scrollView.frame.size.height);
+    [self setContentSize:1];
     
     [self requestSurveyScanList:index];
 }
@@ -1094,7 +1095,7 @@
     snNumberView.hidden = YES;
     
     //카운트 레이블 구성
-    lblCount = [[UILabel alloc] initWithFrame:CGRectMake(50,  PHONE_SCREEN_HEIGHT - 44 - 20, 250, 20)];
+    lblCount = [[UILabel alloc] initWithFrame:CGRectMake(50,  PHONE_SCREEN_HEIGHT - 44 - 20, self.view.frame.size.width - 100, 20)];
     lblCount.backgroundColor = [UIColor clearColor];
     lblCount.textColor = [UIColor blueColor];
     lblCount.font = [UIFont systemFontOfSize:14];
@@ -1133,17 +1134,22 @@
         _tableView5.hidden = NO;
         _tableView6.hidden = NO;
         
-        _scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*6, _scrollView.frame.size.height);
+        //_scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*6, _scrollView.frame.size.height);
+        [self setContentSize:6];
     }
     else if ([JOB_GUBUN isEqualToString:@"개조개량완료"] ||
              [JOB_GUBUN isEqualToString:@"개조개량의뢰"] ||
              [JOB_GUBUN isEqualToString:@"개조개량의뢰취소"]) {
-        _scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*3, _scrollView.frame.size.height);
+        //_scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*3, _scrollView.frame.size.height);
+        [self setContentSize:3];
     }
     else if ([JOB_GUBUN isEqualToString:@"상품단말실사"]) {
-        _scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*2, _scrollView.frame.size.height);
+        //_scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*2, _scrollView.frame.size.height);
+        [self setContentSize:2];
         _tableView3.hidden = YES;
         columnHeaderView3.hidden = YES;
+        columnHeaderView4.hidden = YES;
+        columnHeaderView5.hidden = YES;
         
         locBarcodeView.hidden = YES;
         locNameView.hidden = YES;
@@ -1187,37 +1193,46 @@
     }
     else if ([JOB_GUBUN isEqualToString:@"수리의뢰취소"] ||
              [JOB_GUBUN isEqualToString:@"고장등록취소"]) {
-        _scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*5, _scrollView.frame.size.height);
+        //_scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*5, _scrollView.frame.size.height);
+        [self setContentSize:5];
+        CGRect rect = _scrollView.bounds;
+        NSLog(@"_scrollView : %f, %f, %f, %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+        
+        rect = _tableView.bounds;
+        NSLog(@"contentSize : %f, %f, %f, %f", rect.origin.x, rect.origin.y, _scrollView.contentSize.width, _scrollView.contentSize.height);
     }
-    else if ([JOB_GUBUN isEqualToString:@"수리완료"])
-        _scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*7, _scrollView.frame.size.height);
+    else if ([JOB_GUBUN isEqualToString:@"수리완료"]) {
+        //_scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*7, _scrollView.frame.size.height);
+        [self setContentSize:7];
+    }
     else{
-        _scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*4, _scrollView.frame.size.height);
+        //_scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*4, _scrollView.frame.size.height);
+        [self setContentSize:4];
     }
     
     // DR-2015-45173 바코드앱 일부 메뉴의 select 값 순서 변경 by 조석호 과장(예비 -> 유휴)
     if ([JOB_GUBUN isEqualToString:@"고장등록취소"]){
-        picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:@[@"유휴", @"예비", @"미운용", @"불용대기"]];
+        picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, self.view.frame.size.width, 240) data:@[@"유휴", @"예비", @"미운용", @"불용대기"]];
         //피커 델리게이트를 항상 먼저 선택
         picker.delegate = self;
         [picker selectPicker:0]; //선택값 예비로 설정 -> 유휴로 변경
         
-        CGRect rect = _scrollView.frame;
-        rect.origin.y = 200;
-        rect.size.height += 36;
-        _scrollView.frame = rect;
+//        CGRect rect = _scrollView.frame;
+//        rect.origin.y = 200;
+//        rect.size.height += 36;
+//        _scrollView.frame = rect;
     }
     else if ([JOB_GUBUN isEqualToString:@"수리의뢰취소"]){
         fccStatusView.hidden = YES;
-        curdView.frame = CGRectMake(0, 123, 320, 40);
+//        curdView.frame = CGRectMake(0, 123, 320, 40);
         
-        CGRect rect = _scrollView.frame;
-        rect.origin.y = 163;
-        rect.size.height += 72;
-        _scrollView.frame = rect;
+//        CGRect rect = _scrollView.frame;
+//        rect.origin.y = 163;
+//        rect.size.height += 72;
+//        _scrollView.frame = rect;
     }
     else if ([JOB_GUBUN isEqualToString:@"수리완료"]){
-        picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:@[@"유휴", @"예비", @"불용대기"]];
+        picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, self.view.frame.size.width, 240) data:@[@"유휴", @"예비", @"불용대기"]];
         picker.delegate = self;
         [picker selectPicker:0]; //선택값 예비로 설정 -> 유휴로 변경
         
@@ -1287,7 +1302,7 @@
              [JOB_GUBUN isEqualToString:@"개조개량완료"]
              ){
         //table 3개만 필요함
-        picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:@[@"유휴", @"예비"]];
+        picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, self.view.frame.size.width, 240) data:@[@"유휴", @"예비"]];
         picker.delegate = self;
         [picker selectPicker:0]; //선택값 예비로 설정 -> 유휴로 변경
         
@@ -1372,6 +1387,29 @@
     else
         [txtFacCode becomeFirstResponder];
 }
+
+
+- (void) setContentSize:(float)tableCount {
+    
+    BOOL use15 = [JOB_GUBUN isEqualToString:@"S/N변경"];
+    
+    columnHeaderView.hidden = use15 || tableCount < 1;
+    columnHeaderView2.hidden = use15 || tableCount < 2;
+    columnHeaderView3.hidden = use15 || tableCount < 3;
+    columnHeaderView4.hidden = use15 || tableCount < 4;
+    columnHeaderView5.hidden = use15 || tableCount < 5;
+    columnHeaderView6.hidden = use15 || tableCount < 6;
+    columnHeaderView7.hidden = use15 || tableCount < 7;
+    columnHeaderView8.hidden = use15 || tableCount < 8;
+    columnHeaderView9.hidden = use15 || tableCount < 9;
+    columnHeaderView10.hidden = use15 || tableCount < 10;
+    columnHeaderView11.hidden = use15 || tableCount < 11;
+    columnHeaderView12.hidden = use15 || tableCount < 12;
+    columnHeaderView13.hidden = use15 || tableCount < 13;
+    columnHeaderView14.hidden = use15 || tableCount < 14;
+    columnHeaderView15.hidden = !use15;
+}
+
 
 - (void) locBecameFirstResponder
 {
@@ -1997,7 +2035,8 @@
     lblColumnHeader23.frame = CGRectMake(183, 0, 136, 34);
     
     _scrollView.frame = CGRectMake(0, 199, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height + 44));
-    _scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*2, _scrollView.frame.size.height);
+    //_scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*2, _scrollView.frame.size.height);
+    [self setContentSize:2];
     scanSAPList = [NSMutableArray array];
     [_tableScan reloadData];
     [self layoutControl];
