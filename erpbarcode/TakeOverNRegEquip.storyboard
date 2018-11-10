@@ -539,7 +539,7 @@
                                         <rect key="frame" x="0.0" y="206" width="320" height="37"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수정할 개체를 스캔하세요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOo-wz-5QR">
-                                                <rect key="frame" x="12" y="8" width="142" height="14.5"/>
+                                                <rect key="frame" x="12" y="8" width="144" height="14.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="fOo-wz-5QR" secondAttribute="height" multiplier="206:21" id="HP9-9F-bTx"/>
                                                 </constraints>
@@ -1188,7 +1188,7 @@
                                         <rect key="frame" x="0.0" y="206" width="320" height="37"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수정할 개체를 스캔하세요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kld-j7-Ej0">
-                                                <rect key="frame" x="12" y="8" width="142" height="14.5"/>
+                                                <rect key="frame" x="12" y="8" width="144" height="14.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="kld-j7-Ej0" secondAttribute="height" multiplier="206:21" id="gSB-ve-MjQ"/>
                                                 </constraints>
@@ -1817,7 +1817,7 @@
                                         <rect key="frame" x="0.0" y="181" width="320" height="37"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수정할 개체를 스캔하세요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncE-Ks-Qw2">
-                                                <rect key="frame" x="12" y="8" width="142" height="14.5"/>
+                                                <rect key="frame" x="12" y="8" width="140.5" height="14.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ncE-Ks-Qw2" secondAttribute="height" multiplier="206:21" id="9pr-7S-VZ7"/>
                                                 </constraints>
@@ -1944,6 +1944,520 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDO-qJ-aBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2040" y="0.0"/>
+        </scene>
+        <!--TakeOverNRegEquipViewController-->
+        <scene sceneID="CWW-7Q-lAE">
+            <objects>
+                <viewController storyboardIdentifier="TakeOverNRegEquipViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ykD-gl-wjF" userLabel="TakeOverNRegEquipViewController" customClass="TakeOverNRegEquipViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NeU-x6-srf" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTc-dP-Ix4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="s85-iT-Pyf">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="243"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8K-vT-Hbh" userLabel="운영조직">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="운용조직" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLi-2o-Xsk">
+                                                        <rect key="frame" x="6" y="2" width="75" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBj-vQ-uGd">
+                                                        <rect key="frame" x="81" y="2" width="234" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="o8K-vT-Hbh" secondAttribute="height" multiplier="64:5" id="UAJ-ZL-wmF"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iM-Q1-p2h" userLabel="위치바코드">
+                                                <rect key="frame" x="0.0" y="26" width="320" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="위치바코드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vU0-Nu-koq">
+                                                        <rect key="frame" x="6" y="7" width="75" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="common_textfield_bg_gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="NVH-7i-Yaa">
+                                                        <rect key="frame" x="81" y="3" width="234" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="ykD-gl-wjF" id="JYp-HF-7hi"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="6iM-Q1-p2h" secondAttribute="height" multiplier="160:17" id="1Wl-pe-vXw"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7c-BN-oSz" userLabel="위치명">
+                                                <rect key="frame" x="0.0" y="61" width="320" height="24"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fn9-C1-79j">
+                                                        <rect key="frame" x="275" y="0.0" width="40" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                        <state key="normal" title=".." backgroundImage="Default.png">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="highlighted">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="locInfoBtnAction:" destination="ykD-gl-wjF" eventType="touchUpInside" id="n8s-66-SW2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="common_icon_currentaddress.png" translatesAutoresizingMaskIntoConstraints="NO" id="paB-7O-NGH">
+                                                        <rect key="frame" x="2" y="0.0" width="24" height="24"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xLV-K5-ZjJ" customClass="scrollTouch">
+                                                        <rect key="frame" x="27" y="1" width="230" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUV-X9-ZEd">
+                                                                <rect key="frame" x="6" y="0.0" width="225" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </scrollView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="f7c-BN-oSz" secondAttribute="height" multiplier="40:3" id="qCn-Mg-0Od"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbR-Gc-Z8J" userLabel="wbs번호">
+                                                <rect key="frame" x="0.0" y="86" width="320" height="24"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WBS번호" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEw-Ln-xrm">
+                                                        <rect key="frame" x="6" y="1" width="75" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hin-0J-wuk">
+                                                        <rect key="frame" x="81" y="1" width="191" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Fb-mk-UF0">
+                                                        <rect key="frame" x="275" y="-3" width="42" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                        <state key="normal" image="button_change.png">
+                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="highlighted" image="button_change_up.png"/>
+                                                        <connections>
+                                                            <action selector="touchChangeWBSBtn:" destination="ykD-gl-wjF" eventType="touchUpInside" id="Aih-QJ-SpR"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="IbR-Gc-Z8J" secondAttribute="height" multiplier="40:3" id="DlD-LM-fSg"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KGe-xI-bEl" userLabel="장치바코드">
+                                                <rect key="frame" x="0.0" y="111" width="320" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="장치바코드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMz-4K-oVs">
+                                                        <rect key="frame" x="6" y="5" width="75" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="300" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="common_textfield_bg_gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="11x-9p-71y">
+                                                        <rect key="frame" x="81" y="1" width="125" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="ykD-gl-wjF" id="9Wh-vt-x3W"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIb-QA-Ow1">
+                                                        <rect key="frame" x="216" y="5" width="94" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="KGe-xI-bEl" secondAttribute="height" multiplier="160:17" id="7ry-4M-1po"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJX-pJ-dhb" userLabel="장치정보">
+                                                <rect key="frame" x="0.0" y="146" width="320" height="24"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxq-fY-sK6">
+                                                        <rect key="frame" x="275" y="0.0" width="40" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                        <state key="normal" title=".." backgroundImage="Default.png">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="highlighted">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="locInfoBtnAction:" destination="ykD-gl-wjF" eventType="touchUpInside" id="UwQ-hr-9Xm"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="common_icon_deviceid.png" translatesAutoresizingMaskIntoConstraints="NO" id="hqN-Yn-DVR">
+                                                        <rect key="frame" x="2" y="0.0" width="24" height="24"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5K-5k-0J6" customClass="scrollTouch">
+                                                        <rect key="frame" x="27" y="1" width="230" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3n-rs-rAe">
+                                                                <rect key="frame" x="6" y="0.0" width="225" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </scrollView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="sJX-pJ-dhb" secondAttribute="height" multiplier="40:3" id="O14-QF-4ux"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw3-fV-m1G" userLabel="설비바코드">
+                                                <rect key="frame" x="0.0" y="171" width="320" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgs-mN-TfZ">
+                                                        <rect key="frame" x="244" y="5" width="25" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="설비바코드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuG-cK-SJh">
+                                                        <rect key="frame" x="6" y="5" width="75" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="200" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="common_textfield_bg_gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="0A9-fS-RRQ">
+                                                        <rect key="frame" x="81" y="1" width="163" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="ykD-gl-wjF" id="tRi-Tl-z5E"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOh-w4-DgV" userLabel="U-U">
+                                                        <rect key="frame" x="269" y="0.0" width="62" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kha-gQ-Oud" userLabel="Button-UU">
+                                                                <rect key="frame" x="0.0" y="3" width="25" height="25"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                <state key="normal" image="common_checkbox.png">
+                                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <state key="selected" image="common_checkbox_checked.png"/>
+                                                                <state key="highlighted">
+                                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="touchUUBtn:" destination="ykD-gl-wjF" eventType="touchUpInside" id="1JK-du-2PL"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="U-U" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHq-p7-vDX">
+                                                                <rect key="frame" x="23" y="5" width="29" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Top-e1-Ixf">
+                                                        <rect key="frame" x="275" y="0.0" width="40" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                        <state key="normal" title="상세">
+                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="highlighted">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="touchFccInfoBtn:" destination="ykD-gl-wjF" eventType="touchUpInside" id="b9Y-zF-Zpv"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="vw3-fV-m1G" secondAttribute="height" multiplier="160:17" id="7ck-aS-ZiO"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSy-MU-J3U">
+                                                <rect key="frame" x="0.0" y="206" width="320" height="37"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y3x-CJ-od3" userLabel="버튼">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="common_toolbar_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="OHu-Z1-WCO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRe-Pq-Yc0">
+                                                                <rect key="frame" x="21" y="3" width="45" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                <state key="normal" image="button_reset.png">
+                                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <state key="highlighted" image="button_reset_up.png"/>
+                                                                <connections>
+                                                                    <action selector="touchInitBtn:" destination="ykD-gl-wjF" eventType="touchUpInside" id="vRZ-pS-ps1"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwV-PN-908">
+                                                                <rect key="frame" x="132" y="3" width="60" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                <state key="normal" image="button_rescan.png">
+                                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <state key="highlighted" image="button_rescan_up.png"/>
+                                                                <connections>
+                                                                    <action selector="touchReScanReqBtn:" destination="ykD-gl-wjF" eventType="touchUpInside" id="8fx-DG-jxO"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWt-JE-ZIv">
+                                                                <rect key="frame" x="63" y="3" width="45" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                <state key="normal" image="button_move.png">
+                                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <state key="highlighted" image="button_move_up.png"/>
+                                                                <connections>
+                                                                    <action selector="touchMoveBtn:" destination="ykD-gl-wjF" eventType="touchUpInside" id="Duw-KP-wkf"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AH-34-wnh">
+                                                                <rect key="frame" x="105" y="3" width="45" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                <state key="normal" image="button_modify.png">
+                                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <state key="highlighted" image="button_modify_up.png"/>
+                                                                <connections>
+                                                                    <action selector="touchModifyBtn:" destination="ykD-gl-wjF" eventType="touchUpInside" id="NmI-PL-Sfz"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3e-cw-sx2">
+                                                                <rect key="frame" x="147" y="3" width="45" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                <state key="normal" image="button_delete.png">
+                                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <state key="highlighted" image="button_delete_up.png"/>
+                                                                <connections>
+                                                                    <action selector="touchDelBtn:" destination="ykD-gl-wjF" eventType="touchUpInside" id="thX-xy-8i9"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKR-gw-XDx">
+                                                                <rect key="frame" x="189" y="3" width="45" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                <state key="normal" image="button_save.png">
+                                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <state key="highlighted" image="button_save_up.png"/>
+                                                                <connections>
+                                                                    <action selector="touchSaveBtn:" destination="ykD-gl-wjF" eventType="touchUpInside" id="kKK-Z5-0iB"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1u-s5-cQR">
+                                                                <rect key="frame" x="231" y="3" width="45" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                <state key="normal" image="button_send.png">
+                                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <state key="highlighted" image="button_send_up.png"/>
+                                                                <connections>
+                                                                    <action selector="touchSendBtn:" destination="ykD-gl-wjF" eventType="touchUpInside" id="WuA-Jd-bjY"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHK-KJ-3r8">
+                                                                <rect key="frame" x="273" y="3" width="45" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                <state key="normal" image="button_insu.png">
+                                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <state key="highlighted" image="button_insu_up.png"/>
+                                                                <connections>
+                                                                    <action selector="touchRegDecisionBtn:" destination="ykD-gl-wjF" eventType="touchUpInside" id="DLV-Vl-5UW"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="y3x-CJ-od3" secondAttribute="height" multiplier="320:37" id="pwo-X8-c6I"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jud-Xl-kvD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="수정할 개체를 스캔하세요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0r-Tv-RnU">
+                                                                <rect key="frame" x="12" y="8" width="206" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRu-GK-c2J">
+                                                                <rect key="frame" x="267" y="3" width="45" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" image="button_cancel.png">
+                                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <state key="disabled">
+                                                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <state key="highlighted" image="button_cancel_up.png"/>
+                                                                <connections>
+                                                                    <action selector="touchCancel:" destination="ykD-gl-wjF" eventType="touchUpInside" id="UH5-1R-tnJ"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="aSy-MU-J3U" secondAttribute="height" multiplier="320:37" id="EnZ-pF-AoL"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="r3W-2Q-kt8">
+                                        <rect key="frame" x="0.0" y="243" width="320" height="261"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="ykD-gl-wjF" id="LP0-hd-gUD"/>
+                                            <outlet property="delegate" destination="ykD-gl-wjF" id="mSs-mM-uF5"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="r3W-2Q-kt8" firstAttribute="leading" secondItem="tTc-dP-Ix4" secondAttribute="leading" id="2Ek-Ac-nmq"/>
+                                    <constraint firstAttribute="bottom" secondItem="r3W-2Q-kt8" secondAttribute="bottom" id="JvH-hT-trC"/>
+                                    <constraint firstItem="s85-iT-Pyf" firstAttribute="leading" secondItem="tTc-dP-Ix4" secondAttribute="leading" id="jx5-kM-H3B"/>
+                                    <constraint firstAttribute="trailing" secondItem="r3W-2Q-kt8" secondAttribute="trailing" id="pbf-KD-FT6"/>
+                                    <constraint firstAttribute="trailing" secondItem="s85-iT-Pyf" secondAttribute="trailing" id="wv4-gH-0Ob"/>
+                                    <constraint firstItem="r3W-2Q-kt8" firstAttribute="top" secondItem="s85-iT-Pyf" secondAttribute="bottom" id="xI7-QQ-Qev"/>
+                                    <constraint firstItem="s85-iT-Pyf" firstAttribute="top" secondItem="tTc-dP-Ix4" secondAttribute="top" id="zhH-H0-are"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tTc-dP-Ix4" firstAttribute="bottom" secondItem="KA3-Tp-7eD" secondAttribute="bottom" id="V0V-zP-2Ca"/>
+                            <constraint firstItem="tTc-dP-Ix4" firstAttribute="trailing" secondItem="KA3-Tp-7eD" secondAttribute="trailing" id="Vsf-r9-Krb"/>
+                            <constraint firstItem="tTc-dP-Ix4" firstAttribute="leading" secondItem="KA3-Tp-7eD" secondAttribute="leading" id="Xug-ZQ-Ihd"/>
+                            <constraint firstItem="tTc-dP-Ix4" firstAttribute="top" secondItem="KA3-Tp-7eD" secondAttribute="top" id="qXS-Ss-Qp9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KA3-Tp-7eD"/>
+                        <connections>
+                            <action selector="touchBackground:" destination="ykD-gl-wjF" eventType="touchDown" id="x2O-hZ-F9O"/>
+                        </connections>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="_tableView" destination="r3W-2Q-kt8" id="XCA-FH-19T"/>
+                        <outlet property="btnChangeWBS" destination="1Fb-mk-UF0" id="etQ-6b-Vp3"/>
+                        <outlet property="btnClear" destination="xRe-Pq-Yc0" id="vYl-3q-flx"/>
+                        <outlet property="btnDel" destination="R3e-cw-sx2" id="Vr5-6d-dvR"/>
+                        <outlet property="btnDetailFccInfo" destination="Top-e1-Ixf" id="4wJ-3j-klb"/>
+                        <outlet property="btnModify" destination="9AH-34-wnh" id="2yS-x0-a5W"/>
+                        <outlet property="btnMove" destination="TWt-JE-ZIv" id="TJm-dA-bTD"/>
+                        <outlet property="btnReScanReq" destination="kwV-PN-908" id="NYP-iv-Xoa"/>
+                        <outlet property="btnRegDecision" destination="PHK-KJ-3r8" id="6dy-dL-3cp"/>
+                        <outlet property="btnSave" destination="rKR-gw-XDx" id="i3Z-jH-qpK"/>
+                        <outlet property="btnSend" destination="J1u-s5-cQR" id="VCI-BU-iRL"/>
+                        <outlet property="btnUU" destination="Kha-gQ-Oud" id="Xi1-jx-Xix"/>
+                        <outlet property="buttonView" destination="y3x-CJ-od3" id="EoQ-t5-vlC"/>
+                        <outlet property="deviceIDView" destination="KGe-xI-bEl" id="Y1c-Aw-rwt"/>
+                        <outlet property="deviceINfoView" destination="sJX-pJ-dhb" id="8TN-M8-SfK"/>
+                        <outlet property="fccBarcodeView" destination="vw3-fV-m1G" id="tG0-Hv-bEk"/>
+                        <outlet property="lblDeviceID" destination="UIb-QA-Ow1" id="nx3-bS-Kki"/>
+                        <outlet property="lblDeviceIdTitle" destination="TMz-4K-oVs" id="0uw-e4-4OH"/>
+                        <outlet property="lblDeviceInfo" destination="q3n-rs-rAe" id="71y-lM-TBK"/>
+                        <outlet property="lblLocName" destination="MUV-X9-ZEd" id="Q7E-qu-KlL"/>
+                        <outlet property="lblMessage" destination="P0r-Tv-RnU" id="q5X-Wx-VBY"/>
+                        <outlet property="lblOperationInfo" destination="PBj-vQ-uGd" id="3nd-Oj-RU4"/>
+                        <outlet property="lblPartType" destination="zgs-mN-TfZ" id="rJl-lQ-ksu"/>
+                        <outlet property="lblWBSNo" destination="hin-0J-wuk" id="vjw-ki-RuB"/>
+                        <outlet property="locBarcodeView" destination="6iM-Q1-p2h" id="bZI-CA-DP1"/>
+                        <outlet property="locNameView" destination="f7c-BN-oSz" id="IIT-uA-qg6"/>
+                        <outlet property="messageView" destination="jud-Xl-kvD" id="TMI-47-yq8"/>
+                        <outlet property="orgView" destination="o8K-vT-Hbh" id="7JR-MR-rLj"/>
+                        <outlet property="scrollDeviceInfo" destination="z5K-5k-0J6" id="wku-l9-d30"/>
+                        <outlet property="scrollLocName" destination="xLV-K5-ZjJ" id="G3W-PN-dXV"/>
+                        <outlet property="txtDeviceID" destination="11x-9p-71y" id="47D-jC-rB7"/>
+                        <outlet property="txtFacCode" destination="0A9-fS-RRQ" id="3dC-y6-Pc6"/>
+                        <outlet property="txtLocCode" destination="NVH-7i-Yaa" id="kNL-F2-S2L"/>
+                        <outlet property="uuView" destination="sOh-w4-DgV" id="9gH-Rf-bzA"/>
+                        <outlet property="wbsView" destination="IbR-Gc-Z8J" id="jmN-B0-ILR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iMG-bx-LCU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1146" y="0.0"/>
         </scene>
     </scenes>
     <resources>
