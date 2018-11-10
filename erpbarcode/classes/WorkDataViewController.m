@@ -415,21 +415,21 @@
         self.navigationController.viewControllers = @[mainVc,vc];
     }
     else if ( [WORK_CD isEqualToString:@"03"] ) { // 인계
-        UIViewController* vc = [self instantiateViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController1"];
+        UIViewController* vc = [self instantiateViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController"];
         if (vc != nil) {
             ((TakeOverNRegEquipViewController*)vc).dbWorkDic = selItemDic;
             [self pushViewController:vc animated:YES];
         }
     }
     else if ( [WORK_CD isEqualToString:@"04"] ) { // 인수
-        UIViewController* vc = [self instantiateViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController2"];
+        UIViewController* vc = [self instantiateViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController"];
         if (vc != nil) {
             ((TakeOverNRegEquipViewController*)vc).dbWorkDic = selItemDic;
             [self pushViewController:vc animated:YES];
         }
     }
     else if ( [WORK_CD isEqualToString:@"05"] ) { // 시설등록
-        UIViewController* vc = [self instantiateViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController3"];
+        UIViewController* vc = [self instantiateViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController"];
         if (vc != nil) {
             ((TakeOverNRegEquipViewController*)vc).dbWorkDic = selItemDic;
             [self pushViewController:vc animated:YES];
