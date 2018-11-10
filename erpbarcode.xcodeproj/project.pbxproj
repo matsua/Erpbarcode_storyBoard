@@ -323,6 +323,10 @@
 		7A9D3AD6218A169A00C36FC8 /* OutIntoViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D3AC6218A169A00C36FC8 /* OutIntoViewController2.xib */; };
 		7A9D3AD7218A169A00C36FC8 /* OutIntoViewController13.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9D3AC7218A169A00C36FC8 /* OutIntoViewController13.xib */; };
 		7AB4A8D32190C7E60004C28B /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB4A8D22190C7E60004C28B /* Info.storyboard */; };
+		7ADA1D5721979F7A006699F6 /* main_button_menu_b9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ADA1D5321979F7A006699F6 /* main_button_menu_b9.png */; };
+		7ADA1D5821979F7A006699F6 /* main_button_menu_b9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ADA1D5421979F7A006699F6 /* main_button_menu_b9@2x.png */; };
+		7ADA1D5921979F7A006699F6 /* main_button_menu_b8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ADA1D5521979F7A006699F6 /* main_button_menu_b8@2x.png */; };
+		7ADA1D5A21979F7A006699F6 /* main_button_menu_b8.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ADA1D5621979F7A006699F6 /* main_button_menu_b8.png */; };
 		7AE4C873218F30CE002F622C /* Barcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE4C86B218F30CC002F622C /* Barcode.storyboard */; };
 		7AE4C877218F30CE002F622C /* TakeOverNRegEquip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE4C86F218F30CD002F622C /* TakeOverNRegEquip.storyboard */; };
 		7AE4C878218F30CE002F622C /* BuyOutInto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE4C870218F30CD002F622C /* BuyOutInto.storyboard */; };
@@ -1180,6 +1184,10 @@
 		7A9D3AC6218A169A00C36FC8 /* OutIntoViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutIntoViewController2.xib; sourceTree = "<group>"; };
 		7A9D3AC7218A169A00C36FC8 /* OutIntoViewController13.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutIntoViewController13.xib; sourceTree = "<group>"; };
 		7AB4A8D22190C7E60004C28B /* Info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Info.storyboard; path = erpbarcode/Info.storyboard; sourceTree = "<group>"; };
+		7ADA1D5321979F7A006699F6 /* main_button_menu_b9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_button_menu_b9.png; sourceTree = "<group>"; };
+		7ADA1D5421979F7A006699F6 /* main_button_menu_b9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_button_menu_b9@2x.png"; sourceTree = "<group>"; };
+		7ADA1D5521979F7A006699F6 /* main_button_menu_b8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_button_menu_b8@2x.png"; sourceTree = "<group>"; };
+		7ADA1D5621979F7A006699F6 /* main_button_menu_b8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_button_menu_b8.png; sourceTree = "<group>"; };
 		7AE4C86B218F30CC002F622C /* Barcode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Barcode.storyboard; path = erpbarcode/Barcode.storyboard; sourceTree = "<group>"; };
 		7AE4C86F218F30CD002F622C /* TakeOverNRegEquip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TakeOverNRegEquip.storyboard; path = erpbarcode/TakeOverNRegEquip.storyboard; sourceTree = "<group>"; };
 		7AE4C870218F30CD002F622C /* BuyOutInto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BuyOutInto.storyboard; path = erpbarcode/BuyOutInto.storyboard; sourceTree = "<group>"; };
@@ -1946,6 +1954,10 @@
 		5D3F699017B33E4500EBD5E8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7ADA1D5621979F7A006699F6 /* main_button_menu_b8.png */,
+				7ADA1D5521979F7A006699F6 /* main_button_menu_b8@2x.png */,
+				7ADA1D5321979F7A006699F6 /* main_button_menu_b9.png */,
+				7ADA1D5421979F7A006699F6 /* main_button_menu_b9@2x.png */,
 				08C27AB61FA9BE5B003B56A9 /* navi_bg_ps.png */,
 				08C27AB71FA9BE5B003B56A9 /* navi_bg_ps@2.png */,
 				08095D961DF7EC9D006C9CE2 /* btn_send.png */,
@@ -3027,6 +3039,7 @@
 				B6EE64B81845DE2200209381 /* button_change@2x.png in Resources */,
 				0825D5801E1A3A520066A9B7 /* PersonalInfoAgreeController.xib in Resources */,
 				5DA0061317B4AF0500A913CA /* OutIntoViewController.xib in Resources */,
+				7ADA1D5A21979F7A006699F6 /* main_button_menu_b8.png in Resources */,
 				08949D671D5C743900854D23 /* pwreset_btn_tap.png in Resources */,
 				06D103CD216F07AB00520F83 /* Main.storyboard in Resources */,
 				B6A876A5183EF4900053EBE8 /* main_button_menu_d5.png in Resources */,
@@ -3095,6 +3108,7 @@
 				B6A65C87184580FC00422D27 /* button_inquiry_up.png in Resources */,
 				5D88563317C5AEF200521934 /* c.wav in Resources */,
 				B6A87691183EF4900053EBE8 /* main_button_menu_c.png in Resources */,
+				7ADA1D5921979F7A006699F6 /* main_button_menu_b8@2x.png in Resources */,
 				5D65CCC8184728BB005B8A9B /* plus@2x.png in Resources */,
 				B6EE64B51845DE2200209381 /* button_change_up.png in Resources */,
 				B6EE64DD1845DE4800209381 /* button_rescan_up.png in Resources */,
@@ -3259,6 +3273,7 @@
 				B6D3A50C18ACC61B00530583 /* Images-2.xcassets in Resources */,
 				5D88565217C5AEF200521934 /* sendquestion.wav in Resources */,
 				B6A876E7183EF9560053EBE8 /* main_button_1@2x.png in Resources */,
+				7ADA1D5821979F7A006699F6 /* main_button_menu_b9@2x.png in Resources */,
 				B6A87696183EF4900053EBE8 /* main_button_menu_c2@2x.png in Resources */,
 				B6A876F3183EF9560053EBE8 /* main_button_4@2x.png in Resources */,
 				B6A876C0183EF4900053EBE8 /* main_button_menu_h_up@2x.png in Resources */,
@@ -3285,6 +3300,7 @@
 				B6A8768E183EF4900053EBE8 /* main_button_menu_b7@2x.png in Resources */,
 				B6825AB8183C567A00BB27E4 /* FccInfoViewController.xib in Resources */,
 				B6A876B0183EF4900053EBE8 /* main_button_menu_f_up@2x.png in Resources */,
+				7ADA1D5721979F7A006699F6 /* main_button_menu_b9.png in Resources */,
 				5D65CCC41845E977005B8A9B /* gbic_0240.txt in Resources */,
 				08949D651D5C743900854D23 /* pwreset_btn_off.png in Resources */,
 				5D88565717C5AEF200521934 /* u.wav in Resources */,

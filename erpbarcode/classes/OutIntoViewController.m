@@ -74,6 +74,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnHierachy;
 @property (strong, nonatomic) IBOutlet UIButton *btnMove;
 @property (strong, nonatomic) IBOutlet UIButton *btnInit;
+@property (strong, nonatomic) IBOutlet UIView *shapeOrderView;
+@property (strong, nonatomic) IBOutlet UIView *moveCurdView;
 
 @property(nonatomic,strong) NSString* CHKZKOSTL_INSTCONF;
 @property(nonatomic,strong) NSString* strUserOrgCode;
@@ -317,6 +319,8 @@
 @synthesize table2Header;
 @synthesize locType;
 @synthesize isGwlenListSend;
+@synthesize shapeOrderView;
+@synthesize moveCurdView;
 
 const static char* moveObjKey = "moveObjKey";
 const static char* moveTarKey = "moveTarKey";
@@ -1847,6 +1851,7 @@ const static char* moveTarKey = "moveTarKey";
     wbsView.hidden = YES;
     failureFccView.hidden = YES;
     failureDevView.hidden = YES;
+    shapeOrderView.hidden = YES;
     
     _scrollView.hidden = YES;
     
@@ -1863,7 +1868,7 @@ const static char* moveTarKey = "moveTarKey";
         locNameView.hidden = YES;
         fccStatusView.hidden = YES;
         fccBarcodeView.frame = CGRectMake(fccBarcodeView.frame.origin.x, 26, fccBarcodeView.frame.size.width,fccBarcodeView.frame.size.height); //설비바코드
-        curdView.frame = CGRectMake(0, 61, 320, 40); //3번째 라인
+//        curdView.frame = CGRectMake(0, 61, 320, 40); //3번째 라인
         
         _tableView.frame = CGRectMake(0, 102, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height) - 80);
     }
@@ -1886,7 +1891,7 @@ const static char* moveTarKey = "moveTarKey";
         deviceIDView.frame = CGRectMake(deviceIDView.frame.origin.x, 121, deviceIDView.frame.size.width, deviceIDView.frame.size.height);
         deviceInfoView.frame = CGRectMake(deviceInfoView.frame.origin.x, 156, deviceInfoView.frame.size.width,deviceInfoView.frame.size.height);
         upperFacView.frame = CGRectMake(upperFacView.frame.origin.x, 181, upperFacView.frame.size.width,upperFacView.frame.size.height);
-        curdView.frame = CGRectMake(0, 216, 320,40);
+//        curdView.frame = CGRectMake(0, 216, 320,40);
         _tableView.frame = CGRectMake(0, 257, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height)  - 70);
     }
     else if ([JOB_GUBUN isEqualToString:@"송부(팀간)"]){
@@ -1896,7 +1901,7 @@ const static char* moveTarKey = "moveTarKey";
         fccStatusView.hidden = YES;
         receivedOrgView.frame = CGRectMake(receivedOrgView.frame.origin.x, 26, receivedOrgView.frame.size.width,receivedOrgView.frame.size.height); //접수조직
         fccBarcodeView.frame = CGRectMake(fccBarcodeView.frame.origin.x, 52, fccBarcodeView.frame.size.width,fccBarcodeView.frame.size.height); //설비바코드
-        curdView.frame = CGRectMake(0, 87, 320,40);
+//        curdView.frame = CGRectMake(0, 87, 320,40);
         
         _tableView.frame = CGRectMake(0, 128, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height)  - 70);
     }
@@ -1906,7 +1911,7 @@ const static char* moveTarKey = "moveTarKey";
         //locNameView.hidden = YES;
         fccStatusView.hidden = YES;
         fccBarcodeView.frame = CGRectMake(fccBarcodeView.frame.origin.x, 87, fccBarcodeView.frame.size.width,fccBarcodeView.frame.size.height); //설비바코드
-        curdView.frame = CGRectMake(0, 120, 320,40);
+//        curdView.frame = CGRectMake(0, 120, 320,40);
         btnScan.selected = YES;
         btnScan.userInteractionEnabled = NO;
         [btnScan setImage:[UIImage imageNamed:@"common_checkbox_checked_disable"] forState:UIControlStateSelected];
@@ -1931,7 +1936,7 @@ const static char* moveTarKey = "moveTarKey";
         sendOrgView.frame = CGRectMake(sendOrgView.frame.origin.x, 115, sendOrgView.frame.size.width,sendOrgView.frame.size.height);
         fccBarcodeView.frame = CGRectMake(fccBarcodeView.frame.origin.x, 114, fccBarcodeView.frame.size.width,fccBarcodeView.frame.size.height);
         fccStatusView.frame = CGRectMake(fccStatusView.frame.origin.x, 142, fccStatusView.frame.size.width,fccStatusView.frame.size.height);
-        curdView.frame = CGRectMake(0, 178, 320, 40);
+//        curdView.frame = CGRectMake(0, 178, 320, 40);
         btnScan.selected = YES;
         btnScan.userInteractionEnabled = NO;
         [btnScan setImage:[UIImage imageNamed:@"common_checkbox_checked_disable"] forState:UIControlStateSelected];
@@ -1947,6 +1952,7 @@ const static char* moveTarKey = "moveTarKey";
         locBarcodeView.hidden = YES;
         locNameView.hidden = YES;
         fccStatusView.hidden = YES;
+        moveCurdView.hidden = YES;
         curdView.hidden = YES;
         btnDetailFccInfo.hidden = NO;
         fccBarcodeView.frame = CGRectMake(fccBarcodeView.frame.origin.x, 27, fccBarcodeView.frame.size.width,fccBarcodeView.frame.size.height);
@@ -1958,7 +1964,7 @@ const static char* moveTarKey = "moveTarKey";
         locNameView.hidden = YES;
         fccBarcodeView.frame = CGRectMake(fccBarcodeView.frame.origin.x, 27, fccBarcodeView.frame.size.width,fccBarcodeView.frame.size.height);
         fccStatusView.frame = CGRectMake(fccStatusView.frame.origin.x, 62, fccStatusView.frame.size.width,fccStatusView.frame.size.height);
-        curdView.frame = CGRectMake(0, 98, 346, 40);
+//        curdView.frame = CGRectMake(0, 98, 346, 40);
         _tableView.frame = CGRectMake(0, 139, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height) - 70);
     }
     else if ([JOB_GUBUN isEqualToString:@"철거"]){
@@ -1975,7 +1981,7 @@ const static char* moveTarKey = "moveTarKey";
             locNameView.frame = CGRectMake(locNameView.frame.origin.x, 96, locNameView.frame.size.width,locNameView.frame.size.height);
             wbsView.frame = CGRectMake(wbsView.frame.origin.x, 131, wbsView.frame.size.width,wbsView.frame.size.height);
             fccBarcodeView.frame = CGRectMake(fccBarcodeView.frame.origin.x, 166, fccBarcodeView.frame.size.width,fccBarcodeView.frame.size.height);
-            curdView.frame = CGRectMake(0, 201, 320, 40);
+//            curdView.frame = CGRectMake(0, 201, 320, 40);
             _tableView.frame = CGRectMake(0, 242, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height) - 70);
             isRequireLocCode = YES;
         }else{
@@ -1990,7 +1996,8 @@ const static char* moveTarKey = "moveTarKey";
             curdView.hidden = NO;
             
             receivedOrgView.frame = CGRectMake(receivedOrgView.frame.origin.x, 26, receivedOrgView.frame.size.width,receivedOrgView.frame.size.height);
-            fccBarcodeView.frame = CGRectMake(fccBarcodeView.frame.origin.x, 61, fccBarcodeView.frame.size.width,fccBarcodeView.frame.size.height);            curdView.frame = CGRectMake(0, 96, 320, 40);
+            fccBarcodeView.frame = CGRectMake(fccBarcodeView.frame.origin.x, 61, fccBarcodeView.frame.size.width,fccBarcodeView.frame.size.height);
+//            curdView.frame = CGRectMake(0, 96, 320, 40);
             
             _tableView.frame = CGRectMake(0, 131, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height) - 70);
             isRequireLocCode = NO;
@@ -2033,7 +2040,7 @@ const static char* moveTarKey = "moveTarKey";
         [self.view addSubview:viewPictureButton];
         defaultImage = [btnPicture backgroundImageForState:UIControlStateNormal];
         
-        curdView.frame = CGRectMake(0, 159, 320, 40);
+//        curdView.frame = CGRectMake(0, 159, 320, 40);
         _tableView.frame = CGRectMake(0, 199, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height)  - 70);
     }
     else if ([JOB_GUBUN isEqualToString:@"납품취소"]){
@@ -2051,7 +2058,7 @@ const static char* moveTarKey = "moveTarKey";
         btnInit.frame = CGRectMake(133, 5, 45,30);
         fccBarcodeView.frame = CGRectMake(2, 28, 318,30); //설비바코드
         uuView.hidden = YES;
-        curdView.frame = CGRectMake(0, 60, 320, 40); //3번째 라인
+//        curdView.frame = CGRectMake(0, 60, 320, 40); //3번째 라인
         
         // 삭제버튼 없음으로 인해 추가
         btnDelete.hidden = YES;
@@ -2066,22 +2073,24 @@ const static char* moveTarKey = "moveTarKey";
         btnInit.frame = CGRectMake(133, 5, 45,30);
         lblLoc.text = @"수신위치";
         uuView.hidden = YES;
+        shapeOrderView.hidden = NO;
         shapeView.hidden = YES;
         deliveryOrderView.hidden = NO;
-        deliveryOrderView.frame = CGRectMake(2, 117, 318,24);
+//        deliveryOrderView.frame = CGRectMake(2, 117, 318,24);
         
-        curdView.frame = CGRectMake(2, 145, 320, 40);
+//        curdView.frame = CGRectMake(2, 145, 320, 40);
         _tableView.frame = CGRectMake(0, 185, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height)  - 70);
     }
     else if([JOB_GUBUN isEqualToString:@"납품입고"])
     {
         fccStatusView.hidden = YES;
+        shapeOrderView.hidden = NO;
         shapeView.hidden = NO;
         uuView.hidden = NO;
         btnScan.hidden = YES;
         lblScan.hidden = YES;
         btnHierachy.selected = NO;
-        curdView.frame = CGRectMake(2, 145, 320, 40);
+//        curdView.frame = CGRectMake(2, 145, 320, 40);
         _tableView.frame = CGRectMake(0, curdView.frame.origin.y + curdView.frame.size.height, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height)  - 70);
     }
     else if ([JOB_GUBUN isEqualToString:@"고장정보"]){
@@ -2110,6 +2119,7 @@ const static char* moveTarKey = "moveTarKey";
         locBarcodeView.hidden = YES;
         locNameView.hidden = YES;
         fccStatusView.hidden = YES;
+        moveCurdView.hidden = YES;
         curdView.hidden = YES;
         deviceIDView.hidden = NO;
         txtDeviceID.enabled = YES;
@@ -2145,7 +2155,7 @@ const static char* moveTarKey = "moveTarKey";
         txtUFacCode.backgroundColor = (txtUFacCode.enabled)? [UIColor whiteColor]:[UIColor lightGrayColor];
         
         upperFacView.frame = CGRectMake(upperFacView.frame.origin.x, fccBarcodeView.frame.origin.y + fccBarcodeView.frame.size.height, upperFacView.frame.size.width,upperFacView.frame.size.height);
-        curdView.frame = CGRectMake(0, 159, 320,40);
+//        curdView.frame = CGRectMake(0, 159, 320,40);
         _tableView.frame = CGRectMake(0, 199, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height)  - 70);
         
         btnScan.selected = YES;
@@ -2157,7 +2167,7 @@ const static char* moveTarKey = "moveTarKey";
         locNameView.hidden = YES;
         fccStatusView.hidden = YES;
         fccBarcodeView.frame = CGRectMake(fccBarcodeView.frame.origin.x, 26, fccBarcodeView.frame.size.width,fccBarcodeView.frame.size.height); //설비바코드
-        curdView.frame = CGRectMake(0, 61, 320, 40); //3번째 라인
+//        curdView.frame = CGRectMake(0, 61, 320, 40); //3번째 라인
         
         _tableView.frame = CGRectMake(0, 102, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height) - 80);
         
