@@ -399,13 +399,13 @@
         case 6:
             if (nTag == 0){ //현장점검(창고/실)
                 [Util udSetObject:@"현장점검(창고/실)" forKey:USER_WORK_NAME];
-                [self pushViewController:@"SpotCheck" viewName:@"SpotCheckViewController1" animated:YES];
+                [self pushViewController:@"SpotCheck" viewName:@"SpotCheckViewController" animated:YES];
                 //SpotCheckViewController* vc = [[SpotCheckViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 1){ //현장점검(베이)
                 [Util udSetObject:@"현장점검(베이)" forKey:USER_WORK_NAME];
-                [self pushViewController:@"SpotCheck" viewName:@"SpotCheckViewController2" animated:YES];
+                [self pushViewController:@"SpotCheck" viewName:@"SpotCheckViewController" animated:YES];
                 //SpotCheckViewController* vc = [[SpotCheckViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
             }

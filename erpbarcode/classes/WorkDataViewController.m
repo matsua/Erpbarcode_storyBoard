@@ -409,10 +409,15 @@
              [WORK_CD isEqualToString:@"60"] || // 현장점검(창고/실)
              [WORK_CD isEqualToString:@"61"]  // 현장점검(베이)
              )
-    {
-        SpotCheckViewController* vc = [[SpotCheckViewController alloc] init];
-        vc.dbWorkDic = selItemDic;
-        self.navigationController.viewControllers = @[mainVc,vc];
+    {        
+        UIViewController* vc = [self instantiateViewController:@"SpotCheck" viewName:@"SpotCheckViewController"];
+        if (vc != nil) {
+            ((SpotCheckViewController*)vc).dbWorkDic = selItemDic;
+            self.navigationController.viewControllers = @[mainVc,vc];
+        }
+        //SpotCheckViewController* vc = [[SpotCheckViewController alloc] init];
+        //vc.dbWorkDic = selItemDic;
+        //self.navigationController.viewControllers = @[mainVc,vc];
     }
     else if ( [WORK_CD isEqualToString:@"03"] ) { // 인계
         UIViewController* vc = [self instantiateViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController"];
