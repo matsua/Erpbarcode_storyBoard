@@ -209,7 +209,7 @@
             }
             else if (nTag == 3){
                 [Util udSetObject:@"인계" forKey:USER_WORK_NAME];
-                [self pushViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController1" animated:YES];
+                [self pushViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController" animated:YES];
                 //TakeOverNRegEquipViewController* vc = [[TakeOverNRegEquipViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
             }
@@ -221,13 +221,13 @@
                 }
                 
                 [Util udSetObject:@"인수" forKey:USER_WORK_NAME];
-                [self pushViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController2" animated:YES];
+                [self pushViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController" animated:YES];
                 //TakeOverNRegEquipViewController* vc = [[TakeOverNRegEquipViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 5){
                 [Util udSetObject:@"시설등록" forKey:USER_WORK_NAME];
-                [self pushViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController3" animated:YES];
+                [self pushViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController" animated:YES];
                 //TakeOverNRegEquipViewController* vc = [[TakeOverNRegEquipViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
             }
