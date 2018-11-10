@@ -414,14 +414,35 @@
         vc.dbWorkDic = selItemDic;
         self.navigationController.viewControllers = @[mainVc,vc];
     }
-    else if (
-             [WORK_CD isEqualToString:@"03"] || // 인계
-             [WORK_CD isEqualToString:@"04"] || // 인수
-             [WORK_CD isEqualToString:@"05"]){  // 시설등록
-        TakeOverNRegEquipViewController* vc = [[TakeOverNRegEquipViewController alloc]init];
-        vc.dbWorkDic = selItemDic;
-        self.navigationController.viewControllers = @[mainVc, vc];
+    else if ( [WORK_CD isEqualToString:@"03"] ) { // 인계
+        UIViewController* vc = [self instantiateViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController1"];
+        if (vc != nil) {
+            ((TakeOverNRegEquipViewController*)vc).dbWorkDic = selItemDic;
+            [self pushViewController:vc animated:YES];
+        }
     }
+    else if ( [WORK_CD isEqualToString:@"04"] ) { // 인수
+        UIViewController* vc = [self instantiateViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController2"];
+        if (vc != nil) {
+            ((TakeOverNRegEquipViewController*)vc).dbWorkDic = selItemDic;
+            [self pushViewController:vc animated:YES];
+        }
+    }
+    else if ( [WORK_CD isEqualToString:@"05"] ) { // 시설등록
+        UIViewController* vc = [self instantiateViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController3"];
+        if (vc != nil) {
+            ((TakeOverNRegEquipViewController*)vc).dbWorkDic = selItemDic;
+            [self pushViewController:vc animated:YES];
+        }
+    }
+//    else if (
+//             [WORK_CD isEqualToString:@"03"] || // 인계
+//             [WORK_CD isEqualToString:@"04"] || // 인수
+//             [WORK_CD isEqualToString:@"05"]){  // 시설등록
+//        TakeOverNRegEquipViewController* vc = [[TakeOverNRegEquipViewController alloc]init];
+//        vc.dbWorkDic = selItemDic;
+//        self.navigationController.viewControllers = @[mainVc, vc];
+//    }
 }
 
 // 삭제

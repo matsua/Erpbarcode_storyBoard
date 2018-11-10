@@ -209,8 +209,9 @@
             }
             else if (nTag == 3){
                 [Util udSetObject:@"인계" forKey:USER_WORK_NAME];
-                TakeOverNRegEquipViewController* vc = [[TakeOverNRegEquipViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController1" animated:YES];
+                //TakeOverNRegEquipViewController* vc = [[TakeOverNRegEquipViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 4){
                 if (isOffLine) {
@@ -220,13 +221,15 @@
                 }
                 
                 [Util udSetObject:@"인수" forKey:USER_WORK_NAME];
-                TakeOverNRegEquipViewController* vc = [[TakeOverNRegEquipViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController2" animated:YES];
+                //TakeOverNRegEquipViewController* vc = [[TakeOverNRegEquipViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 5){
                 [Util udSetObject:@"시설등록" forKey:USER_WORK_NAME];
-                TakeOverNRegEquipViewController* vc = [[TakeOverNRegEquipViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController3" animated:YES];
+                //TakeOverNRegEquipViewController* vc = [[TakeOverNRegEquipViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             break;
         case 1: //유동관리
@@ -293,6 +296,7 @@
                     return;
                 }
                 
+                // TODO :
                 [Util udSetObject:@"바코드대체요청" forKey:USER_WORK_NAME];
                 IMRequestViewController* vc = [[IMRequestViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -303,7 +307,7 @@
                     
                     return;
                 }
-                
+                // TODO :
                 [Util udSetObject:@"부외실물등록요청" forKey:USER_WORK_NAME];
                 EtcEquipmentViewController* vc = [[EtcEquipmentViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -314,6 +318,7 @@
                     
                     return;
                 }
+                // TODO :
                 [Util udSetObject:@"인스토어마킹완료" forKey:USER_WORK_NAME];
                 CompleteScanViewController* vc = [[CompleteScanViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -325,8 +330,9 @@
                     return;
                 }
                 [Util udSetObject:@"인스토어마킹관리" forKey:USER_WORK_NAME];
-                BarcodeViewController* vc = [[BarcodeViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Barcode" viewName:@"BarcodeViewController1" animated:YES];
+                //BarcodeViewController* vc = [[BarcodeViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             break;
         case 3: //수리/개조개량
@@ -378,7 +384,7 @@
             if (nTag == 0){ //설비상태변경
                 [Util udSetObject:@"설비상태변경" forKey:USER_WORK_NAME];
                 [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
-                OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+                //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 1){ //S/N변경
@@ -393,13 +399,15 @@
         case 6:
             if (nTag == 0){ //현장점검(창고/실)
                 [Util udSetObject:@"현장점검(창고/실)" forKey:USER_WORK_NAME];
-                SpotCheckViewController* vc = [[SpotCheckViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"SpotCheck" viewName:@"SpotCheckViewController1" animated:YES];
+                //SpotCheckViewController* vc = [[SpotCheckViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 1){ //현장점검(베이)
                 [Util udSetObject:@"현장점검(베이)" forKey:USER_WORK_NAME];
-                SpotCheckViewController* vc = [[SpotCheckViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"SpotCheck" viewName:@"SpotCheckViewController2" animated:YES];
+                //SpotCheckViewController* vc = [[SpotCheckViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 2){ //상품단말실사
                 if (isOffLine) {
@@ -422,8 +430,9 @@
                     return;
                 }
                 [Util udSetObject:@"임대단말실사" forKey:USER_WORK_NAME];
-                BuyOutIntoViewController* vc = [[BuyOutIntoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"BuyOutInto" viewName:@"BuyOutIntoViewController" animated:YES];
+                //BuyOutIntoViewController* vc = [[BuyOutIntoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             
             break;
@@ -431,8 +440,9 @@
         case 7://정보조회 도우미
             if (nTag == 0){ //물품정보
                 [Util udSetObject:@"물품정보" forKey:USER_WORK_NAME];
-                GoodsInfoViewController* vc = [[GoodsInfoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Info" viewName:@"GoodsInfoViewController" animated:YES];
+                //GoodsInfoViewController* vc = [[GoodsInfoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 1){ //설비정보
                 if (isOffLine) {
@@ -454,8 +464,9 @@
                     return;
                 }
                 [Util udSetObject:@"장치바코드정보" forKey:USER_WORK_NAME];
-                DeviceInfoViewController* vc = [[DeviceInfoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Info" viewName:@"DeviceInfoViewController" animated:YES];
+                //DeviceInfoViewController* vc = [[DeviceInfoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 3){ //위치정보
                 if (isOffLine) {
@@ -465,8 +476,9 @@
                     return;
                 }
                 [Util udSetObject:@"위치정보" forKey:USER_WORK_NAME];
-                LocInfoViewController* vc = [[LocInfoViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Info" viewName:@"DeviceInfoViewController" animated:YES];
+                //LocInfoViewController* vc = [[LocInfoViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 4){ //고장정보
                 if (isOffLine) {
@@ -490,8 +502,9 @@
                 }
                 
                 [Util udSetObject:@"위치바코드" forKey:USER_WORK_NAME];
-                BarcodeViewController* vc = [[BarcodeViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Barcode" viewName:@"BarcodeViewController2" animated:YES];
+                //BarcodeViewController* vc = [[BarcodeViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             else if (nTag == 1){ //소스마킹
                 if (isOffLine) {
@@ -501,8 +514,9 @@
                 }
                 
                 [Util udSetObject:@"장치바코드" forKey:USER_WORK_NAME];
-                BarcodeViewController* vc = [[BarcodeViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Barcode" viewName:@"BarcodeViewController3" animated:YES];
+                //BarcodeViewController* vc = [[BarcodeViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }else if (nTag == 2){ //장치바코드
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"위치바코드"];
@@ -511,8 +525,9 @@
                 }
                 
                 [Util udSetObject:@"소스마킹" forKey:USER_WORK_NAME];
-                BarcodeViewController* vc = [[BarcodeViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Barcode" viewName:@"BarcodeViewController4" animated:YES];
+                //BarcodeViewController* vc = [[BarcodeViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             break;
             
@@ -523,7 +538,7 @@
                     [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
                     return;
                 }
-                
+                // TODO :
                 [Util udSetObject:@"신규등록[OA]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -533,7 +548,7 @@
                     [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
                     return;
                 }
-                
+                // TODO :
                 [Util udSetObject:@"관리자변경[OA]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -544,6 +559,7 @@
                     
                     return;
                 }
+                // TODO :
                 [Util udSetObject:@"재물조사[OA]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -554,6 +570,7 @@
                     
                     return;
                 }
+                // TODO :
                 [Util udSetObject:@"불용요청[OA]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -564,6 +581,7 @@
                     
                     return;
                 }
+                // TODO :
                 [Util udSetObject:@"연식조회[OA]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -574,6 +592,7 @@
                     
                     return;
                 }
+                // TODO :
                 [Util udSetObject:@"납품확인[OA]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -584,6 +603,7 @@
                     
                     return;
                 }
+                // TODO :
                 [Util udSetObject:@"대여등록[OA]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -594,6 +614,7 @@
                     
                     return;
                 }
+                // TODO :
                 [Util udSetObject:@"대여반납[OA]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -607,7 +628,7 @@
                     [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
                     return;
                 }
-                
+                // TODO :
                 [Util udSetObject:@"신규등록[OE]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -617,7 +638,7 @@
                     [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
                     return;
                 }
-                
+                // TODO :
                 [Util udSetObject:@"관리자변경[OE]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -628,6 +649,7 @@
                     
                     return;
                 }
+                // TODO :
                 [Util udSetObject:@"재물조사[OE]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -638,6 +660,7 @@
                     
                     return;
                 }
+                // TODO :
                 [Util udSetObject:@"불용요청[OE]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -648,6 +671,7 @@
                     
                     return;
                 }
+                // TODO :
                 [Util udSetObject:@"비품연식조회[OE]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -658,6 +682,7 @@
                     
                     return;
                 }
+                // TODO :
                 [Util udSetObject:@"납품확인[OE]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -668,6 +693,7 @@
                     
                     return;
                 }
+                // TODO :
                 [Util udSetObject:@"대여등록[OE]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -678,6 +704,7 @@
                     
                     return;
                 }
+                // TODO :
                 [Util udSetObject:@"대여반납[OE]" forKey:USER_WORK_NAME];
                 BaseViewController* vc = [[BaseViewController alloc] init];
                 [controller pushViewController:vc animated:YES];
@@ -762,8 +789,10 @@
 
 // 작업관리
 - (IBAction)touchMangeWork:(id)sender {
-    WorkDataViewController* vc = [[WorkDataViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    
+    [self pushViewController:@"Main" viewName:@"WorkDataViewController" animated:YES];
+    //WorkDataViewController* vc = [[WorkDataViewController alloc] init];
+    //[self.navigationController pushViewController:vc animated:YES];
 }
 
 // 설비정보조회
@@ -779,8 +808,9 @@
 
 // 환경설정
 - (IBAction)touchSetup:(id)sender {
-    SettingViewController* vc = [[SettingViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self pushViewController:@"Main" viewName:@"SettingViewController" animated:YES];
+    //SettingViewController* vc = [[SettingViewController alloc] init];
+    //[self.navigationController pushViewController:vc animated:YES];
 }
 
 // 종료
@@ -809,8 +839,9 @@
     [Util udSetObject:@"N" forKey:USER_WORK_MODE];
     
     [Util udSetObject:job_gubun forKey:USER_WORK_NAME];
-    OutIntoViewController* vc = [[OutIntoViewController alloc] init];
-    [controller pushViewController:vc animated:YES];
+    [self goOutIntoView:[Util udObjectForKey:USER_WORK_NAME]];
+    //OutIntoViewController* vc = [[OutIntoViewController alloc] init];
+    //[controller pushViewController:vc animated:YES];
     
     return;
 }
