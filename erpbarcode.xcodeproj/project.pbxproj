@@ -327,6 +327,7 @@
 		7ADA1D5821979F7A006699F6 /* main_button_menu_b9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ADA1D5421979F7A006699F6 /* main_button_menu_b9@2x.png */; };
 		7ADA1D5921979F7A006699F6 /* main_button_menu_b8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ADA1D5521979F7A006699F6 /* main_button_menu_b8@2x.png */; };
 		7ADA1D5A21979F7A006699F6 /* main_button_menu_b8.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ADA1D5621979F7A006699F6 /* main_button_menu_b8.png */; };
+		7ADA1D5C2197A688006699F6 /* Instore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADA1D5B2197A687006699F6 /* Instore.storyboard */; };
 		7AE4C873218F30CE002F622C /* Barcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE4C86B218F30CC002F622C /* Barcode.storyboard */; };
 		7AE4C877218F30CE002F622C /* TakeOverNRegEquip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE4C86F218F30CD002F622C /* TakeOverNRegEquip.storyboard */; };
 		7AE4C878218F30CE002F622C /* BuyOutInto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE4C870218F30CD002F622C /* BuyOutInto.storyboard */; };
@@ -1188,6 +1189,7 @@
 		7ADA1D5421979F7A006699F6 /* main_button_menu_b9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_button_menu_b9@2x.png"; sourceTree = "<group>"; };
 		7ADA1D5521979F7A006699F6 /* main_button_menu_b8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_button_menu_b8@2x.png"; sourceTree = "<group>"; };
 		7ADA1D5621979F7A006699F6 /* main_button_menu_b8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_button_menu_b8.png; sourceTree = "<group>"; };
+		7ADA1D5B2197A687006699F6 /* Instore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Instore.storyboard; path = erpbarcode/Instore.storyboard; sourceTree = "<group>"; };
 		7AE4C86B218F30CC002F622C /* Barcode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Barcode.storyboard; path = erpbarcode/Barcode.storyboard; sourceTree = "<group>"; };
 		7AE4C86F218F30CD002F622C /* TakeOverNRegEquip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TakeOverNRegEquip.storyboard; path = erpbarcode/TakeOverNRegEquip.storyboard; sourceTree = "<group>"; };
 		7AE4C870218F30CD002F622C /* BuyOutInto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BuyOutInto.storyboard; path = erpbarcode/BuyOutInto.storyboard; sourceTree = "<group>"; };
@@ -2641,6 +2643,7 @@
 		5DFB7A4917A0ABB600EB8991 = {
 			isa = PBXGroup;
 			children = (
+				7ADA1D5B2197A687006699F6 /* Instore.storyboard */,
 				7AB4A8D22190C7E60004C28B /* Info.storyboard */,
 				7AE4C86B218F30CC002F622C /* Barcode.storyboard */,
 				7AE4C870218F30CD002F622C /* BuyOutInto.storyboard */,
@@ -3011,6 +3014,7 @@
 				5DDB51B4183B63BC00764BFB /* menu_bg_up@2x.png in Resources */,
 				B6E85565181F537900C1E613 /* IMRequestCell5.xib in Resources */,
 				7A9D3AD2218A169A00C36FC8 /* OutIntoViewController4.xib in Resources */,
+				7ADA1D5C2197A688006699F6 /* Instore.storyboard in Resources */,
 				B6EE64EE1845DE5E00209381 /* button_select_up@2x.png in Resources */,
 				B6A65CAD1845BC8600422D27 /* button_modify.png in Resources */,
 				B6EE64D81845DE3E00209381 /* button_register@2x.png in Resources */,

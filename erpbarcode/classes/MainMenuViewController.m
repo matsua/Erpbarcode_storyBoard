@@ -298,8 +298,12 @@
                 
                 // TODO :
                 [Util udSetObject:@"바코드대체요청" forKey:USER_WORK_NAME];
-                IMRequestViewController* vc = [[IMRequestViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Instore" viewName:@"IMRequestViewController" animated:YES];
+                
+                //IMRequestViewController* vc = [[IMRequestViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
+                
+                
             }else if (nTag == 1){   // 부외실물등록요청
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"부외실물등록요청"];
@@ -309,8 +313,10 @@
                 }
                 // TODO :
                 [Util udSetObject:@"부외실물등록요청" forKey:USER_WORK_NAME];
-                EtcEquipmentViewController* vc = [[EtcEquipmentViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Instore" viewName:@"EtcEquipmentViewController" animated:YES];
+                
+                //EtcEquipmentViewController* vc = [[EtcEquipmentViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }else if (nTag == 2){   // 인스토어마킹완료
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"인스토어마킹완료"];
@@ -320,8 +326,10 @@
                 }
                 // TODO :
                 [Util udSetObject:@"인스토어마킹완료" forKey:USER_WORK_NAME];
-                CompleteScanViewController* vc = [[CompleteScanViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Instore" viewName:@"CompleteScanViewController" animated:YES];
+                
+                //CompleteScanViewController* vc = [[CompleteScanViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }else if(nTag == 3){ //인스토어마킹관리
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"인스토어마킹완료"];
@@ -330,7 +338,7 @@
                     return;
                 }
                 [Util udSetObject:@"인스토어마킹관리" forKey:USER_WORK_NAME];
-                [self pushViewController:@"Barcode" viewName:@"BarcodeViewController1" animated:YES];
+                [self pushViewController:@"Barcode" viewName:@"BarcodeViewController" animated:YES];
                 //BarcodeViewController* vc = [[BarcodeViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
             }
@@ -417,7 +425,7 @@
                     return;
                 }
                 [Util udSetObject:@"상품단말실사" forKey:USER_WORK_NAME];
-                [self pushViewController:@"Revision" viewName:@"RevisionViewController8" animated:YES];
+                [self pushViewController:@"Revision" viewName:@"RevisionViewController" animated:YES];
                 //evisionViewController* vc = [[RevisionViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
             }
@@ -502,7 +510,7 @@
                 }
                 
                 [Util udSetObject:@"위치바코드" forKey:USER_WORK_NAME];
-                [self pushViewController:@"Barcode" viewName:@"BarcodeViewController2" animated:YES];
+                [self pushViewController:@"Barcode" viewName:@"BarcodeViewController" animated:YES];
                 //BarcodeViewController* vc = [[BarcodeViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
             }
@@ -514,7 +522,7 @@
                 }
                 
                 [Util udSetObject:@"장치바코드" forKey:USER_WORK_NAME];
-                [self pushViewController:@"Barcode" viewName:@"BarcodeViewController3" animated:YES];
+                [self pushViewController:@"Barcode" viewName:@"BarcodeViewController" animated:YES];
                 //BarcodeViewController* vc = [[BarcodeViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
             }else if (nTag == 2){ //장치바코드
@@ -525,7 +533,7 @@
                 }
                 
                 [Util udSetObject:@"소스마킹" forKey:USER_WORK_NAME];
-                [self pushViewController:@"Barcode" viewName:@"BarcodeViewController4" animated:YES];
+                [self pushViewController:@"Barcode" viewName:@"BarcodeViewController" animated:YES];
                 //BarcodeViewController* vc = [[BarcodeViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
             }
