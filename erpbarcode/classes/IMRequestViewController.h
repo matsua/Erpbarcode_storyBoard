@@ -83,6 +83,7 @@
 @property (strong, nonatomic) UITapGestureRecognizer* tabPressGesture;
 
 @property(nonatomic,strong) UIActivityIndicatorView* indicatorView;
+@property (strong, nonatomic) IBOutlet UIView *imrView;
 
 
 - (IBAction)touchGoodsListBtn:(id)sender;

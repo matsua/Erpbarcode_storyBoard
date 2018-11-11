@@ -90,6 +90,7 @@
 @synthesize nSelectedRow;
 
 @synthesize indicatorView;
+@synthesize imrView;
 
 @synthesize  isShowPicker;
 
@@ -206,7 +207,7 @@
         [txtDamageId isFirstResponder])
         return;
     
-    scrollRect = _itemScrollVIew.frame;
+//    scrollRect = _itemScrollVIew.frame;
     
     NSDictionary* userInfo = [notif userInfo];
     NSValue* animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
@@ -222,15 +223,19 @@
     // 에니메이션 시작
     [UIView commitAnimations];
     
-    NSInteger orgPos = 0;
-    if ([txtDamageId isFirstResponder])
-        orgPos = viewDamagedBarcode.frame.origin.y;
-    else if ([txtMakerSN isFirstResponder])
-        orgPos = viewMakerSN.frame.origin.y;
-    if (orgPos){
-        CGRect viewRect = CGRectMake(scrollRect.origin.x, scrollRect.origin.y, scrollRect.size.width, scrollRect.size.height + orgPos);
-        [_itemScrollVIew scrollRectToVisible:viewRect animated:YES];
-    }
+//    NSInteger orgPos = 0;
+//    if ([txtDamageId isFirstResponder])
+//        orgPos = viewDamagedBarcode.frame.origin.y;
+//    else if ([txtMakerSN isFirstResponder])
+//        orgPos = viewMakerSN.frame.origin.y;
+//    if (orgPos){
+//        CGRect viewRect = CGRectMake(scrollRect.origin.x, scrollRect.origin.y, scrollRect.size.width, scrollRect.size.height + orgPos);
+//        [_itemScrollVIew scrollRectToVisible:viewRect animated:YES];
+//    }
+    
+    CGRect viewRect = CGRectMake(0, -80, imrView.frame.size.width, imrView.frame.size.height);
+    imrView.frame = viewRect;
+    
     keyboardVisible = YES;
 }
 
@@ -250,8 +255,12 @@
     [UIView setAnimationDuration:animationDuration];
     
     [UIView commitAnimations];
-    CGRect viewRect = CGRectMake(scrollRect.origin.x, scrollRect.origin.y, scrollRect.size.width, scrollRect.size.height);
-    [_itemScrollVIew scrollRectToVisible:viewRect animated:YES];
+    
+//    CGRect viewRect = CGRectMake(scrollRect.origin.x, scrollRect.origin.y, scrollRect.size.width, scrollRect.size.height);
+//    [_itemScrollVIew scrollRectToVisible:viewRect animated:YES];
+    
+    CGRect viewRect = CGRectMake(0, 0, imrView.frame.size.width, imrView.frame.size.height);
+    imrView.frame = viewRect;
 
     keyboardVisible = NO;
 }
@@ -799,12 +808,13 @@
     
     
 	CGRect pageRect = [_scrollView bounds];
-    pageRect.origin.y = 339;
-    pageRect.size.height = _itemScrollVIew.contentSize.height - pageRect.origin.y;
+//    pageRect.origin.y = 339;
+//    pageRect.size.height = _itemScrollVIew.contentSize.height - pageRect.origin.y;
+//
+//    [_scrollView setFrame:pageRect];
     
-    [_scrollView setFrame:pageRect];
     CGRect tableRect = pageRect;
-    CGRect titleRect = CGRectMake(0, 0, 320, 23);
+    CGRect titleRect = CGRectMake(0, 0, PHONE_SCREEN_WIDTH, 23);
     tableRect.origin.y = titleRect.size.height;
     tableRect.size.height = pageRect.size.height - titleRect.size.height;
     ;
