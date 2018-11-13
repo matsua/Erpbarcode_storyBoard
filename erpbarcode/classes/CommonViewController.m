@@ -66,6 +66,8 @@
     if (viewController == nil) return nil;
     
     [self pushViewController:(UIViewController *)viewController animated:(BOOL)YES];
+    
+    return viewController;
 }
 
 - (UIViewController*)getOutIntoView:(NSString*)workName {
