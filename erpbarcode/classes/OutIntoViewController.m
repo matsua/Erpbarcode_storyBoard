@@ -6377,7 +6377,7 @@ const static char* moveTarKey = "moveTarKey";
         
         cell.lblTreeData.frame = CGRectMake(cell.lblTreeData.frame.origin.x, cell.lblTreeData.frame.origin.y, textLength+cell.indentationLevel*cell.indentationWidth, cell.lblTreeData.frame.size.height);
         cell.lblTreeData.text = formatString;
-        cell.scrollView.contentSize = CGSizeMake(textLength+cell.indentationLevel*cell.indentationWidth + 30, COMMON_CELL_HEIGHT);
+        cell.scrollView.contentSize = CGSizeMake(textLength+cell.indentationLevel*cell.indentationWidth + 30, cell.scrollView.frame.size.height);
         
         cell.nScanType = [scanType integerValue];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -6434,31 +6434,33 @@ const static char* moveTarKey = "moveTarKey";
             
             if(txtFacCode.text.length > 0){
                 clv1.hidden = NO; clv2.hidden = YES;
-                _tableView2.frame = CGRectMake(_tableView2.frame.origin.x, _tableView2.frame.origin.y, 820, _tableView2.frame.size.height);
-                table2Header.frame = CGRectMake(table2Header.frame.origin.x, table2Header.frame.origin.y, 820, table2Header.frame.size.height);
+                //_tableView2.frame = CGRectMake(_tableView2.frame.origin.x, _tableView2.frame.origin.y, 820, _tableView2.frame.size.height);
+                //table2Header.frame = CGRectMake(table2Header.frame.origin.x, table2Header.frame.origin.y, 820, table2Header.frame.size.height);
             }
             else{
                 clv1.hidden = YES; clv2.hidden = NO;
-                _tableView2.frame = CGRectMake(_tableView2.frame.origin.x, _tableView2.frame.origin.y, 1134, _tableView2.frame.size.height);
-                table2Header.frame = CGRectMake(table2Header.frame.origin.x, table2Header.frame.origin.y, 1134, table2Header.frame.size.height);
+                //_tableView2.frame = CGRectMake(_tableView2.frame.origin.x, _tableView2.frame.origin.y, 1134, _tableView2.frame.size.height);
+                //table2Header.frame = CGRectMake(table2Header.frame.origin.x, table2Header.frame.origin.y, 1134, table2Header.frame.size.height);
             }
             
-            _scrollView.contentSize = CGSizeMake(_tableView2.bounds.size.width, _scrollView.frame.size.height);
+            //_scrollView.contentSize = CGSizeMake(_tableView2.bounds.size.width, _scrollView.frame.size.height);
             
             if (!cell){
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"GridColumnRepairCell" owner:self options:nil];
+                float scale = (float)self.view.frame.size.width / 320.0f;
+                float width = self.view.frame.size.width;
                 for (id object in nib)
                 {
                     if ([object isMemberOfClass:[GridColumnRepairCell class]])
                     {
                         cell = object;
                         if(txtFacCode.text.length > 0){
-                            cell.lblColumn1.frame = CGRectMake(4, 0, 110, 40);
-                            cell.lblColumn2.frame = CGRectMake(114, 0, 110,40);
-                            cell.lblColumn3.frame = CGRectMake(224, 0, 110, 40);
-                            cell.lblColumn4.frame = CGRectMake(334, 0, 160, 40);
-                            cell.lblColumn5.frame = CGRectMake(494, 0, 160, 40);
-                            cell.lblColumn6.frame = CGRectMake(654, 0, 160, 40);
+                            cell.lblColumn1.frame = CGRectMake(4, 0, width / 3.0f, 40);
+                            cell.lblColumn2.frame = CGRectMake(4 + width / 3.0f, 0, width / 3.0f, 40);
+                            cell.lblColumn3.frame = CGRectMake(4 + width * 2.0f / 3.0f, 0, width / 3.0f, 40);
+                            cell.lblColumn4.frame = CGRectMake(4 + width, 0, width / 2.0f, 40);
+                            cell.lblColumn5.frame = CGRectMake(4 + width * 1.5f, 0, width / 2.0f, 40);
+                            cell.lblColumn6.frame = CGRectMake(4 + width * 2.0f, 0, width / 2.0f, 40);
                         }else{
                             cell.lblColumna.frame = CGRectMake(4, 0, 160, 40);
                             cell.lblColumnb.frame = CGRectMake(164, 0, 110, 40);
