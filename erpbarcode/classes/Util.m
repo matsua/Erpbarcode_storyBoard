@@ -155,7 +155,12 @@
         if ([JOB_GUBUN isEqualToString:@"송부취소(팀간)"] || [JOB_GUBUN isEqualToString:@"접수(팀간)"]) {
             [dic setObject:@"Y" forKey:@"pageUseYN"];
             [dic setObject:@"1" forKey:@"currentPageNo"];
-            [dic setObject:@"1000"  forKey:@"currentPageCount"];        // 최대 1000개만 불러오게....
+            if([JOB_GUBUN isEqualToString:@"접수(팀간)"]){
+                [dic setObject:@"500"  forKey:@"currentPageCount"];        // 최대 1000개만 불러오게....
+            }
+            else{
+                [dic setObject:@"1000"  forKey:@"currentPageCount"];        // 최대 1000개만 불러오게....
+            }
         } else {
             [dic setObject:@"N" forKey:@"pageUseYN"];
             [dic setObject:@"" forKey:@"currentPageNo"];
