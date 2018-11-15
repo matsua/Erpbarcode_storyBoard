@@ -3596,7 +3596,8 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
         return;
     }
     
-    AddInfoViewController *modalView = [[AddInfoViewController alloc] initWithNibName:@"AddInfoViewController" bundle:nil];
+//    AddInfoViewController *modalView = [[AddInfoViewController alloc] initWithNibName:@"AddInfoViewController" bundle:nil];
+    AddInfoViewController* modalView = (AddInfoViewController*)[self instantiateViewController:@"Sub" viewName:@"AddInfoViewController"];
     self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
     
     NSString *modalViewCode, *modalViewText = @"";
@@ -3615,8 +3616,9 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
     modalView.locNmBd = locAddrBd;
     modalView.locNmLoad = locAddrLoad;
     
-    [self presentViewController:modalView animated:NO completion:nil];
-    modalView.view.alpha = 0;
+    if (modalView) {
+        [self presentViewController:modalView animated:NO completion:nil];
+    }
     
     [UIView animateWithDuration:0.5 animations:^{
         modalView.view.alpha = 1;

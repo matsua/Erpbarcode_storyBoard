@@ -2699,7 +2699,7 @@
                                                             <constraint firstAttribute="width" secondItem="fpY-HO-Ghn" secondAttribute="height" multiplier="1:1" id="85K-d7-Os8"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6r-9p-CtP" customClass="scrollTouch">
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I6r-9p-CtP" customClass="scrollTouch">
                                                         <rect key="frame" x="35" y="1" width="230" height="22"/>
                                                         <subviews>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQr-rd-gAW">
@@ -2715,33 +2715,12 @@
                                                             <constraint firstItem="NQr-rd-gAW" firstAttribute="leading" secondItem="I6r-9p-CtP" secondAttribute="leading" id="f9N-bC-9EU"/>
                                                         </constraints>
                                                     </scrollView>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgP-dE-Lu0">
-                                                        <rect key="frame" x="270" y="1" width="40" height="22"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="HgP-dE-Lu0" secondAttribute="height" multiplier="20:11" id="HtW-hg-XnO"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                        <state key="normal" title=".." backgroundImage="Default.png">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <state key="highlighted">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="locInfoBtnAction:" destination="bBq-Tg-JJo" eventType="touchUpInside" id="s5T-rH-BQY"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="HgP-dE-Lu0" secondAttribute="trailing" constant="10" id="24E-0V-bXp"/>
-                                                    <constraint firstAttribute="bottom" secondItem="HgP-dE-Lu0" secondAttribute="bottom" constant="1" id="PbN-Kc-UxT"/>
                                                     <constraint firstItem="I6r-9p-CtP" firstAttribute="leading" secondItem="fpY-HO-Ghn" secondAttribute="trailing" constant="5" id="QRJ-Lu-gTl"/>
-                                                    <constraint firstItem="HgP-dE-Lu0" firstAttribute="top" secondItem="4cd-9t-TEc" secondAttribute="top" constant="1" id="cPz-hh-faD"/>
                                                     <constraint firstItem="fpY-HO-Ghn" firstAttribute="leading" secondItem="4cd-9t-TEc" secondAttribute="leading" constant="6" id="czb-7P-ynv"/>
                                                     <constraint firstItem="I6r-9p-CtP" firstAttribute="top" secondItem="4cd-9t-TEc" secondAttribute="top" constant="1" id="efc-2W-dYP"/>
-                                                    <constraint firstItem="HgP-dE-Lu0" firstAttribute="leading" secondItem="I6r-9p-CtP" secondAttribute="trailing" constant="5" id="hh9-B1-CP2"/>
                                                     <constraint firstAttribute="width" secondItem="4cd-9t-TEc" secondAttribute="height" multiplier="40:3" id="khe-wN-2xO"/>
                                                     <constraint firstItem="fpY-HO-Ghn" firstAttribute="top" secondItem="4cd-9t-TEc" secondAttribute="top" id="ug2-7e-WYS"/>
                                                     <constraint firstAttribute="bottom" secondItem="I6r-9p-CtP" secondAttribute="bottom" constant="1" id="wU4-jp-Drc"/>
