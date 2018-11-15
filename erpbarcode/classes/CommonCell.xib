@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,24 +18,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="34.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17" userLabel="Label-background">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="34.5"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="17" userLabel="Label-background">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15" customClass="scrollTouch">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="34.5"/>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" id="15" customClass="scrollTouch">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJr-TT-FMP">
-                                <rect key="frame" x="0.0" y="0.0" width="35" height="34.5"/>
+                            <view contentMode="scaleToFill" id="MJr-TT-FMP">
+                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjo-Wt-hcJ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Wjo-Wt-hcJ">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="H5U-h5-jHl"/>
-                                            <constraint firstAttribute="width" constant="35" id="grV-F9-rVm"/>
-                                        </constraints>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,51 +44,23 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13">
-                                        <rect key="frame" x="35" y="0.0" width="0.0" height="34.5"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13">
+                                        <rect key="frame" x="35" y="0.0" width="0.0" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="13" firstAttribute="top" secondItem="MJr-TT-FMP" secondAttribute="top" id="1wQ-1Y-beG"/>
-                                    <constraint firstAttribute="bottom" secondItem="13" secondAttribute="bottom" id="28x-mZ-Sc8"/>
-                                    <constraint firstItem="Wjo-Wt-hcJ" firstAttribute="centerY" secondItem="MJr-TT-FMP" secondAttribute="centerY" constant="0.25" id="42P-Bc-r34"/>
-                                    <constraint firstItem="13" firstAttribute="centerY" secondItem="MJr-TT-FMP" secondAttribute="centerY" id="Iaa-fI-cCW"/>
-                                    <constraint firstAttribute="trailing" secondItem="13" secondAttribute="trailing" id="Wbr-QV-73v"/>
-                                    <constraint firstItem="13" firstAttribute="leading" secondItem="Wjo-Wt-hcJ" secondAttribute="trailing" id="iZb-nJ-ppT"/>
-                                    <constraint firstItem="Wjo-Wt-hcJ" firstAttribute="leading" secondItem="MJr-TT-FMP" secondAttribute="leading" id="qNQ-8m-VTb"/>
-                                </constraints>
                             </view>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="MJr-TT-FMP" firstAttribute="height" secondItem="15" secondAttribute="height" id="1Q6-U0-JvZ"/>
-                            <constraint firstItem="MJr-TT-FMP" firstAttribute="top" secondItem="15" secondAttribute="top" id="5Pp-i6-5jw"/>
-                            <constraint firstItem="MJr-TT-FMP" firstAttribute="leading" secondItem="15" secondAttribute="leading" id="E0D-yU-FaX"/>
-                            <constraint firstAttribute="trailing" secondItem="MJr-TT-FMP" secondAttribute="trailing" id="N1j-Y3-Y1k"/>
-                            <constraint firstAttribute="bottom" secondItem="MJr-TT-FMP" secondAttribute="bottom" id="noA-Gz-AJO"/>
-                        </constraints>
                         <connections>
                             <outlet property="delegate" destination="-1" id="21"/>
                         </connections>
                     </scrollView>
                 </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailing" secondItem="17" secondAttribute="trailing" id="0dI-jY-8Mv"/>
-                    <constraint firstAttribute="bottom" secondItem="17" secondAttribute="bottom" id="E4j-Qo-cvo"/>
-                    <constraint firstItem="17" firstAttribute="top" secondItem="jfS-38-yE8" secondAttribute="top" id="H0b-6P-7Gc"/>
-                    <constraint firstItem="15" firstAttribute="height" secondItem="jfS-38-yE8" secondAttribute="height" id="MN8-Hv-Heo"/>
-                    <constraint firstItem="17" firstAttribute="leading" secondItem="jfS-38-yE8" secondAttribute="leading" id="TOD-4V-Sei"/>
-                    <constraint firstItem="15" firstAttribute="top" secondItem="jfS-38-yE8" secondAttribute="top" id="XIh-xK-iBH"/>
-                    <constraint firstItem="15" firstAttribute="leading" secondItem="jfS-38-yE8" secondAttribute="leading" id="Yqx-uh-fBi"/>
-                    <constraint firstItem="15" firstAttribute="width" secondItem="jfS-38-yE8" secondAttribute="width" id="b0Z-HJ-nT7"/>
-                    <constraint firstAttribute="bottom" secondItem="15" secondAttribute="bottom" id="ls7-JK-dxa"/>
-                    <constraint firstAttribute="trailing" secondItem="15" secondAttribute="trailing" id="xDg-nD-2Sx"/>
-                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-            <viewLayoutGuide key="safeArea" id="SAL-bN-VFE"/>
             <connections>
                 <outlet property="btnTree" destination="Wjo-Wt-hcJ" id="pdD-dw-a0h"/>
                 <outlet property="lblBackground" destination="17" id="18"/>

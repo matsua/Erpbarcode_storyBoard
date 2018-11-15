@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tct-Xz-BOY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tct-Xz-BOY">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,7 +51,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7C-pQ-38V">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7C-pQ-38V" customClass="UIControl">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_icon_logo1.png" translatesAutoresizingMaskIntoConstraints="NO" id="3tV-vy-8hz">
@@ -206,6 +206,9 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstItem="3tV-vy-8hz" firstAttribute="leading" secondItem="d7C-pQ-38V" secondAttribute="leading" constant="44" id="3gr-jG-t3m"/>
                                     <constraint firstItem="G7U-VL-INy" firstAttribute="leading" secondItem="eNj-Vc-BM1" secondAttribute="trailing" constant="7" id="ABM-I9-3Md"/>
@@ -218,6 +221,9 @@
                                     <constraint firstAttribute="trailing" secondItem="3tV-vy-8hz" secondAttribute="trailing" constant="46" id="oO7-HB-AAC"/>
                                     <constraint firstItem="eNj-Vc-BM1" firstAttribute="top" secondItem="5em-kt-5aj" secondAttribute="bottom" constant="8" id="sBa-bq-xo5"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="touchBackground:" destination="NIk-6z-uAV" eventType="touchUpInside" id="GCN-RO-4FI"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

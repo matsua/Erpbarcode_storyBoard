@@ -1098,7 +1098,7 @@
     snNumberView.hidden = YES;
     
     //카운트 레이블 구성
-    lblCount = [[UILabel alloc] initWithFrame:CGRectMake(50,  PHONE_SCREEN_HEIGHT - 44 - 20, self.view.frame.size.width - 100, 20)];
+    lblCount = [[UILabel alloc] initWithFrame:CGRectMake(50,  self.view.frame.size.height - 40, self.view.frame.size.width - 100, 20)];
     lblCount.backgroundColor = [UIColor clearColor];
     lblCount.textColor = [UIColor blueColor];
     lblCount.font = [UIFont systemFontOfSize:14];
