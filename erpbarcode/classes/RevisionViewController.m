@@ -466,6 +466,9 @@
         [self performSelectorOnMainThread:@selector(processWorkData) withObject:nil waitUntilDone:NO];
     }
     [self showCount];
+    
+    // TEST
+    
 }
 
 - (void)didReceiveMemoryWarning
