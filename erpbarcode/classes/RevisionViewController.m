@@ -2818,23 +2818,38 @@
         GridColumn9Cell* cell = (GridColumn9Cell*)[tableView dequeueReusableCellWithIdentifier:@"GridColumn9Cell"];
         if (!cell){
             NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"GridColumn9Cell" owner:self options:nil];
+            float width = self.view.frame.size.width;
             for(id object in nib){
                 if ([object isMemberOfClass:[GridColumn9Cell class]]){
                     cell = object;
                     
                     cell.btnCheck.frame = CGRectMake(2, 6, 28, 29);
-                    cell.lblColumn2.frame = CGRectMake(32, 0, 151, 40);
-                    cell.lblColumn3.frame = CGRectMake(184, 0, 134, 40);
+                    cell.lblColumn2.frame = CGRectMake(32, 0, width * 0.47f, 40);
+                    cell.lblColumn3.frame = CGRectMake(32 + width * 0.47f, 0, width * 0.42f, 40);
                     
-                    cell.lblColumn4.frame = CGRectMake(322, 0, 105, 40);
-                    cell.lblColumn5.frame = CGRectMake(427, 0, 105, 40);
-                    cell.lblColumn6.frame = CGRectMake(532, 0, 105, 40);
+                    cell.lblColumn4.frame = CGRectMake(2 + width, 0, width * 0.328f, 40);
+                    cell.lblColumn5.frame = CGRectMake(2 + width * 1.328, 0, width * 0.328f, 40);
+                    cell.lblColumn6.frame = CGRectMake(2 + width * 1.656, 0, width * 0.328f, 40);
                     
-                    cell.lblColumn7.frame = CGRectMake(642, 0, 105, 40);
-                    cell.lblColumn8.frame = CGRectMake(747, 0, 105, 40);
-                    cell.lblColumn9.frame = CGRectMake(852, 0, 105, 40);
+                    cell.lblColumn7.frame = CGRectMake(2 + width * 2.0f, 0, width * 0.328f, 40);
+                    cell.lblColumn8.frame = CGRectMake(2 + width * 2.328, 0, width * 0.328f, 40);
+                    cell.lblColumn9.frame = CGRectMake(2 + width * 2.626, 0, width * 0.328f, 40);
                     
-                    cell.lblColumn10.frame = CGRectMake(962, 0, 318, 40);
+                    cell.lblColumn10.frame = CGRectMake(2 + width * 3.0f, 0, width - 2, 40);
+                    
+//                    cell.btnCheck.frame = CGRectMake(2, 6, 28, 29);
+//                    cell.lblColumn2.frame = CGRectMake(32, 0, 151, 40);
+//                    cell.lblColumn3.frame = CGRectMake(184, 0, 134, 40);
+//
+//                    cell.lblColumn4.frame = CGRectMake(322, 0, 105, 40);
+//                    cell.lblColumn5.frame = CGRectMake(427, 0, 105, 40);
+//                    cell.lblColumn6.frame = CGRectMake(532, 0, 105, 40);
+//
+//                    cell.lblColumn7.frame = CGRectMake(642, 0, 105, 40);
+//                    cell.lblColumn8.frame = CGRectMake(747, 0, 105, 40);
+//                    cell.lblColumn9.frame = CGRectMake(852, 0, 105, 40);
+//
+//                    cell.lblColumn10.frame = CGRectMake(962, 0, 318, 40);
                     break;
                 }
             }
