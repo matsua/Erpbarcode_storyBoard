@@ -16,6 +16,7 @@
 #import "SpotCheckViewController.h"
 #import "RevisionViewController.h"
 #import "TakeOverNRegEquipViewController.h"
+#import "BaseViewController.h"
 #import "MainMenuViewController.h"
 #import "ERPAlert.h"
 
@@ -374,6 +375,30 @@
         UIViewController* vc = [self instantiateViewController:@"TakeOverNRegEquip" viewName:@"TakeOverNRegEquipViewController"];
         if (vc != nil) {
             ((TakeOverNRegEquipViewController*)vc).dbWorkDic = selItemDic;
+            self.navigationController.viewControllers = @[mainVc, vc];
+        }
+    }
+    else if(
+            [WORK_CD isEqualToString:@"100"] || //신규등록[OA]
+            [WORK_CD isEqualToString:@"101"] || //관리자변경[OA]
+            [WORK_CD isEqualToString:@"102"] || //재물조사[OA]
+            [WORK_CD isEqualToString:@"103"] || //불용요청[OA]
+            [WORK_CD isEqualToString:@"104"] || //연식조회[OA]
+            [WORK_CD isEqualToString:@"105"] || //납품확인[OA]
+            [WORK_CD isEqualToString:@"106"] || //대여등록[OA]
+            [WORK_CD isEqualToString:@"107"] || //대여반납[OA]
+            [WORK_CD isEqualToString:@"110"] || //신규등록[OE]
+            [WORK_CD isEqualToString:@"111"] || //관리자변경[OE]
+            [WORK_CD isEqualToString:@"112"] || //재물조사[OE]
+            [WORK_CD isEqualToString:@"113"] || //불용요청[OE]
+            [WORK_CD isEqualToString:@"114"] || //비품연식조회[OE]
+            [WORK_CD isEqualToString:@"115"] || //납품확인[OE]
+            [WORK_CD isEqualToString:@"116"] || //대여등록[OE]
+            [WORK_CD isEqualToString:@"117"]  //대여반납[OE]
+            ){
+        UIViewController* vc = [self instantiateViewController:@"Baes" viewName:@"BaseViewController"];
+        if (vc != nil) {
+            ((BaseViewController*)vc).dbWorkDic = selItemDic;
             self.navigationController.viewControllers = @[mainVc, vc];
         }
     }

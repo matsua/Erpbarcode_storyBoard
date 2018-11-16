@@ -1480,15 +1480,15 @@
 //    AddInfoViewController *modalView = [[AddInfoViewController alloc] initWithNibName:@"AddInfoViewController" bundle:nil];
     
     AddInfoViewController* modalView = (AddInfoViewController*)[self instantiateViewController:@"Sub" viewName:@"AddInfoViewController"];
-    self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
-    
-    modalView.locCd = txtLocBarcode.text;
-    modalView.locNm = lblLocBarcodeName.text;
-    modalView.locNmBd = locAddrBd;
-    modalView.locNmLoad = locAddrLoad;
     
     if (modalView) {
-        [self presentViewController:modalView animated:NO completion:nil];
+        modalView.locCd = txtLocBarcode.text;
+        modalView.locNm = lblLocBarcodeName.text;
+        modalView.locNmBd = locAddrBd;
+        modalView.locNmLoad = locAddrLoad;
+        
+        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        [self presentViewController:modalView animated:YES completion:nil];
     }
     
     [UIView animateWithDuration:0.5 animations:^{

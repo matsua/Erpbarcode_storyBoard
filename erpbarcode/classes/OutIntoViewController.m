@@ -462,7 +462,8 @@ const static char* moveTarKey = "moveTarKey";
         else if ([JOB_GUBUN isEqualToString:@"송부취소(팀간)"] ||
                  [JOB_GUBUN isEqualToString:@"접수(팀간)"]){
             isFirstMove = YES;
-            [self requestMoveData:@"" orgCode:strUserOrgCode];
+//            [self requestMoveData:@"" orgCode:strUserOrgCode];
+            [self requestMoveData:@"" orgCode:@""];
         }
     }
     // 작업관리 모드이면...
@@ -740,6 +741,7 @@ const static char* moveTarKey = "moveTarKey";
 // 송부 혹은 접수조직을 선택했을때(OrgSearchViewController에서)
 - (void) orgDataReceived:(NSNotification *)notification
 {
+    NSLog(@"==========orgDataReceived============");
     receivedOrgDic = [notification object];
     if (receivedOrgDic.count){
         lblReceivedOrg.text = [NSString stringWithFormat:@"%@/%@",[receivedOrgDic objectForKey:@"costCenter"],[receivedOrgDic objectForKey:@"orgName"]];
@@ -3088,15 +3090,32 @@ const static char* moveTarKey = "moveTarKey";
     // 설비리스트에 있는 설비의 조직을 기반으로 조직 리스트를 생성한다.
     [self makeOrgList];
     
-    OrgSearchViewController* vc = [[OrgSearchViewController alloc] init];
-    vc.Sender = self;
-    if ([JOB_GUBUN isEqualToString:@"접수(팀간)"]){
-        vc.isSearchMode = YES;
-        vc.orgList = uniqueOrgList;
+//    OrgSearchViewController* vc = [[OrgSearchViewController alloc] init];
+//    vc.Sender = self;
+//    if ([JOB_GUBUN isEqualToString:@"접수(팀간)"]){
+//        vc.isSearchMode = YES;
+//        vc.orgList = uniqueOrgList;
+//    }
+//    else
+//        vc.isSearchMode = NO;
+//    [self.navigationController pushViewController:vc animated:NO];
+    
+    OrgSearchViewController* modalView = (OrgSearchViewController*)[self instantiateViewController:@"Sub" viewName:@"OrgSearchViewController"];
+    
+    if (modalView) {
+        modalView.Sender = self;
+        if ([JOB_GUBUN isEqualToString:@"접수(팀간)"]){
+            modalView.isSearchMode = YES;
+            modalView.orgList = uniqueOrgList;
+        }else{
+             modalView.isSearchMode = NO;
+        }
+//        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+//        [self presentViewController:modalView animated:YES completion:nil];
+        
+        [self.navigationController pushViewController:modalView animated:NO];
     }
-    else
-        vc.isSearchMode = NO;
-    [self.navigationController pushViewController:vc animated:NO];
+    
 }
 
 - (IBAction) touchFccInfoBtn:(id)sender
@@ -6612,26 +6631,26 @@ const static char* moveTarKey = "moveTarKey";
 //    AddInfoViewController *modalView = [[AddInfoViewController alloc] initWithNibName:@"AddInfoViewController" bundle:nil];
     
     AddInfoViewController* modalView = (AddInfoViewController*)[self instantiateViewController:@"Sub" viewName:@"AddInfoViewController"];
-    self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
-    
-    NSString *modalViewCode, *modalViewText = @"";
-    
-    if(pwSendType == 0){
-        modalViewCode = txtLocCode.text;
-        modalViewText = lblLocName.text;
-    }
-    else{
-        modalViewCode = deviceLocCd;
-        modalViewText = deviceLocNm;
-    }
-    
-    modalView.locCd = modalViewCode;
-    modalView.locNm = modalViewText;
-    modalView.locNmBd = locAddrBd;
-    modalView.locNmLoad = locAddrLoad;
     
     if (modalView) {
-        [self presentViewController:modalView animated:NO completion:nil];
+        NSString *modalViewCode, *modalViewText = @"";
+        
+        if(pwSendType == 0){
+            modalViewCode = txtLocCode.text;
+            modalViewText = lblLocName.text;
+        }
+        else{
+            modalViewCode = deviceLocCd;
+            modalViewText = deviceLocNm;
+        }
+        
+        modalView.locCd = modalViewCode;
+        modalView.locNm = modalViewText;
+        modalView.locNmBd = locAddrBd;
+        modalView.locNmLoad = locAddrLoad;
+        
+        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        [self presentViewController:modalView animated:YES completion:nil];
     }
     
     [UIView animateWithDuration:0.5 animations:^{

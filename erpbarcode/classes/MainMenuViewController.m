@@ -548,8 +548,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"신규등록[OA]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                 [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 1){ //관리자변경
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"관리자변경"];
@@ -558,8 +559,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"관리자변경[OA]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 2){ //재물조사
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"재물조사"];
@@ -569,8 +571,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"재물조사[OA]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                 [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 3){ //불용요청
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"불용요청"];
@@ -580,8 +583,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"불용요청[OA]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                 [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 4){ //OA연식조회
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"OA연식조회"];
@@ -591,8 +595,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"연식조회[OA]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                 [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 5){ //납품확인
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"납품확인"];
@@ -602,8 +607,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"납품확인[OA]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                 [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 6){ //대여등록
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"대여등록"];
@@ -613,8 +619,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"대여등록[OA]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                 [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 7){ //대여반납
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"대여반납"];
@@ -624,8 +631,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"대여반납[OA]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                 [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }
             break;
             
@@ -638,8 +646,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"신규등록[OE]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                 [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 1){ //관리자변경
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"관리자변경"];
@@ -648,8 +657,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"관리자변경[OE]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 2){ //재물조사
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"재물조사"];
@@ -659,8 +669,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"재물조사[OE]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                 [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 3){ //불용요청
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"불용요청"];
@@ -670,8 +681,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"불용요청[OE]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                 [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 4){ //비품연식조회
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"비품연식조회"];
@@ -681,8 +693,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"비품연식조회[OE]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                 [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 5){ //납품확인
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"납품확인"];
@@ -692,8 +705,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"납품확인[OE]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                 [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 6){ //대여등록
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"대여등록"];
@@ -703,8 +717,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"대여등록[OE]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                 [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }else if (nTag == 7){ //대여반납
                 if (isOffLine) {
                     message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"대여반납"];
@@ -714,8 +729,9 @@
                 }
                 // TODO :
                 [Util udSetObject:@"대여반납[OE]" forKey:USER_WORK_NAME];
-                BaseViewController* vc = [[BaseViewController alloc] init];
-                [controller pushViewController:vc animated:YES];
+//                BaseViewController* vc = [[BaseViewController alloc] init];
+//                [controller pushViewController:vc animated:YES];
+                [self pushViewController:@"Base" viewName:@"BaseViewController" animated:YES];
             }
             break;
             

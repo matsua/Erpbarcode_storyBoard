@@ -334,6 +334,7 @@
 		7AE4C879218F30CE002F622C /* Revision.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE4C871218F30CE002F622C /* Revision.storyboard */; };
 		7AE4C87A218F30CE002F622C /* SpotCheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE4C872218F30CE002F622C /* SpotCheck.storyboard */; };
 		7AE6190C218AF27E0015A535 /* OutInto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE6190B218AF27D0015A535 /* OutInto.storyboard */; };
+		7AF7D1DB219EF7ED00FA5C48 /* Base.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF7D1DA219EF7ED00FA5C48 /* Base.storyboard */; };
 		B23A846F18725E59005FC0E9 /* setupInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B23A846E18725E59005FC0E9 /* setupInfo.plist */; };
 		B24B9DE11AC1599F005634D8 /* GridColumnRepairCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B24B9DDF1AC1599F005634D8 /* GridColumnRepairCell.m */; };
 		B24B9DE21AC1599F005634D8 /* GridColumnRepairCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24B9DE01AC1599F005634D8 /* GridColumnRepairCell.xib */; };
@@ -1196,6 +1197,7 @@
 		7AE4C871218F30CE002F622C /* Revision.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Revision.storyboard; path = erpbarcode/Revision.storyboard; sourceTree = "<group>"; };
 		7AE4C872218F30CE002F622C /* SpotCheck.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SpotCheck.storyboard; path = erpbarcode/SpotCheck.storyboard; sourceTree = "<group>"; };
 		7AE6190B218AF27D0015A535 /* OutInto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = OutInto.storyboard; path = erpbarcode/OutInto.storyboard; sourceTree = "<group>"; };
+		7AF7D1DA219EF7ED00FA5C48 /* Base.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Base.storyboard; path = erpbarcode/Base.storyboard; sourceTree = "<group>"; };
 		B23A846E18725E59005FC0E9 /* setupInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setupInfo.plist; sourceTree = "<group>"; };
 		B24B9DDE1AC1599F005634D8 /* GridColumnRepairCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GridColumnRepairCell.h; path = classes/GridColumnRepairCell.h; sourceTree = "<group>"; };
 		B24B9DDF1AC1599F005634D8 /* GridColumnRepairCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GridColumnRepairCell.m; path = classes/GridColumnRepairCell.m; sourceTree = "<group>"; };
@@ -2643,6 +2645,7 @@
 		5DFB7A4917A0ABB600EB8991 = {
 			isa = PBXGroup;
 			children = (
+				7AF7D1DA219EF7ED00FA5C48 /* Base.storyboard */,
 				7ADA1D5B2197A687006699F6 /* Instore.storyboard */,
 				7AB4A8D22190C7E60004C28B /* Info.storyboard */,
 				7AE4C86B218F30CC002F622C /* Barcode.storyboard */,
@@ -3118,6 +3121,7 @@
 				B6EE64DD1845DE4800209381 /* button_rescan_up.png in Resources */,
 				B6A87709183F48D20053EBE8 /* login_pw.png in Resources */,
 				B6EE64B91845DE2200209381 /* button_confirm_up.png in Resources */,
+				7AF7D1DB219EF7ED00FA5C48 /* Base.storyboard in Resources */,
 				B6A65CD21845BC9100422D27 /* button_send@2x.png in Resources */,
 				B6A876AC183EF4900053EBE8 /* main_button_menu_e_up@2x.png in Resources */,
 				B6A87615183EF4800053EBE8 /* common_button_bg_red.png in Resources */,

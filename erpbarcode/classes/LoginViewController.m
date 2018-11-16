@@ -825,8 +825,12 @@
     else{
         if(passwordChange){
             // TODO : Storyboard
-            ChangePasswordViewController *modalView = [[ChangePasswordViewController alloc] init];
-            [self presentViewController:modalView animated:YES completion:nil];
+//            ChangePasswordViewController *modalView = [[ChangePasswordViewController alloc] init];
+            ChangePasswordViewController* modalView = (ChangePasswordViewController*)[self instantiateViewController:@"Sub" viewName:@"ChangePasswordViewController"];
+            if (modalView) {
+                [self presentViewController:modalView animated:YES completion:nil];
+            }
+            
             passwordChange = false;
             return;
         }

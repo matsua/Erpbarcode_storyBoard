@@ -85,12 +85,13 @@
     }
     
     if([userIdValue length] < 1){
+//        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         [self showMessage:@"선택된 항목이 없습니다. " tag:-1 title1:@"닫기" title2:nil isError:YES];
         return;
     }
     
-    [delegate findUserRequest:userIdValue];
-    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    [self.delegate findUserRequest:userIdValue];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 
 }
 
@@ -107,6 +108,8 @@
         
         for (NSDictionary* dic in resultList){
             NSMutableDictionary* userDic = [NSMutableDictionary dictionary];
+            
+            NSLog(@"detail :: %@", [dic objectForKey:@"detail"]);
             
             [userDic setObject:[dic objectForKey:@"userId"] forKey:@"userId"];
             [userDic setObject:[dic objectForKey:@"userName"] forKey:@"userName"];
@@ -211,7 +214,7 @@
 #pragma mark - messegeAlert
 - (void) showMessage:(NSString*)message tag:(NSInteger)tag title1:(NSString*)title1 title2:(NSString*)title2 isError:(BOOL)isError
 {
-    [[ERPAlert getInstance] showMessage:message tag:tag title1:title1 title2:title2 isError:isError isCheckComplete:YES delegate:self];
+    [[ERPAlert getInstance] showMessage:message tag:tag title1:title1 title2:title2 isError:isError isCheckComplete:NO delegate:nil];
 }
 
 @end

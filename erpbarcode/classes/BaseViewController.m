@@ -370,9 +370,7 @@
     NSString *JOB_GUBUN = [Util udObjectForKey:USER_WORK_NAME];
     
     if([JOB_GUBUN isEqualToString:@"불용요청[OA]"] || [JOB_GUBUN isEqualToString:@"불용요청[OE]"] || [JOB_GUBUN isEqualToString:@"비품연식조회[OE]"] || [JOB_GUBUN isEqualToString:@"연식조회[OA]"]){
-        CGRect locviewFrame = CGRectMake(locCodeView.frame.origin.x, locCodeView.frame.size.height, locCodeView.frame.size.width, locCodeView.frame.size.height);
         locCodeView.hidden = YES;
-        facCodeView.frame = locviewFrame;
     }
     
     if([JOB_GUBUN isEqualToString:@"신규등록[OA]"] || [JOB_GUBUN isEqualToString:@"신규등록[OE]"]) bsnNo = @"0501";

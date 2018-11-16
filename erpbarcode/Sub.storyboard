@@ -122,7 +122,7 @@
         <!--CancelRsViewController-->
         <scene sceneID="jVm-dh-oj3">
             <objects>
-                <viewController storyboardIdentifier="CancelRsViewController" title="요청취소사유" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UeV-Ki-jBE" userLabel="CancelRsViewController" customClass="CancelRsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CancelRsViewController" title="요청취소사유" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UeV-Ki-jBE" userLabel="CancelRsViewController" customClass="CancelRsViewController" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="vGS-hV-wxL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,7 +256,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ued-q8-pQW"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="lblCancelRs" destination="ZOL-jb-P75" id="9ek-DF-p3C"/>
                         <outlet property="txtCancelRsDt" destination="T2R-GO-hNw" id="Yeo-gs-yAk"/>
@@ -269,7 +268,7 @@
         <!--PrintSettingViewController-->
         <scene sceneID="Waz-zO-gCO">
             <objects>
-                <viewController storyboardIdentifier="PrintSettingViewController" title="프린터 설정" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g7h-wD-WEt" userLabel="PrintSettingViewController" customClass="PrintSettingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PrintSettingViewController" title="프린터 설정" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g7h-wD-WEt" userLabel="PrintSettingViewController" customClass="PrintSettingViewController" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="LAp-vK-lM7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -561,7 +560,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tll-nb-yL0"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="darknessTextField" destination="pzs-0F-Rmr" id="iZc-Qw-LdK"/>
                         <outlet property="lblCount" destination="aC1-2C-yLI" id="iaa-US-ljH"/>
@@ -577,7 +575,7 @@
         <!--ChangePasswordViewController-->
         <scene sceneID="6UI-Q0-mfT">
             <objects>
-                <viewController storyboardIdentifier="ChangePasswordViewController" title="비밀번호 변경" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PtF-e7-jHA" userLabel="ChangePasswordViewController" customClass="ChangePasswordViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordViewController" title="비밀번호 변경" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PtF-e7-jHA" userLabel="ChangePasswordViewController" customClass="ChangePasswordViewController" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Nps-3l-XMG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -726,7 +724,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tpD-e6-nbY"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="changeView" destination="LfZ-7C-bcx" id="ibG-Fa-k6x"/>
                         <outlet property="endBtn" destination="Kyt-Sm-Zrf" id="Y4E-eE-Xy0"/>
@@ -743,7 +740,7 @@
         <!--FindUserController-->
         <scene sceneID="69A-Hq-vns">
             <objects>
-                <viewController storyboardIdentifier="FindUserController" title="사용자 조회" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sfh-wn-7Ds" userLabel="FindUserController" customClass="FindUserController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindUserController" title="사용자 조회" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sfh-wn-7Ds" userLabel="FindUserController" customClass="FindUserController" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="s4n-WY-L4Z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -901,7 +898,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hE7-mG-XJu"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="scrollView" destination="wyU-4j-Ld8" id="eIe-US-Q8l"/>
                         <outlet property="txtUserId" destination="guc-ZH-AVJ" id="EFo-uQ-oQQ"/>
@@ -1013,7 +1009,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RIP-Es-1n7"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="_tableView" destination="3II-d5-ubp" id="QWu-5A-XMT"/>
                         <outlet property="btnSearch" destination="xPD-AG-JBC" id="g4A-8u-AI6"/>

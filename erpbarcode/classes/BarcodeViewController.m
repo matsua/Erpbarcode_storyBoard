@@ -344,6 +344,7 @@
 - (void)layoutSubView{
     [self.navigationItem addLeftBarButtonItem:@"navigation_back" target:self action:@selector(touchBackBtn:)];
     
+    orgView.hidden = YES;
     instoreView.hidden = YES;
     srcmkView.hidden = YES;
     chBarcodeReqView.hidden = YES;
@@ -365,6 +366,7 @@
     dvc_columnHeaderView.hidden = YES;
     
     if([JOB_GUBUN isEqualToString:@"인스토어마킹관리"]){
+        orgView.hidden = NO;
         instoreView.hidden = NO;
         printerSetView.hidden = NO;
         printerSetView.frame = CGRectMake(printerSetView.frame.origin.x, instoreView.frame.origin.y + instoreView.frame.size.height, printerSetView.frame.size.width,printerSetView.frame.size.height);
@@ -713,10 +715,17 @@
 
 #pragma mark - 사용자검색
 - (IBAction)findUser:(id)sender{
-    FindUserController *modalView = [[FindUserController alloc] initWithNibName:@"FindUserController" bundle:nil];
-    modalView.delegate = self;
-    self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
-    [self presentViewController:modalView animated:NO completion:nil];
+//    FindUserController *modalView = [[FindUserController alloc] initWithNibName:@"FindUserController" bundle:nil];
+//    modalView.delegate = self;
+//    self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+//    [self presentViewController:modalView animated:NO completion:nil];
+    
+    FindUserController* modalView = (FindUserController*)[self instantiateViewController:@"Sub" viewName:@"FindUserController"];
+    if (modalView) {
+        modalView.delegate = self;
+        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        [self presentViewController:modalView animated:YES completion:nil];
+    }
 }
 
 #pragma mark - 검색조회
@@ -995,13 +1004,15 @@
 #pragma mark - 요청취소
 -(IBAction)requestCancel:(id)sender {
     
-    CancelRsViewController *modalView = [[CancelRsViewController alloc] initWithNibName:@"CancelRsViewController" bundle:nil];
-    self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+//    CancelRsViewController *modalView = [[CancelRsViewController alloc] initWithNibName:@"CancelRsViewController" bundle:nil];
+    CancelRsViewController* modalView = (CancelRsViewController*)[self instantiateViewController:@"Sub" viewName:@"CancelRsViewController"];
     
-    modalView.delegate = self;
+    if (modalView) {
+        modalView.delegate = self;
+        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        [self presentViewController:modalView animated:NO completion:nil];
+    }
     
-    [self presentViewController:modalView animated:NO completion:nil];
-    modalView.view.alpha = 1;
 }
 
 #pragma mark - 발행
@@ -1026,11 +1037,14 @@
         return;
     }
     
-    PrintSettingViewController *modalView = [[PrintSettingViewController alloc] initWithNibName:@"PrintSettingViewController" bundle:nil];
-    self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
-    modalView.type = ltKey;
-    [self presentViewController:modalView animated:NO completion:nil];
-    modalView.view.alpha = 1;
+//    PrintSettingViewController *modalView = [[PrintSettingViewController alloc] initWithNibName:@"PrintSettingViewController" bundle:nil];
+    PrintSettingViewController* modalView = (PrintSettingViewController*)[self instantiateViewController:@"Sub" viewName:@"PrintSettingViewController"];
+
+    if (modalView) {
+        modalView.type = ltKey;
+        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        [self presentViewController:modalView animated:NO completion:nil];
+    }
 }
 
 #pragma mark - 출력
@@ -1796,10 +1810,19 @@
         return;
     }
     
-    OrgSearchViewController* vc = [[OrgSearchViewController alloc] init];
-    vc.Sender = self;
-    vc.isSearchMode = NO;
-    [self.navigationController pushViewController:vc animated:NO];
+//    OrgSearchViewController* vc = [[OrgSearchViewController alloc] init];
+//    vc.Sender = self;
+//    vc.isSearchMode = NO;
+//    [self.navigationController pushViewController:vc animated:NO];
+    
+    OrgSearchViewController* modalView = (OrgSearchViewController*)[self instantiateViewController:@"Sub" viewName:@"OrgSearchViewController"];
+    
+    if (modalView) {
+        modalView.Sender = self;
+        modalView.isSearchMode = NO;
+        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        [self presentViewController:modalView animated:YES completion:nil];
+    }
 }
 
 #pragma mark - orgDataReceived

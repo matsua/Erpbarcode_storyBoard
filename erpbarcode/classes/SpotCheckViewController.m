@@ -1479,10 +1479,19 @@
         return;
     }
     
-    OrgSearchViewController* vc = [[OrgSearchViewController alloc] init];
-    vc.Sender = self;
-    vc.isSearchMode = NO;
-    [self.navigationController pushViewController:vc animated:NO];
+//    OrgSearchViewController* vc = [[OrgSearchViewController alloc] init];
+//    vc.Sender = self;
+//    vc.isSearchMode = NO;
+//    [self.navigationController pushViewController:vc animated:NO];
+    
+    OrgSearchViewController* modalView = (OrgSearchViewController*)[self instantiateViewController:@"Sub" viewName:@"OrgSearchViewController"];
+    
+    if (modalView) {
+        modalView.Sender = self;
+        modalView.isSearchMode = NO;
+        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        [self presentViewController:modalView animated:YES completion:nil];
+    }
 }
 
 
@@ -2860,26 +2869,26 @@
     
 //    AddInfoViewController *modalView = [[AddInfoViewController alloc] initWithNibName:@"AddInfoViewController" bundle:nil];
     AddInfoViewController* modalView = (AddInfoViewController*)[self instantiateViewController:@"Sub" viewName:@"AddInfoViewController"];
-    self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
-    
-    NSString *modalViewCode, *modalViewText = @"";
-    
-    if(pwSendType == 0){
-        modalViewCode = txtLocCode.text;
-        modalViewText = lblLocName.text;
-    }
-    else{
-        modalViewCode = deviceLocCd;
-        modalViewText = deviceLocNm;
-    }
-    
-    modalView.locCd = modalViewCode;
-    modalView.locNm = modalViewText;
-    modalView.locNmBd = locAddrBd;
-    modalView.locNmLoad = locAddrLoad;
     
     if (modalView) {
-        [self presentViewController:modalView animated:NO completion:nil];
+        NSString *modalViewCode, *modalViewText = @"";
+        
+        if(pwSendType == 0){
+            modalViewCode = txtLocCode.text;
+            modalViewText = lblLocName.text;
+        }
+        else{
+            modalViewCode = deviceLocCd;
+            modalViewText = deviceLocNm;
+        }
+        
+        modalView.locCd = modalViewCode;
+        modalView.locNm = modalViewText;
+        modalView.locNmBd = locAddrBd;
+        modalView.locNmLoad = locAddrLoad;
+        
+        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        [self presentViewController:modalView animated:YES completion:nil];
     }
     
     [UIView animateWithDuration:0.5 animations:^{
