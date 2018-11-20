@@ -16,8 +16,6 @@
 @property(nonatomic,strong) IBOutlet UIScrollView* _scrollView;
 @property(nonatomic,strong) IBOutlet UIScrollView* _scrollView2;
 
-@property(nonatomic,strong) IBOutlet UIView* contentView;
-
 @property(nonatomic,strong) IBOutlet UIView* normalView;
 @property(nonatomic,strong) IBOutlet UIView* locView;
 @property(nonatomic,strong) IBOutlet UIView* orgView;
@@ -153,16 +151,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    self.normalView.frame = CGRectMake(0, 0, self.view.frame.size.width, MAX(_scrollView.frame.size.height, self.normalView.frame.size.height));
+    self.locView.frame = CGRectMake(0, 0, self.view.frame.size.width, MAX(_scrollView.frame.size.height, self.locView.frame.size.height));
+    self.warrantyView.frame = CGRectMake(0, 0, self.view.frame.size.width, MAX(_scrollView.frame.size.height, self.warrantyView.frame.size.height));
+    self.orgView.frame = CGRectMake(0, 0, self.view.frame.size.width, MAX(_scrollView.frame.size.height, self.orgView.frame.size.height));
+    self.failureView.frame = CGRectMake(0, 0, self.view.frame.size.width, MAX(_scrollView.frame.size.height, self.failureView.frame.size.height));
+    self.failureListView.frame = CGRectMake(0, 0, self.view.frame.size.width, MAX(_scrollView.frame.size.height, self.failureListView.frame.size.height));
+}
+
 #pragma mark - UserDefine Method
 - (void) layoutSubView
 {
-    self.normalView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.normalView.frame.size.height);
-    self.locView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.locView.frame.size.height);
-    self.warrantyView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.warrantyView.frame.size.height);
-    self.orgView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.orgView.frame.size.height);
-    self.failureView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.failureView.frame.size.height);
-    self.failureListView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.failureListView.frame.size.height);
-    
     //이전 버튼 구성
     [self.navigationItem addLeftBarButtonItem:@"navigation_back" target:self action:@selector(touchBackBtn:)];
     
@@ -451,14 +454,15 @@
             case 60://고장이력
                 failureListBtn.selected = YES;
                 [_scrollView addSubview:failureListView];
+                
                 _scrollView.contentSize = failureListView.bounds.size;
                 _scrollView.contentOffset = CGPointMake(0, 0);
                 
-                [_scrollView addSubview:_scrollView2];
-                _scrollView2.frame = CGRectMake(0, 0, 320, PHONE_SCREEN_HEIGHT - 105);
-                _scrollView2.contentSize = CGSizeMake(_tableView.bounds.size.width, _scrollView2.frame.size.height);
+                //[_scrollView addSubview:_scrollView2];
+                //_scrollView2.frame = CGRectMake(0, 0, 320, PHONE_SCREEN_HEIGHT - 105);
+                //_scrollView2.contentSize = CGSizeMake(_tableView.bounds.size.width, _scrollView2.frame.size.height);
             
-                listCount.frame = CGRectMake(0, (_scrollView2.frame.origin.y + _scrollView2.frame.size.height), 320, 22);
+                //listCount.frame = CGRectMake(0, (_scrollView2.frame.origin.y + _scrollView2.frame.size.height), 320, 22);
                                 
                 break;
         }
