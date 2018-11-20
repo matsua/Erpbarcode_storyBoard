@@ -803,12 +803,20 @@ const static char* moveTarKey = "moveTarKey";
             if(indexPath){
                 NSDictionary* dic = [fccSAPList objectAtIndex:indexPath.row];
                 if(dic.count){
-                    FccInfoViewController* vc = [[FccInfoViewController alloc] init];
-                    vc.paramBarcode = [dic objectForKey:@"EQUNR"];
-                    if([JOB_GUBUN isEqualToString:@"고장등록"]){
-                        vc.paramScreenCode = @"고장이력조회";
+                    UIViewController* vc = [self instantiateViewController:@"Info" viewName:@"FccInfoViewController"];
+                    if (vc) {
+                        ((FccInfoViewController*)vc).paramBarcode = [dic objectForKey:@"EQUNR"];
+                        if([JOB_GUBUN isEqualToString:@"고장등록"]){
+                            ((FccInfoViewController*)vc).paramScreenCode = @"고장이력조회";
+                        }
+                        [self pushViewController:vc animated:YES];
                     }
-                    [self.navigationController pushViewController:vc animated:YES];
+//                    FccInfoViewController* vc = [[FccInfoViewController alloc] init];
+//                    vc.paramBarcode = [dic objectForKey:@"EQUNR"];
+//                    if([JOB_GUBUN isEqualToString:@"고장등록"]){
+//                        vc.paramScreenCode = @"고장이력조회";
+//                    }
+//                    [self.navigationController pushViewController:vc animated:YES];
                 }
             }
         }
@@ -3133,15 +3141,17 @@ const static char* moveTarKey = "moveTarKey";
     }
     
     // 설비상세정보화면을 띄워준다.
-    FccInfoViewController* vc = [[FccInfoViewController alloc] init];
-    if (originalSAPList.count){
-        NSDictionary* subDic = [fccSAPList objectAtIndex:nSelectedRow];
-        NSDictionary* selItemdic = [WorkUtil getItemFromFccList:[subDic objectForKey:@"EQUNR"] fccList:originalSAPList];
-        
-        vc.paramBarcode = [selItemdic objectForKey:@"EQUNR"];
-        
+    //FccInfoViewController* vc = [[FccInfoViewController alloc] init];
+    UIViewController* vc = [self instantiateViewController:@"Info" viewName:@"FccInfoViewController"];
+    if (vc) {
+        if (originalSAPList.count){
+            NSDictionary* subDic = [fccSAPList objectAtIndex:nSelectedRow];
+            NSDictionary* selItemdic = [WorkUtil getItemFromFccList:[subDic objectForKey:@"EQUNR"] fccList:originalSAPList];
+            ((FccInfoViewController*)vc).paramBarcode = [selItemdic objectForKey:@"EQUNR"];
+        }
+        [self pushViewController:vc animated:YES];
+        //[self.navigationController pushViewController:vc animated:YES];
     }
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)fccDetailScreen{
@@ -3151,10 +3161,12 @@ const static char* moveTarKey = "moveTarKey";
         return;
     }
     
-    FccInfoViewController* vc = [[FccInfoViewController alloc] init];
-    vc.paramBarcode = txtFacCode.text;
-    vc.paramScreenCode = @"고장정보";
-    [self.navigationController pushViewController:vc animated:YES];
+    UIViewController* vc = [self instantiateViewController:@"Info" viewName:@"FccInfoViewController"];
+    if (vc) {
+        ((FccInfoViewController*)vc).paramBarcode = txtFacCode.text;
+        ((FccInfoViewController*)vc).paramScreenCode = @"고장정보";
+        [self pushViewController:vc animated:YES];
+    } 
 }
 
 - (IBAction) touchSendBtn:(id)sender

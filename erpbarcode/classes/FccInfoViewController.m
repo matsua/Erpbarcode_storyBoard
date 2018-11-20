@@ -16,6 +16,8 @@
 @property(nonatomic,strong) IBOutlet UIScrollView* _scrollView;
 @property(nonatomic,strong) IBOutlet UIScrollView* _scrollView2;
 
+@property(nonatomic,strong) IBOutlet UIView* contentView;
+
 @property(nonatomic,strong) IBOutlet UIView* normalView;
 @property(nonatomic,strong) IBOutlet UIView* locView;
 @property(nonatomic,strong) IBOutlet UIView* orgView;
@@ -154,6 +156,13 @@
 #pragma mark - UserDefine Method
 - (void) layoutSubView
 {
+    self.normalView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.normalView.frame.size.height);
+    self.locView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.locView.frame.size.height);
+    self.warrantyView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.warrantyView.frame.size.height);
+    self.orgView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.orgView.frame.size.height);
+    self.failureView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.failureView.frame.size.height);
+    self.failureListView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.failureListView.frame.size.height);
+    
     //이전 버튼 구성
     [self.navigationItem addLeftBarButtonItem:@"navigation_back" target:self action:@selector(touchBackBtn:)];
     

@@ -1738,9 +1738,11 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
                         [[dic objectForKey:@"PART_NAME"] isEqualToString:@"D"])
                         return;
                     
-                    FccInfoViewController* vc = [[FccInfoViewController alloc] init];
-                    vc.paramBarcode = [dic objectForKey:@"EQUNR"];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    UIViewController* vc = [self instantiateViewController:@"Info" viewName:@"FccInfoViewController"];
+                    if (vc) {
+                        ((FccInfoViewController*)vc).paramBarcode = [dic objectForKey:@"EQUNR"];
+                        [self pushViewController:vc animated:YES];                        
+                    }
                 }
             }
         }
@@ -1780,16 +1782,20 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
 }
 
 - (IBAction)touchFccInfoBtn:(id)sender {
-    FccInfoViewController* vc = [[FccInfoViewController alloc] init];
-    if (tableList.count){
-        NSDictionary* selItemdic = [tableList objectAtIndex:nSelectedRow];
-        if (strFccBarCode.length)
-            vc.paramBarcode = [selItemdic objectForKey:@"EQUNR"]; //설비조회 화면시.
-        else
-            vc.paramBarcode = [selItemdic objectForKey:@"BARCODE"];
-        
+    //FccInfoViewController* vc = [[FccInfoViewController alloc] init];
+    UIViewController* vc = [self instantiateViewController:@"info" viewName:@"FccInfoViewController"];
+    if (vc) {
+        if (tableList.count){
+            NSDictionary* selItemdic = [tableList objectAtIndex:nSelectedRow];
+            if (strFccBarCode.length)
+                ((FccInfoViewController*)vc).paramBarcode = [selItemdic objectForKey:@"EQUNR"]; //설비조회 화면시.
+            else
+                ((FccInfoViewController*)vc).paramBarcode = [selItemdic objectForKey:@"BARCODE"];
+            
+        }
+        //[self.navigationController pushViewController:vc animated:YES];
+        [self pushViewController:vc animated:YES];
     }
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)touchInitBtn:(id)sender {

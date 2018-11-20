@@ -367,9 +367,11 @@
             if(indexPath){
                 NSDictionary* dic = [fccSAPList objectAtIndex:indexPath.row];
                 if(dic.count){
-                    FccInfoViewController* vc = [[FccInfoViewController alloc] init];
-                    vc.paramBarcode = [dic objectForKey:@"EQUNR"];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    UIViewController* vc = [self instantiateViewController:@"Info" viewName:@"FccInfoViewController"];
+                    if (vc) {
+                        ((FccInfoViewController*)vc).paramBarcode = [dic objectForKey:@"EQUNR"];
+                        [self pushViewController:vc animated:YES];
+                    }  
                 }
             }
         }

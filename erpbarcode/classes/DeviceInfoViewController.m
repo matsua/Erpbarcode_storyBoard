@@ -246,9 +246,13 @@
                         [[dic objectForKey:@"PART_NAME"] isEqualToString:@"D"])
                         return;
                     
-                    FccInfoViewController* vc = [[FccInfoViewController alloc] init];
-                    vc.paramBarcode = [dic objectForKey:@"EQUNR"];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    //FccInfoViewController* vc = [[FccInfoViewController alloc] init];
+                    UIViewController* vc = [self instantiateViewController:@"info" viewName:@"FccInfoViewController"];
+                    if (vc) {
+                        ((FccInfoViewController*)vc).paramBarcode = [dic objectForKey:@"EQUNR"];
+                        [self pushViewController:vc animated:YES];
+                        //[self.navigationController pushViewController:vc animated:YES];
+                    }
                 }
             }
         }
