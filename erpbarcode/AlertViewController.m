@@ -70,7 +70,11 @@
     
     if (self.alertController == nil) return;
     AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    [appDelegate.window.rootViewController presentViewController:self.alertController animated:YES completion:nil];
+    UIViewController* rootView = appDelegate.window.rootViewController;
+    while(rootView.presentedViewController) {
+        rootView = rootView.presentedViewController;
+    }
+    [rootView presentViewController:self.alertController animated:YES completion:nil];
 }
 
 -(void)hide {
