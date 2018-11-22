@@ -466,7 +466,9 @@
     lblCount.font = [UIFont systemFontOfSize:14];
     lblCount.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:lblCount];
-        
+    
+    [self setCountLabelPosition:lblCount y:30 height:20];
+    
     lblOrperationInfo.text = [NSString stringWithFormat:@"%@/%@",strUserOrgCode,strUserOrgName];
     
     //long press gesture add

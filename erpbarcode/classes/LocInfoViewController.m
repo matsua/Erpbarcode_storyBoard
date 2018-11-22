@@ -79,6 +79,8 @@
     //lblContent.text = @"test";
     [self.view addSubview:lblCount];
     
+    [self setCountLabelPosition:lblCount y:30 height:20];
+    
     [txtLocCode becomeFirstResponder];
     
     scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width*2, scrollView.frame.size.height);

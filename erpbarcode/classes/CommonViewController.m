@@ -130,6 +130,35 @@
     
 }
 
+- (CGFloat)getBottomPadding {
+    
+    if (@available(iOS 11.0, *)) {
+        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        CGFloat bottomPadding = window.safeAreaInsets.bottom;
+        return bottomPadding;
+    }
+    return 0;
+}
+
+- (void)setCountLabelPosition:(UIView*)lblCount parent:(UIView*)parent y:(CGFloat)y height:(CGFloat)height {
+    
+    lblCount.translatesAutoresizingMaskIntoConstraints = false;
+    CGFloat bottom = [self getBottomPadding] + y;
+    [lblCount.widthAnchor constraintEqualToConstant:parent.bounds.size.width].active = YES;
+    [lblCount.heightAnchor constraintEqualToConstant:height].active = YES;
+    [lblCount.centerXAnchor constraintEqualToAnchor:parent.centerXAnchor].active = YES;
+    [lblCount.topAnchor constraintEqualToAnchor:parent.bottomAnchor constant:-bottom].active = YES;
+}
+
+- (void)setCountLabelPosition:(UIView*)lblCount y:(CGFloat)y height:(CGFloat)height{
+    
+    lblCount.translatesAutoresizingMaskIntoConstraints = false;
+    CGFloat bottom = [self getBottomPadding] + y;
+    [lblCount.widthAnchor constraintEqualToConstant:self.view.bounds.size.width].active = YES;
+    [lblCount.heightAnchor constraintEqualToConstant:height].active = YES;
+    [lblCount.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [lblCount.topAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-bottom].active = YES;
+}
 /*
 #pragma mark - Navigation
 

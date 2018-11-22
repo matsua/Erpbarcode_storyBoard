@@ -96,7 +96,8 @@
     
     // Refresh myView and/or main view
     [self.view layoutIfNeeded];
-    
+    CGRect rect = self.view.frame;
+    NSLog(@"\nLineView %f, %f, %f, %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
     
     //font test : matsua
 //    for(NSString *familyName in [UIFont familyNames])

@@ -1764,6 +1764,8 @@ const static char* moveTarKey = "moveTarKey";
     lblCount.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:lblCount];
     
+    [self setCountLabelPosition:lblCount y:30 height:20];
+    
     // 접수 또는 송부조직 선택/취소 시 발생되는 notification 등록
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(orgDataReceived:)

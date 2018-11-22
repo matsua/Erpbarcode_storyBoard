@@ -643,7 +643,7 @@
                                         </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EJl-q6-fK4">
-                                        <rect key="frame" x="0.0" y="246" width="320" height="258"/>
+                                        <rect key="frame" x="0.0" y="246" width="320" height="198"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="dataSource" destination="O6B-x9-Uuo" id="TZ0-me-eZO"/>
@@ -655,7 +655,7 @@
                                 <constraints>
                                     <constraint firstItem="mOO-R6-uds" firstAttribute="top" secondItem="TZz-TD-ZUc" secondAttribute="top" id="3i9-st-VDS"/>
                                     <constraint firstItem="mOO-R6-uds" firstAttribute="leading" secondItem="TZz-TD-ZUc" secondAttribute="leading" id="RVS-YG-ag3"/>
-                                    <constraint firstAttribute="bottom" secondItem="EJl-q6-fK4" secondAttribute="bottom" id="a2s-4X-qTd"/>
+                                    <constraint firstAttribute="bottom" secondItem="EJl-q6-fK4" secondAttribute="bottom" constant="60" id="a2s-4X-qTd"/>
                                     <constraint firstItem="EJl-q6-fK4" firstAttribute="leading" secondItem="TZz-TD-ZUc" secondAttribute="leading" id="eGc-gQ-5vl"/>
                                     <constraint firstAttribute="trailing" secondItem="EJl-q6-fK4" secondAttribute="trailing" id="enT-Ci-4KX"/>
                                     <constraint firstItem="EJl-q6-fK4" firstAttribute="top" secondItem="mOO-R6-uds" secondAttribute="bottom" id="pAT-1M-ox7"/>

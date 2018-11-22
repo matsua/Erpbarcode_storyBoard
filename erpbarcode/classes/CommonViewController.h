@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UIViewController*)getOutIntoView:(NSString*)workName;
 - (UIViewController*)goOutIntoView:(NSString*)workName;
+- (CGFloat)getBottomPadding;
+- (void)setCountLabelPosition:(UIView*)lblCount  y:(CGFloat)y height:(CGFloat)height;
+- (void)setCountLabelPosition:(UIView*)lblCount parent:(UIView*)parent y:(CGFloat)y height:(CGFloat)height;
 
 @end
 

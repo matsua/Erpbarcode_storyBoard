@@ -49,22 +49,25 @@
             [subView removeFromSuperview];
     
     
-	CGRect pageRect = [_scrollView bounds];
-    CGRect tableRect = [_scrollView bounds];
-    CGRect titleRect = CGRectMake(0, 0, 320, 40);
-    tableRect.origin.y += titleRect.size.height;
-    tableRect.size.height -= titleRect.size.height;
+    CGRect scrollViewRect = [_scrollView bounds];
+	CGRect titleRect = CGRectMake(0, 0, scrollViewRect.size.width, 40);
+    CGRect pageRect = CGRectMake(0, 0, scrollViewRect.size.width, scrollViewRect.size.height);
+    CGRect tableRect = CGRectMake(0, titleRect.size.height, pageRect.size.width, pageRect.size.height - titleRect.size.height);
+    
+//    CGRect tableRect = [_scrollView bounds];
+//    tableRect.origin.y += titleRect.size.height;
+//    tableRect.size.height -= titleRect.size.height;
     
     
     // 첫번째 페이지 생성
     UIView* firstView = [[UIView alloc]initWithFrame:pageRect];
-    firstView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    //firstView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
     page1TitleView.frame = titleRect;
     [firstView addSubview:page1TitleView];
     
     _tblFirst = [[UITableView alloc]initWithFrame:tableRect];
-    _tblFirst .autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    //_tblFirst .autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     _tblFirst.delegate = self;
     _tblFirst.dataSource = self;
     _tblFirst.tag = 1;
@@ -76,13 +79,13 @@
     if ([JOB_GUBUN isEqualToString:@"인계"] || [JOB_GUBUN isEqualToString:@"인수"]){
         // 두번째 페이지 생성
         UIView* secondView = [[UIView alloc]initWithFrame:pageRect];
-        secondView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        //secondView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         
         toPage2TitleView.frame = titleRect;
         [secondView addSubview:toPage2TitleView];
         
         _tblSecond = [[UITableView alloc]initWithFrame:tableRect];
-        _tblSecond.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+        //_tblSecond.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
         _tblSecond.delegate = self;
         _tblSecond.dataSource = self;
         _tblSecond.tag = 2;
@@ -94,13 +97,13 @@
 
         // 세번째 페이지 생성
         UIView* thirdView = [[UIView alloc]initWithFrame:pageRect];
-        thirdView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        //thirdView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         
         toPage3TitleView.frame = titleRect;
         [thirdView addSubview:toPage3TitleView];
         
         _tblThird = [[UITableView alloc]initWithFrame:tableRect];
-        _tblThird.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+        //_tblThird.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
         _tblThird.delegate = self;
         _tblThird.dataSource = self;
         _tblThird.tag = 3;
@@ -110,18 +113,17 @@
         [self loadScrollViewWithPage:thirdView];
         
         
-        CGRect scrollViewRect = [_scrollView bounds];
         _scrollView.contentSize = CGSizeMake(scrollViewRect.size.width * 3, 1);
     }else{
         // 두번째 페이지 생성
         UIView* secondView = [[UIView alloc]initWithFrame:pageRect];
-        secondView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        //secondView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         
         page2TitleView.frame = titleRect;
         [secondView addSubview:page2TitleView];
         
         _tblSecond = [[UITableView alloc]initWithFrame:tableRect];
-        _tblSecond.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+        //_tblSecond.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
         _tblSecond.delegate = self;
         _tblSecond.dataSource = self;
         _tblSecond.tag = 2;
@@ -130,8 +132,6 @@
         
         [self loadScrollViewWithPage:secondView];
         
-        
-        CGRect scrollViewRect = [_scrollView bounds];
         _scrollView.contentSize = CGSizeMake(scrollViewRect.size.width * 2, 1);
     }
 
@@ -147,7 +147,7 @@
 {
 	int pageCount = (int)[[_scrollView subviews] count];
 	
-	CGRect bounds = _scrollView.bounds;
+    CGRect bounds = _scrollView.bounds;
 	bounds.origin.x = bounds.size.width * pageCount;
 	bounds.origin.y = 0;
 	page.frame = bounds;
@@ -176,8 +176,15 @@
     
     self.title = @"WBS 선택";
     
-    [self createPages];
+    
+}
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self createPages];
+    
     if (wbsList.count > 0){
         [self tableView:_tblFirst didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     }

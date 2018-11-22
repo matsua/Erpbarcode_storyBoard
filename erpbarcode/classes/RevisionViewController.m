@@ -1105,6 +1105,8 @@
     lblCount.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:lblCount];
     
+    [self setCountLabelPosition:lblCount y:30 height:20];
+    
     //운용조직
     NSDictionary* dic = [Util udObjectForKey:USER_INFO];
     strUserOrgCode = [dic objectForKey:@"orgId"];

@@ -327,32 +327,33 @@
     [self.navigationItem addLeftBarButtonItem:@"navigation_back" target:self action:@selector(touchBackBtn:)];
     
     
-    UIView* countView = [[UIView alloc] initWithFrame:CGRectMake(0,  PHONE_SCREEN_HEIGHT - 44 - 45, 320, 45)];
+    UIView* countView = [[UIView alloc] initWithFrame:CGRectMake(0,  PHONE_SCREEN_HEIGHT - 44 - 45, self.view.frame.size.width, 45)];
     countView.backgroundColor = [UIColor clearColor];
     
-    lblCount = [[UILabel alloc] initWithFrame:CGRectMake(20,0, 300, 15)];
+    lblCount = [[UILabel alloc] initWithFrame:CGRectMake(20,0, self.view.frame.size.width - 40, 15)];
     lblCount.backgroundColor = [UIColor clearColor];
     lblCount.textColor = [UIColor brownColor];
     lblCount.font = [UIFont systemFontOfSize:14];
     lblCount.textAlignment = NSTextAlignmentCenter;
     [countView addSubview:lblCount];
     
-    lblScanCount = [[UILabel alloc] initWithFrame:CGRectMake(20,15, 300, 15)];
+    lblScanCount = [[UILabel alloc] initWithFrame:CGRectMake(20,15, self.view.frame.size.width - 40, 15)];
     lblScanCount.backgroundColor = [UIColor clearColor];
     lblScanCount.textColor = [UIColor blueColor];
     lblScanCount.font = [UIFont systemFontOfSize:14];
     lblScanCount.textAlignment = NSTextAlignmentCenter;
     [countView addSubview:lblScanCount];
     
-    lblPercent = [[UILabel alloc] initWithFrame:CGRectMake(20,30, 300, 15)];
+    lblPercent = [[UILabel alloc] initWithFrame:CGRectMake(20,30, self.view.frame.size.width - 40, 15)];
     lblPercent.backgroundColor = [UIColor clearColor];
     lblPercent.textColor = [UIColor brownColor];
     lblPercent.font = [UIFont systemFontOfSize:14];
     lblPercent.textAlignment = NSTextAlignmentCenter;
     [countView addSubview:lblPercent];
     
-    
     [self.view addSubview:countView];
+    
+    [self setCountLabelPosition:countView y:55 height:45];
     
     //운용조직
     NSDictionary* dic = [Util udObjectForKey:USER_INFO];

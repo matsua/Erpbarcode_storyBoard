@@ -577,6 +577,16 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="CYp-aY-WID" firstAttribute="width" secondItem="Hlc-6z-ztX" secondAttribute="width" id="6CD-eF-te8"/>
+                                            <constraint firstItem="HhT-Kc-Cha" firstAttribute="width" secondItem="Hlc-6z-ztX" secondAttribute="width" id="AP4-9n-acn"/>
+                                            <constraint firstItem="4cd-9t-TEc" firstAttribute="width" secondItem="Hlc-6z-ztX" secondAttribute="width" id="Nkr-zU-Fxr"/>
+                                            <constraint firstItem="KU6-nF-Ffj" firstAttribute="width" secondItem="Hlc-6z-ztX" secondAttribute="width" id="O0v-uR-Ncr"/>
+                                            <constraint firstItem="Yjx-SA-1rd" firstAttribute="width" secondItem="Hlc-6z-ztX" secondAttribute="width" id="QBb-e5-Z8o"/>
+                                            <constraint firstItem="eCq-vK-kIi" firstAttribute="width" secondItem="Hlc-6z-ztX" secondAttribute="width" id="WMf-52-m5H"/>
+                                            <constraint firstItem="YIt-bR-5bh" firstAttribute="width" secondItem="Hlc-6z-ztX" secondAttribute="width" id="WMl-ME-Z7L"/>
+                                            <constraint firstItem="1W9-3A-hnU" firstAttribute="width" secondItem="Hlc-6z-ztX" secondAttribute="width" id="hiY-jT-W2b"/>
+                                        </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NIP-w8-cFN">
                                         <rect key="frame" x="0.0" y="243" width="320" height="217"/>
@@ -590,12 +600,12 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Hlc-6z-ztX" firstAttribute="top" secondItem="uUf-jC-tEY" secondAttribute="top" id="5J1-kj-34y"/>
+                                    <constraint firstItem="NIP-w8-cFN" firstAttribute="width" secondItem="uUf-jC-tEY" secondAttribute="width" id="BSO-1s-IQD"/>
                                     <constraint firstItem="NIP-w8-cFN" firstAttribute="top" secondItem="Hlc-6z-ztX" secondAttribute="bottom" id="H47-qV-ANT"/>
-                                    <constraint firstItem="NIP-w8-cFN" firstAttribute="leading" secondItem="uUf-jC-tEY" secondAttribute="leading" id="Occ-M1-6YQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="NIP-w8-cFN" secondAttribute="trailing" id="Z1P-Ex-GQT"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hlc-6z-ztX" secondAttribute="trailing" id="qHP-nK-T6k"/>
+                                    <constraint firstItem="NIP-w8-cFN" firstAttribute="centerX" secondItem="uUf-jC-tEY" secondAttribute="centerX" id="JGl-1O-vrM"/>
+                                    <constraint firstItem="Hlc-6z-ztX" firstAttribute="centerX" secondItem="uUf-jC-tEY" secondAttribute="centerX" id="imm-hX-PfV"/>
+                                    <constraint firstItem="Hlc-6z-ztX" firstAttribute="width" secondItem="uUf-jC-tEY" secondAttribute="width" id="nPu-fN-LkT"/>
                                     <constraint firstAttribute="bottom" secondItem="NIP-w8-cFN" secondAttribute="bottom" constant="44" id="qdw-Py-S9r"/>
-                                    <constraint firstItem="Hlc-6z-ztX" firstAttribute="leading" secondItem="uUf-jC-tEY" secondAttribute="leading" id="v7Z-Ox-kI1"/>
                                 </constraints>
                             </view>
                         </subviews>

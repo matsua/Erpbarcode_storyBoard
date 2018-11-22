@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface LocListViewController : UIViewController
+#import "CommonViewController.h"
+
+@interface LocListViewController : CommonViewController
 
 @property(nonatomic,strong) NSArray* locList;
 @property(nonatomic,strong) id sender;

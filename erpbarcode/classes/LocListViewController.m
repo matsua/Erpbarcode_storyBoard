@@ -61,6 +61,8 @@
     lblCount.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:lblCount];
     
+    [self setCountLabelPosition:lblCount y:30 height:20];
+    
     if (locList.count){
         lblCount.text = [NSString stringWithFormat:@"%d건",(int)[locList count]];
     }

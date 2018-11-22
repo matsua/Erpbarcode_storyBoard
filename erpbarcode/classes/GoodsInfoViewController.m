@@ -96,6 +96,8 @@
     lblCount.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:lblCount];
 
+    [self setCountLabelPosition:lblCount y:30 height:20];
+    
     if ([JOB_GUBUN isEqualToString:@"물품정보"]){
         btnSelect.hidden = YES;
         btnInit.hidden = YES;

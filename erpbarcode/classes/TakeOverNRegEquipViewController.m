@@ -1006,9 +1006,9 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
     [self.navigationItem addLeftBarButtonItem:@"navigation_back" target:self action:@selector(touchBackBtn:)];
     CGRect lblCountRect;
     if ([JOB_GUBUN isEqualToString:@"인수"]){
-        lblCountRect = CGRectMake(0, PHONE_SCREEN_HEIGHT - 44 - 40, 320, 20);
+        lblCountRect = CGRectMake(0, PHONE_SCREEN_HEIGHT - 44 - 40, self.view.frame.size.width, 20);
     }else
-        lblCountRect = CGRectMake(0, PHONE_SCREEN_HEIGHT - 44 - 20, 320, 20);
+        lblCountRect = CGRectMake(0, PHONE_SCREEN_HEIGHT - 44 - 20, self.view.frame.size.width, 20);
     
     lblCount = [[UILabel alloc] initWithFrame:lblCountRect];
     lblCount.backgroundColor = [UIColor clearColor];
@@ -1017,8 +1017,9 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
     lblCount.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:lblCount];
     
+    
     if ([JOB_GUBUN isEqualToString:@"인수"]){
-        lblCount2 = [[UILabel alloc] initWithFrame:CGRectMake(0,  PHONE_SCREEN_HEIGHT - 44 - 20, 320, 20)];
+        lblCount2 = [[UILabel alloc] initWithFrame:CGRectMake(0,  PHONE_SCREEN_HEIGHT - 44 - 20, self.view.frame.size.width, 20)];
         lblCount2.backgroundColor = [UIColor clearColor];
         lblCount2.textColor = [UIColor blueColor];
         lblCount2.font = [UIFont systemFontOfSize:14];
@@ -1026,7 +1027,12 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
         
         [self.view addSubview:lblCount2];
         
+        [self setCountLabelPosition:lblCount y:40 height:20];
+        [self setCountLabelPosition:lblCount2 y:20 height:20];
+        
         _tableView.frame = CGRectMake(_tableView.frame.origin.x, _tableView.frame.origin.y, _tableView.frame.size.width, _tableView.frame.size.height - 20);
+    } else {
+        [self setCountLabelPosition:lblCount y:30 height:20];
     }
     
     if ([JOB_GUBUN isEqualToString:@"인계"]){
@@ -1999,12 +2005,19 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
     isChange = YES;
     self.isSendFlag = YES;
     
-    WBSListViewController* vc = [[WBSListViewController alloc] init];
-    vc.delegate = self;
-    vc.wbsList = wbsResultList;
-    vc.JOB_GUBUN = JOB_GUBUN;
-    
-    [self presentViewController:vc animated:YES completion:nil];
+    UIViewController* vc = [self instantiateViewController:@"Sub" viewName:@"WBSListViewController"];
+    if (vc) {
+        ((WBSListViewController*)vc).delegate = self;
+        ((WBSListViewController*)vc).wbsList = wbsResultList;
+        ((WBSListViewController*)vc).JOB_GUBUN = JOB_GUBUN;
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+//    WBSListViewController* vc = [[WBSListViewController alloc] init];
+//    vc.delegate = self;
+//    vc.wbsList = wbsResultList;
+//    vc.JOB_GUBUN = JOB_GUBUN;
+//
+//    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (IBAction)touchModifyBtn:(id)sender {
@@ -3000,12 +3013,19 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
 - (void)processWBSList:(NSArray*)wbsList
 {
     if (wbsList.count){
-        WBSListViewController* vc = [[WBSListViewController alloc] init];
-        vc.delegate = self;
-        vc.wbsList = wbsList;
-        vc.JOB_GUBUN = JOB_GUBUN;
-        
-        [self.navigationController pushViewController:vc animated:YES];
+        UIViewController* vc = [self instantiateViewController:@"Sub" viewName:@"WBSListViewController"];
+        if (vc) {
+            ((WBSListViewController*)vc).delegate = self;
+            ((WBSListViewController*)vc).wbsList = wbsList;
+            ((WBSListViewController*)vc).JOB_GUBUN = JOB_GUBUN;
+            [self pushViewController:vc animated:YES];
+        }
+//        WBSListViewController* vc = [[WBSListViewController alloc] init];
+//        vc.delegate = self;
+//        vc.wbsList = wbsList;
+//        vc.JOB_GUBUN = JOB_GUBUN;
+//
+//        [self.navigationController pushViewController:vc animated:YES];
     }else{
         NSString* message = @"WBS가 없습니다.";
         [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
