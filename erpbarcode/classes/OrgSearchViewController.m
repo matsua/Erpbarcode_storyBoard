@@ -341,8 +341,9 @@
              object:selItemDic];
             
         }
-        [self.navigationController popViewControllerAnimated:NO];
+//        [self.navigationController popViewControllerAnimated:NO];
 //        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         
     }
 }

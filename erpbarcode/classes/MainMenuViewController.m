@@ -486,7 +486,7 @@
                     return;
                 }
                 [Util udSetObject:@"위치정보" forKey:USER_WORK_NAME];
-                [self pushViewController:@"Info" viewName:@"DeviceInfoViewController" animated:YES];
+                [self pushViewController:@"Info" viewName:@"LocInfoViewController" animated:YES];
                 //LocInfoViewController* vc = [[LocInfoViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
             }
@@ -516,9 +516,9 @@
                 //BarcodeViewController* vc = [[BarcodeViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
             }
-            else if (nTag == 1){ //소스마킹
+            else if (nTag == 1){ //장치바코드
                 if (isOffLine) {
-                    message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"위치바코드"];
+                    message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"장치바코드"];
                     [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
                     return;
                 }
@@ -527,9 +527,9 @@
                 [self pushViewController:@"Barcode" viewName:@"BarcodeViewController" animated:YES];
                 //BarcodeViewController* vc = [[BarcodeViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
-            }else if (nTag == 2){ //장치바코드
+            }else if (nTag == 2){ //소스마킹
                 if (isOffLine) {
-                    message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"위치바코드"];
+                    message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"소스마킹"];
                     [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
                     return;
                 }
