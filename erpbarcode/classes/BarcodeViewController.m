@@ -328,13 +328,13 @@
                                                object:nil];
     
     StartDatePicker = [[DatePickerViewController alloc] init];
-    CGRect dateFrameStart = CGRectMake(StartDatePicker.view.frame.origin.x, self.view.frame.size.height + 20, StartDatePicker.view.frame.size.width, StartDatePicker.view.frame.size.height);
+    CGRect dateFrameStart = CGRectMake(StartDatePicker.view.frame.origin.x, self.view.frame.size.height + 20, PHONE_SCREEN_WIDTH, StartDatePicker.view.frame.size.height);
     StartDatePicker.view.frame = dateFrameStart;
     StartDatePicker.delegate = self;
     [self.view addSubview:StartDatePicker.view];
     
     EndDatePicker = [[DatePickerViewController alloc] init];
-    CGRect dateFrameEnd = CGRectMake(EndDatePicker.view.frame.origin.x, self.view.frame.size.height + 20, EndDatePicker.view.frame.size.width, EndDatePicker.view.frame.size.height);
+    CGRect dateFrameEnd = CGRectMake(EndDatePicker.view.frame.origin.x, self.view.frame.size.height + 20, PHONE_SCREEN_WIDTH, EndDatePicker.view.frame.size.height);
     EndDatePicker.view.frame = dateFrameEnd;
     EndDatePicker.delegate = self;
     [self.view addSubview:EndDatePicker.view];

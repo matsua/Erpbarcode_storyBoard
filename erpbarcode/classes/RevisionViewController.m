@@ -1215,7 +1215,7 @@
     
     // DR-2015-45173 바코드앱 일부 메뉴의 select 값 순서 변경 by 조석호 과장(예비 -> 유휴)
     if ([JOB_GUBUN isEqualToString:@"고장등록취소"]){
-        picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, self.view.frame.size.width, 240) data:@[@"유휴", @"예비", @"미운용", @"불용대기"]];
+        picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:@[@"유휴", @"예비", @"미운용", @"불용대기"]];
         //피커 델리게이트를 항상 먼저 선택
         picker.delegate = self;
         [picker selectPicker:0]; //선택값 예비로 설정 -> 유휴로 변경
@@ -1235,7 +1235,7 @@
 //        _scrollView.frame = rect;
     }
     else if ([JOB_GUBUN isEqualToString:@"수리완료"]){
-        picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, self.view.frame.size.width, 240) data:@[@"유휴", @"예비", @"불용대기"]];
+        picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:@[@"유휴", @"예비", @"불용대기"]];
         picker.delegate = self;
         [picker selectPicker:0]; //선택값 예비로 설정 -> 유휴로 변경
         
@@ -1305,7 +1305,7 @@
              [JOB_GUBUN isEqualToString:@"개조개량완료"]
              ){
         //table 3개만 필요함
-        picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, self.view.frame.size.width, 240) data:@[@"유휴", @"예비"]];
+        picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:@[@"유휴", @"예비"]];
         picker.delegate = self;
         [picker selectPicker:0]; //선택값 예비로 설정 -> 유휴로 변경
         

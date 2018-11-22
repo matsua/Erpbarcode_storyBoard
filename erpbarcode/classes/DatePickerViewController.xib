@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerViewController">
@@ -16,33 +21,53 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
             <subviews>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="FlL-yW-8sX">
-                    <rect key="frame" x="0.0" y="37" width="320" height="162"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <date key="date" timeIntervalSinceReferenceDate="405175033.05751199">
-                        <!--2013-11-03 12:37:13 +0000-->
-                    </date>
-                </datePicker>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Iz5-QI-Y52">
-                    <rect key="frame" x="0.0" y="-7" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <items>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="uEP-oM-EBC"/>
-                        <barButtonItem title="선택" width="55" id="hoD-mS-C2h">
-                            <connections>
-                                <action selector="touchSelectBtn:" destination="-1" id="CFo-U9-NRD"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem title="취소" width="44" id="DUP-03-Shh">
-                            <connections>
-                                <action selector="touchCancelBtn:" destination="-1" id="5LY-PD-pNP"/>
-                            </connections>
-                        </barButtonItem>
-                    </items>
-                </toolbar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtS-0Y-J2e">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FlL-yW-8sX">
+                            <rect key="frame" x="0.0" y="37" width="320" height="162"/>
+                            <date key="date" timeIntervalSinceReferenceDate="405175033.05751199">
+                                <!--2013-11-03 12:37:13 +0000-->
+                            </date>
+                        </datePicker>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iz5-QI-Y52">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <items>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="uEP-oM-EBC"/>
+                                <barButtonItem title="선택" width="55" id="hoD-mS-C2h">
+                                    <connections>
+                                        <action selector="touchSelectBtn:" destination="-1" id="CFo-U9-NRD"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem title="취소" width="44" id="DUP-03-Shh">
+                                    <connections>
+                                        <action selector="touchCancelBtn:" destination="-1" id="5LY-PD-pNP"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Iz5-QI-Y52" firstAttribute="top" secondItem="GtS-0Y-J2e" secondAttribute="top" id="GdM-yg-RZW"/>
+                        <constraint firstAttribute="trailing" secondItem="Iz5-QI-Y52" secondAttribute="trailing" id="aRp-B4-Iqp"/>
+                        <constraint firstAttribute="bottom" secondItem="FlL-yW-8sX" secondAttribute="bottom" id="bct-BQ-kOR"/>
+                        <constraint firstItem="Iz5-QI-Y52" firstAttribute="leading" secondItem="GtS-0Y-J2e" secondAttribute="leading" id="m2H-Tq-m93"/>
+                        <constraint firstAttribute="trailing" secondItem="FlL-yW-8sX" secondAttribute="trailing" id="rBl-q5-gku"/>
+                        <constraint firstItem="FlL-yW-8sX" firstAttribute="leading" secondItem="GtS-0Y-J2e" secondAttribute="leading" id="vKh-vP-zb2"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="GtS-0Y-J2e" firstAttribute="bottom" secondItem="Hna-F9-Gh9" secondAttribute="bottom" id="9JY-dI-XxZ"/>
+                <constraint firstItem="GtS-0Y-J2e" firstAttribute="leading" secondItem="Hna-F9-Gh9" secondAttribute="leading" id="Ctk-8J-XoL"/>
+                <constraint firstItem="GtS-0Y-J2e" firstAttribute="trailing" secondItem="Hna-F9-Gh9" secondAttribute="trailing" id="VeC-ea-KTA"/>
+                <constraint firstItem="GtS-0Y-J2e" firstAttribute="top" secondItem="1" secondAttribute="top" id="zCq-lf-JPZ"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Hna-F9-Gh9"/>
+            <point key="canvasLocation" x="139" y="126"/>
         </view>
     </objects>
 </document>

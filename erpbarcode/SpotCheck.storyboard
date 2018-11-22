@@ -156,7 +156,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.89799207449999996" green="0.89807194469999996" blue="0.89792543650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="oyz-iR-XUf" secondAttribute="bottom" constant="1" id="1bk-IA-DQL"/>
                                                     <constraint firstItem="oyz-iR-XUf" firstAttribute="top" secondItem="MaD-xP-6w3" secondAttribute="top" constant="1" id="7RA-V4-xEi"/>
@@ -264,7 +264,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="3mR-de-dnn" firstAttribute="leading" secondItem="IhT-GP-DHk" secondAttribute="leading" constant="6" id="4WF-Yb-8Lr"/>
                                                             <constraint firstItem="3nM-Wb-BHz" firstAttribute="top" secondItem="IhT-GP-DHk" secondAttribute="top" id="AKO-nh-uTk"/>

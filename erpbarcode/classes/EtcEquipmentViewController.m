@@ -286,7 +286,7 @@
     [UIView commitAnimations];
 
     if ([txtMakerSN isFirstResponder] || [txtReqCount isFirstResponder]){
-        _scrollView.contentSize = CGSizeMake(PHONE_SCREEN_WIDTH, 500 + KEYBOARD_SIZE);
+        _scrollView.contentSize = CGSizeMake(320, 500 + KEYBOARD_SIZE);
         CGRect viewRect = CGRectMake(scrollRect.origin.x, scrollRect.origin.y, scrollRect.size.width, scrollRect.size.height + 500 + KEYBOARD_SIZE);
         [_scrollView scrollRectToVisible:viewRect animated:YES];
     }
@@ -313,7 +313,7 @@
     
     CGRect scrollRect = _scrollView.frame;
     if ([txtMakerSN isFirstResponder] || [txtReqCount isFirstResponder]){
-        _scrollView.contentSize = CGSizeMake(PHONE_SCREEN_WIDTH, 480);
+        _scrollView.contentSize = CGSizeMake(320, 480);
         CGRect viewRect = CGRectMake(scrollRect.origin.x, scrollRect.origin.y, scrollRect.size.width, scrollRect.size.height);
         [_scrollView scrollRectToVisible:viewRect animated:YES];
     }
@@ -437,13 +437,14 @@
     // 에니메이션 시작
     [UIView commitAnimations];
     
-    _scrollView.contentSize = CGSizeMake(PHONE_SCREEN_WIDTH, 500 + datePickerVC.view.frame.size.height);
+    _scrollView.contentSize = CGSizeMake(320, 500 + datePickerVC.view.frame.size.height);
     CGRect scrollRect = _scrollView.frame;
     CGRect viewRect = CGRectMake(scrollRect.origin.x, scrollRect.origin.y, scrollRect.size.width, scrollRect.size.height + datePickerVC.view.frame.size.height);
-    
-    NSLog(@"datePickerVC WIDTH === %f", datePickerVC.view.frame.size.width);
-    
     [_scrollView scrollRectToVisible:viewRect animated:YES];
+    
+    NSLog(@"datePickerVC X ==== %f", datePickerVC.view.frame.origin.x);
+    NSLog(@"datePickerVC WIDTH ==== %f", datePickerVC.view.frame.size.width);
+    NSLog(@"_scrollView WIDTH ==== %f", _scrollView.frame.size.width);
     
     pickerVisible = YES;
 }
@@ -537,7 +538,7 @@
 - (void) selectDate:(NSString *)date showingDate:(NSString *)showingDate
 {
     CGRect scrollRect = _scrollView.frame;
-    _scrollView.contentSize = CGSizeMake(PHONE_SCREEN_WIDTH, 480);
+    _scrollView.contentSize = CGSizeMake(320, 480);
 
     CGRect viewRect = CGRectMake(scrollRect.origin.x, scrollRect.origin.y, scrollRect.size.width, scrollRect.size.height);
     [_scrollView scrollRectToVisible:viewRect animated:YES];
@@ -550,7 +551,7 @@
 - (void) cancelDatePicker
 {
     CGRect scrollRect = _scrollView.frame;
-    _scrollView.contentSize = CGSizeMake(PHONE_SCREEN_WIDTH, 480);
+    _scrollView.contentSize = CGSizeMake(320, 480);
     CGRect viewRect = CGRectMake(scrollRect.origin.x, scrollRect.origin.y, scrollRect.size.width, scrollRect.size.height);
     [_scrollView scrollRectToVisible:viewRect animated:YES];
 

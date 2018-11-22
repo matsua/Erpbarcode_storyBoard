@@ -2037,7 +2037,7 @@ const static char* moveTarKey = "moveTarKey";
         
         fccStatusView.frame = CGRectMake(fccStatusView.frame.origin.x, 58, fccStatusView.frame.size.width,fccStatusView.frame.size.height);
         picker = [[CustomPickerView alloc]
-                  initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240)
+                  initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240)
                   data:@[@"선택하세요.",@"Z001:이상로그발생",@"Z002:H/W FAULT(동작불가)",@"Z003:절체 불량",
                          @"Z004:행업",@"Z005:서비스 불가",@"Z006:Power 불량",
                          @"Z007:FAN 불량",@"Z008:낙뢰피해",@"Z999:기타"]];
