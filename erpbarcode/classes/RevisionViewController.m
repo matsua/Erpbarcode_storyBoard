@@ -3828,7 +3828,7 @@
         lblSavedLoc.text = strSavedLoc;
         selectedSavedLocPickerData = strSavedLoc;
         
-        savedLocPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:pickerList];
+        savedLocPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:pickerList];
         savedLocPicker.delegate = self;
         [self requestDocNo];
     }
@@ -3853,7 +3853,7 @@
         lblDocNo.text = strDocNo;
         selectedDocNoPickerData = strDocNo;
         
-        docPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:pickerList];
+        docPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:pickerList];
         docPicker.delegate = self;
     }
     else {
@@ -3876,7 +3876,7 @@
         lblPlant.text = strPlant;
         selectedPlantPickerData = strPlant;
         
-        plantPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:pickerList];
+        plantPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:pickerList];
         plantPicker.delegate = self;
         [self requestSaveLocation];
         

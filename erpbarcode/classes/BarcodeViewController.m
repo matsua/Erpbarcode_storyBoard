@@ -473,7 +473,7 @@
         
         ltKey = @"";
         
-        LabelTpPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:tempLt];
+        LabelTpPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:tempLt];
         LabelTpPicker.delegate = self;
     }
     
@@ -540,7 +540,7 @@
     [tempLt addObject:@"출력"];
     [tempLt addObject:@"미출력"];
     
-    printYnPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:tempLt];
+    printYnPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:tempLt];
     printYnPicker.delegate = self;
     
     [printYnPicker showView];
@@ -1361,7 +1361,7 @@
     lblProgression.text = @"전체";
     stKey = @"all";
     
-    ProgressionPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:tempSt];
+    ProgressionPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:tempSt];
     ProgressionPicker.delegate = self;
 }
 
@@ -1395,7 +1395,7 @@
     lblRequestReason.text = @"전체";
     pwKey = @"all";
     
-    RequestReasonPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:tempPw];
+    RequestReasonPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:tempPw];
     RequestReasonPicker.delegate = self;
 }
 
@@ -1427,7 +1427,7 @@
     
     lblLabelTp.text = @"선택";
     
-    LabelTpPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:tempLt];
+    LabelTpPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:tempLt];
     LabelTpPicker.delegate = self;
 }
 
@@ -1451,7 +1451,7 @@
     
     lblSido.text = @"선택";
     
-    SidoPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:tempSd];
+    SidoPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:tempSd];
     SidoPicker.delegate = self;
 }
 
@@ -1484,7 +1484,7 @@
         lblSigoon.text = @"선택";
     }
     
-    SigoonPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:tempSg];
+    SigoonPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:tempSg];
     SigoonPicker.delegate = self;
 }
 
@@ -1507,7 +1507,7 @@
         }
     }
     
-    DongPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:tempDo];
+    DongPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:tempDo];
     DongPicker.delegate = self;
     
     [DongPicker showView];

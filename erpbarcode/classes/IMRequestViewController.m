@@ -133,7 +133,7 @@
     lblRequestReason.textColor = [UIColor lightGrayColor];
 
     // pickerView의 초기 리스트값을 설정한다.
-    picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:@[@"훼손",@"오부착(교환)",@"교품"]];
+    picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:@[@"훼손",@"오부착(교환)",@"교품"]];
     picker.delegate = self;
     
     // "물품코드를 변경하시겠습니까?"라는 물음에 의한 것인지 여부...  처음엔 아닌거로 설정

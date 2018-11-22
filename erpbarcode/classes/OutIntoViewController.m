@@ -621,9 +621,10 @@ const static char* moveTarKey = "moveTarKey";
         }
         else if ([task isEqualToString:@"M"]) //송부취소(팀간) 접수(팀간) 최초 호출
         {
-            if ([[dic objectForKey:@"IS_FIRST_MOVE"] isEqualToString:@"Y"])
+            if ([[dic objectForKey:@"IS_FIRST_MOVE"] isEqualToString:@"Y"]){
                 isFirstMove = YES;
-            else{
+                originalSAPList = [NSMutableArray array];
+            }else{
                 txtFacCode.text = strMoveBarCode = value;
                 isFirstMove = NO;
             }
@@ -752,7 +753,10 @@ const static char* moveTarKey = "moveTarKey";
             originalSAPList = [NSMutableArray array];
             
             isFirstMove = NO;
-            [self requestMoveData:@"" orgCode:@""];
+            if(strMoveBarCode == nil){
+                isFirstMove = YES;
+            }
+            [self requestMoveData:@"" orgCode:[receivedOrgDic objectForKey:@"costCenter"]];
         }
         //작업관리 추가
         [workDic setObject:receivedOrgDic forKey:@"ORGCODE"];
@@ -1817,16 +1821,16 @@ const static char* moveTarKey = "moveTarKey";
         if(
            [JOB_GUBUN isEqualToString:@"고장등록취소"]
            ){
-            picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:@[@"유휴",@"예비",@"미운용"]];
+            picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:@[@"유휴",@"예비",@"미운용"]];
         }
         else if ([JOB_GUBUN isEqualToString:@"설비상태변경"] ){
-            picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:@[@"유휴",@"예비",@"미운용", @"불용대기"]];
+            picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:@[@"유휴",@"예비",@"미운용", @"불용대기"]];
         }
         else if(![JOB_GUBUN isEqualToString:@"접수(팀간)"]){
-            picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:@[@"유휴",@"예비",@"불용대기"]];
+            picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:@[@"유휴",@"예비",@"불용대기"]];
         }
         else{
-            picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:@[@"유휴",@"예비"]];
+            picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:@[@"유휴",@"예비"]];
         }
         lblFccStatus.text = @"예비";
         picker.delegate = self;
@@ -6006,6 +6010,11 @@ const static char* moveTarKey = "moveTarKey";
             [taskDic setObject:@"" forKey:@"VALUE"];
         }
         else{
+            if([JOB_GUBUN isEqualToString:@"접수(팀간)"]){
+                if(strMoveBarCode == nil){
+                    strMoveBarCode = @"";
+                }
+            }
             [taskDic setObject:@"N" forKey:@"IS_FIRST_MOVE"];
             [taskDic setObject:strMoveBarCode forKey:@"VALUE"];
         }

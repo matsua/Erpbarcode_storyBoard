@@ -88,7 +88,7 @@
     y_coordinateTextField.text = [NSString stringWithFormat:@"%d",y_coordinate];
     darknessTextField.text =  [NSString stringWithFormat:@"%d",darkness];
     
-    picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"8",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19",@"20"]];
+    picker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"8",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19",@"20"]];
     picker.delegate = self;
     selectedPickerData = @"";
     [picker selectPicker:0];

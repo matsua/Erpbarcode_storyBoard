@@ -102,7 +102,7 @@
     
     lblCancelRs.text = @"선택하세요.";
     
-    RequestIdPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:tempId];
+    RequestIdPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:tempId];
     RequestIdPicker.delegate = self;
 }
 

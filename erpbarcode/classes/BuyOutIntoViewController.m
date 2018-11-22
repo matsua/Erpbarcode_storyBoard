@@ -1141,7 +1141,7 @@
         }
         NSString* strPlant = [pickerList objectAtIndex:0];
         lblPlant.text = strPlant;
-        plantPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:pickerList];
+        plantPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:pickerList];
         plantPicker.delegate = self;
         [plantPicker selectPicker:0];
         [self requestSaveLocation];
@@ -1174,7 +1174,7 @@
         
         NSString* strSavedLoc = [pickerList objectAtIndex:0];
         lblSavedLoc.text = strSavedLoc;
-        savedLocPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, 320, 240) data:pickerList];
+        savedLocPicker = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, PHONE_SCREEN_HEIGHT - 240, PHONE_SCREEN_WIDTH, 240) data:pickerList];
         savedLocPicker.delegate = self;
         [savedLocPicker selectPicker:0];
     }
