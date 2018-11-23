@@ -21,6 +21,7 @@
 @property(nonatomic,strong) IBOutlet UITextField* txtLocCode;
 @property(nonatomic,strong) IBOutlet CLTickerView* locTickerView;
 @property(nonatomic,strong) UIActivityIndicatorView* indicatorView;
+@property(nonatomic,strong) IBOutlet UIView* normalView;
 @property(nonatomic,strong) IBOutlet UIView* locView;
 @property(nonatomic,strong) IBOutlet UIView* orgView;
 @property(nonatomic,strong) IBOutlet UIView* attributeView;
@@ -68,6 +69,7 @@
 @synthesize strLocBarCode;
 @synthesize strDeviceID;
 @synthesize strSubDeviceID;
+@synthesize normalView;
 @synthesize locView;
 @synthesize orgView;
 @synthesize attributeView;
@@ -161,10 +163,10 @@
     tapGesture.numberOfTapsRequired = 1;
     tapGesture.delegate = self;
     [self._tableView addGestureRecognizer:tapGesture];
-    subFccView.frame = CGRectMake(subFccView.bounds.origin.x, subFccView.bounds.origin.y,subFccView.bounds.size.width ,PHONE_SCREEN_HEIGHT - 75);
+    subFccView.frame = CGRectMake(subFccView.bounds.origin.x, subFccView.bounds.origin.y,self.view.frame.size.width ,PHONE_SCREEN_HEIGHT - 75);
 
-    lblCount = [[UILabel alloc] initWithFrame:CGRectMake(50, _tableView.frame.origin.y + _tableView.frame.size.height + 5, 250, 20)];
-
+    lblCount = [[UILabel alloc] initWithFrame:CGRectMake(50, _tableView.frame.origin.y + _tableView.frame.size.height + 5, self.view.frame.size.width - 100, 20)];
+    
     lblCount.backgroundColor = [UIColor clearColor];
     lblCount.textColor = [UIColor blueColor];
     lblCount.textAlignment = NSTextAlignmentCenter;
@@ -173,6 +175,9 @@
     [subFccView addSubview:lblCount];
     
     [txtDeviceCode becomeFirstResponder];
+    
+    normalView.frame = CGRectMake(0, 80, self.view.frame.size.width, normalView.frame.size.height);
+    [self.view addSubview:normalView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -323,38 +328,38 @@
                 else if (nPrevBtn == 30)
                     [orgView removeFromSuperview];
                 else
-                    [attributeView removeFromSuperview];                
+                    [attributeView removeFromSuperview];
+                normalView.frame = CGRectMake(0, 80, self.view.frame.size.width, normalView.frame.size.height);
+                [self.view addSubview:normalView];
                 break;
             case 20://위치
-                if (nPrevBtn == 10){                    
-                    
-                }
+                if (nPrevBtn == 10)
+                    [normalView removeFromSuperview];
                 else if (nPrevBtn == 30)
                     [orgView removeFromSuperview];
                 else
                     [attributeView removeFromSuperview];
-                locView.frame = CGRectMake(0, 80, 320, locView.frame.size.height);
+                locView.frame = CGRectMake(0, 80, self.view.frame.size.width, locView.frame.size.height);
                 [self.view addSubview:locView];
                 break;
             case 30://조직
-                if (nPrevBtn == 10){                    
-                    
-                }
+                if (nPrevBtn == 10)
+                    [normalView removeFromSuperview];
                 else if (nPrevBtn == 20)
                     [locView removeFromSuperview];
                 else
                     [attributeView removeFromSuperview];
-                orgView.frame = CGRectMake(0, 80, 320, orgView.frame.size.height);
+                orgView.frame = CGRectMake(0, 80, self.view.frame.size.width, orgView.frame.size.height);
                 [self.view addSubview:orgView];
                 break;
             case 40://네크워크 장비속성
-                if (nPrevBtn == 10){
-                }
+                if (nPrevBtn == 10)
+                    [normalView removeFromSuperview];
                 else if (nPrevBtn == 20)
                     [locView removeFromSuperview];
                 else
                     [orgView removeFromSuperview];
-                attributeView.frame = CGRectMake(0, 80, 320, attributeView.frame.size.height);
+                attributeView.frame = CGRectMake(0, 80, self.view.frame.size.width, attributeView.frame.size.height);
                 [self.view addSubview:attributeView];                
                 break;
         }

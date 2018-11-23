@@ -460,9 +460,9 @@
                 
                 //[_scrollView addSubview:_scrollView2];
                 //_scrollView2.frame = CGRectMake(0, 0, 320, PHONE_SCREEN_HEIGHT - 105);
-                //_scrollView2.contentSize = CGSizeMake(_tableView.bounds.size.width, _scrollView2.frame.size.height);
+                _scrollView2.contentSize = CGSizeMake(_tableView.bounds.size.width, _scrollView2.frame.size.height);
             
-                //listCount.frame = CGRectMake(0, (_scrollView2.frame.origin.y + _scrollView2.frame.size.height), 320, 22);
+                listCount.frame = CGRectMake(0, (_scrollView2.frame.origin.y + _scrollView2.frame.size.height), self.view.frame.size.width, 22);
                                 
                 break;
         }
@@ -608,17 +608,18 @@
         GridColumnRepairCell *cell = (GridColumnRepairCell*)[tableView dequeueReusableCellWithIdentifier:@"GridColumnRepairCell"];
         if (!cell){
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"GridColumnRepairCell" owner:self options:nil];
+            float width = self.view.frame.size.width;
             for (id object in nib)
             {
                 if ([object isMemberOfClass:[GridColumnRepairCell class]])
                 {
                     cell = object;
-                    cell.lblColumn1.frame = CGRectMake(4, 0, 110, 40);
-                    cell.lblColumn2.frame = CGRectMake(114, 0, 110,40);
-                    cell.lblColumn3.frame = CGRectMake(224, 0, 110, 40);
-                    cell.lblColumn4.frame = CGRectMake(334, 0, 160, 40);
-                    cell.lblColumn5.frame = CGRectMake(494, 0, 160, 40);
-                    cell.lblColumn6.frame = CGRectMake(654, 0, 160, 40);
+                    cell.lblColumn1.frame = CGRectMake(4, 0, width / 3.0f, 40);
+                    cell.lblColumn2.frame = CGRectMake(4 + width / 3.0f, 0, width / 3.0f, 40);
+                    cell.lblColumn3.frame = CGRectMake(4 + width * 2.0f / 3.0f, 0, width / 3.0f, 40);
+                    cell.lblColumn4.frame = CGRectMake(4 + width, 0, width / 2.0f, 40);
+                    cell.lblColumn5.frame = CGRectMake(4 + width * 1.5f, 0, width / 2.0f, 40);
+                    cell.lblColumn6.frame = CGRectMake(4 + width * 2.0f, 0, width / 2.0f, 40);
                     break;
                 }
             }

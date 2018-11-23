@@ -283,9 +283,14 @@
 
 - (IBAction)touchGoodsListBtn:(id)sender {
     [Util udSetObject:JOB_GUBUN forKey:USER_WORK_NAME];
-    GoodsInfoViewController* vc = [[GoodsInfoViewController alloc]init];
-    vc.delegate = self;
-    [self.navigationController pushViewController:vc animated:YES];
+    UIViewController* vc = [self instantiateViewController:@"Info" viewName:@"GoodsInfoViewController"];
+    if (vc) {
+        ((GoodsInfoViewController*)vc).delegate = self;
+        [self pushViewController:vc animated:YES];
+    }
+//    GoodsInfoViewController* vc = [[GoodsInfoViewController alloc]init];
+//    vc.delegate = self;
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)touchRequestReasonBtn:(id)sender {
@@ -570,9 +575,14 @@
         if (buttonIndex == 0){
             isChangeGoodsIdMode = YES;
             [Util udSetObject:JOB_GUBUN forKey:USER_WORK_NAME];
-            GoodsInfoViewController* vc = [[GoodsInfoViewController alloc]init];
-            vc.delegate = self;
-            [self.navigationController pushViewController:vc animated:YES];
+            UIViewController* vc = [self instantiateViewController:@"Info" viewName:@"GoodsInfoViewController"];
+            if (vc) {
+                ((GoodsInfoViewController*)vc).delegate = self;
+                [self pushViewController:vc animated:YES];
+            }
+//            GoodsInfoViewController* vc = [[GoodsInfoViewController alloc]init];
+//            vc.delegate = self;
+//            [self.navigationController pushViewController:vc animated:YES];
         }
     }else if (alertView.tag == 2000){
         if (buttonIndex == 0){
