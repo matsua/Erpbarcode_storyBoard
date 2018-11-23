@@ -83,6 +83,7 @@
                                                         <rect key="frame" x="76" y="0.0" width="280" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVw-3q-O12">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -91,6 +92,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="nVw-3q-O12" secondAttribute="trailing" id="1tt-oP-7ZV"/>
                                                             <constraint firstItem="nVw-3q-O12" firstAttribute="leading" secondItem="NA3-5S-Zer" secondAttribute="leading" id="7LF-d5-dXd"/>
+                                                            <constraint firstItem="nVw-3q-O12" firstAttribute="height" secondItem="NA3-5S-Zer" secondAttribute="height" id="9pY-2j-szQ"/>
                                                             <constraint firstItem="nVw-3q-O12" firstAttribute="top" secondItem="NA3-5S-Zer" secondAttribute="top" id="NAK-kk-kl3"/>
                                                             <constraint firstAttribute="bottom" secondItem="nVw-3q-O12" secondAttribute="bottom" id="dvd-ho-62h"/>
                                                         </constraints>
@@ -184,6 +186,7 @@
                                                         <rect key="frame" x="36" y="0.0" width="322" height="24"/>
                                                         <subviews>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayo-JO-A3A">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="24"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -191,6 +194,7 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="ayo-JO-A3A" firstAttribute="top" secondItem="gbk-fg-gNy" secondAttribute="top" id="2yc-ol-iax"/>
+                                                            <constraint firstItem="ayo-JO-A3A" firstAttribute="height" secondItem="gbk-fg-gNy" secondAttribute="height" id="6MO-vo-TxS"/>
                                                             <constraint firstItem="ayo-JO-A3A" firstAttribute="leading" secondItem="gbk-fg-gNy" secondAttribute="leading" id="QGj-HV-oOf"/>
                                                             <constraint firstAttribute="bottom" secondItem="ayo-JO-A3A" secondAttribute="bottom" id="Umh-gM-Tv2"/>
                                                             <constraint firstAttribute="trailing" secondItem="ayo-JO-A3A" secondAttribute="trailing" id="fRt-cJ-I7d"/>
@@ -343,7 +347,7 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="drop_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="r76-kO-z5y">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="drop_01" translatesAutoresizingMaskIntoConstraints="NO" id="r76-kO-z5y">
                                                         <rect key="frame" x="76" y="2" width="328" height="30"/>
                                                         <rect key="contentStretch" x="0.25" y="0.0" width="0.0" height="0.0"/>
                                                     </imageView>
@@ -629,6 +633,7 @@
                                                         <rect key="frame" x="36" y="1" width="322" height="22"/>
                                                         <subviews>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4x-vg-gFn">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="22"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -637,6 +642,7 @@
                                                         <constraints>
                                                             <constraint firstItem="l4x-vg-gFn" firstAttribute="top" secondItem="6pp-0q-DO0" secondAttribute="top" id="K34-3Z-UEQ"/>
                                                             <constraint firstAttribute="trailing" secondItem="l4x-vg-gFn" secondAttribute="trailing" id="LMU-Bh-ZQv"/>
+                                                            <constraint firstItem="l4x-vg-gFn" firstAttribute="height" secondItem="6pp-0q-DO0" secondAttribute="height" id="OBc-ZR-mId"/>
                                                             <constraint firstAttribute="bottom" secondItem="l4x-vg-gFn" secondAttribute="bottom" id="Pl8-YC-hqc"/>
                                                             <constraint firstItem="l4x-vg-gFn" firstAttribute="leading" secondItem="6pp-0q-DO0" secondAttribute="leading" id="h9J-nY-BX6"/>
                                                         </constraints>
@@ -1537,7 +1543,7 @@
         <image name="common_list_header_bg.png" width="45" height="35"/>
         <image name="common_textfield_bg_gray.png" width="240" height="30"/>
         <image name="common_toolbar_bg.png" width="320" height="41"/>
-        <image name="drop_01.png" width="60" height="37"/>
+        <image name="drop_01" width="60" height="37"/>
         <image name="icon.png" width="57" height="57"/>
     </resources>
 </document>

@@ -2264,10 +2264,16 @@
             }
             [locList addObject:dic];
         }
-        LocListViewController* vc = [[LocListViewController alloc] init];
-        vc.locList = locList;
-        vc.sender = self;
-        [self.navigationController pushViewController:vc animated:NO];
+        UIViewController* vc = [self instantiateViewController:@"SpotCheck" viewName:@"LocListViewController"];
+        if (vc) {
+            ((LocListViewController*)vc).locList = locList;
+            ((LocListViewController*)vc).sender = self;
+            [self pushViewController:vc animated:YES];
+        }
+//        LocListViewController* vc = [[LocListViewController alloc] init];
+//        vc.locList = locList;
+//        vc.sender = self;
+//        [self.navigationController pushViewController:vc animated:NO];
         
     }
     else {

@@ -102,6 +102,7 @@
                                                         <rect key="frame" x="35" y="1" width="230" height="22"/>
                                                         <subviews>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O52-xa-A7g">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="22"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -110,6 +111,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="O52-xa-A7g" secondAttribute="trailing" id="06m-Ox-Uc6"/>
                                                             <constraint firstItem="O52-xa-A7g" firstAttribute="top" secondItem="TUE-Qb-aO3" secondAttribute="top" id="BwX-Jq-GbX"/>
+                                                            <constraint firstItem="O52-xa-A7g" firstAttribute="height" secondItem="TUE-Qb-aO3" secondAttribute="height" id="N0Y-um-5bq"/>
                                                             <constraint firstAttribute="bottom" secondItem="O52-xa-A7g" secondAttribute="bottom" id="mUZ-lU-Zc5"/>
                                                             <constraint firstItem="O52-xa-A7g" firstAttribute="leading" secondItem="TUE-Qb-aO3" secondAttribute="leading" id="x9L-bN-E9v"/>
                                                         </constraints>
@@ -254,6 +256,7 @@
                                                         <rect key="frame" x="35" y="1" width="275" height="22"/>
                                                         <subviews>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQr-rd-gAW">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="22"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -261,6 +264,7 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="NQr-rd-gAW" firstAttribute="top" secondItem="I6r-9p-CtP" secondAttribute="top" id="3pl-qN-xex"/>
+                                                            <constraint firstItem="NQr-rd-gAW" firstAttribute="height" secondItem="I6r-9p-CtP" secondAttribute="height" id="DvC-OP-BhN"/>
                                                             <constraint firstAttribute="bottom" secondItem="NQr-rd-gAW" secondAttribute="bottom" id="J89-iw-BY4"/>
                                                             <constraint firstAttribute="trailing" secondItem="NQr-rd-gAW" secondAttribute="trailing" id="dos-1m-dMQ"/>
                                                             <constraint firstItem="NQr-rd-gAW" firstAttribute="leading" secondItem="I6r-9p-CtP" secondAttribute="leading" id="f9N-bC-9EU"/>

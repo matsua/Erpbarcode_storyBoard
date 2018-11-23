@@ -19,6 +19,23 @@
     // Do any additional setup after loading the view.
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+
+    return UIStatusBarStyleLightContent;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    [self setNeedsStatusBarAppearanceUpdate];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:[self getStatusBarStyle] animated:YES];
+}
+
+- (UIStatusBarStyle) getStatusBarStyle {
+    
+    return UIStatusBarStyleLightContent;
+}
 
 - (UIViewController*)instantiateViewController:(NSString *)storyBoardName viewName:(NSString*)viewName {
     

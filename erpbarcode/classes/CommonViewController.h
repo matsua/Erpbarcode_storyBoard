@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CommonViewController : UIViewController<AlertViewDelegate>
 
+- (UIStatusBarStyle) getStatusBarStyle;
 - (UIViewController*)instantiateViewController:(NSString *)storyBoardName viewName:(NSString*)viewName;
 - (UIViewController*)pushViewController:(NSString *)storyBoardName viewName:(NSString*)viewName animated:(BOOL)animated;
 - (UIViewController*)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;

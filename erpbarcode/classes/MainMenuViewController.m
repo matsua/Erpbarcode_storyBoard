@@ -73,6 +73,16 @@
     return self;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    
+    return UIStatusBarStyleDefault;
+}
+
+- (UIStatusBarStyle) getStatusBarStyle {
+    
+    return UIStatusBarStyleDefault;
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

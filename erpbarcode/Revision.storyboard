@@ -131,6 +131,7 @@
                                                         <constraints>
                                                             <constraint firstItem="oHd-VP-taA" firstAttribute="centerY" secondItem="n23-h8-IPk" secondAttribute="centerY" id="1gs-ua-FkF"/>
                                                             <constraint firstItem="oHd-VP-taA" firstAttribute="leading" secondItem="n23-h8-IPk" secondAttribute="leading" constant="5" id="8CZ-yo-K1K"/>
+                                                            <constraint firstItem="oHd-VP-taA" firstAttribute="height" secondItem="n23-h8-IPk" secondAttribute="height" id="Du5-M7-meP"/>
                                                             <constraint firstAttribute="bottom" secondItem="oHd-VP-taA" secondAttribute="bottom" id="GFz-9v-zIe"/>
                                                             <constraint firstAttribute="trailing" secondItem="oHd-VP-taA" secondAttribute="trailing" id="KQN-Pf-t2f"/>
                                                             <constraint firstItem="oHd-VP-taA" firstAttribute="top" secondItem="n23-h8-IPk" secondAttribute="top" id="oZc-3H-HxL"/>
