@@ -91,8 +91,8 @@
                                                             <constraint firstAttribute="height" constant="30" id="dwC-jM-z2z"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="KTfontBold" family="KT font" pointSize="12"/>
-                                                        <state key="normal" title="이동" backgroundImage="button_register_full.png"/>
-                                                        <state key="highlighted" title="이동" backgroundImage="button_register_up_full.png"/>
+                                                        <state key="normal" title="스캔" backgroundImage="button_register_full.png"/>
+                                                        <state key="highlighted" title="스캔" backgroundImage="button_register_up_full.png"/>
                                                         <connections>
                                                             <action selector="scan:" destination="9B7-TO-hGl" eventType="touchUpInside" id="a8m-l6-J4Y"/>
                                                         </connections>
@@ -144,8 +144,8 @@
                                                             <constraint firstAttribute="height" constant="30" id="Y42-oP-XdC"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="KTfontBold" family="KT font" pointSize="12"/>
-                                                        <state key="normal" title="이동" backgroundImage="button_register_full.png"/>
-                                                        <state key="highlighted" title="이동" backgroundImage="button_register_up_full.png"/>
+                                                        <state key="normal" title="스캔" backgroundImage="button_register_full.png"/>
+                                                        <state key="highlighted" title="스캔" backgroundImage="button_register_up_full.png"/>
                                                         <connections>
                                                             <action selector="scan:" destination="9B7-TO-hGl" eventType="touchUpInside" id="QmZ-kN-fPS"/>
                                                         </connections>
@@ -184,10 +184,10 @@
                                                             <constraint firstAttribute="width" constant="45" id="wPm-CO-8f9"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="KTfontBold" family="KT font" pointSize="12"/>
-                                                        <state key="normal" title="등록" backgroundImage="button_register_full.png">
+                                                        <state key="normal" title="조회" backgroundImage="button_register_full.png">
                                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
-                                                        <state key="highlighted" title="등록" backgroundImage="button_register_up_full.png"/>
+                                                        <state key="highlighted" title="조회" backgroundImage="button_register_up_full.png"/>
                                                         <connections>
                                                             <action selector="requestBtn:" destination="9B7-TO-hGl" eventType="touchUpInside" id="MfU-tp-lMG"/>
                                                         </connections>

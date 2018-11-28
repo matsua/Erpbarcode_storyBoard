@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ZBarReaderViewController.h"
+#import "ERPRequestManager.h"
 
-@interface BaseViewController : UIViewController <ZBarReaderDelegate>
+@interface BaseViewController : UIViewController <ZBarReaderDelegate, IProcessRequest>
 
 @property(nonatomic,strong) NSDictionary* dbWorkDic;
 

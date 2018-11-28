@@ -13,6 +13,7 @@
 
 @interface BaseViewController ()
 
+@property(nonatomic,strong) UIActivityIndicatorView* indicatorView;
 @property(nonatomic,assign) NSString *bsnGb;
 @property(nonatomic,strong) NSMutableDictionary* workDic;
 @property(nonatomic,strong) NSMutableArray* taskList;
@@ -36,6 +37,7 @@
 @end
 
 @implementation BaseViewController
+@synthesize indicatorView;
 @synthesize workDic;
 @synthesize dbWorkDic;
 @synthesize taskList;
@@ -326,37 +328,132 @@
 
 
 -(IBAction)requestBtn:(id)sender{
-    NSString *JOB_GUBUN = [Util udObjectForKey:USER_WORK_NAME];
-    NSString *url = @"";
-    
     //TEST CODE : matsua
-    NSString *userId = @"91186176";
-    strLocBarCode = locCode.text;
-    strFacBarCode = @"001Z00911318010012";
+    locCode.text = strLocBarCode = @"P10064962";
+    facCode.text = strFacBarCode = @"001Z00345300002812";
     
-    if([bsnGb isEqualToString:@"OA"]){//OA
-        if([JOB_GUBUN isEqualToString:@"불용요청[OA]"]){//불용요청
-            url = [NSString stringWithFormat:API_BASE_OA_WORK_LIST_HALF, bsnNo, userId, strFacBarCode];
-        }else if([JOB_GUBUN isEqualToString:@"연식조회[OA]"]){//OA연식조회
-            url = [NSString stringWithFormat:API_BASE_OA_ITEM_SEARCH, bsnNo, userId, strFacBarCode];
-        }else{//신규등록, 관리자 변경, 재물조사, 납품확인, 대여등록, 대여반납
-            url = [NSString stringWithFormat:API_BASE_OA_WORK_LIST, bsnNo, userId, strLocBarCode, strFacBarCode];
-        }
-    }else{//OE
-        if([JOB_GUBUN isEqualToString:@"불용요청[OE]"]){//불용요청
-            url = [NSString stringWithFormat:API_BASE_OE_WORK_LIST_HALF, bsnNo, userId, strFacBarCode];
-        }else if([JOB_GUBUN isEqualToString:@"비품연식조회[OE]"] ){//비품연식조회
-            url = [NSString stringWithFormat:API_BASE_OE_ITEM_SEARCH, bsnNo, userId, strFacBarCode];
-        }else{//신규등록, 관리자 변경, 재물조사, 납품확인, 대여등록, 대여반납
-            url = [NSString stringWithFormat:API_BASE_OE_WORK_LIST, bsnNo, userId, strLocBarCode, strFacBarCode];
+    NSString *JOB_GUBUN = [Util udObjectForKey:USER_WORK_NAME];
+    
+    if([JOB_GUBUN hasPrefix:@"신규등록"] || [JOB_GUBUN hasPrefix:@"관리자변경"] || [JOB_GUBUN hasPrefix:@"재물조사"] ||
+       [JOB_GUBUN hasPrefix:@"납품확인"] || [JOB_GUBUN hasPrefix:@"대여등록"] || [JOB_GUBUN hasPrefix:@"대여반납"]){
+        if(!locCode.text){
+            AlertViewController *alert = [[AlertViewController alloc] initWithTitle:nil message:@"위치바코드가 존재하지 않습니다." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
+            [alert show];
+            return;
         }
     }
     
-    NSLog(@"url=======%@", url);
+    if(!facCode.text){
+        AlertViewController *alert = [[AlertViewController alloc] initWithTitle:nil message:@"설비바코드가 존재하지 않습니다." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
     
-    NSURL *resultWebUrl = [[NSURL alloc] initWithString:url];
-    NSURLRequest *resultWebUrlRequest = [[NSURLRequest alloc] initWithURL:resultWebUrl];
-    [resultWebView loadRequest:resultWebUrlRequest];
+    
+    if([JOB_GUBUN hasPrefix:@"신규등록"] || [JOB_GUBUN hasPrefix:@"관리자변경"] || [JOB_GUBUN hasPrefix:@"재물조사"] ||
+       [JOB_GUBUN hasPrefix:@"납품확인"] || [JOB_GUBUN hasPrefix:@"대여등록"] || [JOB_GUBUN hasPrefix:@"대여반납"]){
+        [self requestManagement];
+    }
+    
+    if([JOB_GUBUN hasPrefix:@"연식조회"] || [JOB_GUBUN hasPrefix:@"비품연식조회"] || [JOB_GUBUN hasPrefix:@"불용요청"]){
+        [self requestItemSearch];
+    }
+}
+
+#pragma mark - Http Request Method
+- (void)requestManagement
+{
+    ERPRequestManager* requestMgr = [[ERPRequestManager alloc]init];
+    
+    requestMgr.delegate = self;
+    requestMgr.reqKind = REQUEST_BASE_MANAGEMENT;
+    
+    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
+    [paramDic setObject:bsnNo forKey:@"COM"];                   //업무번호
+    [paramDic setObject:strFacBarCode forKey:@"BCID"];  //설비바코드
+    [paramDic setObject:strLocBarCode forKey:@"SDID"];  //위치바코드
+    
+    NSDictionary* bodyDic = [Util singleMessageBody:paramDic];
+    
+    NSDictionary* rootDic  = [Util defaultMessage:[Util defaultHeader] body:bodyDic];
+    
+    [requestMgr asychronousConnectToServer:API_BASE_MANAGEMENT withData:rootDic];
+}
+
+- (void)requestItemSearch
+{
+    ERPRequestManager* requestMgr = [[ERPRequestManager alloc]init];
+    
+    requestMgr.delegate = self;
+    requestMgr.reqKind = REQUEST_BASE_ITEM_SEARCH;
+    
+    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
+    [paramDic setObject:bsnNo forKey:@"COM"];                   //업무번호
+    [paramDic setObject:strFacBarCode forKey:@"BCID"];  //설비바코드
+    
+    NSDictionary* bodyDic = [Util singleMessageBody:paramDic];
+    
+    NSDictionary* rootDic  = [Util defaultMessage:[Util defaultHeader] body:bodyDic];
+    
+    [requestMgr asychronousConnectToServer:API_BASE_ITEM_SEARCH withData:rootDic];
+}
+
+#pragma IProcessRequest delegate -- call by ERPRequestManager
+- (void)processRequest:(NSArray*)resultList PID:(requestOfKind)pid Status:(NSInteger)status
+{
+    [self performSelectorOnMainThread:@selector(hideIndicator) withObject:nil waitUntilDone:NO];
+    
+    if(pid == REQUEST_DATA_NULL && status == 99){
+        return;
+    }
+    
+    //test : matsua
+    if (resultList != nil){
+         NSLog(@"Result List [%@]", resultList);
+        
+    }
+    
+    if (status == 0 || status == 2){ //실패
+        NSDictionary* headerDic = [resultList objectAtIndex:0];
+        
+        NSString* message = [headerDic objectForKey:@"detail"];
+        
+        message = [message stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        // 전송한 후에는 작업관리에 그 결과를 저장한다.  실패시 에러나 워닝을 저장한다.
+        if (pid == REQUEST_SEND){
+            if (status == 0)
+                [workDic setObject:@"E" forKey:@"TRANSACT_YN"];
+            else if (status == 2)
+                [workDic setObject:@"W" forKey:@"TRANSACT_YN"];
+            [workDic setObject:message forKey:@"TRANSACT_MSG"];
+            [self saveToWorkDB];
+            
+            // DB에 작업관리를 저장했으므로 본 화면에서 백버튼으로 나가도 문제 없음을 의미한다.
+            isDataSaved = YES;
+        }
+        
+        // 실패 시 필요한 메시지를 뿌려주고, 적당한 처리를 한다.
+        [self processFailRequest:pid Message:message Status:status];
+        
+        return;
+    }else if (status == -1){ //세션종료
+        [self processEndSession:pid];
+        
+        return;
+    }
+    
+    if (pid == REQUEST_BASE_MANAGEMENT || pid == REQUEST_BASE_ITEM_SEARCH){
+        [self processResponseSearch:resultList];
+    }else isOperationFinished = YES;
+}
+
+- (void)processResponseSearch:(NSArray*)responseList
+{
+    if (responseList.count){
+        //TODO.
+    }
+    
+    isOperationFinished = YES;
 }
 
 -(void)layoutChangeSubview{
@@ -423,6 +520,56 @@
 - (void) touchBackBtn:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (void) processFailRequest:(requestOfKind)pid Message:(NSString*)message Status:(NSInteger)status
+{
+    if(pid == REQUEST_BASE_MANAGEMENT || pid == REQUEST_BASE_ITEM_SEARCH){
+        locCode.text = strLocBarCode = @"";
+        facCode.text = strFacBarCode = @"";
+        
+        if (message.length){
+            [self showMessage:message tag:-1 title1:@"닫기" title2:nil isError:YES];
+        }
+        
+        isOperationFinished = YES;
+    }
+}
+
+- (void) processEndSession:(requestOfKind)pid
+{
+    NSString* message = @"세션이 종료되었습니다.\n재접속 하시겠습니까?\n(저장하지 않은 자료는 재 작업 하셔야 합니다.)";
+    [self showMessage:message tag:2000 title1:@"예" title2:@"아니오"];
+    
+    isOperationFinished = YES;
+}
+
+- (void) showIndicator
+{
+    if (![indicatorView isAnimating])
+    {
+        indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        indicatorView.frame = CGRectMake(PHONE_SCREEN_WIDTH/2-30, PHONE_SCREEN_HEIGHT/2-30, 60.0f, 60.0f);
+        indicatorView.backgroundColor = [UIColor colorWithWhite:0.5f alpha:0.5f];
+        indicatorView.layer.cornerRadius = 10.0f;
+        indicatorView.contentMode = UIViewContentModeCenter;
+        [self.view addSubview:indicatorView];
+        self.view.userInteractionEnabled = NO;
+        [self.navigationController.navigationBar setUserInteractionEnabled:NO];
+        [indicatorView startAnimating];
+    }
+}
+
+- (void) hideIndicator
+{
+    if (indicatorView){
+        [indicatorView stopAnimating];
+        [indicatorView removeFromSuperview];
+        indicatorView = nil;
+        self.view.userInteractionEnabled = YES;
+        [self.navigationController.navigationBar setUserInteractionEnabled:YES];
+    }
 }
 
 @end

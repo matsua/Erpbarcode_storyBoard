@@ -150,6 +150,8 @@
     
     NSString *requestUrl = [NSString stringWithFormat:@"%@%@?securityYN=N&call=IOS", [Util udObjectForKey:BARCODE_SERVER], urlInfo];
     
+    NSLog(@"requestUrl >> %@", requestUrl);
+    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
                                     initWithURL:[NSURL URLWithString:requestUrl]];
     request.timeoutInterval = 120;
