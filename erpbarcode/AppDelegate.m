@@ -57,7 +57,7 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
     
     [self startIntroView];
     
-    ix_not_use_update();
+//    ix_not_use_update();
     //  iXShield 개발시에 사용하는 옵션으로 상용 배포시에 필히 삭제하여야 한다.
 //    ix_set_debug();
     
@@ -104,56 +104,6 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
     }
 }
 
-#pragma mark 1-1. 게임핵과 스스템체크를 동시에 진행할 경우
-- (void) systemCheckWithGameHack {
-
-    struct ix_detected_pattern *patternInfo;
-    struct ix_detected_pattern_list_gamehack *patternList = NULL;
-
-    int ret = ix_sysCheck_gamehack(&patternInfo, &patternList);
-
-    if (ret != 1) {
-        AlertViewController *alert = [[AlertViewController alloc] initWithTitle:@"안내"
-                                                        message:[NSString stringWithFormat:@"[error code : %d]시스템 체크 오류 \n ERP Barcode 를 \n사용하실수 없습니다.",ret]
-                                                       delegate:self
-                                              cancelButtonTitle:NSLocalizedString(@"확인", nil)
-                                              otherButtonTitles:nil];
-        [alert setTag:33333];
-        [alert show];
-
-    }else {
-        NSString *jbCode = [NSString stringWithUTF8String:patternInfo->pattern_type_id];
-
-        //gamehack list
-        NSMutableArray *jbArr = [[NSMutableArray alloc]init];
-        NSMutableString *hack = [NSMutableString string];
-        for (int i = 0; i < patternList->list_cnt; i++) {
-            NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-            [dic setObject:[NSString stringWithUTF8String:patternList->pattern[i].pattern_type_id] forKey:@"id"];
-            [dic setObject:[NSString stringWithUTF8String:patternList->pattern[i].pattern_obj] forKey:@"obj"];
-            [dic setObject:[NSString stringWithUTF8String:patternList->pattern[i].pattern_desc] forKey:@"desc"];
-            [jbArr addObject:dic];
-            NSLog(@"dic - %@", dic);
-
-            [hack appendString:[NSString stringWithFormat:@"\n[GameHack%d\nid :%@\nobj : %@\n desc :%@]",i + 1,[dic objectForKey:@"id"], [dic objectForKey:@"obj"], [dic objectForKey:@"desc"]]];
-        }
-
-        AlertViewController *alert = nil;
-
-        if ([jbCode isEqualToString:@"0000"]) {
-            [self integrityCheck];
-        }else {
-            alert = [[AlertViewController alloc] initWithTitle:@"안내"
-                                               message:[NSString stringWithFormat:@"[Jail break\n%@]%@\n감지 되었습니다.\nERP Barcode를 \n이용할수 없습니다.",[NSString stringWithUTF8String:patternInfo->pattern_desc],hack]
-                                              delegate:self
-                                     cancelButtonTitle:NSLocalizedString(@"확인", nil)
-                                     otherButtonTitles:nil];
-            [alert setTag:33333];
-            [alert show];
-        }
-    }
-}
-
 #pragma mark 2. 무결성 검사 진행
 - (void) integrityCheck {
 
@@ -183,7 +133,7 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
 - (void) fakeGpsCheck {
     AlertViewController *alert = nil;
 
-    if (ix_check_fakegps()) {
+    if (ix_check_fakegps() == 1) {
         alert = [[AlertViewController alloc] initWithTitle:@"안내"
                                            message:@"[Fake Gps]\n감지 되었습니다.\nERP Barcode를 \n이용할수 없습니다."
                                           delegate:self
@@ -200,7 +150,7 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
 - (void) debuggerCheck {
     AlertViewController *alert = nil;
 
-    if (ix_runAntiDebugger()) {
+    if (ix_runAntiDebugger() == 1) {
         alert = [[AlertViewController alloc] initWithTitle:@"안내"
                                            message:@"[Debugger]\n감지 되었습니다.\nERP Barcode를 \n이용할수 없습니다."
                                           delegate:self

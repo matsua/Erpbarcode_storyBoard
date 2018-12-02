@@ -4034,12 +4034,22 @@ const static char* moveTarKey = "moveTarKey";
             }
             
             if(gwlenList.count){
-                GwlenListController *modalView = [[GwlenListController alloc] initWithNibName:@"GwlenListController" bundle:nil];
-                modalView.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-                modalView.delegate = self;
-                modalView.list = gwlenList;
-                [self presentViewController:modalView animated:NO completion:nil];
-                modalView.view.alpha = 1;
+//                GwlenListController *modalView = [[GwlenListController alloc] initWithNibName:@"GwlenListController" bundle:nil];
+//                modalView.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//                modalView.delegate = self;
+//                modalView.list = gwlenList;
+//                [self presentViewController:modalView animated:NO completion:nil];
+//                modalView.view.alpha = 1;
+                
+                GwlenListController* modalView = (GwlenListController*)[self instantiateViewController:@"Sub" viewName:@"GwlenListController"];
+                
+                if (modalView) {
+                    modalView.delegate = self;
+                    modalView.list = gwlenList;
+                    self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+                    [self presentViewController:modalView animated:YES completion:nil];
+                }
+                
                 return;
             }
         }
@@ -4913,12 +4923,21 @@ const static char* moveTarKey = "moveTarKey";
         }
         if ([JOB_GUBUN isEqualToString:@"철거"] || [JOB_GUBUN isEqualToString:@"인계"] ||
             [JOB_GUBUN isEqualToString:@"인수"] || [JOB_GUBUN isEqualToString:@"시설등록"]){
-            WBSListViewController* vc = [[WBSListViewController alloc] init];
-            vc.delegate = self;
-            vc.wbsList = wbsResultList;
-            vc.JOB_GUBUN = JOB_GUBUN;
+
+            UIViewController* vc = [self instantiateViewController:@"Sub" viewName:@"WBSListViewController"];
+            if (vc) {
+                ((WBSListViewController*)vc).delegate = self;
+                ((WBSListViewController*)vc).wbsList = wbsResultList;
+                ((WBSListViewController*)vc).JOB_GUBUN = JOB_GUBUN;
+                [self presentViewController:vc animated:YES completion:nil];
+            }
             
-            [self.navigationController pushViewController:vc animated:YES];
+//            WBSListViewController* vc = [[WBSListViewController alloc] init];
+//            vc.delegate = self;
+//            vc.wbsList = wbsResultList;
+//            vc.JOB_GUBUN = JOB_GUBUN;
+//
+//            [self.navigationController pushViewController:vc animated:YES];
         }
     }else{
         NSLog(@"WBS가 없습니다.");

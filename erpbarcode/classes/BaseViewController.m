@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ERPAlert.h"
 #import "BaseViewController.h"
-#import "ZBarReaderViewController.h"
+#import "ScanViewController.h"
 
 @interface BaseViewController ()
 
@@ -33,6 +33,7 @@
 @property(nonatomic,assign) BOOL isDataSaved;
 @property(nonatomic,strong) NSString* JOB_GUBUN;
 @property(nonatomic,assign) BOOL isOffLine;
+@property(nonatomic,assign) int scanBtnTag;
 
 @end
 
@@ -58,6 +59,7 @@
 @synthesize isDataSaved;
 @synthesize JOB_GUBUN;
 @synthesize isOffLine;
+@synthesize scanBtnTag;
 
 #pragma mark - View LifeCycle
 
@@ -287,50 +289,27 @@
 
 - (IBAction)scan:(id)sender
 {
+    scanBtnTag = (int)[sender tag];
+    
     NSLog(@"ScanViewController :: scan");
 
-    ZBarReaderViewController *reader = [ZBarReaderViewController new];
-    reader = [ZBarReaderViewController new];
-    reader.readerDelegate = self;
-    
-    ZBarImageScanner *scanner = reader.scanner;
-    [scanner setSymbology:ZBAR_PDF417 config:ZBAR_CFG_ENABLE to:1];
-    [self presentViewController:reader animated:YES completion:nil];
-    
+    ScanViewController* scanView = (ScanViewController*)[self instantiateViewController:@"Base" viewName:@"ScanViewController"];
+    scanView.delegate = self;
+    [self presentViewController:scanView animated:YES completion:nil];
 }
 
-#pragma mark - ZBarReaderController methods
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+#pragma mark - protocol method
+-(void)setScanBarcode:(NSString *)barcode withResult:(BOOL)result
 {
-    id<NSFastEnumeration> scanResults = [info objectForKey:ZBarReaderControllerResults];
+    NSLog(@"barcode == %@", barcode);
     
-    NSString *result;
-    ZBarSymbol *symbol;
-    
-    for (symbol in scanResults)
-    {
-        result = [symbol.data copy];
-        break;
-    }
-    
-    if(nSelected == 0){
-        [locCode setText:result];
+    if(scanBtnTag == 0){
+        locCode.text = barcode;
     }else{
-        [facCode setText:result];
+        facCode.text = barcode;
     }
     
-    NSLog(@"Result : %@", result);
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    NSLog(@"ScanViewController :: imagePickerControllerDidCancel");
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 
 -(IBAction)requestBtn:(id)sender{
     //TEST CODE : matsua

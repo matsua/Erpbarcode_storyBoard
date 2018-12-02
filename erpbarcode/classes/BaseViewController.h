@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZBarReaderViewController.h"
 #import "ERPRequestManager.h"
+#import "CommonViewController.h"
+#import "ScanViewController.h"
 
-@interface BaseViewController : UIViewController <ZBarReaderDelegate, IProcessRequest>
+@interface BaseViewController : CommonViewController < IProcessRequest, IScanBarcode>
 
 @property(nonatomic,strong) NSDictionary* dbWorkDic;
 
