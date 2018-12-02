@@ -288,10 +288,15 @@
 - (IBAction)scan:(id)sender
 {
     NSLog(@"ScanViewController :: scan");
-    nSelected = [sender tag];
-    ZBarReaderViewController *barcodeReaderController = [[ZBarReaderViewController alloc] init];
-    barcodeReaderController.readerDelegate = self;
-    [self presentViewController:barcodeReaderController animated:YES completion:nil];
+
+    ZBarReaderViewController *reader = [ZBarReaderViewController new];
+    reader = [ZBarReaderViewController new];
+    reader.readerDelegate = self;
+    
+    ZBarImageScanner *scanner = reader.scanner;
+    [scanner setSymbology:ZBAR_PDF417 config:ZBAR_CFG_ENABLE to:1];
+    [self presentViewController:reader animated:YES completion:nil];
+    
 }
 
 #pragma mark - ZBarReaderController methods
