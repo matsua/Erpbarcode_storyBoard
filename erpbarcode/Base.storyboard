@@ -175,7 +175,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7a4-4x-RCI">
-                                                <rect key="frame" x="179" y="5" width="135" height="30"/>
+                                                <rect key="frame" x="224" y="5" width="90" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2m5-QY-60J">
                                                         <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
@@ -192,23 +192,8 @@
                                                             <action selector="requestBtn:" destination="9B7-TO-hGl" eventType="touchUpInside" id="MfU-tp-lMG"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UcX-vY-dGh">
-                                                        <rect key="frame" x="45" y="0.0" width="45" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="kp3-S7-iuI"/>
-                                                            <constraint firstAttribute="width" constant="45" id="ris-PB-KRB"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="KTfontBold" family="KT font" pointSize="12"/>
-                                                        <state key="normal" title="저장" backgroundImage="button_register_full.png">
-                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <state key="highlighted" title="저장" backgroundImage="button_register_up_full.png"/>
-                                                        <connections>
-                                                            <action selector="touchSaveBtn:" destination="9B7-TO-hGl" eventType="touchUpInside" id="JfI-NH-4jK"/>
-                                                        </connections>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpo-Qg-bk9">
-                                                        <rect key="frame" x="90" y="0.0" width="45" height="30"/>
+                                                        <rect key="frame" x="45" y="0.0" width="45" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="45" id="kxz-q2-UEh"/>
                                                             <constraint firstAttribute="height" constant="30" id="qyk-AG-NBk"/>
