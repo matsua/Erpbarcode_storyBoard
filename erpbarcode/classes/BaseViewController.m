@@ -18,7 +18,7 @@
 @property(nonatomic,strong) NSMutableDictionary* workDic;
 @property(nonatomic,strong) NSMutableArray* taskList;
 @property(nonatomic,strong) NSArray* fetchTaskList;
-@property(nonatomic,strong) IBOutlet UIView* orgView;
+@property(nonatomic,strong) IBOutlet UIView* requestView;
 @property(nonatomic,strong) IBOutlet UILabel* lblOrperationInfo;
 @property(nonatomic,strong) IBOutlet UIView *locCodeView;
 @property(nonatomic,strong) IBOutlet UIView *facCodeView;
@@ -30,6 +30,15 @@
 @property(nonatomic,assign) __block BOOL isOperationFinished;
 @property(nonatomic,strong) NSString* JOB_GUBUN;
 @property(nonatomic,assign) int scanBtnTag;
+@property(nonatomic,strong) IBOutlet UILabel* stat;
+@property(nonatomic,strong) IBOutlet UILabel* regDate;
+@property(nonatomic,strong) IBOutlet UILabel* standNm;
+@property(nonatomic,strong) IBOutlet UILabel* stand;
+@property(nonatomic,strong) IBOutlet UILabel* equip;
+@property(nonatomic,strong) IBOutlet UILabel* productRegDate;
+@property(nonatomic,strong) IBOutlet UILabel* itemNm;
+@property(nonatomic,strong) IBOutlet UILabel* sn;
+@property(nonatomic,strong) IBOutlet UILabel* mnf;
 
 @end
 
@@ -39,7 +48,7 @@
 @synthesize dbWorkDic;
 @synthesize taskList;
 @synthesize fetchTaskList;
-@synthesize orgView;
+@synthesize requestView;
 @synthesize lblOrperationInfo;
 @synthesize locCodeView;
 @synthesize facCodeView;
@@ -52,6 +61,15 @@
 @synthesize isOperationFinished;
 @synthesize JOB_GUBUN;
 @synthesize scanBtnTag;
+@synthesize stat;
+@synthesize regDate;
+@synthesize standNm;
+@synthesize stand;
+@synthesize equip;
+@synthesize productRegDate;
+@synthesize itemNm;
+@synthesize sn;
+@synthesize mnf;
 
 #pragma mark - View LifeCycle
 
@@ -105,16 +123,16 @@
 - (BOOL) processShouldReturn:(NSString*)barcode tag:(NSInteger)tag
 {
     if (tag == 100){ //위치바코드
-        if(barcode.length != 11 && barcode.length != 14 && barcode.length != 17 && barcode.length != 21){
-            [self showMessage:@"처리할 수 없는 위치바코드입니다." tag:-1 title1:@"닫기" title2:nil isError:YES];
+        if(barcode.length > 10){
+            [self showMessage:@"처리할 수 없는 위치바코드입니다." tag:-1 title1:@"확인" title2:nil isError:YES];
             locCode.text = @"";
             [locCode becomeFirstResponder];
             return YES;
         }
     }
-    else if (tag == 200){ //200 설비 바코드
-        if (barcode.length < 16 || barcode.length > 18){
-            [self showMessage:@"처리할 수 없는 설비바코드입니다." tag:-1 title1:@"닫기" title2:nil isError:YES];
+    else if (tag == 200){ //설비 바코드
+        if (barcode.length != 17 && barcode.length != 18){
+            [self showMessage:@"처리할 수 없는 설비바코드입니다." tag:-1 title1:@"확인" title2:nil isError:YES];
             facCode.text = @"";
             [facCode becomeFirstResponder];
             return YES;
@@ -182,21 +200,16 @@
 -(IBAction)requestBtn:(id)sender{
     NSString *JOB_GUBUN = [Util udObjectForKey:USER_WORK_NAME];
     
-    facCode.text = @"001Z00358100000917";
-//    locCode.text = @"P10028416";
-    
     if([JOB_GUBUN hasPrefix:@"신규등록"] || [JOB_GUBUN hasPrefix:@"관리자변경"] || [JOB_GUBUN hasPrefix:@"재물조사"] ||
        [JOB_GUBUN hasPrefix:@"납품확인"] || [JOB_GUBUN hasPrefix:@"대여등록"] || [JOB_GUBUN hasPrefix:@"대여반납"]){
-        if(!locCode.text){
-            AlertViewController *alert = [[AlertViewController alloc] initWithTitle:nil message:@"위치바코드가 존재하지 않습니다." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
-            [alert show];
+        if(locCode.text.length == 0){
+            [self showMessage:@"위치바코드가 존재하지 않습니다." tag:-1 title1:@"확인" title2:nil isError:YES];
             return;
         }
     }
     
-    if(!facCode.text){
-        AlertViewController *alert = [[AlertViewController alloc] initWithTitle:nil message:@"설비바코드가 존재하지 않습니다." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
-        [alert show];
+    if(facCode.text.length == 0){
+        [self showMessage:@"설비바코드가 존재하지 않습니다." tag:-1 title1:@"확인" title2:nil isError:YES];
         return;
     }
     
@@ -206,7 +219,7 @@
         [self requestManagement];
     }
     
-    if([JOB_GUBUN hasPrefix:@"연식조회"] || [JOB_GUBUN hasPrefix:@"비품연식조회"]){
+    if([JOB_GUBUN hasPrefix:@"연식조회"]){
         [self requestItemSearch];
     }
 }
@@ -222,18 +235,15 @@
     NSDictionary *userinfo = [Util udObjectForKey:USER_INFO];
     NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
     
-    [paramDic setObject:bsnNo forKey:@"com"];                   //업무번호
-    [paramDic setObject:facCode.text forKey:@"bcId"];   //설비바코드
+    [paramDic setObject:bsnNo forKey:@"com"];                                           //업무번호
+    [paramDic setObject:facCode.text forKey:@"bcId"];                                   //설비바코드
     if(locCode.text){
-        [paramDic setObject:locCode.text forKey:@"sdId"];   //위치바코드
+        [paramDic setObject:locCode.text forKey:@"sdId"];                               //위치바코드
     }
+    [paramDic setObject:bsnGb forKey:@"facType"];                                       //OA, OE 구분
+    [paramDic setObject:[userinfo objectForKey:@"userId"] forKey:@"userId"];            //사용자아이디
     
-    [paramDic setObject:bsnGb forKey:@"facType"];                  //OA, OE 구분
-    [paramDic setObject:[userinfo objectForKey:@"userId"] forKey:@"userId"];                  //사용자아이디
-    
-    NSDictionary* bodyDic = [Util singleMessageBody:paramDic];
-    NSDictionary* rootDic  = [Util defaultMessage:[Util defaultHeader] body:bodyDic];
-    [requestMgr asychronousConnectToServer:API_BASE_MANAGEMENT withData:rootDic];
+    [requestMgr asychronousConnectToServer:API_BASE_MANAGEMENT withData:paramDic];
 }
 
 - (void)requestItemSearch
@@ -246,15 +256,11 @@
     NSDictionary *userinfo = [Util udObjectForKey:USER_INFO];
     NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
     
-    [paramDic setObject:bsnNo forKey:@"com"];                   //업무번호
-    [paramDic setObject:facCode.text forKey:@"bcId"];  //설비바코드
+    [paramDic setObject:bsnNo forKey:@"com"];                                   //업무번호
+    [paramDic setObject:facCode.text forKey:@"bcId"];                           //설비바코드
+    [paramDic setObject:bsnGb forKey:@"facType"];                               //OA, OE 구분
+    [paramDic setObject:[userinfo objectForKey:@"userId"] forKey:@"userId"];    //사용자아이디
     
-    [paramDic setObject:bsnGb forKey:@"facType"];                  //OA, OE 구분
-    [paramDic setObject:[userinfo objectForKey:@"userId"] forKey:@"userId"];                  //사용자아이디
-    
-//    NSDictionary* bodyDic = [Util singleMessageBody:paramDic];
-//    NSDictionary* rootDic  = [Util defaultMessage:[Util defaultHeader] body:bodyDic];
-//    [requestMgr asychronousConnectToServer:API_BASE_ITEM_SEARCH withData:rootDic];
     [requestMgr asychronousConnectToServer:API_BASE_ITEM_SEARCH withData:paramDic];
     
 }
@@ -268,10 +274,11 @@
         return;
     }
     
-    //test : matsua
     if (resultList != nil){
-         NSLog(@"Result List [%@]", resultList);
-        
+        if([resultList count] == 0){
+            [self showMessage:@"조회된 결과값이 없습니다." tag:-1 title1:@"확인" title2:nil isError:YES];
+            return;
+        }
     }
     
     if (status == 0 || status == 2){ //실패
@@ -298,7 +305,16 @@
 - (void)processResponseSearch:(NSArray*)responseList
 {
     if (responseList.count){
-        //TODO.
+        NSDictionary* dic = [responseList objectAtIndex:0];
+        [stat setText:[dic objectForKey:@"STAT"]];
+        [regDate setText:[dic objectForKey:@"REGDATE"]];
+        [standNm setText:[dic objectForKey:@"STANDNAME"]];
+        [stand setText:[dic objectForKey:@"STAND"]];
+        [equip setText:[dic objectForKey:@"EQUIP"]];
+        [productRegDate setText:[dic objectForKey:@"PRODUCTREGDATE"]];
+        [itemNm setText:[dic objectForKey:@"ITEMNM"]];
+        [sn setText:[dic objectForKey:@"SN"]];
+        [mnf setText:[dic objectForKey:@"MNF"]];
     }
     
     isOperationFinished = YES;
@@ -307,19 +323,21 @@
 -(void)layoutChangeSubview{
     [self.navigationItem addLeftBarButtonItem:@"navigation_back" target:self action:@selector(touchBackBtn:)];
     
-    //운용조직
-    NSDictionary* dic = [Util udObjectForKey:USER_INFO];
-    lblOrperationInfo.text = [NSString stringWithFormat:@"%@/%@",[dic objectForKey:@"orgId"],[dic objectForKey:@"orgName"]];
-    
     bsnNo = @"";
     NSString *JOB_GUBUN = [Util udObjectForKey:USER_WORK_NAME];
     
-    if([JOB_GUBUN rangeOfString:@"신규등록"].location != NSNotFound)
+    if([JOB_GUBUN rangeOfString:@"신규등록"].location != NSNotFound){
         bsnNo = @"0501";
-    else if([JOB_GUBUN rangeOfString:@"관리자변경"].location != NSNotFound)
+        requestView.hidden = YES;
+    }
+    else if([JOB_GUBUN rangeOfString:@"관리자변경"].location != NSNotFound){
         bsnNo = @"0504";
-    else if([JOB_GUBUN rangeOfString:@"재물조사"].location != NSNotFound)
+        requestView.hidden = YES;
+    }
+    else if([JOB_GUBUN rangeOfString:@"재물조사"].location != NSNotFound){
         bsnNo = @"0601";
+        requestView.hidden = YES;
+    }
     else if([JOB_GUBUN rangeOfString:@"불용요청"].location != NSNotFound){
          bsnNo = @"0505";
         locCodeView.hidden = YES;
@@ -328,12 +346,19 @@
         bsnNo = @"0602";
         locCodeView.hidden = YES;
     }
-    else if([JOB_GUBUN rangeOfString:@"납품확인"].location != NSNotFound)
+    else if([JOB_GUBUN rangeOfString:@"납품확인"].location != NSNotFound){
         bsnNo = @"0512";
-    else if([JOB_GUBUN rangeOfString:@"대여등록"].location != NSNotFound)
+        requestView.hidden = YES;
+    }
+    else if([JOB_GUBUN rangeOfString:@"대여등록"].location != NSNotFound){
         bsnNo = @"0513";
-    else if([JOB_GUBUN rangeOfString:@"대여반납"].location != NSNotFound)
+        requestView.hidden = YES;
+    }
+    else if([JOB_GUBUN rangeOfString:@"대여반납"].location != NSNotFound){
         bsnNo = @"0503";
+        requestView.hidden = YES;
+    }
+    
 }
 
 #pragma mark - KSCAN Notification

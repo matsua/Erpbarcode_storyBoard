@@ -33,6 +33,70 @@
             endingLineNumber = "410"
             landmarkName = "-touchedLogin:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LoginViewController touchedCheckButton:]"
+                  moduleName = "erpbarcode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matsua/Documents/workspace/ERPBarcode_2019/%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF/ERPBarcode_ios/erpbarcode/classes/LoginViewController.m"
+                  timestampString = "566315089.01703"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "410"
+                  endingLineNumber = "410"
+                  offsetFromSymbolStart = "424">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LoginViewController touchedCheckButton:]"
+                  moduleName = "erpbarcode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matsua/Documents/workspace/ERPBarcode_2019/%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF/ERPBarcode_ios/erpbarcode/classes/LoginViewController.m"
+                  timestampString = "566315089.020913"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "410"
+                  endingLineNumber = "410"
+                  offsetFromSymbolStart = "436">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "erpbarcode/classes/ERPRequestManager.m"
+            timestampString = "566313995.668632"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
+            landmarkName = "-processResponseDatas:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "erpbarcode/classes/BaseViewController.m"
+            timestampString = "566315088.832546"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
+            landmarkName = "-processResponseSearch:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

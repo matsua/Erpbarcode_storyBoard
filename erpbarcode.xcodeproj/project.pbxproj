@@ -45,6 +45,14 @@
 		0825F3B620734D340096C9C1 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0825F3AD20734D330096C9C1 /* NSData+Base64.m */; };
 		0825F3BB2073506C0096C9C1 /* UIViewController+findFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0825F3B72073506B0096C9C1 /* UIViewController+findFirstResponder.m */; };
 		0825F3BC2073506C0096C9C1 /* UINavigationItem+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0825F3B82073506B0096C9C1 /* UINavigationItem+Addition.m */; };
+		08274DAE21C132E4007F72BF /* main_button_menu_jk6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08274DA721C132E3007F72BF /* main_button_menu_jk6@2x.png */; };
+		08274DAF21C132E4007F72BF /* main_button_menu_jk4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08274DA821C132E3007F72BF /* main_button_menu_jk4@2x.png */; };
+		08274DB021C132E4007F72BF /* main_button_menu_j5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08274DA921C132E3007F72BF /* main_button_menu_j5@2x.png */; };
+		08274DB121C132E4007F72BF /* main_button_menu_jk7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08274DAA21C132E4007F72BF /* main_button_menu_jk7@2x.png */; };
+		08274DB221C132E4007F72BF /* main_button_menu_jk8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08274DAB21C132E4007F72BF /* main_button_menu_jk8@2x.png */; };
+		08274DB321C132E4007F72BF /* main_button_menu_jk2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08274DAC21C132E4007F72BF /* main_button_menu_jk2@2x.png */; };
+		08274DB421C132E4007F72BF /* main_button_menu_jk1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08274DAD21C132E4007F72BF /* main_button_menu_jk1@2x.png */; };
+		08274DB621C132F9007F72BF /* main_button_menu_k5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08274DB521C132F9007F72BF /* main_button_menu_k5@2x.png */; };
 		0830CD021F7CD62E004C0019 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0830CD011F7CD62E004C0019 /* CoreTelephony.framework */; };
 		083AB47619DB9D4B00CC6715 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 083AB47419DB9D4B00CC6715 /* ChangePasswordViewController.m */; };
 		083AB47719DB9D4B00CC6715 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 083AB47519DB9D4B00CC6715 /* ChangePasswordViewController.xib */; };
@@ -725,6 +733,14 @@
 		0825F3B82073506B0096C9C1 /* UINavigationItem+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationItem+Addition.m"; path = "classes/UINavigationItem+Addition.m"; sourceTree = "<group>"; };
 		0825F3B92073506C0096C9C1 /* UINavigationItem+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationItem+Addition.h"; path = "classes/UINavigationItem+Addition.h"; sourceTree = "<group>"; };
 		0825F3BA2073506C0096C9C1 /* UIViewController+findFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+findFirstResponder.h"; path = "classes/UIViewController+findFirstResponder.h"; sourceTree = "<group>"; };
+		08274DA721C132E3007F72BF /* main_button_menu_jk6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_button_menu_jk6@2x.png"; sourceTree = "<group>"; };
+		08274DA821C132E3007F72BF /* main_button_menu_jk4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_button_menu_jk4@2x.png"; sourceTree = "<group>"; };
+		08274DA921C132E3007F72BF /* main_button_menu_j5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_button_menu_j5@2x.png"; sourceTree = "<group>"; };
+		08274DAA21C132E4007F72BF /* main_button_menu_jk7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_button_menu_jk7@2x.png"; sourceTree = "<group>"; };
+		08274DAB21C132E4007F72BF /* main_button_menu_jk8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_button_menu_jk8@2x.png"; sourceTree = "<group>"; };
+		08274DAC21C132E4007F72BF /* main_button_menu_jk2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_button_menu_jk2@2x.png"; sourceTree = "<group>"; };
+		08274DAD21C132E4007F72BF /* main_button_menu_jk1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_button_menu_jk1@2x.png"; sourceTree = "<group>"; };
+		08274DB521C132F9007F72BF /* main_button_menu_k5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_button_menu_k5@2x.png"; sourceTree = "<group>"; };
 		0830CD011F7CD62E004C0019 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		08310BE21FCD4ED200158677 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		083AB47319DB9D4B00CC6715 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangePasswordViewController.h; path = classes/ChangePasswordViewController.h; sourceTree = "<group>"; };
@@ -1902,6 +1918,14 @@
 		5D3F699017B33E4500EBD5E8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				08274DB521C132F9007F72BF /* main_button_menu_k5@2x.png */,
+				08274DA921C132E3007F72BF /* main_button_menu_j5@2x.png */,
+				08274DAD21C132E4007F72BF /* main_button_menu_jk1@2x.png */,
+				08274DAC21C132E4007F72BF /* main_button_menu_jk2@2x.png */,
+				08274DA821C132E3007F72BF /* main_button_menu_jk4@2x.png */,
+				08274DA721C132E3007F72BF /* main_button_menu_jk6@2x.png */,
+				08274DAA21C132E4007F72BF /* main_button_menu_jk7@2x.png */,
+				08274DAB21C132E4007F72BF /* main_button_menu_jk8@2x.png */,
 				7ADA1D5621979F7A006699F6 /* main_button_menu_b8.png */,
 				7ADA1D5521979F7A006699F6 /* main_button_menu_b8@2x.png */,
 				7ADA1D5321979F7A006699F6 /* main_button_menu_b9.png */,
@@ -2881,6 +2905,7 @@
 				5D3F699617B33E4500EBD5E8 /* common_logo_erpbarcode.png in Resources */,
 				B27BF4D3199A08A4003E3DF2 /* main_button_menu_f1.png in Resources */,
 				5D5C9653181A384600BE0708 /* list_checkbox_unchecked.png in Resources */,
+				08274DB321C132E4007F72BF /* main_button_menu_jk2@2x.png in Resources */,
 				7A9D3AC9218A169A00C36FC8 /* OutIntoViewController15.xib in Resources */,
 				08095DB31DF7EC9D006C9CE2 /* main_button_menu_jk7.png in Resources */,
 				08095DB61DF7EC9D006C9CE2 /* main_button_menu_k_up@2x.png in Resources */,
@@ -2916,6 +2941,7 @@
 				08AF22D22057A1180015BEE4 /* san.dat in Resources */,
 				08949D681D5C743900854D23 /* pwreset_btn_tap@2x.png in Resources */,
 				B6A8A4FD1822D2EA00095D6B /* CompleteScanCell3.xib in Resources */,
+				08274DAF21C132E4007F72BF /* main_button_menu_jk4@2x.png in Resources */,
 				5D3F69A817B35A4700EBD5E8 /* login_icon_ID.png in Resources */,
 				B6A876C7183EF4900053EBE8 /* main_button_menu_h3.png in Resources */,
 				5D3F69A917B35A4700EBD5E8 /* login_icon_ID@2x.png in Resources */,
@@ -2981,6 +3007,7 @@
 				B6A65C9A1845BC7A00422D27 /* button_delete@2x.png in Resources */,
 				1C93A5661855D3FB000C790E /* SettingViewRereadDelay.xib in Resources */,
 				0853F4F31BA2BE5900C57C6C /* main_button_menu_i_up@2x.png in Resources */,
+				08274DB621C132F9007F72BF /* main_button_menu_k5@2x.png in Resources */,
 				5D3F69C717B37C4D00EBD5E8 /* Navi_setting_D@2x.png in Resources */,
 				B6A876B6183EF4900053EBE8 /* main_button_menu_g@2x.png in Resources */,
 				B6A87708183F48D20053EBE8 /* login_loginbutton@2x.png in Resources */,
@@ -3125,6 +3152,7 @@
 				B6A87692183EF4900053EBE8 /* main_button_menu_c@2x.png in Resources */,
 				B6E22651183D9AE700147519 /* duplication.wav in Resources */,
 				5D88564017C5AEF200521934 /* n0.wav in Resources */,
+				08274DB221C132E4007F72BF /* main_button_menu_jk8@2x.png in Resources */,
 				B6A65CC71845BC9100422D27 /* button_save_up.png in Resources */,
 				5D5C9652181A384600BE0708 /* list_checkbox_checked.png in Resources */,
 				B6FFBF6E1846FFD700EC2E2B /* common_checkbox_checked_disable@2x.png in Resources */,
@@ -3156,6 +3184,8 @@
 				5DA8564C185C1C9A00511372 /* intro@2x.png in Resources */,
 				5D88564517C5AEF200521934 /* n5.wav in Resources */,
 				5D88564617C5AEF200521934 /* n6.wav in Resources */,
+				08274DB421C132E4007F72BF /* main_button_menu_jk1@2x.png in Resources */,
+				08274DB021C132E4007F72BF /* main_button_menu_j5@2x.png in Resources */,
 				B6A65C8C184580FC00422D27 /* button_reset_up@2x.png in Resources */,
 				B6EE64CC1845DE3500209381 /* button_insu_disable@2x.png in Resources */,
 				B6A65CB71845BC8600422D27 /* button_request_up.png in Resources */,
@@ -3189,6 +3219,7 @@
 				5D88564E17C5AEF200521934 /* r.wav in Resources */,
 				7A9D3AD5218A169A00C36FC8 /* OutIntoViewController8.xib in Resources */,
 				5D88564F17C5AEF200521934 /* s.wav in Resources */,
+				08274DB121C132E4007F72BF /* main_button_menu_jk7@2x.png in Resources */,
 				085BF4001AAECB7700E8FD18 /* main_button_menu_h6@2x.png in Resources */,
 				B6F15C37180E511700410DE7 /* SelectWBSFirstPageCell.xib in Resources */,
 				B6A65CCD1845BC9100422D27 /* button_search.png in Resources */,
@@ -3272,6 +3303,7 @@
 				B6A65C981845BC7A00422D27 /* button_delete_up@2x.png in Resources */,
 				5D65CCC61846D413005B8A9B /* gbic.txt in Resources */,
 				B6A65CEA1845BCB800422D27 /* tab_bg@2x.png in Resources */,
+				08274DAE21C132E4007F72BF /* main_button_menu_jk6@2x.png in Resources */,
 				5D88565B17C5AEF200521934 /* y.wav in Resources */,
 				B69C042B180BC19F00E651DF /* GoodsInfoSecondTableCell.xib in Resources */,
 				08095DB21DF7EC9D006C9CE2 /* main_button_menu_jk6.png in Resources */,
