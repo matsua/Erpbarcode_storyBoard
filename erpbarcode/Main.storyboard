@@ -525,12 +525,18 @@
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <items>
-                                    <tabBarItem title="작업관리" id="YGX-Ug-swe">
-                                        <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <tabBarItem title="작업관리" image="main_button_1.png" id="YGX-Ug-swe">
+                                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                                     </tabBarItem>
-                                    <tabBarItem tag="1" title="설비정보조회" id="Q2h-Dk-Jpz"/>
-                                    <tabBarItem tag="2" title="환경설정" id="8ZK-X2-8l5"/>
-                                    <tabBarItem tag="3" title="종료" id="dGu-fR-0lg"/>
+                                    <tabBarItem tag="1" title="설비정보조회" image="main_button_2.png" id="Q2h-Dk-Jpz">
+                                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="2" title="환경설정" image="main_button_3.png" id="8ZK-X2-8l5">
+                                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="3" title="종료" image="main_button_4.png" id="dGu-fR-0lg">
+                                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
+                                    </tabBarItem>
                                 </items>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>

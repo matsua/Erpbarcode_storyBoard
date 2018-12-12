@@ -420,7 +420,6 @@
 {
     NSString* message = @"세션이 종료되었습니다.\n재접속 하시겠습니까?\n(저장하지 않은 자료는 재 작업 하셔야 합니다.)";
     [self showMessage:message tag:2000 title1:@"예" title2:@"아니오"];
-    
     isOperationFinished = YES;
 }
 
