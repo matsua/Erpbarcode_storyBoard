@@ -87,6 +87,7 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
+    [self.tabBar setSelectedItem:nil];
 }
 
 - (void)viewWillLayoutSubviews
