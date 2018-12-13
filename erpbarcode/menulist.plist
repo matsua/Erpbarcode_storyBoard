@@ -176,8 +176,6 @@
 			<string>main_button_menu_jk1</string>
 			<string>관리자변경</string>
 			<string>main_button_menu_jk2</string>
-			<string>재물조사</string>
-			<string>main_button_menu_jk3</string>
 			<string>불용요청</string>
 			<string>main_button_menu_jk4</string>
 			<string>OA연식조회</string>
@@ -201,18 +199,10 @@
 			<string>main_button_menu_jk1</string>
 			<string>관리자변경</string>
 			<string>main_button_menu_jk2</string>
-			<string>재물조사</string>
-			<string>main_button_menu_jk3</string>
 			<string>불용요청</string>
 			<string>main_button_menu_jk4</string>
 			<string>비품연식조회</string>
 			<string>main_button_menu_k5</string>
-			<string>납품확인</string>
-			<string>main_button_menu_jk6</string>
-			<string>대여등록</string>
-			<string>main_button_menu_jk7</string>
-			<string>대여반납</string>
-			<string>main_button_menu_jk8</string>
 		</array>
 	</dict>
 	<dict>

@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CTO-xz-amz">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VX-fb-zju" userLabel="위치바코드">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
@@ -135,10 +135,63 @@
                                                     <constraint firstItem="OiT-Xt-pQp" firstAttribute="leading" secondItem="zbg-mf-M5Q" secondAttribute="trailing" constant="10" id="xZg-m3-Oxr"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="loC-fo-Dxo" userLabel="S/N">
+                                                <rect key="frame" x="0.0" y="70" width="320" height="35"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="S/N" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAA-Te-fM0" userLabel="S/N">
+                                                        <rect key="frame" x="6" y="0.0" width="70" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="70" id="8C3-iZ-Ic9"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="common_textfield_bg_gray" translatesAutoresizingMaskIntoConstraints="NO" id="zMm-T2-8Tz">
+                                                        <rect key="frame" x="76" y="2" width="183" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Zg4-Th-1se"/>
+                                                        </constraints>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="9B7-TO-hGl" id="kIR-2c-RbO"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckP-Wo-ZaB">
+                                                        <rect key="frame" x="269" y="2" width="45" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="45" id="QC0-n0-jDD"/>
+                                                            <constraint firstAttribute="height" constant="30" id="oGt-hN-cEL"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="KTfontBold" family="KT font" pointSize="12"/>
+                                                        <state key="normal" title="스캔" backgroundImage="button_register_full.png"/>
+                                                        <state key="highlighted" title="스캔" backgroundImage="button_register_up_full.png"/>
+                                                        <connections>
+                                                            <action selector="scan:" destination="9B7-TO-hGl" eventType="touchUpInside" id="4o6-gM-kfK"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ckP-Wo-ZaB" secondAttribute="trailing" constant="6" id="59c-35-8oJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ckP-Wo-ZaB" secondAttribute="bottom" constant="3" id="FEM-Uf-kjf"/>
+                                                    <constraint firstItem="ckP-Wo-ZaB" firstAttribute="top" secondItem="loC-fo-Dxo" secondAttribute="top" constant="2" id="K6a-9i-hOL"/>
+                                                    <constraint firstItem="ZAA-Te-fM0" firstAttribute="leading" secondItem="loC-fo-Dxo" secondAttribute="leading" constant="6" id="MTV-jd-yGk"/>
+                                                    <constraint firstItem="zMm-T2-8Tz" firstAttribute="leading" secondItem="ZAA-Te-fM0" secondAttribute="trailing" id="VWL-zg-yRr"/>
+                                                    <constraint firstItem="ckP-Wo-ZaB" firstAttribute="leading" secondItem="zMm-T2-8Tz" secondAttribute="trailing" constant="10" id="Zw6-BF-2hn"/>
+                                                    <constraint firstItem="ZAA-Te-fM0" firstAttribute="top" secondItem="loC-fo-Dxo" secondAttribute="top" id="jm6-aY-90T"/>
+                                                    <constraint firstAttribute="height" constant="35" id="nAu-aI-dbm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ZAA-Te-fM0" secondAttribute="bottom" constant="1" id="s0r-A0-ryt"/>
+                                                    <constraint firstItem="zMm-T2-8Tz" firstAttribute="top" secondItem="loC-fo-Dxo" secondAttribute="top" constant="2" id="t1o-ej-QQt"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zMm-T2-8Tz" secondAttribute="bottom" constant="3" id="vy2-41-VPp"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uat-tw-GnF" userLabel="스캔필수">
-                                        <rect key="frame" x="0.0" y="71" width="320" height="40"/>
+                                        <rect key="frame" x="0.0" y="106" width="320" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_toolbar_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Mj-NI-ojj">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
@@ -161,7 +214,7 @@
                                                             <action selector="requestBtn:" destination="9B7-TO-hGl" eventType="touchUpInside" id="MfU-tp-lMG"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpo-Qg-bk9">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpo-Qg-bk9">
                                                         <rect key="frame" x="45" y="0.0" width="45" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="45" id="kxz-q2-UEh"/>
@@ -173,7 +226,7 @@
                                                         </state>
                                                         <state key="highlighted" title="전송" backgroundImage="button_register_up_full.png"/>
                                                         <connections>
-                                                            <action selector="requestBtn:" destination="9B7-TO-hGl" eventType="touchUpInside" id="PNH-GF-lmk"/>
+                                                            <action selector="requestBtn:" destination="9B7-TO-hGl" eventType="touchUpInside" id="NVf-WO-8n6"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -198,7 +251,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PV4-kf-1Rr">
-                                        <rect key="frame" x="0.0" y="113" width="320" height="391"/>
+                                        <rect key="frame" x="0.0" y="148" width="320" height="356"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnK-z8-855" userLabel="상태">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
@@ -565,8 +618,12 @@
                         <outlet property="mnf" destination="moO-xn-OIR" id="6iS-lJ-ZPC"/>
                         <outlet property="productRegDate" destination="Wno-BG-DHO" id="e2N-FU-ol9"/>
                         <outlet property="regDate" destination="ITP-Mz-7UG" id="8V1-J4-hk3"/>
+                        <outlet property="requestBtn" destination="2m5-QY-60J" id="ph6-tv-vrz"/>
                         <outlet property="requestView" destination="PV4-kf-1Rr" id="7j7-mi-UAg"/>
+                        <outlet property="sendBtn" destination="cpo-Qg-bk9" id="VxY-i1-lNE"/>
                         <outlet property="sn" destination="JQk-MC-Obu" id="96X-83-bCb"/>
+                        <outlet property="snCode" destination="zMm-T2-8Tz" id="ebW-5s-MPH"/>
+                        <outlet property="snCodeView" destination="loC-fo-Dxo" id="GyR-fr-53g"/>
                         <outlet property="stand" destination="IHl-1d-FOY" id="0D4-Q9-xL7"/>
                         <outlet property="standNm" destination="oaz-bm-DhH" id="W7A-OK-OJX"/>
                         <outlet property="stat" destination="Dud-lg-vxq" id="T7p-I0-DFR"/>

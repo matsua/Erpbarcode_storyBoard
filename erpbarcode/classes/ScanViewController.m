@@ -83,11 +83,11 @@
     CGRect highlightViewRect = CGRectZero;
     AVMetadataMachineReadableCodeObject *barcodeObject;
     NSString *detectionString = nil;
-    //    NSArray *barCodeTypes = @[AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code,
-    //            AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeCode128Code,
-    //            AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode, AVMetadataObjectTypeAztecCode];
+        NSArray *barcodeTypes = @[AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code,
+                AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeCode128Code,
+                AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode, AVMetadataObjectTypeAztecCode];
     
-    NSArray *barcodeTypes = @[AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode];
+//    NSArray *barcodeTypes = @[AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode];
     
     for (AVMetadataObject *metadata in metadataObjects) {
         for (NSString *type in barcodeTypes) {

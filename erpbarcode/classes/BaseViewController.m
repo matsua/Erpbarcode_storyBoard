@@ -22,11 +22,14 @@
 @property(nonatomic,strong) IBOutlet UILabel* lblOrperationInfo;
 @property(nonatomic,strong) IBOutlet UIView *locCodeView;
 @property(nonatomic,strong) IBOutlet UIView *facCodeView;
+@property(nonatomic,strong) IBOutlet UIView *snCodeView;
 @property(nonatomic,strong) IBOutlet UITextField *locCode;
 @property(nonatomic,strong) IBOutlet UITextField *facCode;
+@property(nonatomic,strong) IBOutlet UITextField *snCode;
+@property(nonatomic,strong) IBOutlet UIButton *requestBtn;
+@property(nonatomic,strong) IBOutlet UIButton *sendBtn;
 @property(nonatomic,strong) NSString *bsnNo;
 @property(nonatomic,assign) NSInteger nSelected;
-@property(nonatomic,strong) IBOutlet UIWebView *resultWebView;
 @property(nonatomic,assign) __block BOOL isOperationFinished;
 @property(nonatomic,strong) NSString* JOB_GUBUN;
 @property(nonatomic,assign) int scanBtnTag;
@@ -52,12 +55,15 @@
 @synthesize lblOrperationInfo;
 @synthesize locCodeView;
 @synthesize facCodeView;
+@synthesize snCodeView;
 @synthesize locCode;
 @synthesize facCode;
+@synthesize snCode;
+@synthesize requestBtn;
+@synthesize sendBtn;
 @synthesize bsnNo;
 @synthesize bsnGb;
 @synthesize nSelected;
-@synthesize resultWebView;
 @synthesize isOperationFinished;
 @synthesize JOB_GUBUN;
 @synthesize scanBtnTag;
@@ -93,6 +99,7 @@
     bsnGb = @"OA";
     if([JOB_GUBUN rangeOfString:@"OA"].location == NSNotFound){
         bsnGb = @"OE";
+        snCodeView.hidden = YES;
     }
     
     [self makeDummyInputViewForTextField];
@@ -103,7 +110,7 @@
 - (void)makeDummyInputViewForTextField
 {
     if([[Util udObjectForKey:INPUT_MODE] isEqualToString:@"1"]) return;
-    
+
     if (![[Util udObjectForKey:BARCODE_SERVER_ID] isEqualToString:@"QA"] ||
         ([[Util udObjectForKey:BARCODE_SERVER_ID] isEqualToString:@"QA"] &&
          ![[Util udObjectForKey:SOFT_KEYBOARD_ON_OFF] boolValue])
@@ -191,8 +198,10 @@
     
     if(scanBtnTag == 0){
         locCode.text = barcode;
-    }else{
+    }else if(scanBtnTag == 1){
         facCode.text = barcode;
+    }else{
+        snCode.text = barcode;
     }
     
 }
@@ -219,7 +228,7 @@
         [self requestManagement];
     }
     
-    if([JOB_GUBUN hasPrefix:@"연식조회"]){
+    if([JOB_GUBUN hasPrefix:@"연식조회"] || [JOB_GUBUN hasPrefix:@"비품연식조회"]){
         [self requestItemSearch];
     }
 }
@@ -235,10 +244,18 @@
     NSDictionary *userinfo = [Util udObjectForKey:USER_INFO];
     NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
     
+    NSString *snCodeStr = @"";
+    if(!snCodeView.isHidden && snCode.text.length > 0){
+        snCodeStr = snCode.text;                              //S/N바코드
+    }
+    
     [paramDic setObject:bsnNo forKey:@"com"];                                           //업무번호
     [paramDic setObject:facCode.text forKey:@"bcId"];                                   //설비바코드
     if(locCode.text){
         [paramDic setObject:locCode.text forKey:@"sdId"];                               //위치바코드
+    }
+    if(!snCodeView.isHidden){
+        [paramDic setObject:snCodeStr forKey:@"serge"];                               //S/N바코드
     }
     [paramDic setObject:bsnGb forKey:@"facType"];                                       //OA, OE 구분
     [paramDic setObject:[userinfo objectForKey:@"userId"] forKey:@"userId"];            //사용자아이디
@@ -283,13 +300,9 @@
     
     if (status == 0 || status == 2){ //실패
         NSDictionary* headerDic = [resultList objectAtIndex:0];
-        
         NSString* message = [headerDic objectForKey:@"detail"];
-        
         message = [message stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        // 실패 시 필요한 메시지를 뿌려주고, 적당한 처리를 한다.
         [self processFailRequest:pid Message:message Status:status];
-        
         return;
     }else if (status == -1){ //세션종료
         [self processEndSession:pid];
@@ -297,9 +310,28 @@
         return;
     }
     
-    if (pid == REQUEST_BASE_MANAGEMENT || pid == REQUEST_BASE_ITEM_SEARCH){
+    //정상응답
+    if (pid == REQUEST_BASE_ITEM_SEARCH){
         [self processResponseSearch:resultList];
+    }else if(pid == REQUEST_BASE_MANAGEMENT){
+        [self processResponseManagement:resultList];
     }else isOperationFinished = YES;
+}
+
+- (void)processResponseManagement:(NSArray*)responseList
+{
+    isOperationFinished = YES;
+    
+    if (responseList.count){
+        NSDictionary* dic = [responseList objectAtIndex:0];
+        if([[dic objectForKey:@"T_ERR_TYPE"]isEqualToString:@"E"]){
+            NSString *message = [dic objectForKey:@"T_MESS"];
+            [self showMessage:message tag:0 title1:@"확인" title2:@""];
+            return;
+        }else{
+            [self showMessage:@"정상처리 되었습니다." tag:0 title1:@"확인" title2:@""];
+        }
+    }
 }
 
 - (void)processResponseSearch:(NSArray*)responseList
@@ -326,37 +358,45 @@
     bsnNo = @"";
     NSString *JOB_GUBUN = [Util udObjectForKey:USER_WORK_NAME];
     
+    if([JOB_GUBUN rangeOfString:@"납품확인"].location == NSNotFound){
+        snCodeView.hidden = YES;
+    }
+    
     if([JOB_GUBUN rangeOfString:@"신규등록"].location != NSNotFound){
         bsnNo = @"0501";
         requestView.hidden = YES;
+        requestBtn.hidden = YES;
     }
     else if([JOB_GUBUN rangeOfString:@"관리자변경"].location != NSNotFound){
         bsnNo = @"0504";
         requestView.hidden = YES;
-    }
-    else if([JOB_GUBUN rangeOfString:@"재물조사"].location != NSNotFound){
-        bsnNo = @"0601";
-        requestView.hidden = YES;
+        requestBtn.hidden = YES;
     }
     else if([JOB_GUBUN rangeOfString:@"불용요청"].location != NSNotFound){
          bsnNo = @"0505";
         locCodeView.hidden = YES;
+        requestView.hidden = YES;
+        requestBtn.hidden = YES;
     }
     else if([JOB_GUBUN rangeOfString:@"연식조회"].location != NSNotFound){
         bsnNo = @"0602";
         locCodeView.hidden = YES;
+        sendBtn.hidden = YES;
     }
     else if([JOB_GUBUN rangeOfString:@"납품확인"].location != NSNotFound){
         bsnNo = @"0512";
         requestView.hidden = YES;
+        requestBtn.hidden = YES;
     }
     else if([JOB_GUBUN rangeOfString:@"대여등록"].location != NSNotFound){
         bsnNo = @"0513";
         requestView.hidden = YES;
+        requestBtn.hidden = YES;
     }
     else if([JOB_GUBUN rangeOfString:@"대여반납"].location != NSNotFound){
         bsnNo = @"0503";
         requestView.hidden = YES;
+        requestBtn.hidden = YES;
     }
     
 }
