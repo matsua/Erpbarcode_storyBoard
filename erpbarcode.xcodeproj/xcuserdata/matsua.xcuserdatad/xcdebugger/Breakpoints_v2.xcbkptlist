@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "erpbarcode/classes/SelfCertificationViewController.m"
-            timestampString = "547462854.8708349"
+            timestampString = "566726717.691569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "308"
@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "410"
             endingLineNumber = "410"
-            landmarkName = "-touchedLogin:"
+            landmarkName = "-touchedCheckButton:"
             landmarkType = "7">
             <Locations>
                <Location
@@ -42,7 +42,7 @@
                   moduleName = "erpbarcode"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/matsua/Documents/workspace/ERPBarcode_2019/%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF/ERPBarcode_ios/erpbarcode/classes/LoginViewController.m"
-                  timestampString = "566315089.01703"
+                  timestampString = "566732586.370717"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "410"
@@ -57,7 +57,7 @@
                   moduleName = "erpbarcode"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/matsua/Documents/workspace/ERPBarcode_2019/%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF/ERPBarcode_ios/erpbarcode/classes/LoginViewController.m"
-                  timestampString = "566315089.020913"
+                  timestampString = "566732586.3741601"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "410"
@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "310"
             endingLineNumber = "310"
-            landmarkName = "-processResponseSearch:"
+            landmarkName = "-processRequest:PID:Status:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

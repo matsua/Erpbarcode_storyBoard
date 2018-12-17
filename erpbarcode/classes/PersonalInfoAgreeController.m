@@ -73,14 +73,14 @@
         agree4.selected = YES;
     }
     
-    lblHeader1.layer.borderWidth = 1.0;
-    lblHeader2.layer.borderWidth = 1.0;
-    lblHeader3.layer.borderWidth = 1.0;
-    lblHeader4.layer.borderWidth = 1.0;
-    lblContents1.layer.borderWidth = 1.0;
-    lblContents2.layer.borderWidth = 1.0;
-    lblContents3.layer.borderWidth = 1.0;
-    lblContents4.layer.borderWidth = 1.0;
+//    lblHeader1.layer.borderWidth = 1.0;
+//    lblHeader2.layer.borderWidth = 1.0;
+//    lblHeader3.layer.borderWidth = 1.0;
+//    lblHeader4.layer.borderWidth = 1.0;
+//    lblContents1.layer.borderWidth = 1.0;
+//    lblContents2.layer.borderWidth = 1.0;
+//    lblContents3.layer.borderWidth = 1.0;
+//    lblContents4.layer.borderWidth = 1.0;
 }
 
 - (void)didReceiveMemoryWarning

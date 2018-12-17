@@ -1636,7 +1636,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9I-f6-G5Q">
-                                <rect key="frame" x="0.0" y="0.0" width="265" height="469"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHb-Nr-kgQ">
                                         <rect key="frame" x="20" y="30" width="280" height="508"/>
