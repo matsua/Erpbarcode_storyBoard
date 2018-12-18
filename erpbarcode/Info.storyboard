@@ -1145,7 +1145,7 @@
                     <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1000" y="0.0"/>
+            <point key="canvasLocation" x="2829" y="1293"/>
         </scene>
         <!--GoodsInfoViewController-->
         <scene sceneID="cga-vC-9IF">
@@ -1302,7 +1302,7 @@
                                         </connections>
                                     </pageControl>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DlY-GG-8Ce">
-                                        <rect key="frame" x="0.0" y="111" width="320" height="329"/>
+                                        <rect key="frame" x="0.0" y="111" width="320" height="393"/>
                                         <connections>
                                             <outlet property="delegate" destination="glX-Bi-F1P" id="Arg-QO-WQi"/>
                                         </connections>
@@ -1480,7 +1480,7 @@
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="3894" y="0.0"/>
+            <point key="canvasLocation" x="3698" y="1293"/>
         </scene>
         <!--DeviceInfoViewController-->
         <scene sceneID="atJ-Ti-GGk">
@@ -2411,7 +2411,7 @@
                                                         </constraints>
                                                     </view>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nse-VO-GTX">
-                                                        <rect key="frame" x="0.0" y="33" width="320" height="352"/>
+                                                        <rect key="frame" x="0.0" y="33" width="320" height="392"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="320" id="izT-su-LkS"/>
@@ -2493,7 +2493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kcc-2I-kLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3893" y="1293"/>
+            <point key="canvasLocation" x="1931" y="1293"/>
         </scene>
     </scenes>
     <resources>
