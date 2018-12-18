@@ -133,16 +133,23 @@
         if(barcode.length > 10){
             [self showMessage:@"처리할 수 없는 위치바코드입니다." tag:-1 title1:@"확인" title2:nil isError:YES];
             locCode.text = @"";
-            [locCode becomeFirstResponder];
+            [self locBecameFirstResponder];
             return YES;
         }
+        locCode.text = barcode;
+        [self fccBecameFirstResponder];
     }
     else if (tag == 200){ //설비 바코드
         if (barcode.length != 17 && barcode.length != 18){
             [self showMessage:@"처리할 수 없는 설비바코드입니다." tag:-1 title1:@"확인" title2:nil isError:YES];
             facCode.text = @"";
             [facCode becomeFirstResponder];
+            [self fccBecameFirstResponder];
             return YES;
+        }
+        facCode.text = barcode;
+        if(!snCodeView.hidden){
+            [self snBecameFirstResponder];
         }
     }
     return YES;
@@ -213,12 +220,14 @@
        [JOB_GUBUN hasPrefix:@"납품확인"] || [JOB_GUBUN hasPrefix:@"대여등록"] || [JOB_GUBUN hasPrefix:@"대여반납"]){
         if(locCode.text.length == 0){
             [self showMessage:@"위치바코드가 존재하지 않습니다." tag:-1 title1:@"확인" title2:nil isError:YES];
+            [self locBecameFirstResponder];
             return;
         }
     }
     
     if(facCode.text.length == 0){
         [self showMessage:@"설비바코드가 존재하지 않습니다." tag:-1 title1:@"확인" title2:nil isError:YES];
+        [self fccBecameFirstResponder];
         return;
     }
     
@@ -358,6 +367,12 @@
     bsnNo = @"";
     NSString *JOB_GUBUN = [Util udObjectForKey:USER_WORK_NAME];
     
+    if(!locCodeView.hidden){
+        [self locBecameFirstResponder];
+    }else{
+        [self fccBecameFirstResponder];
+    }
+    
     if([JOB_GUBUN rangeOfString:@"납품확인"].location == NSNotFound){
         snCodeView.hidden = YES;
     }
@@ -434,6 +449,12 @@
 {
     if (![locCode isFirstResponder])
         [locCode becomeFirstResponder];
+}
+
+- (void) snBecameFirstResponder
+{
+    if (![snCode isFirstResponder])
+        [snCode becomeFirstResponder];
 }
 
 - (void) touchBackBtn:(id)sender
