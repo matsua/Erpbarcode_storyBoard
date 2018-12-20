@@ -42,7 +42,7 @@
                   moduleName = "erpbarcode"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/matsua/Documents/workspace/ERPBarcode_2019/%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF/ERPBarcode_ios/erpbarcode/classes/LoginViewController.m"
-                  timestampString = "566988210.918425"
+                  timestampString = "567002395.579421"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "410"
@@ -57,7 +57,7 @@
                   moduleName = "erpbarcode"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/matsua/Documents/workspace/ERPBarcode_2019/%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF/ERPBarcode_ios/erpbarcode/classes/LoginViewController.m"
-                  timestampString = "566988210.922029"
+                  timestampString = "567002395.583087"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "410"
@@ -65,22 +65,6 @@
                   offsetFromSymbolStart = "436">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "erpbarcode/classes/ERPRequestManager.m"
-            timestampString = "566313995.668632"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "418"
-            endingLineNumber = "418"
-            landmarkName = "-processResponseDatas:"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
