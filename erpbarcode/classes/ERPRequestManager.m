@@ -8,7 +8,7 @@
 
 #import "ERPRequestManager.h"
 #import "ERPLocationManager.h"
-#import "ERPAlert.h"
+
 
 @implementation ERPRequestManager
 
@@ -415,6 +415,10 @@
 // 서버로 부터 받은 response data를 처리해 필요한 method를 호출한다.
 - (void)processResponseDatas:(NSData*)data
 {
+    if(data == nil){
+        return;
+    }
+    
     NSError* error;
     NSDictionary* responseDic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     if (!responseDic && error && [error.domain isEqualToString:NSCocoaErrorDomain] && (error.code == NSPropertyListReadCorruptError)) {
@@ -789,6 +793,5 @@
     theConnection = nil;
     receivedData = nil;
 }
-
 
 @end
