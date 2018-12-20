@@ -1982,14 +1982,39 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
         }
     }
     
-    ArgumentConfirmViewController* vc = [[ArgumentConfirmViewController alloc] init];
-    vc.delegate = self;
-    vc.POSID = strWBSNo;
-    vc.loccd = strCompleteLocBarCode;
-    vc.JOB_GUBUN = JOB_GUBUN;
-    vc.infoList = dataList;
+    UIViewController* vc = [self instantiateViewController:@"Sub" viewName:@"ArgumentConfirmViewController"];
+    if (vc) {
+        ((ArgumentConfirmViewController*)vc).delegate = self;
+        ((ArgumentConfirmViewController*)vc).POSID = strWBSNo;
+        ((ArgumentConfirmViewController*)vc).loccd = strCompleteLocBarCode;
+        ((ArgumentConfirmViewController*)vc).JOB_GUBUN = JOB_GUBUN;
+        ((ArgumentConfirmViewController*)vc).infoList = dataList;
+        [self pushViewController:vc animated:YES];
+    }
     
-    [self.navigationController pushViewController:vc animated:YES];
+//    ArgumentConfirmViewController* vc = (ArgumentConfirmViewController*)[self instantiateViewController:@"Sub" viewName:@"ArgumentConfirmViewController"];
+//    //UIViewController* vc = [self instantiateViewController:@"Sub" viewName:@"ArgumentConfirmViewController"];
+//
+//    if (vc) {
+//        vc.delegate = self;
+//        vc.POSID = strWBSNo;
+//        vc.loccd = strCompleteLocBarCode;
+//        vc.JOB_GUBUN = JOB_GUBUN;
+//        vc.infoList = dataList;
+//
+//        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+//        [self presentViewController:vc animated:YES completion:nil];
+//    }
+    
+    
+//    ArgumentConfirmViewController* vc = [[ArgumentConfirmViewController alloc] init];
+//    vc.delegate = self;
+//    vc.POSID = strWBSNo;
+//    vc.loccd = strCompleteLocBarCode;
+//    vc.JOB_GUBUN = JOB_GUBUN;
+//    vc.infoList = dataList;
+//
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)touchUUBtn:(id)sender {
@@ -2010,8 +2035,9 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
         ((WBSListViewController*)vc).delegate = self;
         ((WBSListViewController*)vc).wbsList = wbsResultList;
         ((WBSListViewController*)vc).JOB_GUBUN = JOB_GUBUN;
-        [self presentViewController:vc animated:YES completion:nil];
+        [self pushViewController:vc animated:YES];
     }
+    
 //    WBSListViewController* vc = [[WBSListViewController alloc] init];
 //    vc.delegate = self;
 //    vc.wbsList = wbsResultList;

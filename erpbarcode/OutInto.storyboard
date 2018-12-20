@@ -103,7 +103,7 @@
                                                             <constraint firstAttribute="width" secondItem="4nl-Ra-Qhb" secondAttribute="height" multiplier="3:2" id="3FY-pG-dbJ"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="KTfontBold" family="KT font" pointSize="12"/>
-                                                        <state key="normal" title="검색" backgroundImage="button_search.png">
+                                                        <state key="normal" backgroundImage="button_search.png">
                                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <state key="highlighted" title="검색" backgroundImage="button_register_up_full.png"/>
