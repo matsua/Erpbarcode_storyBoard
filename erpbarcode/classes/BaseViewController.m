@@ -210,7 +210,6 @@
     }else{
         snCode.text = barcode;
     }
-    
 }
 
 -(IBAction)requestBtn:(id)sender{
@@ -373,7 +372,7 @@
         [self fccBecameFirstResponder];
     }
     
-    if([JOB_GUBUN rangeOfString:@"납품확인"].location == NSNotFound){
+    if([JOB_GUBUN rangeOfString:@"납품확인"].location == NSNotFound && [JOB_GUBUN rangeOfString:@"신규등록"].location){
         snCodeView.hidden = YES;
     }
     

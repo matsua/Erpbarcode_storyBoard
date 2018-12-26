@@ -218,20 +218,6 @@ typedef enum {
 #define API_BASE_MANAGEMENT         @"/base/smart/management.json"    //BASE OA,OE - 불용요청, 신규등록, 관리자 변경, 재물조사, 납품확인, 대여등록, 대여반납
 #define API_BASE_ITEM_SEARCH        @"/base/smart/itemSearch.json"    //BASE OA - OA연식조회, BASE OE - 비품연식조회
 
-
-//#define API_BASE_OA_LOGIN           @"https://base.kt.com/base/OA/smart/login.jsp?USERID=%@&USERPWD=%@"                             //베이스OA 로그인
-
-
-//#define API_BASE_OA_WORK_LIST_HALF  @"http://base.kt.com/base/OA/smart/work_list.jsp?COM=%@&USERID=%@&BCID=%@&ACT=search"           //베이스OA 불용요청
-//#define API_BASE_OA_WORK_LIST       @"http://base.kt.com/base/OA/smart/work_list.jsp?COM=%@&USERID=%@&SDID=%@&BCID=%@&ACT=search"   //베이스OA 신규등록, 관리자 변경, 재물조사, 납품확인, 대여등록, 대여반납
-//#define API_BASE_OA_ITEM_SEARCH     @"http://base.kt.com/base/OA/smart/item_search.jsp?COM=%@&USERID=%@&BCID=%@"                    //베이스OA OA연식조회
-//
-//#define API_BASE_OE_LOGIN           @"https://base.kt.com/base/OA/smart_OE/login.jsp?USERID=%@&USERPWD=%@"                              //베이스OE 로그인
-//#define API_BASE_OE_WORK_LIST_HALF  @"http://base.kt.com/base/OA/smart_OE/work_list.jsp?COM=%@&USERID=%@&BCID=%@&ACT=search"            //베이스OE 불용요청
-//#define API_BASE_OE_WORK_LIST       @"http://base.kt.com/base/OA/smart_OE/work_list.jsp?COM=%@&USERID=%@&SDID=%@&BCID=%@&ACT=search"    //베이스OE 신규등록, 관리자 변경, 재물조사, 납품확인, 대여등록, 대여반납
-//#define API_BASE_OE_ITEM_SEARCH     @"http://base.kt.com/base/OA/smart_OE/item_search.jsp?COM=%@&USERID=%@&BCID=%@"                     //베이스OE 비품연식조회
-
-
 //NSUserDefault Access Keyword
 #define USER_INFO           @"USER_INFO"            //로그인시 사용자정보 dictionary 형식
                                                     /* userId"        
