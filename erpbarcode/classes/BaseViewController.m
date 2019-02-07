@@ -346,15 +346,41 @@
 {
     if (responseList.count){
         NSDictionary* dic = [responseList objectAtIndex:0];
-        [stat setText:[dic objectForKey:@"STAT"]];
-        [regDate setText:[dic objectForKey:@"REGDATE"]];
-        [standNm setText:[dic objectForKey:@"STANDNAME"]];
-        [stand setText:[dic objectForKey:@"STAND"]];
-        [equip setText:[dic objectForKey:@"EQUIP"]];
-        [productRegDate setText:[dic objectForKey:@"PRODUCTREGDATE"]];
-        [itemNm setText:[dic objectForKey:@"ITEMNM"]];
-        [sn setText:[dic objectForKey:@"SN"]];
-        [mnf setText:[dic objectForKey:@"MNF"]];
+        if ([dic objectForKey:@"STAT"] != (id)[NSNull null]) {
+            [stat setText:[dic objectForKey:@"STAT"]];
+        }
+        
+        if ([dic objectForKey:@"REGDATE"] != (id)[NSNull null]) {
+            [regDate setText:[dic objectForKey:@"REGDATE"]];
+        }
+        
+        if ([dic objectForKey:@"STANDNAME"] != (id)[NSNull null]) {
+            [standNm setText:[dic objectForKey:@"STANDNAME"]];
+        }
+        
+        if ([dic objectForKey:@"STAND"] != (id)[NSNull null]) {
+            [stand setText:[dic objectForKey:@"STAND"]];
+        }
+        
+        if ([dic objectForKey:@"EQUIP"] != (id)[NSNull null]) {
+            [equip setText:[dic objectForKey:@"EQUIP"]];
+        }
+        
+        if ([dic objectForKey:@"PRODUCTREGDATE"] != (id)[NSNull null]) {
+            [productRegDate setText:[dic objectForKey:@"PRODUCTREGDATE"]];
+        }
+        
+        if ([dic objectForKey:@"ITEMNM"] != (id)[NSNull null]) {
+            [itemNm setText:[dic objectForKey:@"ITEMNM"]];
+        }
+        
+        if ([dic objectForKey:@"SN"] != (id)[NSNull null]) {
+            [sn setText:[dic objectForKey:@"SN"]];
+        }
+        
+        if ([dic objectForKey:@"MNF"] != (id)[NSNull null]) {
+            [mnf setText:[dic objectForKey:@"MNF"]];
+        }
     }
     
     isOperationFinished = YES;

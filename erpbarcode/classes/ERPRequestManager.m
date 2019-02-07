@@ -769,7 +769,8 @@
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
     
     NSMutableDictionary* headerDic = [NSMutableDictionary dictionary];
-    [headerDic setObject:[NSString stringWithFormat:@"%@", [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]] forKey:@"detail"];
+    //[headerDic setObject:[NSString stringWithFormat:@"%@", [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]] forKey:@"detail"];
+    [headerDic setObject:@"네트워크 상태를 확인하세요." forKey:@"detail"];
     NSArray* resultList = [NSArray arrayWithObject:headerDic];
     
     [delegate processRequest:resultList PID:reqKind Status:0];
