@@ -1492,8 +1492,10 @@
     if (modalView) {
         modalView.Sender = self;
         modalView.isSearchMode = NO;
-        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
-        [self presentViewController:modalView animated:YES completion:nil];
+//        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+//        [self presentViewController:modalView animated:YES completion:nil];
+        
+        [self.navigationController pushViewController:modalView animated:NO];
     }
 }
 
