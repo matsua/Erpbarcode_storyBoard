@@ -341,8 +341,8 @@
              object:selItemDic];
             
         }
-        [self.navigationController popViewControllerAnimated:NO];
-//        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        //[self.navigationController popViewControllerAnimated:NO];
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         
     }
 }
@@ -357,8 +357,8 @@
     }
     
    [txtOrgName resignFirstResponder];
-   [self.navigationController popViewControllerAnimated:NO];
-//    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+   //[self.navigationController popViewControllerAnimated:NO];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void) touchTreeBtn:(id)sender

@@ -149,7 +149,7 @@
     isOffLine = [[Util udObjectForKey:USER_OFFLINE] boolValue];
     
     //음영지역 아닐때만 호출 - 유저디폴트에 저장할 조직도 구성을 위해
-    if (!isOffLine && [Util udObjectForKey:LIST_ORG] == nil)
+    if (!isOffLine /*&& [Util udObjectForKey:LIST_ORG] == nil*/)
         [self requestSearchOrg:@"000001"];
     
     // 현재 위치정보를 요청함

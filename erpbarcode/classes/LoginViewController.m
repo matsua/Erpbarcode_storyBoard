@@ -94,7 +94,9 @@
     if (userid.length){
         textID.text = userid;
 #if TARGET_IPHONE_SIMULATOR
-        textPW.text = @"qkzhem@1";
+        if ([userid isEqualToString:@"admin"]) {
+            textPW.text = @"qkzhem@1";
+        }
 #endif
     }
     

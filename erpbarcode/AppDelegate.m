@@ -57,16 +57,14 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
     
     [self startIntroView];
     
-    ix_not_use_update();
+#if DEBUG
     //  iXShield 개발시에 사용하는 옵션으로 상용 배포시에 필히 삭제하여야 한다.
-//    ix_set_debug();
-    
+    ix_set_debug();
+#else
+    ix_not_use_update();
     [self systemCheck];
-//    [self systemCheckWithGameHack];
-//    [self integrityCheck];
-//    [self fakeGpsCheck];
-//    [self debuggerCheck];
-    
+#endif
+
     return YES;
 }
 

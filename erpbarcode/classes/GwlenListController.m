@@ -81,15 +81,17 @@
 
 #pragma IGwlenRequest delegate
 - (void)gwlenRequest:(BOOL)send{
-    [delegate gwlenRequest:send];
-    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    [self.presentingViewController dismissViewControllerAnimated:NO completion:^{
+       [self.delegate gwlenRequest:send];
+    }];
 }
 
 #pragma mark -  User Define Action
 - (IBAction)close:(id)sender
 {
-    [self gwlenRequest:YES];
-    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    [self.presentingViewController dismissViewControllerAnimated:NO completion:^{
+        [self gwlenRequest:YES];
+    }];
 }
 
 - (IBAction)cansel:(id)sender

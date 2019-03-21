@@ -301,8 +301,10 @@
     
 }
 
-
-
-
-
+#pragma mark - UIAlertViewDelegate
+-(void) clickedButtonAtIndex:(NSInteger)buttonIndex alertView:(AlertViewController*)alertView;
+// (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+   
+}
 @end

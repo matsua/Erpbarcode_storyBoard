@@ -54,8 +54,11 @@
 }
 
 -(IBAction)confirm:(id)sender{
-    [delegate popRequest:idKey cancelRsDt:txtCancelRsDt.text];
-    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    
+    [self.presentingViewController dismissViewControllerAnimated:NO completion:^{
+        [delegate popRequest:idKey cancelRsDt:txtCancelRsDt.text];
+    }];
+    
 }
 
 -(IBAction)closeModal:(id)sender{

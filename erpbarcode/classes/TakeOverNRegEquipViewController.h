@@ -71,8 +71,8 @@
 @property(strong, nonatomic) NSMutableArray* validateYNList;
 
 @property(assign, nonatomic) int pwSendType;
-@property(assign, nonatomic) NSString* deviceLocCd;
-@property(assign, nonatomic) NSString* deviceLocNm;
+@property(strong, nonatomic) NSString* deviceLocCd;
+@property(strong, nonatomic) NSString* deviceLocNm;
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIScrollView *_scrollView;
 @property (strong, nonatomic) IBOutlet UIView *orgView;
