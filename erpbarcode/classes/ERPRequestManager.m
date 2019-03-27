@@ -68,10 +68,9 @@
     
     NSString* postString = [rootDic JSONString];
     
-    NSLog(@"postString >> %@", postString);
-    NSLog(@"urlInfo >> %@", urlInfo);
-    
     NSString *requestUrl = [NSString stringWithFormat:@"%@%@?securityYN=N&call=IOS", [Util udObjectForKey:BARCODE_SERVER], urlInfo];
+    
+    NSLog(@"\n\n========================================================================================================================================\n\n[sychronousConnectToServer]\n\nULR   : %@\n\nPARAM : %@\n\n----------------------------------------------------------------------------------------------------------------------------------------", requestUrl, postString);
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
                                     initWithURL:[NSURL URLWithString:requestUrl]];
@@ -145,12 +144,13 @@
 {
     NSString* postString = [bodyDic JSONString];
     
-    NSLog(@"postString >> %@", postString);
-    NSLog(@"urlInfo >> %@", urlInfo);
+    
     
     NSString *requestUrl = [NSString stringWithFormat:@"%@%@?securityYN=N&call=IOS", [Util udObjectForKey:BARCODE_SERVER], urlInfo];
     
-    NSLog(@"requestUrl >> %@", requestUrl);
+    NSLog(@"\n\n========================================================================================================================================\n\n[asychronousConnectToServer]\n\nULR   : %@\n\nPARAM : %@\n\n----------------------------------------------------------------------------------------------------------------------------------------", requestUrl, postString);
+    
+    //NSLog(@"postString >> %@", postString);
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
                                     initWithURL:[NSURL URLWithString:requestUrl]];
@@ -431,6 +431,9 @@
                                                           options:0 error:&error];
         }
     }
+    
+    NSString *string =[ NSString stringWithCString:[data bytes] encoding:NSUTF8StringEncoding];
+    NSLog(@"\n\n----------------------------------------------------------------------------------------------------------------------------------------\n\nRECV : %@\n\n========================================================================================================================================", string);
         
     if (![responseDic count])
     {
@@ -449,7 +452,8 @@
         resultList = [bodyDic objectForKey:@"result"]; //array 형식
     
     int statusCode = [[headerDic objectForKey:@"status"] intValue];
-    NSLog(@"statusCode [%d]",statusCode);
+    
+    //NSLog(@"processResponseDatas statusCode [%d] %@",statusCode, string);
     
     if (statusCode == -1 || statusCode == 0 || statusCode == 2){ //실패 : -1은 왜 실패 처리 안 하나? 2014.02.26 수정 류성호
         NSLog(@"실패!");
