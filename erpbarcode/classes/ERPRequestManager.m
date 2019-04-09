@@ -432,7 +432,7 @@
         }
     }
     
-    NSString *string =[ NSString stringWithCString:[data bytes] encoding:NSUTF8StringEncoding];
+    NSString *string =[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"\n\n----------------------------------------------------------------------------------------------------------------------------------------\n\nRECV : %@\n\n========================================================================================================================================", string);
         
     if (![responseDic count])
