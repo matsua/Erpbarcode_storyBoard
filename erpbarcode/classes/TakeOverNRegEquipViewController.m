@@ -3191,6 +3191,7 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
         NSString* ZPSTATU = [firstDic objectForKey:@"ZPSTATU"];
         NSString* ZDESC = [firstDic objectForKey:@"ZDESC"];
         NSString* SUBMT = [firstDic objectForKey:@"SUBMT"];
+        NSString* ZKEQUI = [firstDic objectForKey:@"ZKEQUI"];
         
         NSString* message = [WorkUtil processCheckFccStatus:ZPSTATU desc:ZDESC submt:SUBMT];
         if (message.length){
@@ -3203,6 +3204,15 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
         NSString* O_DATA_C = [firstDic objectForKey:@"O_DATA_C"];
         
         if (([JOB_GUBUN isEqualToString:@"인계"] || [JOB_GUBUN isEqualToString:@"인수"])){
+            // Add by sesang 20190416 리스 자산 처리
+            if(([JOB_GUBUN isEqualToString:@"인계"]) && [ZKEQUI isEqualToString:@"L"]){
+                NSString* message = @"리스자산'입니다.\n'실장'으로 처리 하시기 바랍니다.";
+                [self showMessage:message tag:-1 title1:@"닫기" title2:nil isError:YES];
+                isOperationFinished = YES;
+                return;
+            }
+            // end
+
             if([O_DATA_C isEqualToString:@"2"]){
                 NSString* message = @"해당 설비바코드는 '인계'\n 대상이 아닙니다.\n '시설등록'으로 처리 하시기 바랍니다.";
                 [self showMessage:message tag:-1 title1:@"닫기" title2:nil isError:YES];
@@ -3226,11 +3236,18 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
                 //return;
             }
         }
+        // Add by sesang 20190416 리스 자산 처리
+        else if(([JOB_GUBUN isEqualToString:@"시설등록"]) && [ZKEQUI isEqualToString:@"L"]){
+                NSString* message = @"리스자산'입니다.\n'실장'으로 처리 하시기 바랍니다.";
+                [self showMessage:message tag:-1 title1:@"닫기" title2:nil isError:YES];
+                isOperationFinished = YES;
+                return;
+        }
+        // end
         else if ([JOB_GUBUN isEqualToString:@"시설등록"] && ([O_DATA_C isEqualToString:@""] || [O_DATA_C isEqualToString:@"1"])){
             NSString* message = @"해당 설비바코드는 '시설등록'\n 대상이 아닙니다.\n '인계'로 처리 하시기 바랍니다.";
             [self showMessage:message tag:-1 title1:@"닫기" title2:nil isError:YES];
             isOperationFinished = YES;
-            
             return;
         }
         
@@ -3454,19 +3471,25 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
         }
         NSDictionary* multiInfoDic;
         if ([oldDeviceId isEqualToString:@""] || ![oldDeviceId isEqualToString:deviceId]){
+            //if (subFacList == nil) {
             subFacList = [NSMutableArray array];
+            //}
             [self requestMultiInfoWithDeviceId:deviceId];
             
-            multiInfoDic = [subFacList objectAtIndex:0];
-            UFACBARCODE = LOCCODE;
-            NSString* deviceName = [multiInfoDic objectForKey:@"deviceName"];
-            NSString* itemCode = [multiInfoDic objectForKey:@"itemCode"];
-            NSString* itemName = [multiInfoDic objectForKey:@"itemName"];
-            NSString* loccd = [multiInfoDic objectForKey:@"locationCode"];
-            NSString* deviceStatusName = [multiInfoDic objectForKey:@"deviceStatusName"];
-            NSString* title = [NSString stringWithFormat:@"D:%@:%@:%@:%@:R:%@:%@",
-                               deviceId, deviceName, itemCode, itemName, loccd, deviceStatusName ];
-            [self addDeviceToTableTitle:title Info:multiInfoDic Parent:UFACBARCODE];
+            if ([subFacList count] > 0) {
+                multiInfoDic = [subFacList objectAtIndex:0];
+                UFACBARCODE = LOCCODE;
+                NSString* deviceName = [multiInfoDic objectForKey:@"deviceName"];
+                NSString* itemCode = [multiInfoDic objectForKey:@"itemCode"];
+                NSString* itemName = [multiInfoDic objectForKey:@"itemName"];
+                NSString* loccd = [multiInfoDic objectForKey:@"locationCode"];
+                NSString* deviceStatusName = [multiInfoDic objectForKey:@"deviceStatusName"];
+                NSString* title = [NSString stringWithFormat:@"D:%@:%@:%@:%@:R:%@:%@",
+                                   deviceId, deviceName, itemCode, itemName, loccd, deviceStatusName ];
+                [self addDeviceToTableTitle:title Info:multiInfoDic Parent:UFACBARCODE];
+            } else {
+                continue;
+            }
         }
         oldDeviceId = deviceId;
         if ([SHELFID isEqualToString:@""])
