@@ -420,9 +420,10 @@
     [textPW resignFirstResponder];
     passwordChange = NO;
     
-    if([textID.text length] > 0 && [textPW.text isEqualToString:@"1234!"]){
-        passwordChange = YES;
-    }
+    // Modify by sesang 20190425 : 비밀번호 변경 삭제
+//    if([textID.text length] > 0 && [textPW.text isEqualToString:@"1234!"]){
+//        passwordChange = YES;
+//    }
     
     if ([textID.text length] == 0 ){
         NSString* message = @"아이디를 입력하세요.";
@@ -901,12 +902,20 @@
 
 -(IBAction)resetPassword:(id)sender
 {
-    ResetPasswordController* view = (ResetPasswordController*)[self instantiateViewController:@"Login" viewName:@"ResetPasswordController"];
-    if (view) {        
-        [self pushViewController:view animated:NO];
-    }
-//    ResetPasswordController* modalView = [[ResetPasswordController alloc] init];
-//    [self.navigationController pushViewController:modalView animated:NO];
+    
+    // Modify by sesang 20190425 : 비밀번호 초기화 삭제
+    AlertViewController* av = [[AlertViewController alloc]
+                               initWithTitle:nil
+                               message:@"바코드 시스템의 패스워드가\nIDMS 로 통합되었습니다.\n패스워드 변경은 IDMS 를\n이용하시기 바랍니다.\nhttps://idms.kt.com\n* 사내망 PC 사용 필수"
+                               delegate:self
+                               cancelButtonTitle:nil
+                               otherButtonTitles:@"닫기",nil];
+    [av show];
+    
+//    ResetPasswordController* view = (ResetPasswordController*)[self instantiateViewController:@"Login" viewName:@"ResetPasswordController"];
+//    if (view) {
+//        [self pushViewController:view animated:NO];
+//    }
 }
 
 - (NSString*) encryptString:(NSString*)plaintext withKey:(NSString*)key {

@@ -3204,9 +3204,9 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
         NSString* O_DATA_C = [firstDic objectForKey:@"O_DATA_C"];
         
         if (([JOB_GUBUN isEqualToString:@"인계"] || [JOB_GUBUN isEqualToString:@"인수"])){
-            // Add by sesang 20190416 리스 자산 처리
+            // Modify by sesang 20190416 리스 자산 처리
             if(([JOB_GUBUN isEqualToString:@"인계"]) && [ZKEQUI isEqualToString:@"L"]){
-                NSString* message = @"리스자산'입니다.\n'실장'으로 처리 하시기 바랍니다.";
+                NSString* message = @"해당 설비바코드는 '리스자산'입니다.\n'실장'으로 처리 하시기 바랍니다.";
                 [self showMessage:message tag:-1 title1:@"닫기" title2:nil isError:YES];
                 isOperationFinished = YES;
                 return;
@@ -3236,9 +3236,9 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
                 //return;
             }
         }
-        // Add by sesang 20190416 리스 자산 처리
+        // Modify by sesang 20190416 리스 자산 처리
         else if(([JOB_GUBUN isEqualToString:@"시설등록"]) && [ZKEQUI isEqualToString:@"L"]){
-                NSString* message = @"리스자산'입니다.\n'실장'으로 처리 하시기 바랍니다.";
+                NSString* message = @"해당 설비바코드는 '리스자산'입니다.\n'실장'으로 처리 하시기 바랍니다.";
                 [self showMessage:message tag:-1 title1:@"닫기" title2:nil isError:YES];
                 isOperationFinished = YES;
                 return;
@@ -3471,11 +3471,11 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
         }
         NSDictionary* multiInfoDic;
         if ([oldDeviceId isEqualToString:@""] || ![oldDeviceId isEqualToString:deviceId]){
-            //if (subFacList == nil) {
+            
             subFacList = [NSMutableArray array];
-            //}
             [self requestMultiInfoWithDeviceId:deviceId];
             
+            // Modify by sesang 20190416 리스 자산 처리 : 오류 처리
             if ([subFacList count] > 0) {
                 multiInfoDic = [subFacList objectAtIndex:0];
                 UFACBARCODE = LOCCODE;
