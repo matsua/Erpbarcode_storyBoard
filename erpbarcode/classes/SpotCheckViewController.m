@@ -15,6 +15,7 @@
 #import "ERPLocationManager.h"
 #import "AppDelegate.h"
 #import "ERPAlert.h"
+#import "Util.h"
 #import "AddInfoViewController.h"
 
 @interface SpotCheckViewController ()
@@ -1232,7 +1233,8 @@
                 //NSString* message = @"중복 스캔입니다.";
             
                 NSString* message = [NSString stringWithFormat:@"중복 스캔입니다.\n\n%@",txtFacCode.text];
-                [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
+                [Util playSoundWithMessage:message isError:NO];
+                //[self showMessage:message tag:-1 title1:@"닫기" title2:nil];
                 nSelectedRow = index;
                 [self reloadTableWithRefresh:YES];
                 [self scrollToIndex:nSelectedRow];
