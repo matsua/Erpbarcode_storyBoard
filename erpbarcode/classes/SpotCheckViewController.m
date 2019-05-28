@@ -224,8 +224,19 @@
 {
     [super viewWillDisappear:animated];
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kdcBarcodeDataArrivedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kdcBarcodeDataArrivedNotification object:nil];    
 }
+
+// Modify by sesang 20190528 Observer 삭제 추가
+- (void)willMoveToParentViewController:(UIViewController *)parent
+{
+    [super willMoveToParentViewController:parent];
+    if (!parent) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"locSelectedNotification" object:nil];
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"spotOrgSelectedNotification"object:nil];
+    }
+}
+// end 20190528
 
 - (void) dealloc
 {

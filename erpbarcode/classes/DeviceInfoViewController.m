@@ -127,6 +127,15 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kdcBarcodeDataArrivedNotification object:nil];
 }
 
+// Modify by sesang 20190528 Observer 삭제 추가
+- (void)willMoveToParentViewController:(UIViewController *)parent
+{
+    [super willMoveToParentViewController:parent];
+    if (!parent) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"DeviceLocSelectedNotification" object:nil];    }
+}
+// end sesang
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
