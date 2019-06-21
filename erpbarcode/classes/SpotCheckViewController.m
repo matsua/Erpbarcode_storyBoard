@@ -2412,6 +2412,10 @@
         
         //working task add
         if (strDeviceID.length){
+            //작업관리 추가
+            if (strDeviceID.length)
+                [workDic setObject:strDeviceID forKey:@"DEVICE_ID"];
+            
             NSMutableDictionary* taskDic = [NSMutableDictionary dictionary];
             [taskDic setObject:@"D" forKey:@"TASK"];
             [taskDic setObject:strDeviceID forKey:@"VALUE"];
