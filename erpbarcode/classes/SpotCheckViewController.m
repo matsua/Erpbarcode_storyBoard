@@ -2412,9 +2412,8 @@
         
         //working task add
         if (strDeviceID.length){
-            //작업관리 추가
-            if (strDeviceID.length)
-                [workDic setObject:strDeviceID forKey:@"DEVICE_ID"];
+            // Modify by sesang 20190620 작업관리 저장에 장치 아이디 추가
+            [workDic setObject:strDeviceID forKey:@"DEVICE_ID"];
             
             NSMutableDictionary* taskDic = [NSMutableDictionary dictionary];
             [taskDic setObject:@"D" forKey:@"TASK"];
