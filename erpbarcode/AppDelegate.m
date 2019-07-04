@@ -106,12 +106,13 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
 - (void) integrityCheck {
 
     struct ix_init_info *initInfo = calloc(sizeof(struct ix_init_info), 1); // 초기값 및 옵션 셋팅
-    struct ix_verify_info *verifyInfo; //결과 값
+    struct ix_verify_info verifyInfo; //결과 값
 
     initInfo->integrity_type = IX_INTEGRITY_LOCAL;
     int ret = ix_integrityCheck(initInfo, &verifyInfo);
 
-    NSString *verifyData = [NSString stringWithCString:verifyInfo->verify_result encoding:NSUTF8StringEncoding];
+    NSString *verifyResult = [NSString stringWithCString:verifyInfo.verify_result encoding:NSUTF8StringEncoding];
+    NSString *verifyData   = [NSString stringWithCString:verifyInfo.verify_data encoding:NSUTF8StringEncoding];
 
     if (ret != 1) { // 1이 아닐 결우 오류.
         AlertViewController *alert = [[AlertViewController alloc] initWithTitle:@"안내"
@@ -122,9 +123,21 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
         [alert setTag:33333];
         [alert show];
         return;
-    }
+    } else {
+        if(![verifyResult isEqualToString:@"VERIFY_SUCC"]) {
+            AlertViewController *alert = [[AlertViewController alloc] initWithTitle:@"MERP"
+                                               message:[NSString stringWithFormat:@"[error code : %d\n%@]\n시스템 체크 오류 \n ERP Barcode 를 \n사용하실수 없습니다.",ret, verifyData]
+                                              delegate:self
+                                     cancelButtonTitle:NSLocalizedString(@"확인", nil)
+                                     otherButtonTitles:nil];
+            
+            [alert setTag:33333];
+            [alert show];
+        } else {
+            [self fakeGpsCheck];
+        }
     
-    [self fakeGpsCheck];
+    }
 }
 
 #pragma mark 3. fake GPS를 사용할 경우

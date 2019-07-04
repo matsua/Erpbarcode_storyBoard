@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1746,8 +1746,8 @@
                                     <outlet property="delegate" destination="dSz-ek-SGX" id="p2r-8q-MJo"/>
                                 </connections>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="oMm-9r-FXo">
-                                <rect key="frame" x="116.5" y="350" width="87" height="37"/>
+                            <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="oMm-9r-FXo">
+                                <rect key="frame" x="116.5" y="437" width="87" height="37"/>
                                 <connections>
                                     <action selector="changePage:" destination="dSz-ek-SGX" eventType="valueChanged" id="WRz-bg-7qY"/>
                                 </connections>
@@ -1759,13 +1759,13 @@
                             <constraint firstItem="z3l-7n-uel" firstAttribute="bottom" secondItem="qLE-Up-uRH" secondAttribute="bottom" id="3bW-AM-qrZ"/>
                             <constraint firstItem="z3l-7n-uel" firstAttribute="leading" secondItem="qLE-Up-uRH" secondAttribute="leading" id="Dze-qJ-GDb"/>
                             <constraint firstItem="z3l-7n-uel" firstAttribute="top" secondItem="Caf-Iq-aTH" secondAttribute="bottom" id="GLw-59-aWz"/>
-                            <constraint firstItem="oMm-9r-FXo" firstAttribute="top" secondItem="z3l-7n-uel" secondAttribute="top" constant="20" id="IBc-QO-bDY"/>
                             <constraint firstItem="m07-DN-c2T" firstAttribute="top" secondItem="qLE-Up-uRH" secondAttribute="top" id="KPY-wQ-D3F"/>
                             <constraint firstItem="m07-DN-c2T" firstAttribute="leading" secondItem="qLE-Up-uRH" secondAttribute="leading" id="NsW-0S-LBN"/>
                             <constraint firstItem="z3l-7n-uel" firstAttribute="top" secondItem="qLE-Up-uRH" secondAttribute="top" constant="330" id="Pc2-iJ-A9e"/>
                             <constraint firstItem="m07-DN-c2T" firstAttribute="bottom" secondItem="qLE-Up-uRH" secondAttribute="bottom" id="YUq-cd-v7G"/>
                             <constraint firstItem="z3l-7n-uel" firstAttribute="leading" secondItem="qLE-Up-uRH" secondAttribute="leading" id="fEo-MU-0bE"/>
                             <constraint firstItem="z3l-7n-uel" firstAttribute="bottom" secondItem="qLE-Up-uRH" secondAttribute="bottom" id="fyb-bx-R2P"/>
+                            <constraint firstItem="qLE-Up-uRH" firstAttribute="bottom" secondItem="oMm-9r-FXo" secondAttribute="bottom" constant="30" id="hfX-GC-cI6"/>
                             <constraint firstItem="z3l-7n-uel" firstAttribute="trailing" secondItem="qLE-Up-uRH" secondAttribute="trailing" id="mn4-nW-XQz"/>
                             <constraint firstItem="oMm-9r-FXo" firstAttribute="centerX" secondItem="gX1-C1-7ds" secondAttribute="centerX" id="sF5-Wk-bcE"/>
                             <constraint firstItem="z3l-7n-uel" firstAttribute="trailing" secondItem="qLE-Up-uRH" secondAttribute="trailing" id="wrB-nP-LNg"/>

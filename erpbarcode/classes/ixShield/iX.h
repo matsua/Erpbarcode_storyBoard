@@ -49,6 +49,7 @@ struct ix_detected_pattern_list_gamehack {
 #define ix_runAntiDebugger          f16fc676040b6d2ee392956bfee0fcbd
 #define ix_integrityCheck           a106c4e13097eb3613110ee85730fc9f9
 #define ix_getDecodeStr             a6422359711c9dba4e55df3cf722f7c2b
+#define ix_getObfuscatorDecodeStr   a41186fe91a8ab499a9e085f0d45b78aa
 
 #define ix_set_debug                edcd2fe64ae616873665179ec518037a
 #define ix_not_use_update           a1cbc62a6034a2869b7ae2eabec5f17e4
@@ -58,6 +59,7 @@ struct ix_detected_pattern_list_gamehack {
 #define ix_dealloc                  d3ceca1132b5c407a149d812a800dc61
 #define ix_getErrorCodeToReason     a5e0e3b02e146814e3230c963c68cbe25
 
+#define ix_version "1.2.9"
 
 // System Check
 extern int ix_sysCheckStart(struct ix_detected_pattern **p_info);
@@ -71,11 +73,11 @@ extern const char *ix_getVersion();
 extern int ix_runAntiDebugger(void);
 
 // integrity Check
-extern int ix_integrityCheck(struct ix_verify_info **v_info) __attribute__((overloadable));
-extern int ix_integrityCheck(struct ix_init_info *info, struct ix_verify_info **v_info) __attribute__((overloadable));
+extern int ix_integrityCheck(struct ix_init_info *info, struct ix_verify_info *v_info);
 
 //
 extern const char *ix_getDecodeStr(const char * decStr, int *errorCode);
+extern const char *ix_getObfuscatorDecodeStr(const char * decStr, int *errorCode);
 
 extern void ix_set_debug();
 
