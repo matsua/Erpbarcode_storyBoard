@@ -6,6 +6,9 @@
 //  Copyright © 2017년 nshc. All rights reserved.
 //
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include <stdio.h>
 
 #define VERIFY_NONE "VERIFY_NONE"
@@ -59,7 +62,7 @@ struct ix_detected_pattern_list_gamehack {
 #define ix_dealloc                  d3ceca1132b5c407a149d812a800dc61
 #define ix_getErrorCodeToReason     a5e0e3b02e146814e3230c963c68cbe25
 
-#define ix_version "1.2.9"
+#define ix_version "1.3.0"
 
 // System Check
 extern int ix_sysCheckStart(struct ix_detected_pattern **p_info);
@@ -74,15 +77,17 @@ extern int ix_runAntiDebugger(void);
 
 // integrity Check
 extern int ix_integrityCheck(struct ix_init_info *info, struct ix_verify_info *v_info);
-
-//
+    
+// string obfuscation
 extern const char *ix_getDecodeStr(const char * decStr, int *errorCode);
 extern const char *ix_getObfuscatorDecodeStr(const char * decStr, int *errorCode);
 
 extern void ix_set_debug();
 
+// Default : YES
 extern void ix_not_use_update();
-//
+
+// Fake GPS
 extern int ix_check_fakegps();
 
 // Default : YES
@@ -94,3 +99,7 @@ extern int ix_send_message(const char *log);
 extern void ix_dealloc();
 
 extern const char *ix_getErrorCodeToReason(int code);
+    
+#ifdef __cplusplus
+};
+#endif

@@ -777,7 +777,10 @@
                     NSString *uuid = [identifierForVendor UUIDString];
                     NSArray *messagesArr = [message componentsSeparatedByString:@"/"];
                     if([messagesArr[1]isEqualToString:uuid] || [messagesArr[1]isEqualToString:@""] || [messagesArr[1]isEqualToString:@"null"]){
-                        message = @"\n\r비정상 종료 기록이 있습니다. \n\r로그아웃을 진행합니다. \n\r재로그인 해주세요.";
+                        // Modify by sesang 20190806 중복 로그인 경고 문구 수정
+                        // = @"\n\r비정상 종료 기록이 있습니다. \n\r로그아웃을 진행합니다. \n\r재로그인 해주세요.";
+                        message = @"\n\r현재 중복접속 하였습니다. \n\r확인하시고 다시 접속 해주세요. \n\r";
+                        // end sesang
                         isDuplicateLoginPass = YES;
                     }else{
                         message = messagesArr[0];
