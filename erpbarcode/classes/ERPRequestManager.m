@@ -455,7 +455,7 @@
     
     //NSLog(@"processResponseDatas statusCode [%d] %@",statusCode, string);
     
-    if (statusCode == -1 || statusCode == 0 || statusCode == 2){ //실패 : -1은 왜 실패 처리 안 하나? 2014.02.26 수정 류성호
+    if (statusCode == -1 || statusCode == 0 /*|| statusCode == 2*/){ //실패 : -1은 왜 실패 처리 안 하나? 2014.02.26 수정 류성호
         NSLog(@"실패!");
         NSArray* array = [NSArray arrayWithObject:headerDic];
         [delegate processRequest:array PID:reqKind Status:statusCode];

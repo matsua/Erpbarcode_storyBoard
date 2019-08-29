@@ -299,4 +299,7 @@ typedef enum {
 #define NEW_QA_VERSION_URL      @"https://nbaseqa.kt.com/nbase/m/init.do"  // 새버전 다운로드 받을 주소
 #define NEW_VERSION_URL         @"https://erpbarcode.kt.com/m"  // 새버전 다운로드 받을 주소
 
+// Add by sesang
+#define API_CONSISTENCY        @"/deviceId/consistency/get.json"    // 사용자 조직의 장치 ID 정합성 작업 대상 수량 조회
+
 #endif

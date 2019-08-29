@@ -34,6 +34,7 @@
 @property (assign, nonatomic) BOOL passwordChange;
 @property (assign, nonatomic) BOOL isDuplicateLoginPass;
 @property (assign, nonatomic) BOOL is_auth_need;
+@property (assign, nonatomic) BOOL is_check_consistency;
 
 - (NSString*) encryptString:(NSString*)plaintext withKey:(NSString*)key;
 - (NSString*) decryptString:(NSString*)ciphertext withKey:(NSString*)key;
@@ -54,7 +55,7 @@
 @synthesize noticeResultList;
 @synthesize isDuplicateLoginPass;
 @synthesize is_auth_need;
-
+@synthesize is_check_consistency;
 ///////////////////////////////////////////////////////////////////////
 // ** 로그인 과정
 // 1. 아이디, 패스워드 인증
@@ -109,6 +110,10 @@
     
     //개인인증 여부
     is_auth_need = NO;
+    
+    
+    // 정합성 작업대상 수량 체크 여부
+    is_check_consistency = NO;
     
     // 음영지역 작업 여부 저장
     [Util udSetObject:[NSNumber numberWithBool:btnOffLine.selected] forKey:USER_OFFLINE];
@@ -233,8 +238,18 @@
     }
 }
 
+
+
 //메인화면 이동
 -(void)startServiceMenu{
+    
+    // 2019 장치 ID 정합성
+    if (!is_check_consistency) {
+        is_check_consistency = YES;
+        [self requestConsistencyInfo];
+        return;
+    }
+    // end 2019
     
     UINavigationController* nc = (UINavigationController*)[self instantiateViewController:@"Main" viewName:@"MainNavigationController"];
     if (nc) {
@@ -628,6 +643,11 @@
     else if(alertView.tag == 4477){
         [self doAfterLogin];
     }
+    // 2019 장치 ID 정합성
+    else if(alertView.tag == 8000){
+        [self startServiceMenu];
+    }
+    // end 2019
 }
 
 #pragma mark - UITextField Delegate
@@ -747,12 +767,33 @@
     [requestMgr asychronousConnectToServer:API_GET_NOTICE withData:rootDic];
 }
 
+// 2019 장치 ID 정합성
+- (void)requestConsistencyInfo
+{
+    ERPRequestManager* requestMgr = [[ERPRequestManager alloc]init];
+    
+    requestMgr.delegate = self;
+    requestMgr.reqKind = REQUEST_CONSISTENCY;
+    
+    NSDictionary *userinfo = [Util udObjectForKey:USER_INFO];
+    
+    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
+    [paramDic setObject:@"3" forKey:@"I_JOB"];
+    [paramDic setObject:[userinfo objectForKey:@"orgId"] forKey:@"I_ZKOSTL"];
+    NSDictionary* bodyDic = [Util noneMessageBody:paramDic];
+    
+    NSDictionary* rootDic  = [Util defaultMessage:[Util defaultHeader] body:bodyDic];
+    
+    [requestMgr asychronousConnectToServer:API_CONSISTENCY withData:rootDic];
+}
+// end 2019 
+
 #pragma IProcessRequest delegate -- call by ERPRequestManager
 - (void)processRequest:(NSArray*)resultList PID:(requestOfKind)pid Status:(NSInteger)status
 {
     [self performSelectorOnMainThread:@selector(hideIndicator) withObject:nil waitUntilDone:NO];
     
-    if (status == 0 || status == 2){ //실패
+    if (status == 0 /*|| status == 2*/){ //실패
         NSDictionary* headerDic = [resultList objectAtIndex:0];
         
         NSString* message = [headerDic objectForKey:@"detail"];
@@ -854,6 +895,11 @@
         }else if(pid == REQUEST_LOGOUT && isDuplicateLoginPass){
             isDuplicateLoginPass = NO;
         }
+        // 2019 장치 ID 정합성
+        else if(pid == REQUEST_CONSISTENCY) {
+            [self processCheckConsistency:resultList];
+        }
+        // end 2019
     }
 }
 
@@ -920,6 +966,35 @@
 //        [self pushViewController:view animated:NO];
 //    }
 }
+
+// 2019 장치 ID 정합성
+- (void)processCheckConsistency:(NSArray*)resultList
+{
+    if (resultList.count){
+        NSDictionary* dic = [resultList objectAtIndex:0];
+        NSString* str = [dic objectForKey:@"E_DEVICEID_COUNT"];
+        int count = [str intValue];
+        
+        if (count > 0) {
+            NSDictionary *userinfo = [Util udObjectForKey:USER_INFO];
+            NSString* orgName = [userinfo objectForKey:@"orgName"];
+            
+            NSString* message = [NSString stringWithFormat:@"귀하의 조직 '%@'에\n복수 위치 정비 대상 장치ID\n수량은 '%d'건 입니다.\n세부내역은 바코드웹의\n정보조회 >'장치ID 정합성 확인'\n메뉴에서 확인하세요.", orgName, count];
+            AlertViewController* av = [[AlertViewController alloc]
+                                       initWithTitle:@"알림"
+                                       message:message
+                                       delegate:self
+                                       cancelButtonTitle:nil
+                                       otherButtonTitles:@"닫기",nil];
+            av.tag = 8000;
+            [Util playSoundWithMessage:message isError:NO];
+            [av show];
+        } else {
+            [self startServiceMenu];
+        }
+    }
+}
+// end 2019
 
 - (NSString*) encryptString:(NSString*)plaintext withKey:(NSString*)key {
     NSData *temp = [[plaintext dataUsingEncoding:NSUTF8StringEncoding] AES256EncryptWithKey:key];

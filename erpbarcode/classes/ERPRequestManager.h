@@ -89,7 +89,8 @@ typedef enum {
     REQUEST_PWD_UPDATE,
     REQUEST_BASE_MANAGEMENT,
     REQUEST_BASE_ITEM_SEARCH,
-    REQUEST_DATA_NULL
+    REQUEST_DATA_NULL,
+    REQUEST_CONSISTENCY
 }requestOfKind;
 
 @protocol IProcessRequest <NSObject>
