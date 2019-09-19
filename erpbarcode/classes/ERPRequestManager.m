@@ -411,6 +411,29 @@
     [self asychronousConnectToServer:API_GETLOC_SPOTCHECK withData:rootDic];
 }
 
+// sesang 20190910 장치 바코드 스캔 시 정합성 체크
+- (void)requestCheckConsistency:(NSString*)locationCode deviceId:(NSString*)deviceId
+{
+    NSMutableArray *subParamList = [NSMutableArray array];
+    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
+    [paramDic setObject:locationCode forKey:@"locationCode"];
+    [paramDic setObject:deviceId forKey:@"deviceId"];
+    [subParamList addObject:paramDic];
+    
+    
+//    NSMutableDictionary* bodyDic = [NSMutableDictionary dictionary];
+//    [bodyDic setObject:[NSMutableDictionary dictionary] forKey:@"param"];//dictionary
+//    [bodyDic setObject:[NSMutableArray array] forKey:@"paramList"];//array
+//    [bodyDic setObject:subParamList forKey:@"subParamList"];//array
+    //return dic;
+    NSDictionary* bodyDic = [Util doubleMessageBody:[NSMutableDictionary dictionary] subParam:subParamList];
+    
+    NSDictionary* rootDic  = [Util defaultMessage:[Util defaultHeader] body:bodyDic];
+    
+    [self asychronousConnectToServer:API_CHECK_CONSISTENCY withData:rootDic];
+}
+// end sesang
+
 #pragma process after response
 // 서버로 부터 받은 response data를 처리해 필요한 method를 호출한다.
 - (void)processResponseDatas:(NSData*)data

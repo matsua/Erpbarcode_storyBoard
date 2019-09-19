@@ -15,7 +15,7 @@
 @interface LocInfoViewController ()
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property(nonatomic,strong) IBOutlet UITableView* _tableView;
-@property (strong, nonatomic) IBOutlet UITableView *tableView2;
+//@property (strong, nonatomic) IBOutlet UITableView *tableView2;
 @property(nonatomic,strong) IBOutlet UITextField* txtLocCode;
 @property(nonatomic,strong) UIActivityIndicatorView* indicatorView;
 @property(nonatomic,strong) IBOutlet CLTickerView* locTickerView;
@@ -28,7 +28,7 @@
 
 @implementation LocInfoViewController
 @synthesize scrollView;
-@synthesize tableView2;
+//@synthesize tableView2;
 @synthesize _tableView;
 @synthesize txtLocCode;
 @synthesize indicatorView;
@@ -265,7 +265,7 @@
         lblCount.text = [NSString stringWithFormat:@"%d건",(int)[locList count]];
     }
     [_tableView reloadData];
-    [tableView2 reloadData];
+    //[tableView2 reloadData];
 }
 
 #pragma mark - UITableViewDelegate
@@ -274,41 +274,68 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GridNoBtn2Cell *cell = (GridNoBtn2Cell*)[tableView dequeueReusableCellWithIdentifier:@"GridNoBtn2Cell"];
-    if (!cell){
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"GridNoBtn2Cell" owner:self options:nil];
-        for (id object in nib)
-        {
-            if ([object isMemberOfClass:[GridNoBtn2Cell class]])
-            {
-                cell = object;
-                break;
-            }
-        }
-    }
     
-    NSDictionary* dic = [locList objectAtIndex:indexPath.row];
-    NSString* completeLocCode = [dic objectForKey:@"completeLocationCode"];
-    NSString* locationShortName = [dic objectForKey:@"locationShortName"];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
-    if (tableView == _tableView){
-        cell.lblColumn1.frame = CGRectMake(2, 0, 160, 44);
-        cell.lblColumn2.frame = CGRectMake(164, 0, 156, 44);
-        cell.lblColumn1.text = completeLocCode;
-        if (locationShortName.length > 18)
-            cell.lblColumn2.text = [locationShortName  substringToIndex:18];
-        else
-            cell.lblColumn2.text = locationShortName;
-    }else if (tableView == tableView2){
-        if (locationShortName.length > 18){
-            cell.lblColumn1.frame = CGRectMake(0, 0, 318, 44);
-            cell.lblColumn1.text = [locationShortName substringFromIndex:19];
-            cell.lblColumn2.hidden = YES;
-        }
+    if (tableView == _tableView) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocInfoTableCell"];
+        if (!cell) return cell;
+        
+        NSDictionary* dic = [locList objectAtIndex:indexPath.row];
+        NSString* completeLocCode = [dic objectForKey:@"completeLocationCode"];
+        NSString* locationShortName = [dic objectForKey:@"locationShortName"];
+        NSString* refLocCode = [dic objectForKey:@"repLocCd"];
+        NSString* refShortName = [dic objectForKey:@"repLocNm"];
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        UILabel* lblColumn1 = [cell viewWithTag:101];
+        UILabel* lblColumn2 = [cell viewWithTag:102];
+        UILabel* lblColumn3 = [cell viewWithTag:103];
+        UILabel* lblColumn4 = [cell viewWithTag:104];
+        
+        lblColumn1.text = completeLocCode;
+        lblColumn2.text = locationShortName;
+        lblColumn3.text = refLocCode;
+        lblColumn4.text = refShortName;
+        
+        return cell;
     }
-    
-    return cell;
+//    else {
+//    
+//    GridNoBtn2Cell *cell = (GridNoBtn2Cell*)[tableView dequeueReusableCellWithIdentifier:@"GridNoBtn2Cell"];
+//    if (!cell){
+//        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"GridNoBtn2Cell" owner:self options:nil];
+//        for (id object in nib)
+//        {
+//            if ([object isMemberOfClass:[GridNoBtn2Cell class]])
+//            {
+//                cell = object;
+//                break;
+//            }
+//        }
+//    }
+//    
+//    NSDictionary* dic = [locList objectAtIndex:indexPath.row];
+//    NSString* completeLocCode = [dic objectForKey:@"completeLocationCode"];
+//    NSString* locationShortName = [dic objectForKey:@"locationShortName"];
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//
+//    if (tableView == _tableView){
+//        cell.lblColumn1.frame = CGRectMake(2, 0, 160, 44);
+//        cell.lblColumn2.frame = CGRectMake(164, 0, 156, 44);
+//        cell.lblColumn1.text = completeLocCode;
+//        if (locationShortName.length > 18)
+//            cell.lblColumn2.text = [locationShortName  substringToIndex:18];
+//        else
+//            cell.lblColumn2.text = locationShortName;
+//    }else if (tableView == tableView2){
+//        if (locationShortName.length > 18){
+//            cell.lblColumn1.frame = CGRectMake(0, 0, 318, 44);
+//            cell.lblColumn1.text = [locationShortName substringFromIndex:19];
+//            cell.lblColumn2.hidden = YES;
+//        }
+//    }
+//    
+//        return cell; }
 }
 
 - (CGFloat)tableView:(UITableView *)tableViewArg heightForRowAtIndexPath:(NSIndexPath *)indexPath {

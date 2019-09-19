@@ -1078,9 +1078,13 @@ const static char* moveTarKey = "moveTarKey";
         
         if (isOffLine){
             [self setOffLineDeviceCd:strDeviceID];
-        }else
-            [self requestDeviceCode:strDeviceID];
-        
+        }else {
+            // sesang 20190910 장치 바코드 스캔 시 정합성 체크
+            [self requestCheckConsistency:strLocBarCode deviceId:strDeviceID];
+            //[self requestDeviceCode:strDeviceID];
+            // end sesang
+           
+        }
     }
     else if (tag == 500){ //500 상위 바코드
         strUpperBarCode = barcode;
@@ -3735,7 +3739,11 @@ const static char* moveTarKey = "moveTarKey";
             [self requestSend];
         }
     }
-    
+    // sesang 20190910 장치 바코드 스캔 시 정합성 체크
+    else if (alertView.tag == 1910) {
+        [self requestDeviceCode:strDeviceID];
+    }
+    // end sesang
     [Util udSetBool:YES forKey:IS_ALERT_COMPLETE];
 }
 
@@ -3814,6 +3822,19 @@ const static char* moveTarKey = "moveTarKey";
     [requestMgr requestWBS:locBarcode];
 }
 
+// sesang 20190910 장치 바코드 스캔 시 정합성 체크
+- (void)requestCheckConsistency:(NSString*)locationCode deviceId:(NSString*)deviceId
+{
+    ERPRequestManager* requestMgr = [[ERPRequestManager alloc]init];
+    
+    requestMgr.delegate = self;
+    requestMgr.reqKind = REQUEST_CONSISTENCY;
+    
+    [self performSelectorOnMainThread:@selector(showIndicator) withObject:nil waitUntilDone:NO];
+    
+    [requestMgr requestCheckConsistency:locationCode deviceId:deviceId];
+}
+// end sesang
 
 - (void)requestDeviceCode:(NSString*)deviceBarcode
 {
@@ -4733,7 +4754,13 @@ const static char* moveTarKey = "moveTarKey";
         [self processLogicalLocResponse:resultList];
     }else if (pid == REQUEST_WBS){
         [self processWBSList:resultList];
-    }else if (pid == REQUEST_MULTI_INFO){
+    }
+    // sesang 20190910 장치 바코드 스캔 시 정합성 체크
+    else if (pid == REQUEST_CONSISTENCY){
+        [self processCheckConsistency];
+    }
+    // end sesang
+    else if (pid == REQUEST_MULTI_INFO){
         if (resultList)
             [self processDeviceBarcode:[resultList objectAtIndex:0]];
         else
@@ -5522,6 +5549,14 @@ const static char* moveTarKey = "moveTarKey";
     isOperationFinished = YES;
 }
 
+// sesang 20190910 장치 바코드 스캔 시 정합성 체크
+- (void)processCheckConsistency
+{
+    isOperationFinished = YES;
+    [self requestDeviceCode:strDeviceID];
+}
+// end sesang
+
 - (void)processDeviceBarcode:(NSDictionary*)devideInfoDic
 {
     NSLog(@"device dic [%@]",devideInfoDic);
@@ -6219,10 +6254,15 @@ const static char* moveTarKey = "moveTarKey";
         }
         
         if (message.length){
-            [self showMessage:message tag:-1 title1:@"닫기" title2:nil isError:YES];
+            // sesang 20190910 장치 바코드 스캔 시 정합성 체크
+            if (pid == REQUEST_CONSISTENCY){
+                [self showMessage:message tag:1910 title1:@"닫기" title2:nil isError:YES];
+            } else {
+                [self showMessage:message tag:-1 title1:@"닫기" title2:nil isError:YES];
+            }
+            // end sesang
         }
     }
-    
     isOperationFinished = YES;
 }
 

@@ -784,7 +784,7 @@
     
     NSDictionary* rootDic  = [Util defaultMessage:[Util defaultHeader] body:bodyDic];
     
-    [requestMgr asychronousConnectToServer:API_CONSISTENCY withData:rootDic];
+    [requestMgr asychronousConnectToServer:API_CONSISTENCY_CONUT withData:rootDic];
 }
 // end 2019 
 

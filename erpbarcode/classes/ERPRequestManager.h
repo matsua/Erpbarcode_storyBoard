@@ -128,5 +128,7 @@ typedef enum {
 - (void)requestPlantForUserOrg:(NSString*)userOrgCode;
 - (void)requestGetLocSpotCheck:(NSString*)deviceId;
 
-
+// sesang 20190910 장치 바코드 스캔 시 정합성 체크
+- (void)requestCheckConsistency:(NSString*)locationCode deviceId:(NSString*)deviceId;
+// end sesang
 @end

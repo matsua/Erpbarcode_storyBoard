@@ -807,9 +807,15 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
         
         [Util setScrollTouch:scrollDeviceInfo Label:lblDeviceInfo withString:@""];
         
-        if (!isOffLine)
-            [self requestDeviceCode:strDeviceID];
-        else{
+        if (!isOffLine) {
+            // sesang 20190910 장치 바코드 스캔 시 정합성 체크
+            if ([JOB_GUBUN isEqualToString:@"인계"] || [JOB_GUBUN isEqualToString:@"시설등록"]) {
+                [self requestCheckConsistency:strLocBarCode deviceId:strDeviceID];
+            } else {
+                [self requestDeviceCode:strDeviceID];
+            }
+            // end sesang
+        } else{
             [self setOfflineDeviceCd:strDeviceID];
         }
     }
@@ -1128,7 +1134,6 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
         
         if (![txtDeviceID.text isEqualToString:@""]){
             [Util setScrollTouch:scrollDeviceInfo Label:lblDeviceInfo withString:@""];
-            
             [self requestDeviceCode:strDeviceID];
         }
     }
@@ -2333,6 +2338,11 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
             [vc requestUserLogout];
         }
     }
+    // sesang 20190910 장치 바코드 스캔 시 정합성 체크
+    else if (alertView.tag == 1910) {
+        [self requestDeviceCode:strDeviceID];
+    }
+    // end sesang
     [Util udSetBool:YES forKey:IS_ALERT_COMPLETE];
 }
 
@@ -2374,6 +2384,20 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
     [requestMgr requestWBS:locBarcode];
 }
 
+// sesang 20190910 장치 바코드 스캔 시 정합성 체크
+- (void)requestCheckConsistency:(NSString*)locationCode deviceId:(NSString*)deviceId
+{
+    ERPRequestManager* requestMgr = [[ERPRequestManager alloc]init];
+    
+    requestMgr.delegate = self;
+    requestMgr.reqKind = REQUEST_CONSISTENCY;
+    
+    [self performSelectorOnMainThread:@selector(showIndicator) withObject:nil waitUntilDone:NO];
+    
+    isMultiDevice = NO;
+    [requestMgr requestCheckConsistency:locationCode deviceId:deviceId];
+}
+// end sesang
 
 - (void)requestDeviceCode:(NSString*)deviceBarcode
 {
@@ -2969,7 +2993,13 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
         [self processCheckValidateDeviceIdResponse:resultList];
     }else if (pid == REQUEST_SEND){
         [self processSendResponse:resultList];
-    }else
+    }
+    // sesang 20190910 장치 바코드 스캔 시 정합성 체크
+    else if (pid == REQUEST_CONSISTENCY){
+        [self processCheckConsistency];
+    }
+    // end sesnag
+    else
         isOperationFinished = YES;
 }
 
@@ -3059,6 +3089,13 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
         [self performSelectorOnMainThread:@selector(setLocFirstResponder) withObject:nil waitUntilDone:NO];
     }
 }
+// sesang 20190910 장치 바코드 스캔 시 정합성 체크
+- (void)processCheckConsistency
+{
+    isOperationFinished = YES;
+    [self requestDeviceCode:strDeviceID];
+}
+// end sesang
 
 - (void)processDeviceBarcode:(NSDictionary*)devideInfoDic
 {
@@ -3590,6 +3627,11 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
     }else if (pid == TAKEOVER_REQUEST_RESCAN_YN || pid == TAKEOVER_REQUEST_RESCAN || pid == TAKEOVER_REQUEST_SEARCH){
         [self afterSearch];
     }
+    // sesang 20190910 장치 바코드 스캔 시 정합성 체크
+    else if (pid == REQUEST_CONSISTENCY && !isMultiDevice){
+        [self performSelectorOnMainThread:@selector(setDeviceFirstResponder) withObject:nil waitUntilDone:NO];
+    }
+    // end sesang
     
     if ([message length]){
         message = [message stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -3604,8 +3646,15 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
                 message = @"존재하지 않는 설비바코드입니다.";
             }
             [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
-        }else
+        }
+        // sesang 20190910 장치 바코드 스캔 시 정합성 체크
+        else if (pid == REQUEST_CONSISTENCY && !isMultiDevice){
+            [self showMessage:message tag:1910 title1:@"닫기" title2:nil isError:YES];
+        }
+        // end sesang
+        else {
             [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
+        }
     }
     
     isOperationFinished = YES;

@@ -41,6 +41,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblLocBarcode;
 @property (strong, nonatomic) IBOutlet scrollTouch *scrollGoodsId;
 @property (strong, nonatomic) IBOutlet UILabel *lblGoodsId;
+@property (strong, nonatomic) IBOutlet scrollTouch *scrollRefLocName;
+@property (strong, nonatomic) IBOutlet UILabel *lblRefLocName;
 
 @property(nonatomic,strong) NSString* strDeviceID;
 @property(nonatomic,strong) NSString* strLocBarCode;
@@ -99,6 +101,8 @@
 @synthesize lblLocBarcode;
 @synthesize scrollGoodsId;
 @synthesize lblGoodsId;
+@synthesize scrollRefLocName;
+@synthesize lblRefLocName;
 
 @synthesize tapGesture;
 @synthesize longPressGesture;
@@ -172,7 +176,7 @@
     tapGesture.numberOfTapsRequired = 1;
     tapGesture.delegate = self;
     [self._tableView addGestureRecognizer:tapGesture];
-    subFccView.frame = CGRectMake(subFccView.bounds.origin.x, subFccView.bounds.origin.y,self.view.frame.size.width ,PHONE_SCREEN_HEIGHT - 75);
+    //subFccView.frame = CGRectMake(subFccView.bounds.origin.x, subFccView.bounds.origin.y,self.view.frame.size.width ,PHONE_SCREEN_HEIGHT - 75);
 
     lblCount = [[UILabel alloc] initWithFrame:CGRectMake(50, _tableView.frame.origin.y + _tableView.frame.size.height + 5, self.view.frame.size.width - 100, 20)];
     
@@ -185,8 +189,20 @@
     
     [txtDeviceCode becomeFirstResponder];
     
-    normalView.frame = CGRectMake(0, 80, self.view.frame.size.width, normalView.frame.size.height);
-    [self.view addSubview:normalView];
+    normalView.hidden = NO;
+    locView.hidden = YES;
+    orgView.hidden = YES;
+    attributeView.hidden = YES;
+    subFccView.hidden = YES;
+    
+    //normalView.frame = CGRectMake(0, 80, self.view.frame.size.width, normalView.frame.size.height);
+    //[self.view addSubview:normalView];
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];    
+    lblCount.frame = CGRectMake(50, _tableView.frame.origin.y + _tableView.frame.size.height + 5, _tableView.frame.size.width - 100, 20);
 }
 
 - (void)didReceiveMemoryWarning
@@ -313,8 +329,9 @@
 {
     btnMainMenu.selected = NO;
     btnBarcodeInfo.selected = YES;
-    if (subFccView.superview)
-        [subFccView removeFromSuperview];
+    subFccView.hidden = YES;
+    //if (subFccView.superview)
+    //    [subFccView removeFromSuperview];
 }
 
 -(IBAction)touchMenuBtn:(id)sender
@@ -330,6 +347,13 @@
         UIButton* prevBtn = (UIButton*)[self.view viewWithTag:nPrevBtn];
         prevBtn.selected = NO;
         btn.selected = YES;
+        
+        normalView.hidden = (btn.tag != 10);
+        locView.hidden = (btn.tag != 20);
+        orgView.hidden = (btn.tag != 30);
+        attributeView.hidden = (btn.tag != 40);
+        subFccView.hidden = YES;
+/*
         switch (btn.tag) {
             case 10://일반
                 if (nPrevBtn == 20)
@@ -371,7 +395,7 @@
                 attributeView.frame = CGRectMake(0, 80, self.view.frame.size.width, attributeView.frame.size.height);
                 [self.view addSubview:attributeView];                
                 break;
-        }
+        }*/
         
     }
     
@@ -383,7 +407,9 @@
     btnBarcodeInfo.selected = NO;
     
     //하위설비
-    [self.view addSubview:subFccView];
+    //[self.view addSubview:subFccView];
+    
+    subFccView.hidden = NO;
     if (txtDeviceCode.text.length){
         txtSubDeviceCode.text = txtDeviceCode.text;
         strSubDeviceID = txtSubDeviceCode.text;
@@ -585,7 +611,8 @@
     
     //WBS번호
     tf = (UITextField*)[self.view viewWithTag:1003];
-    tf.text = [dic objectForKey:@"wbsNo"];
+    //tf.text = [dic objectForKey:@"wbsNo"];
+    tf.text = [dic objectForKey:@"projectCode"];
     
     //운용시스템 구분자
     NSString* osToken = [dic objectForKey:@"operationSystemTokenName"];
@@ -642,6 +669,15 @@
     //표준서비스명
     tf = (UITextField*)[self.view viewWithTag:1018];
     tf.text = [dic objectForKey:@"standardServiceName"];
+    
+    // sesang 20190910 장치조회 시 대표주소코드 추가
+    // 대표위치
+    tf = (UITextField*)[locView viewWithTag:1103];
+    tf.text = [dic objectForKey:@"repLocCd"];
+    
+    //대표위치명(ticker)
+    [Util setScrollTouch:scrollRefLocName Label:lblRefLocName withString:[dic objectForKey:@"repLocNm"]];
+    // end sesang
     
     //위치뷰
     //위치바코드

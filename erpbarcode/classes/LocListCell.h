@@ -27,6 +27,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblLabel12;
 @property (strong, nonatomic) IBOutlet UILabel *lblLabel13;
 @property (strong, nonatomic) IBOutlet UILabel *lblLabel14;
+@property (strong, nonatomic) IBOutlet UILabel *lblLabel15;
+@property (strong, nonatomic) IBOutlet UILabel *lblLabel16;
 
 
 @property (strong, nonatomic) IBOutlet scrollTouch *scrollItem1;

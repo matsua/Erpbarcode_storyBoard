@@ -1578,7 +1578,12 @@
             [insDic setObject:[dic objectForKey:@"locationCode"] forKey:@"locationCode"];
             [insDic setObject:[dic objectForKey:@"locationLevel"] forKey:@"locationLevel"];
             [insDic setObject:[dic objectForKey:@"locationName"] forKey:@"locationName"];
-            [insDic setObject:[dic objectForKey:@"roomTypeCode"] forKey:@"roomTypeCode"];
+            
+            [insDic setObject:[dic objectForKey:@"repLocCd"] forKey:@"repLocCd"];
+            [insDic setObject:[dic objectForKey:@"repLocNm"] forKey:@"repLocNm"];            
+            [insDic setObject:[dic objectForKey:@"roomTypeName"] forKey:@"roomTypeName"];
+            [insDic setObject:[dic objectForKey:@"subLocationName"] forKey:@"subLocationName"];
+            //[insDic setObject:[dic objectForKey:@"roomTypeCode"] forKey:@"roomTypeCode"];
             [insDic setObject:[dic objectForKey:@"sttus"] forKey:@"sttus"];
             [insDic setObject:[dic objectForKey:@"subLocationTypeName"] forKey:@"subLocationTypeName"];
             [insDic setObject:[dic objectForKey:@"geoName"] forKey:@"geoName"];
@@ -1843,6 +1848,11 @@
 {
     UIButton* btn = (UIButton*)sender;
     
+    NSLog(@"touchSelectBtn %d, %d", insResultList.count, btn.tag);
+    
+    if (btn.tag < 0) return;
+    if (insResultList.count <= btn.tag) return;
+    
     if([JOB_GUBUN isEqualToString:@"장치바코드"]){
         if([[[insResultList objectAtIndex:btn.tag] objectForKey:@"conditions"]isEqualToString:@"20"]){
             [self showMessage:@"표준서비스코드상태가 \n\r종료진행,종료 일경우 \n\r출력할 수 없습니다." tag:-1 title1:@"닫기" title2:nil];
@@ -2014,7 +2024,7 @@
         return cell;
     }else if ([JOB_GUBUN isEqualToString:@"위치바코드"]){
         
-        static NSString *CellIdentifier = @"LocListCell";
+        static NSString *CellIdentifier = @"LocBarcodeTableCell";
         LocListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
         if (cell == nil) {
@@ -2028,24 +2038,28 @@
             cell.lblLabel1.text = [dic objectForKey:@"locationTypeName"];
             cell.lblLabel2.text = [dic objectForKey:@"locationCode"];
             cell.lblLabel3.text = [dic objectForKey:@"locationName"];
-            cell.lblLabel4.text = [dic objectForKey:@"roomTypeCode"];
-            cell.lblLabel5.text = [dic objectForKey:@"roomTypeName"];
-            cell.lblLabel6.text = [dic objectForKey:@"sttus"];
-            cell.lblLabel7.text = [dic objectForKey:@"subLocationTypeName"];
-            [Util setScrollTouch:cell.scrollItem1 Label:cell.lblLabel8 withString:[dic objectForKey:@"geoName"]];
-            cell.lblLabel9.text = [dic objectForKey:@"buildingDistionctYN"];
-            cell.lblLabel10.text = [dic objectForKey:@"buildingTypeName"];
-            cell.lblLabel11.text = [dic objectForKey:@"ktBuildingTypeName"];
-            cell.lblLabel12.text = [dic objectForKey:@"mnofiId"];
-            cell.lblLabel13.text = [dic objectForKey:@"mnofiName"];
-            [Util setScrollTouch:cell.scrollItem4 Label:cell.lblLabel14 withString:[dic objectForKey:@"description"]];
+            cell.lblLabel4.text = [dic objectForKey:@"repLocCd"];
+            cell.lblLabel5.text = [dic objectForKey:@"repLocNm"];
+            cell.lblLabel6.text = [dic objectForKey:@"roomTypeName"];
+            cell.lblLabel7.text = [dic objectForKey:@"subLocationName"];
+            //cell.lblLabel6.text = [dic objectForKey:@"roomTypeCode"];
+            //cell.lblLabel7.text = [dic objectForKey:@"roomTypeName"];
+            cell.lblLabel8.text = [dic objectForKey:@"sttus"];
+            cell.lblLabel9.text = [dic objectForKey:@"subLocationTypeName"];
+            [Util setScrollTouch:cell.scrollItem1 Label:cell.lblLabel10 withString:[dic objectForKey:@"geoName"]];
+            cell.lblLabel11.text = [dic objectForKey:@"buildingDistionctYN"];
+            cell.lblLabel12.text = [dic objectForKey:@"buildingTypeName"];
+            cell.lblLabel13.text = [dic objectForKey:@"ktBuildingTypeName"];
+            cell.lblLabel14.text = [dic objectForKey:@"mnofiId"];
+            cell.lblLabel15.text = [dic objectForKey:@"mnofiName"];
+            [Util setScrollTouch:cell.scrollItem4 Label:cell.lblLabel16 withString:[dic objectForKey:@"description"]];
 
             NSDictionary* cellDic = [insResultList objectAtIndex:indexPath.row];
             int index = [[dic objectForKey:@"TAG"] intValue];
             NSLog(@"index :: %d", index);
             
             [cell.btnCheck addTarget:self action:@selector(touchedSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
-            cell.btnCheck.tag = index;
+            cell.btnCheck.tag = indexPath.row;
             BOOL isSelected = [[cellDic objectForKey:@"IS_SELECTED"] boolValue];
             cell.btnCheck.selected = isSelected;
             
