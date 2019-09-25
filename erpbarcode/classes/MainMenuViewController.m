@@ -549,6 +549,17 @@
                 [self pushViewController:@"Barcode" viewName:@"BarcodeViewController" animated:YES];
                 //BarcodeViewController* vc = [[BarcodeViewController alloc] init];
                 //[controller pushViewController:vc animated:YES];
+            }else if (nTag == 3){ //기지국/중계기 위치바코드
+                if (isOffLine) {
+                    message = [NSString stringWithFormat:@"'음역지역작업' 중에는\n '%@' 작업을\n하실 수 없습니다.",@"기지국/중계기 위치바코드"];
+                    [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
+                    return;
+                }
+                
+                [Util udSetObject:@"기지국/중계기 위치바코드" forKey:USER_WORK_NAME];
+                [self pushViewController:@"Barcode" viewName:@"BarcodeViewController" animated:YES];
+                //BarcodeViewController* vc = [[BarcodeViewController alloc] init];
+                //[controller pushViewController:vc animated:YES];
             }
             break;
             
@@ -874,13 +885,14 @@
     float height = 35 * rate;
     float gap = (rect.size.width - (width * 3)) / 4;
     float y = 0;
+    float font = MIN(11 * rate, 13);
     
     for (NSInteger i=0; i < subMenuList.count/2; i++){
         // 하나의 메뉴가 두개의 아이템(서브메뉴이름, 이미지 이름)을 갖고 있으므로
         NSInteger fileIndex = (2*i)+1;
         
         // 서브메뉴의 이름
-        NSString* menuString = [subMenuList objectAtIndex:i];
+        NSString* menuString = [subMenuList objectAtIndex:i * 2];
         
         // 해당 메뉴의 이미지파일 이름
         NSString* fileName = [subMenuList objectAtIndex:fileIndex];
@@ -893,12 +905,23 @@
         [btn setTag:i];
         [subMenuView addSubview:btn];
         
-        frame.origin.y += 12 * rate;
-        frame.size.height = 11 * rate;
+        // sesang 20190910 메인메뉴 서브메뉴 이미지에서 텍스트로 변경
+        //frame.origin.y += 12 * rate;
+        //frame.size.height = 11 * rate;
         
-        UIImageView* imgView = [[UIImageView alloc]initWithFrame:frame];
-        [imgView setImage:[UIImage imageNamed:fileName]];
-        [self.subMenuView addSubview:imgView];
+        UILabel* label = [[UILabel alloc]initWithFrame:frame];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = [UIColor colorWithRed:(130.0f/256.0f) green:(120.0f/256.0f) blue:(128.0f/256.0f) alpha:1];
+        label.font = [UIFont boldSystemFontOfSize:font];
+        label.numberOfLines = 0;
+        label.adjustsFontSizeToFitWidth = YES;
+        NSString* text = [menuString stringByReplacingOccurrencesOfString:@"\\n" withString:@"\n"];
+        [label setText:text];
+        [self.subMenuView addSubview:label];
+        
+//        UIImageView* imgView = [[UIImageView alloc]initWithFrame:frame];
+//        [imgView setImage:[UIImage imageNamed:fileName]];
+//        [self.subMenuView addSubview:imgView];
         
         y = btn.frame.origin.y + btn.frame.size.height + gap;
     }

@@ -164,7 +164,7 @@
     NSString *agree1 = [Util loadSetupInfoFromPlist:@"PERSONAL_INFO_AGREE1"];
     NSString *agree3 = [Util loadSetupInfoFromPlist:@"PERSONAL_INFO_AGREE3"];
     
-    if([[userDic objectForKey:@"confirmationYn"] isEqualToString:@"Y"]){
+    if([[userDic objectForKey:@"confirmationAdminYn"] isEqualToString:@"Y"]){
         is_auth_need = YES;
     }
     
@@ -506,6 +506,7 @@
                     [newInfoDic setObject:@"" forKey:@"sessionId"];
                     [newInfoDic setObject:@"" forKey:@"empNumber"];
                     [newInfoDic setObject:@"" forKey:@"confirmationYn"];
+                    [newInfoDic setObject:@"" forKey:@"confirmationAdminYn"];
                     
                     [Util udSetObject:newInfoDic forKey:USER_INFO];
                     

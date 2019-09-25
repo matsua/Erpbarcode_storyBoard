@@ -275,15 +275,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocInfoTableCell"];
+    if (!cell) return cell;
+    
     if (tableView == _tableView) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocInfoTableCell"];
-        if (!cell) return cell;
         
         NSDictionary* dic = [locList objectAtIndex:indexPath.row];
         NSString* completeLocCode = [dic objectForKey:@"completeLocationCode"];
         NSString* locationShortName = [dic objectForKey:@"locationShortName"];
-        NSString* refLocCode = [dic objectForKey:@"repLocCd"];
-        NSString* refShortName = [dic objectForKey:@"repLocNm"];
+        NSString* repLocCode = [dic objectForKey:@"repLocCd"];
+        NSString* repShortName = [dic objectForKey:@"repLocNm"];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -294,8 +295,8 @@
         
         lblColumn1.text = completeLocCode;
         lblColumn2.text = locationShortName;
-        lblColumn3.text = refLocCode;
-        lblColumn4.text = refShortName;
+        lblColumn3.text = repLocCode;
+        lblColumn4.text = repShortName;
         
         return cell;
     }

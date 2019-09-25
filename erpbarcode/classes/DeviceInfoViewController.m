@@ -671,11 +671,11 @@
     tf.text = [dic objectForKey:@"standardServiceName"];
     
     // sesang 20190910 장치조회 시 대표주소코드 추가
-    // 대표위치
+    // 대표주소
     tf = (UITextField*)[locView viewWithTag:1103];
     tf.text = [dic objectForKey:@"repLocCd"];
     
-    //대표위치명(ticker)
+    //대표주소명(ticker)
     [Util setScrollTouch:scrollRefLocName Label:lblRefLocName withString:[dic objectForKey:@"repLocNm"]];
     // end sesang
     

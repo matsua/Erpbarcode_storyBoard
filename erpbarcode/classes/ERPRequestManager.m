@@ -699,6 +699,7 @@
     [userDic setObject:[userInfoDic objectForKey:@"sessionId"] forKey:@"sessionId"];
     [userDic setObject:[userInfoDic objectForKey:@"empNumber"] forKey:@"empNumber"];
     [userDic setObject:[userInfoDic objectForKey:@"confirmationYn"] forKey:@"confirmationYn"];
+    [userDic setObject:[userInfoDic objectForKey:@"confirmationAdminYn"] forKey:@"confirmationAdminYn"];
     // Modify by sesang 20190729 비밀번호 변경 로직 삭제
     //[userDic setObject:[userInfoDic objectForKey:@"passwdUpdateYn"] forKey:@"passwdUpdateYn"];
     [userDic setObject:@"N" forKey:@"passwdUpdateYn"];

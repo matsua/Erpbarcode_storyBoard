@@ -34,6 +34,7 @@
 @property(nonatomic,strong) IBOutlet UIView* chBarcodeView;
 @property(nonatomic,strong) IBOutlet UIView* divBarcodeView;
 @property(nonatomic,strong) IBOutlet UIView* locBarcodeView;
+@property(nonatomic,strong) IBOutlet UIView* mnsLocView;
 @property(nonatomic,strong) IBOutlet UIView* printerSetView;
 @property(nonatomic,strong) IBOutlet UIView* buttonView;
 
@@ -57,6 +58,7 @@
 @property(nonatomic,strong) IBOutlet UIView* loc_columnHeaderView;
 @property(nonatomic,strong) IBOutlet UIView* smk_columnHeaderView;
 @property(nonatomic,strong) IBOutlet UIView* dvc_columnHeaderView;
+@property(nonatomic,strong) IBOutlet UIView* mns_columnHeaderView;
 @property(nonatomic,strong) IBOutlet UITableView* ins_tableView;
 
 @property(nonatomic,strong) IBOutlet UILabel* lblProgression;
@@ -137,6 +139,9 @@
 @property(nonatomic,strong) IBOutlet UITextField *deviceId;
 @property(nonatomic,strong) IBOutlet UITextField *operationSystemCode;
 @property(nonatomic,strong) IBOutlet UITextField *registerUserId;
+
+@property(nonatomic,strong) IBOutlet UITextField *mnsDeviceId1;
+@property(nonatomic,strong) IBOutlet UITextField *mnsDeviceId2;
 
 @property(nonatomic,strong) IBOutlet UILabel* printYn;
 @property(nonatomic,strong) NSString* pskKey;
@@ -310,6 +315,8 @@
         [self requestSido];
     }else if ([JOB_GUBUN isEqualToString:@"소스마킹"]||[JOB_GUBUN isEqualToString:@"장치바코드"]){
         [self requestLabelTp];
+    }else if ([JOB_GUBUN isEqualToString:@"기지국/중계기 위치바코드"]){
+        //[self requestLabelTp];
     }
     
     isOffLine = [[Util udObjectForKey:USER_OFFLINE] boolValue];
@@ -364,6 +371,8 @@
     loc_columnHeaderView.hidden = YES;
     smk_columnHeaderView.hidden = YES;
     dvc_columnHeaderView.hidden = YES;
+    _mns_columnHeaderView.hidden = YES;
+    _mnsLocView.hidden = YES;
     
     if([JOB_GUBUN isEqualToString:@"인스토어마킹관리"]){
         orgView.hidden = NO;
@@ -434,6 +443,27 @@
         locBarcodeListView.hidden = NO;
         locBarcodeListView.frame = CGRectMake(locBarcodeListView.frame.origin.x, buttonView.frame.origin.y + buttonView.frame.size.height, locBarcodeListView.frame.size.width,locBarcodeListView.frame.size.height);
         loc_columnHeaderView.hidden = NO;
+        ins_scrollView.contentSize = CGSizeMake(ins_tableView.bounds.size.width, ins_scrollView.frame.size.height);
+        ins_scrollView.frame = CGRectMake(ins_scrollView.frame.origin.x, ins_scrollView.frame.origin.y - 5,ins_scrollView.frame.size.width, ins_scrollView.frame.size.height);
+        
+        requestBtn.hidden = YES;
+        generateBtn.hidden = YES;
+        republishBtn.hidden = YES;
+        
+        searchBtn.frame = CGRectMake(157, searchBtn.frame.origin.y, searchBtn.frame.size.width,searchBtn.frame.size.height);
+        printTestBtn.frame = CGRectMake(204, printTestBtn.frame.origin.y, printTestBtn.frame.size.width,printTestBtn.frame.size.height);
+        
+        lblLabelTp.text = @"30x80mm";
+        ltKey = @"7";
+    }else if ([JOB_GUBUN isEqualToString:@"기지국/중계기 위치바코드"]){
+        _mnsLocView.hidden = NO;
+        printerSetView.hidden = NO;
+//        printerSetView.frame = CGRectMake(printerSetView.frame.origin.x, _manageBarcodeView.frame.origin.y + _manageBarcodeView.frame.size.height, printerSetView.frame.size.width,printerSetView.frame.size.height);
+        buttonView.hidden = NO;
+        buttonView.frame = CGRectMake(buttonView.frame.origin.x, printerSetView.frame.origin.y + printerSetView.frame.size.height, buttonView.frame.size.width,buttonView.frame.size.height);
+        locBarcodeListView.hidden = NO;
+        locBarcodeListView.frame = CGRectMake(locBarcodeListView.frame.origin.x, buttonView.frame.origin.y + buttonView.frame.size.height, locBarcodeListView.frame.size.width,locBarcodeListView.frame.size.height);
+        _mns_columnHeaderView.hidden = NO;
         ins_scrollView.contentSize = CGSizeMake(ins_tableView.bounds.size.width, ins_scrollView.frame.size.height);
         ins_scrollView.frame = CGRectMake(ins_scrollView.frame.origin.x, ins_scrollView.frame.origin.y - 5,ins_scrollView.frame.size.width, ins_scrollView.frame.size.height);
         
@@ -880,6 +910,48 @@
         [paramDic setObject:[operationSystemCode.text uppercaseString] forKey:@"operationSystemCode"];    //장비ID
         
         [requestMgr asychronousConnectToServer:API_PRT_DEVICEID_SEARCH withData:paramDic];
+        
+    }else if([JOB_GUBUN isEqualToString:@"기지국/중계기 위치바코드"]){
+        
+        NSString* deviceId = [_mnsDeviceId1.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString* nmsDeviceId = [_mnsDeviceId2.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        if([deviceId isEqualToString:@""] && [nmsDeviceId isEqualToString:@""]){
+            [self showMessage:@"검색조건을 입력해 주세요. " tag:-1 title1:@"닫기" title2:nil isError:YES];
+            return;
+        }
+        
+        ERPRequestManager* requestMgr = [[ERPRequestManager alloc]init];
+        
+        requestMgr.delegate = self;
+        requestMgr.reqKind = REQUEST_SEARCH_MNS_DEVICE_BARCODE;
+        
+        [self performSelectorOnMainThread:@selector(showIndicator) withObject:nil waitUntilDone:NO];
+        
+//        NSMutableArray *subParamList = [NSMutableArray array];
+//        NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
+//        [paramDic setObject:_manageDeviceId.text forKey:@"deviceId"];                          //장치ID
+//        [paramDic setObject:_manageLocId.text forKey:@"nmsDeviceId"];                          //장비ID
+//        [subParamList addObject:paramDic];
+//
+//        NSDictionary* bodyDic = [Util doubleMessageBody:[NSMutableDictionary dictionary] subParam:subParamList];
+//        NSDictionary* rootDic  = [Util defaultMessage:[Util defaultHeader] body:bodyDic];
+//
+//
+////        NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
+////        [paramDic setObject:_manageDeviceId.text forKey:@"deviceId"];                          //장치ID
+////        [paramDic setObject:_manageLocId.text forKey:@"nmsDeviceId"];                          //장비ID
+////
+////        NSDictionary* bodyDic = [Util noneMessageBody:paramDic];
+////        NSDictionary* rootDic  = [Util defaultMessage:[Util defaultHeader] body:bodyDic];
+//        [requestMgr asychronousConnectToServer:API_PRT_MNS_DEVICEID_SEARCH withData:rootDic];
+                
+        NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
+
+        [paramDic setObject:_mnsDeviceId1.text forKey:@"deviceId"];                          //장치ID
+        [paramDic setObject:_mnsDeviceId2.text forKey:@"nmsDeviceId"];                          //장비ID
+
+        [requestMgr asychronousConnectToServer:API_PRT_MNS_DEVICEID_SEARCH withData:paramDic];
     }
 }
 
@@ -951,7 +1023,7 @@
                 else if (type == 3) [self requestPrint:YES];
             }
         }
-    }else if([JOB_GUBUN isEqualToString:@"위치바코드"] || [JOB_GUBUN isEqualToString:@"소스마킹"] || [JOB_GUBUN isEqualToString:@"장치바코드"]){
+    }else if([JOB_GUBUN isEqualToString:@"위치바코드"] || [JOB_GUBUN isEqualToString:@"소스마킹"] || [JOB_GUBUN isEqualToString:@"장치바코드"] || [JOB_GUBUN isEqualToString:@"기지국/중계기 위치바코드"]){
         if([ltKey isEqualToString:@""] || ltKey.length < 1){
             [self showMessage:@"라벨용지를 선택해주세요 " tag:-1 title1:@"닫기" title2:nil isError:YES];
             return;
@@ -983,7 +1055,6 @@
         bpr.delegate = self;
         [bpr makeBarcodeAndPrint:[ltKey intValue] sendDataList:insSendDataList statusMod:true];
     }
-    
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -1328,7 +1399,13 @@
         [self processSearchSourceMarking:resultList];
     }else if(pid == REQUEST_SEARCH_DEVICE_BARCODE){
         [self processSearchDevice:resultList];
-    }else isOperationFinished = YES;
+    }
+    // sesang 20190910 장비 기준 위치바코드 출력 기능
+    else if(pid == REQUEST_SEARCH_MNS_DEVICE_BARCODE){
+        [self processSearchMnsDevice:resultList];
+    }
+    // end sesang
+    else isOperationFinished = YES;
 }
 
 #pragma  mark - 진행상태 코드 조회
@@ -1689,6 +1766,37 @@
     
 }
 
+// sesang 20190910 장비 기준 위치 바코드 검색 기능
+#pragma  mark - 장비 기준 위치바코드 검색 : 데이터
+- (void)processSearchMnsDevice:(NSArray*)reultList
+{
+    insResultList = [[NSMutableArray array] init];
+    
+    if (reultList.count){
+        
+        for (NSDictionary* dic in reultList){
+            NSMutableDictionary* insDic = [NSMutableDictionary dictionary];
+            [insDic setObject:[dic objectForKey:@"locationCode"] forKey:@"locationCode"];
+            [insDic setObject:[dic objectForKey:@"locationName"] forKey:@"locationName"];
+            [insDic setObject:[dic objectForKey:@"deviceId"] forKey:@"deviceId"];
+            [insDic setObject:[dic objectForKey:@"nmsDeviceId"] forKey:@"nmsDeviceId"];
+            [insDic setObject:[dic objectForKey:@"deviceName"] forKey:@"deviceName"];
+            [insDic setObject:[dic objectForKey:@"repLocCd"] forKey:@"repLocCd"];
+            [insDic setObject:[dic objectForKey:@"repLocNm"] forKey:@"repLocNm"];
+            [insDic setObject:[dic objectForKey:@"repLocNm"] forKey:@"geoName"];
+            [insResultList addObject:insDic];
+        }
+        
+        [ins_tableView reloadData];
+    }else{
+        NSString* message = @"조회된 장치바코드 정보가 없습니다.";
+        [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
+        return;
+    }
+    
+}
+// end sesang
+
 #pragma mark - processFailRequest
 - (void) processFailRequest:(requestOfKind)pid Message:(NSString*)message Status:(NSInteger)status
 {
@@ -1894,10 +2002,18 @@
                 return YES;
             }
         }else{
+            if (textField == dongItf) {
+                NSString* dong = textField.text;
+                textField.text = dong;
+                [textField resignFirstResponder];
+                [self requestDong];
+                return YES;
+            }
             if(lblSido.text.length < 1){
                 message = @"시/도 검색을 해주세요.";
                 [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
                 textField.text = @"";
+                [textField resignFirstResponder];
                 return YES;
             }
             
@@ -1905,12 +2021,9 @@
                 message = @"시/군/구 검색을 해주세요.";
                 [self showMessage:message tag:-1 title1:@"닫기" title2:nil];
                 textField.text = @"";
+                [textField resignFirstResponder];
                 return YES;
             }
-            
-            NSString* dong = textField.text;
-            textField.text = dong;
-            [self requestDong];
         }
     }else if([JOB_GUBUN isEqualToString:@"장치바코드"]){
         if(textField.text.length > 0){
@@ -2171,6 +2284,35 @@
             cell.lblLabel13.text = [dic objectForKey:@"registerDate"];
             cell.lblLabel14.text = [dic objectForKey:@"ect"];
             cell.lblLabel15.text = [dic objectForKey:@"conditionsValue"];
+            
+            [cell.btnCheck addTarget:self action:@selector(touchedSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
+            cell.btnCheck.tag = indexPath.row;
+            NSDictionary* cellDic = [insResultList objectAtIndex:indexPath.row];
+            BOOL isSelected = [[cellDic objectForKey:@"IS_SELECTED"] boolValue];
+            cell.btnCheck.selected = isSelected;
+        }
+        return cell;
+    }
+    else if ([JOB_GUBUN isEqualToString:@"기지국/중계기 위치바코드"]){
+        
+        static NSString *CellIdentifier = @"MnsLocTableCell";
+        LocListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        if (cell == nil) {
+            NSArray* arr = [[NSBundle mainBundle] loadNibNamed:@"LocListCell" owner:self options:nil];
+            cell = arr[0];
+        }
+
+        if (insResultList.count){
+            NSDictionary* dic = [insResultList objectAtIndex:indexPath.row];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.lblLabel1.text = [dic objectForKey:@"locationCode"];
+            cell.lblLabel2.text = [dic objectForKey:@"locationName"];
+            cell.lblLabel3.text = [dic objectForKey:@"repLocCd"];
+            cell.lblLabel4.text = [dic objectForKey:@"repLocNm"];
+            cell.lblLabel5.text = [dic objectForKey:@"deviceId"];
+            cell.lblLabel6.text = [dic objectForKey:@"nmsDeviceId"];
+            cell.lblLabel7.text = [dic objectForKey:@"deviceName"];
             
             [cell.btnCheck addTarget:self action:@selector(touchedSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
             cell.btnCheck.tag = indexPath.row;

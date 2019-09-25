@@ -163,6 +163,8 @@
 			<string>main_button_menu_i2</string>
 			<string>소스마킹</string>
 			<string>main_button_menu_i4</string>
+			<string>기지국/중계기\n위치바코드</string>
+			<string>main_button_menu_i5</string>
 		</array>
 	</dict>
 	<dict>

@@ -937,6 +937,7 @@
 		1C93A5621855D3FB000C790E /* SettingViewRereadDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewRereadDelay.h; path = classes/SettingViewRereadDelay.h; sourceTree = "<group>"; };
 		1C93A5631855D3FB000C790E /* SettingViewRereadDelay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewRereadDelay.m; path = classes/SettingViewRereadDelay.m; sourceTree = "<group>"; };
 		1C93A5641855D3FB000C790E /* SettingViewRereadDelay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewRereadDelay.xib; sourceTree = "<group>"; };
+		4FA922B8233B585300A521B9 /* erpbarcode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = erpbarcode.entitlements; sourceTree = "<group>"; };
 		5D26950517BE250600DD0BA9 /* BuyOutIntoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyOutIntoViewController.h; path = classes/BuyOutIntoViewController.h; sourceTree = "<group>"; };
 		5D26950617BE250600DD0BA9 /* BuyOutIntoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = BuyOutIntoViewController.m; path = classes/BuyOutIntoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5D26950717BE250600DD0BA9 /* BuyOutIntoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BuyOutIntoViewController.xib; path = classes/BuyOutIntoViewController.xib; sourceTree = "<group>"; };
@@ -2638,6 +2639,7 @@
 		5DFB7A5D17A0ABB600EB8991 /* erpbarcode */ = {
 			isa = PBXGroup;
 			children = (
+				4FA922B8233B585300A521B9 /* erpbarcode.entitlements */,
 				068DA0A8218AF802007DAB10 /* old_xib */,
 				08FF755320516925000B5546 /* ixShield_com.kt.ERPBarcode_license.txt */,
 				5D3F699017B33E4500EBD5E8 /* images */,
@@ -2801,6 +2803,7 @@
 				ORGANIZATIONNAME = ktds;
 				TargetAttributes = {
 					5DFB7A5117A0ABB600EB8991 = {
+						DevelopmentTeam = VM8YP667H8;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -3588,47 +3591,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = erpbarcode/erpbarcode.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "erpbarcode/erpbarcode-Prefix.pch";
-				INFOPLIST_FILE = "erpbarcode/erpbarcode-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$SOURCE_ROOT/**",
-					"$(PROJECT_DIR)/erpbarcode/classes/zebra",
-					"$(PROJECT_DIR)/erpbarcode/classes/KoamTac",
-					"$(PROJECT_DIR)/erpbarcode/classes/ixShield",
-					"$(PROJECT_DIR)/erpbarcode/classes/Zbar",
-				);
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"$(inherited)",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kt.ERPBarcode;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv7s arm64";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		5DFB7A7617A0ABB700EB8991 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5.22;
 				DEVELOPMENT_TEAM = VM8YP667H8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3644,6 +3611,48 @@
 					"$(PROJECT_DIR)/erpbarcode/classes/ixShield",
 					"$(PROJECT_DIR)/erpbarcode/classes/Zbar",
 				);
+				MARKETING_VERSION = 112;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kt.ERPBarcode;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "ERP Barcode System_Development_20190730";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s arm64";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5DFB7A7617A0ABB700EB8991 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CODE_SIGN_ENTITLEMENTS = erpbarcode/erpbarcode.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5.22;
+				DEVELOPMENT_TEAM = VM8YP667H8;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "erpbarcode/erpbarcode-Prefix.pch";
+				INFOPLIST_FILE = "erpbarcode/erpbarcode-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$SOURCE_ROOT/**",
+					"$(PROJECT_DIR)/erpbarcode/classes/zebra",
+					"$(PROJECT_DIR)/erpbarcode/classes/KoamTac",
+					"$(PROJECT_DIR)/erpbarcode/classes/ixShield",
+					"$(PROJECT_DIR)/erpbarcode/classes/Zbar",
+				);
+				MARKETING_VERSION = 112;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-ObjC",

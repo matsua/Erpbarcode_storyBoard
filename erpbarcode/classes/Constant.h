@@ -304,4 +304,6 @@ typedef enum {
 
 #define API_CHECK_CONSISTENCY   @"/deviceId/checkLocDevInfo/get.json" // 장치&위치 스캔 시 정합성 체크
 
+#define API_PRT_MNS_DEVICEID_SEARCH     @"/based/location/nmsDevLocationInfo/list/get.json"  //장비 기준 위치바코드 조회
+
 #endif
