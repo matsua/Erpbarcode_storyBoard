@@ -1800,7 +1800,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4H-8K-CnE" userLabel="ColumnView2">
-                                                                <rect key="frame" x="0.0" y="0.0" width="2124" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="2224" height="34"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLa-FA-eOu">
                                                                         <rect key="frame" x="33" y="6.5" width="21" height="21"/>
@@ -1831,16 +1831,16 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치코드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBx-JX-UGl">
-                                                                        <rect key="frame" x="204" y="0.0" width="160" height="34"/>
+                                                                        <rect key="frame" x="204" y="0.0" width="180" height="34"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="160" id="YeQ-7X-cbb"/>
+                                                                            <constraint firstAttribute="width" constant="180" id="YeQ-7X-cbb"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STs-Tx-v3x">
-                                                                        <rect key="frame" x="364" y="0.0" width="160" height="34"/>
+                                                                        <rect key="frame" x="384" y="0.0" width="160" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="160" id="9ZJ-vg-X6l"/>
                                                                         </constraints>
@@ -1849,7 +1849,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표주소코드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFx-Oq-ny0">
-                                                                        <rect key="frame" x="524" y="0.0" width="160" height="34"/>
+                                                                        <rect key="frame" x="544" y="0.0" width="160" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="160" id="moc-XL-bGz"/>
                                                                         </constraints>
@@ -1858,25 +1858,25 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표주소명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edi-ju-j4S">
-                                                                        <rect key="frame" x="684" y="0.0" width="160" height="34"/>
+                                                                        <rect key="frame" x="704" y="0.0" width="200" height="34"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="160" id="iz1-FA-ZOS"/>
+                                                                            <constraint firstAttribute="width" constant="200" id="iz1-FA-ZOS"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실유형" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mnp-Ic-WjD">
-                                                                        <rect key="frame" x="844" y="0.0" width="80" height="34"/>
+                                                                        <rect key="frame" x="904" y="0.0" width="120" height="34"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="80" id="4uI-1P-b7X"/>
+                                                                            <constraint firstAttribute="width" constant="120" id="4uI-1P-b7X"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실명칭" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXI-Oy-0J7">
-                                                                        <rect key="frame" x="924" y="0.0" width="80" height="34"/>
+                                                                        <rect key="frame" x="1024" y="0.0" width="80" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="80" id="sfk-Eh-gIO"/>
                                                                         </constraints>
@@ -1885,7 +1885,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상태" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhP-xy-O6x">
-                                                                        <rect key="frame" x="1004" y="0.0" width="80" height="34"/>
+                                                                        <rect key="frame" x="1104" y="0.0" width="80" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="80" id="jet-Dx-ni0"/>
                                                                         </constraints>
@@ -1894,7 +1894,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실층구분" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTZ-6u-rBP">
-                                                                        <rect key="frame" x="1084" y="0.0" width="80" height="34"/>
+                                                                        <rect key="frame" x="1184" y="0.0" width="80" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="80" id="HLh-Rt-z8D"/>
                                                                         </constraints>
@@ -1903,7 +1903,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j64-I9-PcR">
-                                                                        <rect key="frame" x="1164" y="0.0" width="160" height="34"/>
+                                                                        <rect key="frame" x="1264" y="0.0" width="160" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="160" id="Eyh-Bs-7JQ"/>
                                                                         </constraints>
@@ -1912,7 +1912,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="건물군여부" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSQ-qJ-3i5">
-                                                                        <rect key="frame" x="1324" y="0.0" width="80" height="34"/>
+                                                                        <rect key="frame" x="1424" y="0.0" width="80" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="80" id="jA5-XR-bAI"/>
                                                                         </constraints>
@@ -1921,7 +1921,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="건물유형" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hib-eZ-NaW">
-                                                                        <rect key="frame" x="1404" y="0.0" width="80" height="34"/>
+                                                                        <rect key="frame" x="1504" y="0.0" width="80" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="80" id="6XZ-Ci-UjL"/>
                                                                         </constraints>
@@ -1930,7 +1930,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KT건물유형" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIl-VK-0dG">
-                                                                        <rect key="frame" x="1484" y="0.0" width="160" height="34"/>
+                                                                        <rect key="frame" x="1584" y="0.0" width="160" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="160" id="WSQ-Ee-uWr"/>
                                                                         </constraints>
@@ -1938,7 +1938,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관리국사" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5u-iz-l3G">
-                                                                        <rect key="frame" x="1644" y="0.0" width="160" height="34"/>
+                                                                        <rect key="frame" x="1744" y="0.0" width="160" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="160" id="wKX-HQ-Zc3"/>
                                                                         </constraints>
@@ -1946,7 +1946,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관리국사명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQA-ED-CVt">
-                                                                        <rect key="frame" x="1804" y="0.0" width="160" height="34"/>
+                                                                        <rect key="frame" x="1904" y="0.0" width="160" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="160" id="XMQ-LH-i6y"/>
                                                                         </constraints>
@@ -1954,7 +1954,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wI5-15-5jV">
-                                                                        <rect key="frame" x="1964" y="0.0" width="160" height="34"/>
+                                                                        <rect key="frame" x="2064" y="0.0" width="160" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="160" id="ULR-Bf-DP6"/>
                                                                         </constraints>
@@ -2037,7 +2037,7 @@
                                                                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
-                                                                                <state key="selected" image="9428D9CF-E42B-4242-9413-6A7B4DEABD94"/>
+                                                                                <state key="selected" image="58C9D438-53A1-4808-AC29-8047526A01E4"/>
                                                                                 <state key="highlighted" image="common_checkbox_checked.png">
                                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
@@ -2512,7 +2512,7 @@
                                                                             <state key="selected" image="common_checkbox_checked.png"/>
                                                                         </button>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유형" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWO-wR-xBY">
-                                                                            <rect key="frame" x="122" y="0.0" width="80" height="44"/>
+                                                                            <rect key="frame" x="120" y="0.0" width="80" height="44"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="80" id="BV8-Hl-Fl8"/>
                                                                             </constraints>
@@ -2520,15 +2520,15 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치코드" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uo-0a-XVh">
-                                                                            <rect key="frame" x="204" y="0.0" width="160" height="44"/>
+                                                                            <rect key="frame" x="200" y="0.0" width="180" height="44"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="160" id="KcL-Gs-3vp"/>
+                                                                                <constraint firstAttribute="width" constant="180" id="KcL-Gs-3vp"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치명" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJY-l0-Obp">
-                                                                            <rect key="frame" x="364" y="0.0" width="160" height="44"/>
+                                                                            <rect key="frame" x="380" y="0.0" width="160" height="44"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="160" id="fFC-2p-M7l"/>
                                                                             </constraints>
@@ -2536,7 +2536,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실유형" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rv2-pd-jlc">
-                                                                            <rect key="frame" x="524" y="0.0" width="160" height="44"/>
+                                                                            <rect key="frame" x="540" y="0.0" width="160" height="44"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="160" id="XJw-Dc-EAL"/>
                                                                             </constraints>
@@ -2544,17 +2544,17 @@
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실명칭" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnL-ky-M47">
-                                                                            <rect key="frame" x="684" y="0.0" width="160" height="44"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실명칭" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnL-ky-M47">
+                                                                            <rect key="frame" x="700" y="0.0" width="200" height="44"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="160" id="zIL-MB-19z"/>
+                                                                                <constraint firstAttribute="width" constant="200" id="zIL-MB-19z"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상태" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4A-xG-ddu">
-                                                                            <rect key="frame" x="844" y="0.0" width="80" height="44"/>
+                                                                            <rect key="frame" x="900" y="0.0" width="80" height="44"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="80" id="ofS-XG-LxW"/>
                                                                             </constraints>
@@ -2562,17 +2562,17 @@
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실층구분" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-ot-IhV">
-                                                                            <rect key="frame" x="924" y="0.0" width="80" height="44"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실층구분" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-ot-IhV">
+                                                                            <rect key="frame" x="980" y="0.0" width="120" height="44"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="80" id="aSq-4V-Z9m"/>
+                                                                                <constraint firstAttribute="width" constant="120" id="aSq-4V-Z9m"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="건물군여부" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riL-nN-UG0">
-                                                                            <rect key="frame" x="1004" y="0.0" width="80" height="44"/>
+                                                                            <rect key="frame" x="1100" y="0.0" width="80" height="44"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="80" id="VT7-35-zYP"/>
                                                                             </constraints>
@@ -2581,7 +2581,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="건물유형" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KD-Zb-duI">
-                                                                            <rect key="frame" x="1084" y="0.0" width="80" height="44"/>
+                                                                            <rect key="frame" x="1180" y="0.0" width="80" height="44"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="80" id="8Co-Uh-Ofo"/>
                                                                             </constraints>
@@ -2590,7 +2590,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6za-i5-ubG" customClass="scrollTouch">
-                                                                            <rect key="frame" x="1164" y="0.0" width="160" height="44"/>
+                                                                            <rect key="frame" x="1260" y="0.0" width="160" height="44"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDO-Bz-KeU">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="21" height="44"/>
@@ -2609,7 +2609,7 @@
                                                                             </constraints>
                                                                         </scrollView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KT건물유형" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzW-ME-tHJ">
-                                                                            <rect key="frame" x="1324" y="0.0" width="80" height="44"/>
+                                                                            <rect key="frame" x="1420" y="0.0" width="80" height="44"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="80" id="75w-nV-WSb"/>
                                                                             </constraints>
@@ -2618,7 +2618,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관리국사" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFm-Va-6Yw">
-                                                                            <rect key="frame" x="1404" y="0.0" width="80" height="44"/>
+                                                                            <rect key="frame" x="1500" y="0.0" width="80" height="44"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="80" id="E15-v2-pVR"/>
                                                                             </constraints>
@@ -2627,7 +2627,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관리국사명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GON-FV-hi4">
-                                                                            <rect key="frame" x="1484" y="0.0" width="160" height="44"/>
+                                                                            <rect key="frame" x="1580" y="0.0" width="160" height="44"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="160" id="OrW-63-fOz"/>
                                                                             </constraints>
@@ -2636,7 +2636,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관리국사명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg9-Ol-BkX">
-                                                                            <rect key="frame" x="1644" y="0.0" width="160" height="44"/>
+                                                                            <rect key="frame" x="1740" y="0.0" width="160" height="44"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="160" id="0SM-27-sKe"/>
                                                                             </constraints>
@@ -2645,7 +2645,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관리국사명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl9-O1-gXh">
-                                                                            <rect key="frame" x="1804" y="0.0" width="160" height="44"/>
+                                                                            <rect key="frame" x="1900" y="0.0" width="160" height="44"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="160" id="SZW-4C-9LU"/>
                                                                             </constraints>
@@ -2654,7 +2654,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0d-w2-2gZ" customClass="scrollTouch">
-                                                                            <rect key="frame" x="1964" y="0.0" width="160" height="44"/>
+                                                                            <rect key="frame" x="2060" y="0.0" width="160" height="44"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aos-9T-Csa">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="21" height="44"/>
@@ -2684,7 +2684,7 @@
                                                                         <constraint firstAttribute="bottom" secondItem="e4A-xG-ddu" secondAttribute="bottom" id="Av3-ve-iwK"/>
                                                                         <constraint firstAttribute="bottom" secondItem="2KD-Zb-duI" secondAttribute="bottom" id="BDg-kI-TWx"/>
                                                                         <constraint firstAttribute="bottom" secondItem="g0d-w2-2gZ" secondAttribute="bottom" id="DMi-fY-Rg7"/>
-                                                                        <constraint firstItem="LWO-wR-xBY" firstAttribute="leading" secondItem="7i4-nd-gkf" secondAttribute="trailing" constant="35" id="EOR-vo-X3w"/>
+                                                                        <constraint firstItem="LWO-wR-xBY" firstAttribute="leading" secondItem="7i4-nd-gkf" secondAttribute="trailing" constant="33" id="EOR-vo-X3w"/>
                                                                         <constraint firstAttribute="bottom" secondItem="zg9-Ol-BkX" secondAttribute="bottom" id="Eeq-4e-MDW"/>
                                                                         <constraint firstItem="CbH-ot-IhV" firstAttribute="top" secondItem="PuF-z2-4rQ" secondAttribute="top" id="En5-8q-tAi"/>
                                                                         <constraint firstItem="tl9-O1-gXh" firstAttribute="top" secondItem="PuF-z2-4rQ" secondAttribute="top" id="KDc-OS-ZQa"/>
@@ -2701,7 +2701,7 @@
                                                                         <constraint firstAttribute="bottom" secondItem="riL-nN-UG0" secondAttribute="bottom" id="d51-pe-dnb"/>
                                                                         <constraint firstAttribute="bottom" secondItem="0Uo-0a-XVh" secondAttribute="bottom" id="eRY-1i-EzP"/>
                                                                         <constraint firstAttribute="bottom" secondItem="MJY-l0-Obp" secondAttribute="bottom" id="f48-2e-dMr"/>
-                                                                        <constraint firstItem="0Uo-0a-XVh" firstAttribute="leading" secondItem="LWO-wR-xBY" secondAttribute="trailing" constant="2" id="gvY-YH-FDC"/>
+                                                                        <constraint firstItem="0Uo-0a-XVh" firstAttribute="leading" secondItem="LWO-wR-xBY" secondAttribute="trailing" id="gvY-YH-FDC"/>
                                                                         <constraint firstItem="riL-nN-UG0" firstAttribute="top" secondItem="PuF-z2-4rQ" secondAttribute="top" id="hbF-2h-yH4"/>
                                                                         <constraint firstItem="7i4-nd-gkf" firstAttribute="centerY" secondItem="PuF-z2-4rQ" secondAttribute="centerY" id="ikX-25-e8W"/>
                                                                         <constraint firstAttribute="bottom" secondItem="6za-i5-ubG" secondAttribute="bottom" id="ixY-Gj-bHX"/>
@@ -2985,7 +2985,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="9428D9CF-E42B-4242-9413-6A7B4DEABD94" width="20" height="21">
+        <image name="58C9D438-53A1-4808-AC29-8047526A01E4" width="20" height="21">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
 ExQZHh8jJCsuMTtDR0tPUlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdz

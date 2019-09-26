@@ -1783,7 +1783,11 @@
             [insDic setObject:[dic objectForKey:@"deviceName"] forKey:@"deviceName"];
             [insDic setObject:[dic objectForKey:@"repLocCd"] forKey:@"repLocCd"];
             [insDic setObject:[dic objectForKey:@"repLocNm"] forKey:@"repLocNm"];
-            [insDic setObject:[dic objectForKey:@"repLocNm"] forKey:@"geoName"];
+            [insDic setObject:[dic objectForKey:@"subLocationName"] forKey:@"subLocationName"];
+//            NSString* geoName = [dic objectForKey:@"geoName"] ? [dic objectForKey:@"geoName"] : @"";
+//            if ([geoName isEqualToString:@""]) geoName = [dic objectForKey:@"repLocNm"];
+//            [insDic setObject:geoName forKey:@"geoName"];
+           
             [insResultList addObject:insDic];
         }
         

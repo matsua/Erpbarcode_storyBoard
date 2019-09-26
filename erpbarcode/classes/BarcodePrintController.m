@@ -67,8 +67,10 @@
 //            ZPLcommand = [NSString stringWithFormat:@"%@^XA^SEE:UHANGUL.DAT^FS^CWQ,E:KFONT3.FNT^FS^CI28",ZPLcommand];
             
             NSString *barcode = @"";
-            NSString *geoName = @"";
+            //NSString *geoName = @"";
             NSString *locationName = @"";
+            NSString *subLocationName = @"";
+            
             NSString *barcodeLabel = @"";
             NSString *barcodeSubTitle1 = @"";
             NSString *barcodeSubTitle2 = @"";
@@ -76,8 +78,9 @@
             if(type == 7){
                 barcode = [dic objectForKey:@"locationCode"];
                 barcodeLabel = [dic objectForKey:@"locationCode"];
-                geoName = [[dic objectForKey:@"geoName"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//                geoName = [[dic objectForKey:@"geoName"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 locationName = [[dic objectForKey:@"locationName"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                subLocationName = [[dic objectForKey:@"subLocationName"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             }else{
                 barcode = [dic objectForKey:@"newBarcode"];
                 barcodeLabel = [dic objectForKey:@"newBarcode"];
@@ -162,8 +165,8 @@
                 case 7:
                     ZPLcommand = [NSString stringWithFormat:@"%@^FO%d,%d^BCN,100,N,N,N^FD%@^FS",ZPLcommand,x_coordinate - 50,y_coordinate - 15,barcode];
                     ZPLcommand = [NSString stringWithFormat:@"%@^FO%d,%d^AQN,30,30^FD%@^FS",ZPLcommand,x_coordinate + 40,y_coordinate + 85,barcodeLabel];
-                    ZPLcommand = [NSString stringWithFormat:@"%@^FO%d,%d^AQN,30,30^FD%@^FS",ZPLcommand,x_coordinate - 70,y_coordinate - 150,geoName];
-                    ZPLcommand = [NSString stringWithFormat:@"%@^FO%d,%d^AQN,30,30^FD%@^FS",ZPLcommand,x_coordinate - 70,y_coordinate - 120,locationName];
+                    ZPLcommand = [NSString stringWithFormat:@"%@^FO%d,%d^AQN,30,30^FD%@^FS",ZPLcommand,x_coordinate - 70,y_coordinate - 150,locationName];
+                    ZPLcommand = [NSString stringWithFormat:@"%@^FO%d,%d^AQN,30,30^FD%@^FS",ZPLcommand,x_coordinate - 70,y_coordinate - 120,subLocationName];
                     break;
                 default:
                     break;
