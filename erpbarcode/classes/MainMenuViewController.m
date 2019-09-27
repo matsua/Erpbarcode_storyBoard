@@ -174,7 +174,7 @@
 -(void)setLoginMsg{
     NSDictionary* userDic = [Util udObjectForKey:USER_INFO];
     NSLog(@"setLoginMsg %@, %@, %@", [userDic objectForKey:@"orgTypeCode"], [userDic objectForKey:@"passwdUpdateYn"], [userDic objectForKey:@"confirmationYn"]);
-    if(![[userDic objectForKey:@"orgTypeCode"] isEqualToString:@"INS_USER"] && ![[userDic objectForKey:@"passwdUpdateYn"] isEqualToString:@"Y"] && ![[userDic objectForKey:@"confirmationYn"] isEqualToString:@"N"]){
+    if(![[userDic objectForKey:@"orgTypeCode"] isEqualToString:@"INS_USER"] && ![[userDic objectForKey:@"passwdUpdateAdminYn"] isEqualToString:@"Y"] && ![[userDic objectForKey:@"confirmationYn"] isEqualToString:@"N"]){
         NSString *summaryOrgName = [userDic objectForKey:@"summaryOrg"];
         NSString *centerName = [userDic objectForKey:@"centerName"];
         if(summaryOrgName == NULL) summaryOrgName = @"";
