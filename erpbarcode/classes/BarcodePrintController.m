@@ -272,6 +272,11 @@
 
 
 - (NSString *)getSsid{
+    // sesang 20191002 iOS 13 부터 SSID 정보를 가져오지 못하는 버그때문에 무조건 지브라 프린트라고 리턴
+    if (iOS_VERSION() > 13.0) {
+        return @"ZD500";
+    }
+    // end sesang
     CFArrayRef cfArray = CNCopySupportedInterfaces();
     CFDictionaryRef cfDict = CNCopyCurrentNetworkInfo(CFArrayGetValueAtIndex(cfArray, 0));
     NSDictionary *dic = (__bridge NSDictionary*)cfDict;

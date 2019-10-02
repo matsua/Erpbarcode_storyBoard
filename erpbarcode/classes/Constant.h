@@ -59,6 +59,10 @@
 #define IS_iOS6() \
 ([[UIDevice currentDevice].systemVersion doubleValue] >= 6.0)
 
+// iOS 6점대 판단
+#define iOS_VERSION() \
+([[UIDevice currentDevice].systemVersion doubleValue])
+
 // 컬러값
 #define UIColorFromRGB(rgbValue, alphaValue) \
 [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
