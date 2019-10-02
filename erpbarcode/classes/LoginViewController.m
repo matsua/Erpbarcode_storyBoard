@@ -94,9 +94,9 @@
     NSString* userid = [Util udObjectForKey:USER_ID];
     if (userid.length){
         textID.text = userid;
-#if TARGET_IPHONE_SIMULATOR
-        if ([userid isEqualToString:@"admin"]) {
-            textPW.text = @"qkzhem@1";
+#if TARGET_IPHONE_SIMULATOR || DEBUG
+        if ([userid isEqualToString:@"82047554"]) {
+            textPW.text = @"new1234!";
         }
 #endif
     }

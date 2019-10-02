@@ -1860,7 +1860,7 @@ const static char* moveTarKey = "moveTarKey";
     tapGesture.delegate = self;
     [_tableView addGestureRecognizer:tapGesture];
     
-    
+
     // 본격적인 화면 구성
     uuView.hidden = YES;
     deviceIDView.hidden = YES;
@@ -2199,21 +2199,26 @@ const static char* moveTarKey = "moveTarKey";
         _tableView.frame = CGRectMake(0, 197, 320, PHONE_SCREEN_HEIGHT - (curdView.frame.origin.y + curdView.frame.size.height)  - 70);
     }
     
-    //jdh 추가
-    if (!locBarcodeView.hidden && !txtLocCode.text.length){
-        [self performSelectorOnMainThread:@selector(locBecameFirstResponder) withObject:nil waitUntilDone:NO];
-    }
-    else
-        [self performSelectorOnMainThread:@selector(fccBecameFirstResponder) withObject:nil waitUntilDone:NO];
+    // sesang 20191002 ios13에서 화면 이동 버그 수정 
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        //jdh 추가
+        if (!locBarcodeView.hidden && !txtLocCode.text.length){
+            [self locBecameFirstResponder];
+             //[self performSelectorOnMainThread:@selector(locBecameFirstResponder) withObject:nil waitUntilDone:NO];
+         }
+         else
+            [self fccBecameFirstResponder];
+             //[self performSelectorOnMainThread:@selector(fccBecameFirstResponder) withObject:nil waitUntilDone:NO];
+    });
 }
 
 -(void) setBecameResponder
 {
-    if (!txtLocCode.text.length && !locBarcodeView.hidden)
+    if (!txtLocCode.text.length && !locBarcodeView.hidden && [txtLocCode isFirstResponder])
         [txtLocCode becomeFirstResponder];
-    else if(![txtFacCode isFirstResponder])
+    else if(![txtFacCode isFirstResponder] && [txtFacCode isFirstResponder])
         [txtFacCode becomeFirstResponder];
-    else if (!txtDeviceID.text.length && !deviceIDView.hidden)
+    else if (!txtDeviceID.text.length && !deviceIDView.hidden && [txtDeviceID isFirstResponder])
         [txtDeviceID becomeFirstResponder];
 }
 

@@ -203,8 +203,11 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
     // view들의 초기값을 설정한다.
     [self initViews];
     
-    [self performSelectorOnMainThread:@selector(setLocFirstResponder) withObject:nil waitUntilDone:NO];
-    
+//    // sesang 20191002 ios13에서 화면 이동 버그 수정
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+//         [self performSelectorOnMainThread:@selector(setLocFirstResponder) withObject:nil waitUntilDone:NO];
+//    });
+    // end sesang
     if ([[Util udObjectForKey:USER_WORK_MODE] isEqualToString:@"Y"])
     {
         [self performSelectorOnMainThread:@selector(processWorkData) withObject:nil waitUntilDone:NO];
@@ -1657,12 +1660,15 @@ static BOOL diagStat = NO; //alertView에서 <예> 인 경우에 실행해야 �
     [self initWhenLocBarcode];
     
     //위치바코드 포커싱
-    if (!locBarcodeView.hidden){
-        [self performSelectorOnMainThread:@selector(setLocFirstResponder) withObject:nil waitUntilDone:NO];
-    }
-    else if (!fccBarcodeView.hidden){
-        [self performSelectorOnMainThread:@selector(setFacFirstResponder) withObject:nil waitUntilDone:NO];
-    }
+    // sesang 20191002 ios13에서 화면 이동 버그 수정
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+         if (!locBarcodeView.hidden){
+             [self performSelectorOnMainThread:@selector(setLocFirstResponder) withObject:nil waitUntilDone:NO];
+         }
+         else if (!fccBarcodeView.hidden){
+             [self performSelectorOnMainThread:@selector(setFacFirstResponder) withObject:nil waitUntilDone:NO];
+         }
+    });
 }
 
 - (void)initWhenLocBarcode
