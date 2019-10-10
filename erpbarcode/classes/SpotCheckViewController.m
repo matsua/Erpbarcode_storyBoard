@@ -429,11 +429,18 @@
         btnDevice.enabled = NO;
         lblDevice.textColor = RGB(120, 120, 96);
         
-        
-        [txtLocCode becomeFirstResponder];
+        // sesang 20191002 ios13에서 화면 이동 버그 수정
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [txtLocCode becomeFirstResponder];
+        });
+        // end sesang
     }
     else {
-        [txtDeviceCode becomeFirstResponder];
+        // sesang 20191002 ios13에서 화면 이동 버그 수정
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [txtDeviceCode becomeFirstResponder];
+        });
+        // end sesang
     }
 }
 
